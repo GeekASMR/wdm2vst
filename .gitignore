@@ -1,0 +1,33 @@
+# Build outputs
+**/build/
+**/x64/
+**/*.obj
+**/*.lib
+**/*.pdb
+**/*.exe
+**/*.sys
+**/*.dll
+**/*.cat
+**/*.cer
+**/*.res
+**/*.log
+**/*.tlog/
+**/*.recipe
+**/Debug/
+**/Release/
+**/*.old*
+
+# JUCE
+ASMRTOP_Plugins/JUCE/
+
+# Submodules
+Virtual-Audio-Driver/
+scream/
+
+# System files
+*.suo
+*.user
+*.ncb
+*.sdf
+*.opensdf
+.vs/

@@ -1,0 +1,160 @@
+[Version]
+Signature="$CHICAGO$"
+Class=MEDIA
+Provider=%ASMRTOP%
+ClassGUID={4d36e96c-e325-11ce-bfc1-08002be10318}
+DriverVer = 12/31/2025,16.22.34.282
+CatalogFile=asmrtop.cat
+
+[SourceDisksNames]
+222="ASMRTOP Driver Disk","",222
+
+[SourceDisksFiles]
+asmrtop.sys=222
+
+[Manufacturer]
+%MfgName%=ASMRTOPDeviceSection,NTAMD64,NTIA64
+
+[ASMRTOPDeviceSection]
+%ASMRTOP_1.DeviceDesc%=ASMRTOP_WaveExtensible,*ASMRTOP1
+%ASMRTOP_2.DeviceDesc%=ASMRTOP_WaveExtensible,*ASMRTOP2
+%ASMRTOP_3.DeviceDesc%=ASMRTOP_WaveExtensible,*ASMRTOP3
+%ASMRTOP_4.DeviceDesc%=ASMRTOP_WaveExtensible,*ASMRTOP4
+%ASMRTOP_5.DeviceDesc%=ASMRTOP_WaveExtensible,*ASMRTOP5
+%ASMRTOP_6.DeviceDesc%=ASMRTOP_WaveExtensible,*ASMRTOP6
+
+[ASMRTOPDeviceSection.NTAMD64]
+%ASMRTOP_1.DeviceDesc%=ASMRTOP_WaveExtensible,*ASMRTOP1
+%ASMRTOP_2.DeviceDesc%=ASMRTOP_WaveExtensible,*ASMRTOP2
+%ASMRTOP_3.DeviceDesc%=ASMRTOP_WaveExtensible,*ASMRTOP3
+%ASMRTOP_4.DeviceDesc%=ASMRTOP_WaveExtensible,*ASMRTOP4
+%ASMRTOP_5.DeviceDesc%=ASMRTOP_WaveExtensible,*ASMRTOP5
+%ASMRTOP_6.DeviceDesc%=ASMRTOP_WaveExtensible,*ASMRTOP6
+
+[ASMRTOPDeviceSection.NTIA64]
+%ASMRTOP_1.DeviceDesc%=ASMRTOP_WaveExtensible,*ASMRTOP1
+%ASMRTOP_2.DeviceDesc%=ASMRTOP_WaveExtensible,*ASMRTOP2
+%ASMRTOP_3.DeviceDesc%=ASMRTOP_WaveExtensible,*ASMRTOP3
+%ASMRTOP_4.DeviceDesc%=ASMRTOP_WaveExtensible,*ASMRTOP4
+%ASMRTOP_5.DeviceDesc%=ASMRTOP_WaveExtensible,*ASMRTOP5
+%ASMRTOP_6.DeviceDesc%=ASMRTOP_WaveExtensible,*ASMRTOP6
+
+[DestinationDirs]
+ASMRTOP_WaveExtensible.CopyList=10,system32\drivers
+
+;======================================================
+; DefaultInstall - for right-click install
+;======================================================
+[DefaultInstall]
+CopyFiles=ASMRTOP_WaveExtensible.CopyList
+
+[DefaultInstall.Services]
+AddService=ASMRTOP_WaveExtensible,0x00000002,ASMRTOP_WaveExtensible_Service_Inst
+
+;======================================================
+; ASMRTOP_WaveExtensible
+;======================================================
+[ASMRTOP_WaveExtensible]
+AlsoInstall=ks.registration(ks.inf),wdmaudio.registration(wdmaudio.inf)
+CopyFiles=ASMRTOP_WaveExtensible.CopyList
+AddReg=ASMRTOP_WaveExtensible.AddReg
+
+[ASMRTOP_WaveExtensible.CopyList]
+asmrtop.sys
+
+[ASMRTOP_WaveExtensible.Interfaces]
+AddInterface=%KSCATEGORY_AUDIO%,%KSNAME_Wave%,ASMRTOP.I.Wave
+AddInterface=%KSCATEGORY_RENDER%,%KSNAME_Wave%,ASMRTOP.I.Wave
+AddInterface=%KSCATEGORY_CAPTURE%,%KSNAME_Wave%,ASMRTOP.I.Wave
+AddInterface=%KSCATEGORY_AUDIO%,%KSNAME_Topology%,ASMRTOP.I.Topo
+
+[ASMRTOP_WaveExtensible.AddReg]
+HKR,,AssociatedFilters,,"wdmaud,redbook"
+HKR,,Driver,,asmrtop.sys
+
+HKR,Drivers,SubClasses,,"wave,mixer"
+
+HKR,Drivers\wave\wdmaud.drv,Driver,,wdmaud.drv
+HKR,Drivers\mixer\wdmaud.drv,Driver,,wdmaud.drv
+
+HKR,Drivers\wave\wdmaud.drv,Description,,%ASMRTOP_WaveExtensible.DeviceDesc%
+HKR,Drivers\mixer\wdmaud.drv,Description,,%ASMRTOP_WaveExtensible.DeviceDesc%
+
+; Default volume levels - set to 0 dB (0x00000000) for 100% volume
+HKR,DefaultVolumeLevels\0,Volume,0x00010001,0x00000000
+HKR,DefaultVolumeLevels\1,Volume,0x00010001,0x00000000
+HKR,DefaultVolumeLevels\2,Volume,0x00010001,0x00000000
+HKR,DefaultVolumeLevels\3,Volume,0x00010001,0x00000000
+
+;======================================================
+; COMMON
+;======================================================
+[ASMRTOP.I.Wave]
+AddReg=ASMRTOP.I.Wave.AddReg
+[ASMRTOP.I.Wave.AddReg]
+HKR,,CLSID,,%Proxy.CLSID%
+HKR,,FriendlyName,,%ASMRTOP.Wave.szPname%
+
+[ASMRTOP.I.Topo]
+AddReg=ASMRTOP.I.Topo.AddReg
+[ASMRTOP.I.Topo.AddReg]
+HKR,,CLSID,,%Proxy.CLSID%
+HKR,,FriendlyName,,%ASMRTOP.Topo.szPname%
+
+;======================================================
+; ASMRTOP_Extensible
+;======================================================
+[ASMRTOP_WaveExtensible.NT]
+Include=ks.inf,wdmaudio.inf
+Needs=KS.Registration, WDMAUDIO.Registration
+CopyFiles=ASMRTOP_WaveExtensible.CopyList
+AddReg=ASMRTOP_WaveExtensible.AddReg
+
+[ASMRTOP_WaveExtensible.NT.Interfaces]
+AddInterface=%KSCATEGORY_AUDIO%,%KSNAME_Wave%,ASMRTOP.I.Wave
+AddInterface=%KSCATEGORY_RENDER%,%KSNAME_Wave%,ASMRTOP.I.Wave
+AddInterface=%KSCATEGORY_CAPTURE%,%KSNAME_Wave%,ASMRTOP.I.Wave
+AddInterface=%KSCATEGORY_AUDIO%,%KSNAME_Topology%,ASMRTOP.I.Topo
+
+[ASMRTOP_WaveExtensible.NT.Services]
+AddService=ASMRTOP_WaveExtensible,0x00000002,ASMRTOP_WaveExtensible_Service_Inst
+
+[ASMRTOP_WaveExtensible_Service_Inst]
+DisplayName=%ASMRTOP_WaveExtensible.SvcDesc%
+ServiceType=1
+StartType=3
+ErrorControl=1
+ServiceBinary=%10%\system32\drivers\asmrtop.sys
+
+;======================================================
+; COMMON
+;======================================================
+[Strings]
+ASMRTOP="ASMRTOP Audio"
+MfgName="ASMRTOP Audio Driver"
+ASMRTOP_1.DeviceDesc="ASMRTOP PLAY 1 / REC 1"
+ASMRTOP_2.DeviceDesc="ASMRTOP PLAY 2 / REC 2"
+ASMRTOP_3.DeviceDesc="ASMRTOP PLAY 3 / REC 3"
+ASMRTOP_4.DeviceDesc="ASMRTOP PLAY 4 / REC 4"
+ASMRTOP_5.DeviceDesc="ASMRTOP LIVE1"
+ASMRTOP_6.DeviceDesc="ASMRTOP LIVE2"
+
+ASMRTOP.Wave.szPname="ASMRTOP Wave"
+ASMRTOP.Topo.szPname="ASMRTOP Topology"
+
+Proxy.CLSID="{17CCA71B-ECD7-11D0-B908-00A0C9223196}"
+KSCATEGORY_AUDIO="{6994AD04-93EF-11D0-A3CC-00A0C9223196}"
+KSCATEGORY_RENDER="{65E8773E-8F56-11D0-A3B9-00A0C9223196}"
+KSCATEGORY_CAPTURE="{65E8773D-8F56-11D0-A3B9-00A0C9223196}"
+
+KSNAME_Wave="Wave"
+KSNAME_Topology="Topology"
+
+ASMRTOP_WaveExtensible.SvcDesc="ASMRTOP Virtual Audio Device Service"
+
+
+
+
+
+
+
