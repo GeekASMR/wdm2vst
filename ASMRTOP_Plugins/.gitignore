@@ -1,7 +1,37 @@
-build/
-output/
-docs/
-*.obj
-*.exe
-*.lib
+# Build outputs
+**/build/
+**/build_public/
+**/x64/
+**/*.obj
+**/*.lib
+**/*.pdb
+**/*.exe
+**/*.dll
+**/*.vst3
+**/*.res
+**/*.log
+**/*.tlog/
+**/*.recipe
+**/Debug/
+**/Release/
+**/*.old*
 
+# JUCE
+JUCE/
+
+# Tools binaries
+nsudo/
+
+# System files
+*.suo
+*.user
+.vs/
+
+# Temp output files
+out.txt
+out2.txt
+out3.txt
+out_check.txt
+out_rename.txt
+out_rename2.txt
+temp_dump.txt

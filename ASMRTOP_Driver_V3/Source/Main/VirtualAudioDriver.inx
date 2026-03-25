@@ -3,7 +3,7 @@ Signature   = "$Windows NT$"
 Class       = MEDIA
 Provider    = %ProviderName%
 ClassGUID   = {4d36e96c-e325-11ce-bfc1-08002be10318}
-DriverVer   = 02/22/2016, 1.0.0.1
+DriverVer   = 03/25/2026, 3.1.0.0
 CatalogFile = ASMRTOPAudioRouter.cat
 PnpLockDown = 1
 

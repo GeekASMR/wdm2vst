@@ -41,7 +41,7 @@ namespace ProjectInfo
 {
     const char* const  projectName    = "Audio Receive";
     const char* const  companyName    = "VirtualAudioRouter";
-    const char* const  versionString  = "3.0.2";
-    const int          versionNumber  =  0x30002;
+    const char* const  versionString  = "3.1.0";
+    const int          versionNumber  =  0x30100;
 }
 #endif

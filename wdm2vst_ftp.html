@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WDM2VST Audio Router — 产品介绍 · 使用手册 · 音质报告</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--a:#E91E63;--a2:#00BCD4;--bg:#08090d;--card:#111520;--card2:#161c2a;--text:#e0e0e0;--dim:#666;--r:14px}
+body{font-family:'Inter','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+a{color:var(--a);text-decoration:none}a:hover{text-decoration:underline}
+code{background:#1a1e30;padding:2px 8px;border-radius:6px;font-family:'Consolas','JetBrains Mono',monospace;font-size:13px;color:var(--a)}
+.container{max-width:960px;margin:0 auto;padding:0 24px}
+
+/* ── Nav ── */
+.nav{background:#0c0e14;border-bottom:1px solid #151a28;position:sticky;top:0;z-index:50;backdrop-filter:blur(12px)}
+.nav-inner{max-width:960px;margin:0 auto;padding:10px 24px;display:flex;align-items:center;gap:24px}
+.nav-logo{font-weight:900;font-size:16px;color:var(--a)}
+.nav a{color:#555;font-size:13px;font-weight:600;transition:color .15s}
+.nav a:hover{color:var(--a);text-decoration:none}
+
+/* ── Hero ── */
+.hero{background:linear-gradient(135deg,#0c0e18 0%,#151a2e 50%,#1a1028 100%);padding:80px 20px 60px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 60% 40%,rgba(233,30,99,.08) 0%,transparent 50%),radial-gradient(circle at 30% 70%,rgba(0,188,212,.06) 0%,transparent 40%)}
+.hero *{position:relative}
+.hero h1{font-size:48px;font-weight:900;letter-spacing:-1px;margin-bottom:8px}
+.hero h1 span{background:linear-gradient(135deg,var(--a),#ff5281);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero .sub{font-size:18px;color:#777;margin-bottom:24px}
+.hero .version{display:inline-block;padding:6px 20px;border-radius:20px;background:rgba(233,30,99,.15);color:var(--a);font-weight:700;font-size:13px;border:1px solid rgba(233,30,99,.3);margin-bottom:28px}
+.hero .desc{font-size:15px;color:#555;max-width:640px;margin:0 auto}
+
+.accent-bar{height:4px;background:linear-gradient(90deg,var(--a),#9C27B0,var(--a2))}
+
+/* ── Section ── */
+.section{padding:56px 0}
+.stitle{font-size:28px;font-weight:800;margin-bottom:6px;display:flex;align-items:center;gap:12px}
+.stitle .dot{width:6px;height:28px;border-radius:3px;background:var(--a);flex-shrink:0}
+.sdesc{color:#666;font-size:14px;margin-bottom:28px;padding-left:18px}
+
+/* ── Plugin Cards ── */
+.plugins{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pcard{background:var(--card);border-radius:var(--r);padding:24px;border:1px solid #1e2535;transition:all .25s;position:relative;overflow:hidden}
+.pcard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:14px 14px 0 0}
+.pcard:nth-child(1)::before{background:var(--a)}
+.pcard:nth-child(2)::before{background:var(--a2)}
+.pcard:nth-child(3)::before{background:#FFD600}
+.pcard:nth-child(4)::before{background:#4CAF50}
+.pcard:hover{border-color:#2a3550;transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.3)}
+.pcard h3{font-size:20px;font-weight:800;margin-bottom:4px}
+.pcard .tag{display:inline-block;padding:3px 10px;border-radius:8px;font-size:11px;font-weight:700;margin-bottom:10px}
+.pcard:nth-child(1) .tag{background:rgba(233,30,99,.15);color:var(--a)}
+.pcard:nth-child(2) .tag{background:rgba(0,188,212,.15);color:var(--a2)}
+.pcard:nth-child(3) .tag{background:rgba(255,214,0,.15);color:#FFD600}
+.pcard:nth-child(4) .tag{background:rgba(76,175,80,.15);color:#4CAF50}
+.pcard p{color:#999;font-size:13px;line-height:1.6}
+.pcard .arrow{font-weight:600;font-size:16px;color:#333;display:block;text-align:center;margin-top:10px;letter-spacing:4px}
+
+/* ── Detail Tables ── */
+.dtable{background:var(--card);border-radius:var(--r);padding:24px;border:1px solid #1e2535;margin-bottom:16px}
+.dtable h3{font-size:17px;font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.dtable .desc{color:#666;font-size:13px;margin-bottom:14px}
+table{width:100%;border-collapse:collapse;margin:8px 0}
+th{background:var(--card2);color:#777;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:10px 14px;text-align:left;border-bottom:2px solid #1e2535}
+td{padding:10px 14px;border-bottom:1px solid #151a28;font-size:13px}
+tr:hover td{background:var(--card)}
+
+/* ── Flow ── */
+.flow{background:var(--card);border-radius:var(--r);padding:28px;margin:14px 0;border:1px solid #1e2535}
+.flow-label{color:#555;font-size:12px;text-align:center;margin-bottom:10px;font-weight:600}
+.flow-row{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+.fb{padding:10px 16px;border-radius:10px;font-weight:700;font-size:13px;text-align:center;min-width:100px}
+.fb-app{background:#1a2040;color:#8899cc;border:1px solid #2a3555}
+.fb-p1{background:rgba(233,30,99,.12);color:var(--a);border:1px solid rgba(233,30,99,.3)}
+.fb-p2{background:rgba(0,188,212,.12);color:var(--a2);border:1px solid rgba(0,188,212,.3)}
+.fb-p3{background:rgba(255,214,0,.1);color:#FFD600;border:1px solid rgba(255,214,0,.3)}
+.fb-p4{background:rgba(76,175,80,.1);color:#4CAF50;border:1px solid rgba(76,175,80,.3)}
+.fa{color:#333;font-size:20px;font-weight:300}
+
+/* ── Steps ── */
+.steps{counter-reset:step}
+.step{background:var(--card);border-radius:var(--r);padding:20px 24px;margin-bottom:10px;border:1px solid #1e2535;display:flex;gap:16px;align-items:flex-start}
+.step::before{counter-increment:step;content:counter(step);width:32px;height:32px;border-radius:50%;background:var(--a);color:white;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.step h4{font-size:15px;font-weight:700;margin-bottom:3px}
+.step p{color:#888;font-size:13px}
+
+/* ── Tips & Warns ── */
+.tip{background:linear-gradient(135deg,rgba(233,30,99,.06),rgba(0,188,212,.04));border-left:4px solid var(--a);border-radius:0 var(--r) var(--r) 0;padding:16px 20px;margin:20px 0}
+.tip strong{color:var(--a)}.tip p{color:#999;font-size:13px;margin-top:4px}
+.warn{background:rgba(255,152,0,.05);border-left:4px solid #FF9800;border-radius:0 var(--r) var(--r) 0;padding:16px 20px;margin:20px 0}
+.warn strong{color:#FF9800}.warn p{color:#999;font-size:13px;margin-top:4px}
+.info{background:#182028;border-left:4px solid var(--a2);border-radius:0 8px 8px 0;padding:14px 18px;margin:14px 0;font-size:13px;color:#80c0d0}
+
+/* ── Mode pills ── */
+.mode{padding:3px 10px;border-radius:6px;font-size:11px;font-weight:600}
+.mode-ipc{background:rgba(233,30,99,.12);color:var(--a)}
+.mode-wasapi{background:rgba(0,188,212,.12);color:var(--a2)}
+
+/* ── Divider ── */
+.divider{text-align:center;padding:40px 0;position:relative}
+.divider::before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#1e2535,transparent)}
+.divider span{background:var(--bg);padding:0 24px;position:relative;color:#333;font-size:14px;font-weight:700;letter-spacing:4px}
+
+/* ── Score Cards ── */
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.scard{background:#1a1e28;border-radius:10px;padding:20px;text-align:center;border:1px solid #2a2f3a;transition:all .2s}
+.scard:hover{border-color:var(--a);transform:translateY(-2px)}
+.scard.winner{border-color:#4CAF50;background:#1a2820}
+.scard .nm{font-size:12px;color:#888;font-weight:600;margin-bottom:6px}
+.scard .val{font-size:28px;font-weight:800;margin-bottom:4px}
+.scard .unit{font-size:11px;color:#555}
+
+.win{color:#4CAF50;font-weight:700}.lose{color:#f44336;font-weight:600}.tie{color:#666}
+.stars{color:#FFD600;letter-spacing:2px}.stars-empty{color:#333;letter-spacing:2px}
+
+/* ── Bar Chart ── */
+.bar-cmp{display:flex;align-items:center;gap:10px;margin:6px 0}
+.bar-lbl{width:80px;font-size:12px;color:#888;text-align:right}
+.bar-trk{flex:1;height:22px;background:#1a1e28;border-radius:4px;overflow:hidden}
+.bar-fill{height:100%;border-radius:4px;display:flex;align-items:center;padding-left:8px;font-size:11px;font-weight:700;color:white}
+.bar-ours{background:linear-gradient(90deg,#4CAF50,#2E7D32)}
+.bar-them{background:linear-gradient(90deg,#E91E63,#880E4F)}
+
+/* ── Verdict ── */
+.verdict{background:linear-gradient(135deg,#1a2820,#132818);border:2px solid #4CAF50;border-radius:var(--r);padding:24px;text-align:center;margin:20px 0}
+.verdict h3{color:#4CAF50;font-size:20px;margin-bottom:6px}
+.verdict p{color:#aaa;font-size:14px}
+
+/* ── Analysis List ── */
+.alist{list-style:none;margin:12px 0}
+.alist li{padding:8px 0 8px 24px;position:relative;font-size:13px;border-bottom:1px solid #1a1e28}
+.alist li::before{content:'▸';position:absolute;left:4px;color:var(--a)}
+.alist li strong{color:#e0e0e0}
+
+/* ── Arch Diagram ── */
+.arch{background:#1a1e28;border-radius:8px;padding:16px;font-family:Consolas,monospace;font-size:13px;color:#80c0d0;text-align:center;margin:12px 0;line-height:2}
+
+/* ── Footer ── */
+.footer{text-align:center;padding:40px 20px;color:#333;font-size:12px;border-top:1px solid #111520;margin-top:20px}
+
+@media(max-width:700px){.hero h1{font-size:30px}.plugins,.sgrid{grid-template-columns:1fr}.flow-row{flex-direction:column}}
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav">
+  <div class="nav-inner">
+    <span class="nav-logo">WDM2VST</span>
+    <a href="#plugins">插件介绍</a>
+    <a href="#arch">工作原理</a>
+    <a href="#usage">使用方法</a>
+    <a href="#report">音质报告</a>
+    <a href="#faq">常见问题</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <h1><span>WDM2VST</span> Audio Router</h1>
+  <p class="sub">虚拟音频路由 VST3 插件套件</p>
+  <div class="version">v2.1.0 · Public Edition · 4 个 VST3 插件</div>
+  <p class="desc">将 Windows 系统音频无缝桥接到任何 DAW，实现零延迟虚拟音频路由、跨插件传输和 WASAPI 设备直连。经 A/B 音质测试验证：<strong style="color:#4CAF50">Bit-Perfect 无损传输</strong>，SNR 128dB，THD 0.0000%。</p>
+</section>
+<div class="accent-bar"></div>
+
+<div class="container">
+
+<!-- ═══════════════ PART 1: 产品介绍 ═══════════════ -->
+
+<!-- Plugins -->
+<section class="section" id="plugins">
+  <div class="stitle"><div class="dot"></div>插件一览</div>
+  <p class="sdesc">套件包含 4 个 VST3 插件，覆盖音频路由的所有场景</p>
+  <div class="plugins">
+    <div class="pcard">
+      <h3>WDM2VST</h3><span class="tag">核心 · 输入</span>
+      <p>将 Windows WDM 虚拟音频设备的音频捕获到 DAW 中。支持 IPC 零延迟模式和 WASAPI 录音模式，可捕获任意系统声音。</p>
+      <span class="arrow">系统 → DAW</span>
+    </div>
+    <div class="pcard">
+      <h3>VST2WDM</h3><span class="tag">核心 · 输出</span>
+      <p>将 DAW 音频发送到 WDM 物理/虚拟设备。支持选择输出设备、音量控制、限制器，可实现 DAW 到系统的音频路由。</p>
+      <span class="arrow">DAW → 设备</span>
+    </div>
+    <div class="pcard">
+      <h3>Audio Send</h3><span class="tag">扩展 · 发送</span>
+      <p>跨插件音频路由发送端。支持 IPC 本机通信、LAN 局域网传输、手机监听。可广播到多个接收端。</p>
+      <span class="arrow">插件 → 网络</span>
+    </div>
+    <div class="pcard">
+      <h3>Audio Receive</h3><span class="tag">扩展 · 接收</span>
+      <p>跨插件音频路由接收端。接收来自 Audio Send 的音频流，支持本机 IPC 零延迟和 LAN 远程接收。</p>
+      <span class="arrow">网络 → 插件</span>
+    </div>
+  </div>
+</section>
+
+<!-- Detail: WDM2VST -->
+<div class="dtable">
+  <h3><span style="color:var(--a)">🎙️</span> WDM2VST — 系统声音捕获到 DAW</h3>
+  <div class="desc">将浏览器、游戏、音乐播放器等系统声音实时捕获到 DAW</div>
+  <table>
+    <tr><th style="width:110px">属性</th><th>说明</th></tr>
+    <tr><td>功能</td><td>将 Windows 系统播放的声音<strong style="color:#4CAF50">实时捕获</strong>到 DAW 轨道</td></tr>
+    <tr><td>方向</td><td>WDM 驱动 → DAW（系统声音 → DAW 输入）</td></tr>
+    <tr><td>场景</td><td>直播混音 · 录制游戏/视频通话音频 · 系统声音后期处理 · 多通道捕获（4 对立体声）</td></tr>
+    <tr><td>传输</td><td>IPC 共享内存，<span class="win">Bit-Perfect 无损</span></td></tr>
+    <tr><td>延迟</td><td>Extreme 2ms+ / Fast 4ms+ / Safe 8ms+</td></tr>
+    <tr><td>功能</td><td>音量控制、Limiter 限制器、电平表、语言切换（中/英）</td></tr>
+  </table>
+</div>
+
+<!-- Detail: VST2WDM -->
+<div class="dtable">
+  <h3><span style="color:var(--a2)">🔊</span> VST2WDM — DAW 声音输出到系统</h3>
+  <div class="desc">将 DAW 中的音频实时输出到 Windows 系统的虚拟麦克风或物理设备</div>
+  <table>
+    <tr><th style="width:110px">属性</th><th>说明</th></tr>
+    <tr><td>功能</td><td>将 DAW 音频<strong style="color:#4CAF50">实时输出</strong>到虚拟麦克风</td></tr>
+    <tr><td>方向</td><td>DAW → WDM 驱动（DAW 输出 → 虚拟麦克风）</td></tr>
+    <tr><td>场景</td><td>直播用 DAW 作为麦克风 · 让微信/Teams/Discord 听到 DAW 声音 · DAW 混音输出到 OBS</td></tr>
+    <tr><td>功能</td><td>音量控制、Limiter 限制器、手机远程监听、QR 码连接</td></tr>
+  </table>
+</div>
+
+<!-- Detail: Send/Receive -->
+<div class="dtable">
+  <h3><span style="color:#FFD600">📤</span> Audio Send / <span style="color:#4CAF50">📥</span> Audio Receive — 跨插件传输</h3>
+  <div class="desc">在不同 DAW 实例、不同轨道、甚至不同电脑之间传输音频</div>
+  <table>
+    <tr><th>功能</th><th>Audio Send</th><th>Audio Receive</th></tr>
+    <tr><td>方向</td><td>发送音频</td><td>接收音频</td></tr>
+    <tr><td>IPC</td><td>本机零延迟发送</td><td>本机零延迟接收</td></tr>
+    <tr><td>LAN</td><td>UDP 局域网传输</td><td>UDP 局域网接收</td></tr>
+    <tr><td>手机监听</td><td>扫码浏览器监听</td><td>—</td></tr>
+    <tr><td>防火墙</td><td>一键修复</td><td>自动放行</td></tr>
+ 

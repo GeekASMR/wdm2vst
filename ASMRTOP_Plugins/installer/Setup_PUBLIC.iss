@@ -2,7 +2,7 @@
 ; Inno Setup 6 - 中文版
 
 #define MyAppName "WDM2VST 虚拟音频路由"
-#define MyAppVersion "3.0.0"
+#define MyAppVersion "3.1.0"
 #define MyAppPublisher "VirtualAudioRouter"
 #define MyAppURL "https://github.com/VirtualAudioRouter/WDM2VST"
 
@@ -30,8 +30,8 @@ ArchitecturesInstallIn64BitMode=x64compatible
 WizardStyle=modern
 DisableWelcomePage=no
 DisableFinishedPage=no
-; WizardImageFile=D:\Autigravity\wdm2vst\ASMRTOP_Plugins\installer\wizard_image.bmp
-; WizardSmallImageFile=D:\Autigravity\wdm2vst\ASMRTOP_Plugins\installer\wizard_small.png
+WizardImageFile=D:\Autigravity\wdm2vst\ASMRTOP_Plugins\installer\wizard_image.bmp
+WizardSmallImageFile=D:\Autigravity\wdm2vst\ASMRTOP_Plugins\installer\wizard_small.bmp
 SetupIconFile=D:\Autigravity\wdm2vst\ASMRTOP_Plugins\installer\wdm2vst.ico
 UninstallDisplayName={#MyAppName}
 VersionInfoVersion={#MyAppVersion}.0
@@ -89,41 +89,56 @@ Name: "wdm2vst"; Description: "WDM2VST — 系统声音捕获到 DAW（核心）
 Name: "vst2wdm"; Description: "VST2WDM — DAW 声音输出到系统（核心）"; Types: full compact custom; Flags: fixed
 Name: "send"; Description: "Audio Send — 跨插件音频发送（扩展）"; Types: full
 Name: "recv"; Description: "Audio Receive — 跨插件音频接收（扩展）"; Types: full
+Name: "inst"; Description: "INST WDM2VST — 音源发生器（扩展选装）"
 
 [Files]
 
 ; Driver Setup Files
-Source: "D:\Autigravity\sgin\wdm2vst\gongkai\VirtualAudioRouter.sys"; DestDir: "{app}\Driver"; Flags: ignoreversion
-Source: "D:\Autigravity\sgin\wdm2vst\gongkai\VirtualAudioRouter.inf"; DestDir: "{app}\Driver"; Flags: ignoreversion
-Source: "D:\Autigravity\sgin\wdm2vst\gongkai\virtualaudiorouter.cat"; DestDir: "{app}\Driver"; Flags: ignoreversion
+Source: "E:\Personal\Desktop\签名\已签名\Release\VirtualAudioRouter.sys"; DestDir: "{app}\Driver"; Flags: ignoreversion
+Source: "E:\Personal\Desktop\签名\已签名\Release\VirtualAudioRouter.inf"; DestDir: "{app}\Driver"; Flags: ignoreversion
+Source: "E:\Personal\Desktop\签名\已签名\Release\virtualaudiorouter.cat"; DestDir: "{app}\Driver"; Flags: ignoreversion
 Source: "D:\Autigravity\sgin\wdm2vst\gongkai\time.reg"; DestDir: "{app}\Driver"; Flags: ignoreversion
 Source: "D:\Autigravity\sgin\wdm2vst\gongkai\devcon.exe"; DestDir: "{app}\Driver"; Flags: ignoreversion
 Source: "D:\Autigravity\sgin\wdm2vst\gongkai\install.bat"; DestDir: "{app}\Driver"; Flags: ignoreversion
 Source: "D:\Autigravity\sgin\wdm2vst\gongkai\uninstall.bat"; DestDir: "{app}\Driver"; Flags: ignoreversion
 ; WDM2VST plugin
-Source: "D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_WDM2VST_artefacts\Release\VST3\WDM2VST.vst3\Contents\x86_64-win\WDM2VST.vst3"; DestDir: "{commonpf}\Common Files\VST3\WDM2VST.vst3\Contents\x86_64-win"; Components: wdm2vst; Flags: ignoreversion
-Source: "D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_WDM2VST_artefacts\Release\VST3\WDM2VST.vst3\Contents\Resources\moduleinfo.json"; DestDir: "{commonpf}\Common Files\VST3\WDM2VST.vst3\Contents\Resources"; Components: wdm2vst; Flags: ignoreversion
+Source: "D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_WDM2VST_artefacts\Release\VST3\WDM2VST.vst3"; DestDir: "{commonpf}\Common Files\VST3\VirtualAudioRouter"; Components: wdm2vst; Flags: ignoreversion
 
 ; VST2WDM plugin
-Source: "D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_VST2WDM_artefacts\Release\VST3\VST2WDM.vst3\Contents\x86_64-win\VST2WDM.vst3"; DestDir: "{commonpf}\Common Files\VST3\VST2WDM.vst3\Contents\x86_64-win"; Components: vst2wdm; Flags: ignoreversion
-Source: "D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_VST2WDM_artefacts\Release\VST3\VST2WDM.vst3\Contents\Resources\moduleinfo.json"; DestDir: "{commonpf}\Common Files\VST3\VST2WDM.vst3\Contents\Resources"; Components: vst2wdm; Flags: ignoreversion
+Source: "D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_VST2WDM_artefacts\Release\VST3\VST2WDM.vst3"; DestDir: "{commonpf}\Common Files\VST3\VirtualAudioRouter"; Components: vst2wdm; Flags: ignoreversion
 
 ; Audio Send plugin
-Source: "D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_SEND_artefacts\Release\VST3\Audio Send.vst3\Contents\x86_64-win\Audio Send.vst3"; DestDir: "{commonpf}\Common Files\VST3\Audio Send.vst3\Contents\x86_64-win"; Components: send; Flags: ignoreversion
-Source: "D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_SEND_artefacts\Release\VST3\Audio Send.vst3\Contents\Resources\moduleinfo.json"; DestDir: "{commonpf}\Common Files\VST3\Audio Send.vst3\Contents\Resources"; Components: send; Flags: ignoreversion
+Source: "D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_SEND_artefacts\Release\VST3\Audio Send.vst3"; DestDir: "{commonpf}\Common Files\VST3\VirtualAudioRouter"; Components: send; Flags: ignoreversion
 
 ; Audio Receive plugin
-Source: "D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_RECV_artefacts\Release\VST3\Audio Receive.vst3\Contents\x86_64-win\Audio Receive.vst3"; DestDir: "{commonpf}\Common Files\VST3\Audio Receive.vst3\Contents\x86_64-win"; Components: recv; Flags: ignoreversion
-Source: "D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_RECV_artefacts\Release\VST3\Audio Receive.vst3\Contents\Resources\moduleinfo.json"; DestDir: "{commonpf}\Common Files\VST3\Audio Receive.vst3\Contents\Resources"; Components: recv; Flags: ignoreversion
+Source: "D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_RECV_artefacts\Release\VST3\Audio Receive.vst3"; DestDir: "{commonpf}\Common Files\VST3\VirtualAudioRouter"; Components: recv; Flags: ignoreversion
+
+; INST WDM2VST plugin
+Source: "D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_INST_WDM2VST_artefacts\Release\VST3\INST WDM2VST.vst3"; DestDir: "{commonpf}\Common Files\VST3\VirtualAudioRouter"; Components: inst; Flags: ignoreversion
 
 ; Documentation
 Source: "E:\Antigravity\成品开发\WDM2VST\WDM2VST_介绍.html"; DestDir: "{app}"; DestName: "WDM2VST_介绍.html"; Flags: ignoreversion
 
-[UninstallDelete]
+[InstallDelete]
+Type: filesandordirs; Name: "{commonpf}\Common Files\VST3\VirtualAudioRouter\*.*"
 Type: filesandordirs; Name: "{commonpf}\Common Files\VST3\WDM2VST.vst3"
 Type: filesandordirs; Name: "{commonpf}\Common Files\VST3\VST2WDM.vst3"
 Type: filesandordirs; Name: "{commonpf}\Common Files\VST3\Audio Send.vst3"
 Type: filesandordirs; Name: "{commonpf}\Common Files\VST3\Audio Receive.vst3"
+Type: filesandordirs; Name: "{commonpf}\Common Files\VST3\INST WDM2VST.vst3"
+Type: filesandordirs; Name: "{commonpf}\Common Files\VST3\ASMRTOP WDM2VST.vst3"
+Type: filesandordirs; Name: "{commonpf}\Common Files\VST3\ASMRTOP VST2WDM.vst3"
+Type: filesandordirs; Name: "{commonpf}\Common Files\VST3\ASMRTOP Send.vst3"
+Type: filesandordirs; Name: "{commonpf}\Common Files\VST3\ASMRTOP Receive.vst3"
+Type: filesandordirs; Name: "{commonpf}\Common Files\VST3\ASMRTOP INST WDM2VST.vst3"
+
+[UninstallDelete]
+Type: filesandordirs; Name: "{commonpf}\Common Files\VST3\VirtualAudioRouter"
+Type: filesandordirs; Name: "{commonpf}\Common Files\VST3\WDM2VST.vst3"
+Type: filesandordirs; Name: "{commonpf}\Common Files\VST3\VST2WDM.vst3"
+Type: filesandordirs; Name: "{commonpf}\Common Files\VST3\Audio Send.vst3"
+Type: filesandordirs; Name: "{commonpf}\Common Files\VST3\Audio Receive.vst3"
+Type: filesandordirs; Name: "{commonpf}\Common Files\VST3\INST WDM2VST.vst3"
 Type: files; Name: "{app}\WDM2VST_介绍.html"
 
 

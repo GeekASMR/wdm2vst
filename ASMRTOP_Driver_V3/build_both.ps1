@@ -1,4 +1,4 @@
-﻿$pkg = "d:\Autigravity\wdm2vst\ASMRTOP_Driver_V3\x64\Debug\package"
+$pkg = "d:\Autigravity\wdm2vst\ASMRTOP_Driver_V3\x64\Release\package"
 Remove-Item "$pkg\*.sys" -Force -ErrorAction SilentlyContinue
 Remove-Item "$pkg\*.inf" -Force -ErrorAction SilentlyContinue
 Remove-Item "$pkg\*.cat" -Force -ErrorAction SilentlyContinue
@@ -28,12 +28,15 @@ function BuildAndPackage($BrandStr, $SysName, $InfName, $CatName) {
     
     Set-Content $inx $c -Encoding UTF8 -NoNewline
 
-    cmd.exe /c "build.bat debug x64 < NUL"
+    cmd.exe /c "build.bat release x64 < NUL"
     
     Rename-Item "$pkg\VirtualAudioDriver.sys" $SysName -Force
     Rename-Item "$pkg\VirtualAudioDriver.inf" $InfName -Force
     
-    (Get-Content "$pkg\$InfName" -Encoding UTF8) | Set-Content "$pkg\$InfName" -Encoding Unicode
+    $infPath = "$pkg\$InfName"
+    $infContent = Get-Content $infPath -Encoding UTF8
+    $infContent = $infContent -replace '(?i)DriverVer\s*=.*', 'DriverVer = 03/24/2026, 3.1.0.0'
+    $infContent | Set-Content $infPath -Encoding Unicode
 
     Push-Location $pkg
     $others = Get-ChildItem "*.inf" | Where-Object { $_.Name -ne $InfName }

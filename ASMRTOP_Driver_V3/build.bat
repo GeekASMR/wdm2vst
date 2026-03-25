@@ -127,7 +127,7 @@ if /i "%PLATFORM%"=="ARM64" (
         /p:EnableInf2cat=false
 ) else (
     echo Building x64 with full validation...
-    call "%MSBUILD_CMD%" "VirtualAudioDriver.sln" /p:Configuration=%CONFIG% /p:Platform=%PLATFORM%
+    call "%MSBUILD_CMD%" "VirtualAudioDriver.sln" /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /p:StampInf=false
 )
 
 if %errorlevel% neq 0 (
@@ -176,7 +176,7 @@ for %%c in (%CONFIGS%) do (
                 /p:EnableInf2cat=false
         ) else (
             echo Building x64 with full validation...
-            call "%MSBUILD_CMD%" "VirtualAudioDriver.sln" /p:Configuration=%%c /p:Platform=%%p
+            call "%MSBUILD_CMD%" "VirtualAudioDriver.sln" /p:Configuration=%%c /p:Platform=%%p /p:StampInf=false
         )
         
         if !errorlevel! neq 0 (

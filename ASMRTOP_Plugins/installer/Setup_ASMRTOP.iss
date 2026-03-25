@@ -1,7 +1,7 @@
 ; WDM2VST Public Edition - Installer Script
 ; Inno Setup 6 - 中文版
 
-#define MyAppName "WDM2VST 虚拟音频路由"
+#define MyAppName "ASMRTOP WDM2VST 虚拟音频路由"
 #define MyAppVersion "3.0.0"
 #define MyAppPublisher "VirtualAudioRouter"
 #define MyAppURL "https://github.com/VirtualAudioRouter/WDM2VST"
@@ -36,7 +36,7 @@ SetupIconFile=D:\Autigravity\wdm2vst\ASMRTOP_Plugins\installer\wdm2vst.ico
 UninstallDisplayName={#MyAppName}
 VersionInfoVersion={#MyAppVersion}.0
 VersionInfoCompany={#MyAppPublisher}
-VersionInfoDescription=WDM2VST 虚拟音频路由插件套件
+VersionInfoDescription=ASMRTOP WDM2VST 虚拟音频路由插件套件
 VersionInfoProductName={#MyAppName}
 LicenseFile=
 

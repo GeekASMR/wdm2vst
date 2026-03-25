@@ -1,4 +1,4 @@
-﻿$pwd = "d:\Autigravity\wdm2vst\ASMRTOP_Plugins"
+$pwd = "d:\Autigravity\wdm2vst\ASMRTOP_Plugins"
 cd $pwd
 
 $vst3Dir = "C:\Program Files\Common Files\VST3"
@@ -13,15 +13,36 @@ function BuildBrand($BrandStr, $BuildDir) {
     cmake --build $BuildDir --config Release
     if ($LASTEXITCODE -ne 0) { Write-Error "CMake build failed for $BrandStr"; exit 1 }
     
-    # We use Get-ChildItem to dynamically find the compiled .vst3 folders!
-    $vst3Out = Get-ChildItem -Path "$BuildDir\*" -Filter "*.vst3" -Recurse -Directory
-    foreach ($v in $vst3Out) {
-        Write-Host "Installing $($v.Name)..."
-        Copy-Item -Path $v.FullName -Destination "$vst3Dir\$($v.Name)" -Recurse -Force
+    # Flatten the .vst3 bundles into purely single file .vst3 binaries per user request
+    $vst3bundles = Get-ChildItem -Path "$BuildDir\*" -Filter "*.vst3" -Recurse -Directory
+    foreach ($bundle in $vst3bundles) {
+        $innerDll = Get-ChildItem -Path $bundle.FullName -Filter "*.vst3" -Recurse -File | Select-Object -First 1
+        if ($innerDll) {
+            $tempBundle = "$($bundle.FullName)_tmp"
+            Rename-Item -Path $bundle.FullName -NewName "$($bundle.Name)_tmp" -Force
+            # Now extract the dll from the renamed bundle
+            $newInnerDll = Get-ChildItem -Path $tempBundle -Filter "*.vst3" -Recurse -File | Select-Object -First 1
+            $destPath = "$($bundle.Parent.FullName)\$($bundle.Name)"
+            Copy-Item -Path $newInnerDll.FullName -Destination $destPath -Force
+            Remove-Item -Path $tempBundle -Recurse -Force
+        }
+    }
+
+    # Now the artefacts are genuine single-file .vst3 files, we install them
+    $innerVst3 = Get-ChildItem -Path "$BuildDir\*" -Filter "*.vst3" -Recurse -File
+
+    # Determine manufacturer folder
+    $manufFolder = if ($BrandStr -eq "public") { "VirtualAudioRouter" } else { "ASMRTOP" }
+    $targetDir = "$vst3Dir\$manufFolder"
+    if (!(Test-Path $targetDir)) { New-Item -ItemType Directory -Force -Path $targetDir | Out-Null }
+
+    foreach ($v in $innerVst3) {
+        Write-Host "Installing single-file $($v.Name) into $manufFolder..."
+        Copy-Item -Path $v.FullName -Destination "$targetDir\$($v.Name)" -Force
     }
 }
 
 BuildBrand "public" "build_public"
 BuildBrand "asmrtop" "build_asmrtop"
 
-Write-Host "All plugin versions updated to 3.0.1 and installed successfully!"
+Write-Host "All plugin versions updated to 3.1.0 and installed successfully!"
