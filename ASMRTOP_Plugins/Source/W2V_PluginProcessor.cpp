@@ -49,7 +49,21 @@ void AsmrtopWdm2VstAudioProcessor::enableIPCMode(int channelId, const juce::Stri
     state.store(0, std::memory_order_relaxed);
     fadeVol = 0.0f;
     if (ipcBridge && ipcBridge->getBuffer()) {
-        readPos.store(ipcBridge->getBuffer()->writePos.load(std::memory_order_relaxed), std::memory_order_relaxed);
+        auto* buf = ipcBridge->getBuffer();
+        uint32_t wp = buf->writePos.load(std::memory_order_relaxed);
+        
+        // CRITICAL FIX: Zero out the ring buffer region behind the write position.
+        // When switching channels, the shared memory may contain stale audio data
+        // from whatever was previously playing on this channel. Without clearing,
+        // the fade-in will replay that old audio as residual sound.
+        // Clear 4096 samples (~85ms at 48kHz) which covers the entire buffering window.
+        for (int i = 0; i < 4096; ++i) {
+            uint32_t idx = (wp - i) & Asmrtop::IPC_RING_MASK;
+            buf->ringL[idx] = 0.0f;
+            buf->ringR[idx] = 0.0f;
+        }
+        
+        readPos.store(wp, std::memory_order_relaxed);
     } else {
         readPos.store(0, std::memory_order_relaxed);
     }
@@ -80,7 +94,17 @@ void AsmrtopWdm2VstAudioProcessor::timerCallback()
         ipcBridge->connect();
         if (ipcBridge->isConnected()) {
             if (ipcBridge->getBuffer() != nullptr) {
-                readPos.store(ipcBridge->getBuffer()->writePos.load(std::memory_order_relaxed), std::memory_order_relaxed);
+                auto* buf = ipcBridge->getBuffer();
+                uint32_t wp = buf->writePos.load(std::memory_order_relaxed);
+                
+                // Clear stale audio from ring buffer on reconnect (same fix as enableIPCMode)
+                for (int i = 0; i < 4096; ++i) {
+                    uint32_t idx = (wp - i) & Asmrtop::IPC_RING_MASK;
+                    buf->ringL[idx] = 0.0f;
+                    buf->ringR[idx] = 0.0f;
+                }
+                
+                readPos.store(wp, std::memory_order_relaxed);
             }
             state.store(0, std::memory_order_relaxed);
             readPosFractional = 0.0;
