@@ -1,0 +1,10 @@
+{
+	"InstallScripts" : 
+	[
+		"D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/JUCE/tools/cmake_install.cmake",
+		"D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/JUCE/tools/modules/cmake_install.cmake",
+		"D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/JUCE/tools/extras/Build/cmake_install.cmake",
+		"D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/JUCE/tools/extras/Build/juceaide/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

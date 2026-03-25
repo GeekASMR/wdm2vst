@@ -1,1 +1,0 @@
-D:\ZYGF\ASMRTOP_Driver\sysvad_driver\TabletAudioSample\x64\Debug\TabletAudioSample.sys

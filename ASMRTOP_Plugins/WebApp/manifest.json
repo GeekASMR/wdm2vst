@@ -1,0 +1,11 @@
+{
+    "name": "ASMRTOP Monitor",
+    "short_name": "ASMRTOP",
+    "description": "Real-time audio monitoring from ASMRTOP Send plugin",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0F1115",
+    "theme_color": "#00BCD4",
+    "orientation": "portrait",
+    "icons": []
+}

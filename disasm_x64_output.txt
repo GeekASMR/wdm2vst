@@ -1,0 +1,1301 @@
+﻿Disassembling entire .text section in x64 mode...
+Total instructions: 10030
+
+DeviceIoControl IAT VA: 0x18002F328
+CreateFileA IAT VA: 0x18002F338
+CreateFileW IAT VA: 0x18002F320
+
+DeviceIoControl calls found: 5
+CreateFileA calls found: 2
+CreateFileW calls found: 0
+
+======================================================================
+DEVICEIOCONTROL CALL SITE ANALYSIS
+======================================================================
+
+--- DeviceIoControl Call #1 at 0x18000113E ---
+  IOCTL Code (rdx): 0x9C402428 (TRANSFER)
+     0x1800010C9: CC                             int3     
+     0x1800010CA: CC                             int3     
+     0x1800010CB: CC                             int3     
+     0x1800010CC: CC                             int3     
+     0x1800010CD: CC                             int3     
+     0x1800010CE: CC                             int3     
+     0x1800010CF: CC                             int3     
+     0x1800010D0: 44 89 44 24 18                 mov      dword ptr [rsp + 0x18], r8d
+     0x1800010D5: 53                             push     rbx
+     0x1800010D6: 56                             push     rsi
+     0x1800010D7: 57                             push     rdi
+     0x1800010D8: 48 83 EC 40                    sub      rsp, 0x40
+     0x1800010DC: 48 8B F1                       mov      rsi, rcx
+     0x1800010DF: 48 8B 09                       mov      rcx, qword ptr [rcx]
+     0x1800010E2: 48 8B FA                       mov      rdi, rdx
+     0x1800010E5: 48 85 C9                       test     rcx, rcx
+     0x1800010E8: 75 20                          jne      0x18000110a
+     0x1800010EA: 44 8D 41 40                    lea      r8d, [rcx + 0x40]
+     0x1800010EE: 48 8D 4F 40                    lea      rcx, [rdi + 0x40]
+     0x1800010F2: 33 D2                          xor      edx, edx
+     0x1800010F4: E8 C7 B5 01 00                 call     0x18001c6c0
+     0x1800010F9: C7 47 40 69 00 00 80           mov      dword ptr [rdi + 0x40], 0x80000069
+     0x180001100: 32 C0                          xor      al, al
+     0x180001102: 48 83 C4 40                    add      rsp, 0x40
+     0x180001106: 5F                             pop      rdi
+     0x180001107: 5E                             pop      rsi
+     0x180001108: 5B                             pop      rbx
+     0x180001109: C3                             ret      
+     0x18000110A: 44 8B 4A 04                    mov      r9d, dword ptr [rdx + 4]
+     0x18000110E: 48 8D 44 24 70                 lea      rax, [rsp + 0x70]
+     0x180001113: 4C 8B C2                       mov      r8, rdx
+     0x180001116: 41 83 E9 80                    sub      r9d, -0x80
+     0x18000111A: 48 89 6C 24 60                 mov      qword ptr [rsp + 0x60], rbp
+     0x18000111F: 33 ED                          xor      ebp, ebp
+     0x180001121: 48 89 6C 24 38                 mov      qword ptr [rsp + 0x38], rbp
+     0x180001126: 48 89 44 24 30                 mov      qword ptr [rsp + 0x30], rax
+     0x18000112B: 44 89 4C 24 28                 mov      dword ptr [rsp + 0x28], r9d
+     0x180001130: 48 89 54 24 20                 mov      qword ptr [rsp + 0x20], rdx
+     0x180001135: BA 28 24 40 9C                 mov      edx, 0x9c402428
+     0x18000113A: 89 6C 24 70                    mov      dword ptr [rsp + 0x70], ebp
+ >>> 0x18000113E: FF 15 E4 E1 02 00              call     qword ptr [rip + 0x2e1e4]
+     0x180001144: 85 C0                          test     eax, eax
+     0x180001146: 75 18                          jne      0x180001160
+     0x180001148: 40 0F B6 C5                    movzx    eax, bpl
+     0x18000114C: 48 8B 6C 24 60                 mov      rbp, qword ptr [rsp + 0x60]
+
+--- DeviceIoControl Call #2 at 0x180001446 ---
+  IOCTL Code (rdx): 0x9C402410 (ATTACH)
+     0x1800013B4: 48 8B 9C 24 78 04 00 00        mov      rbx, qword ptr [rsp + 0x478]
+     0x1800013BC: 48 81 C4 60 04 00 00           add      rsp, 0x460
+     0x1800013C3: 5F                             pop      rdi
+     0x1800013C4: C3                             ret      
+     0x1800013C5: CC                             int3     
+     0x1800013C6: CC                             int3     
+     0x1800013C7: CC                             int3     
+     0x1800013C8: CC                             int3     
+     0x1800013C9: CC                             int3     
+     0x1800013CA: CC                             int3     
+     0x1800013CB: CC                             int3     
+     0x1800013CC: CC                             int3     
+     0x1800013CD: CC                             int3     
+     0x1800013CE: CC                             int3     
+     0x1800013CF: CC                             int3     
+     0x1800013D0: 40 53                          push     rbx
+     0x1800013D2: 56                             push     rsi
+     0x1800013D3: 57                             push     rdi
+     0x1800013D4: 48 83 EC 70                    sub      rsp, 0x70
+     0x1800013D8: 48 8B 05 91 3C 04 00           mov      rax, qword ptr [rip + 0x43c91]
+     0x1800013DF: 48 33 C4                       xor      rax, rsp
+     0x1800013E2: 48 89 44 24 68                 mov      qword ptr [rsp + 0x68], rax
+     0x1800013E7: 41 8B D8                       mov      ebx, r8d
+     0x1800013EA: 48 8B F2                       mov      rsi, rdx
+     0x1800013ED: 48 8B F9                       mov      rdi, rcx
+     0x1800013F0: C7 44 24 40 00 00 00 00        mov      dword ptr [rsp + 0x40], 0
+     0x1800013F8: FF 15 0A DF 02 00              call     qword ptr [rip + 0x2df0a]
+     0x1800013FE: 48 8B 0F                       mov      rcx, qword ptr [rdi]
+     0x180001401: 89 44 24 5C                    mov      dword ptr [rsp + 0x5c], eax
+     0x180001405: 48 C7 44 24 38 00 00 00 00     mov      qword ptr [rsp + 0x38], 0
+     0x18000140E: 48 8D 44 24 40                 lea      rax, [rsp + 0x40]
+     0x180001413: 48 89 44 24 30                 mov      qword ptr [rsp + 0x30], rax
+     0x180001418: 48 8D 44 24 48                 lea      rax, [rsp + 0x48]
+     0x18000141D: 4C 8D 44 24 58                 lea      r8, [rsp + 0x58]
+     0x180001422: 41 B9 0C 00 00 00              mov      r9d, 0xc
+     0x180001428: BA 10 24 40 9C                 mov      edx, 0x9c402410
+     0x18000142D: C7 44 24 28 0C 00 00 00        mov      dword ptr [rsp + 0x28], 0xc
+     0x180001435: C7 44 24 58 00 00 01 01        mov      dword ptr [rsp + 0x58], 0x1010000
+     0x18000143D: 89 5C 24 60                    mov      dword ptr [rsp + 0x60], ebx
+     0x180001441: 48 89 44 24 20                 mov      qword ptr [rsp + 0x20], rax
+ >>> 0x180001446: FF 15 DC DE 02 00              call     qword ptr [rip + 0x2dedc]
+     0x18000144C: 85 C0                          test     eax, eax
+     0x18000144E: 75 70                          jne      0x1800014c0
+     0x180001450: 48 83 7F 18 00                 cmp      qword ptr [rdi + 0x18], 0
+     0x180001455: 74 62                          je       0x1800014b9
+
+--- DeviceIoControl Call #3 at 0x18000164D ---
+  IOCTL Code (rdx): 0x9C402414 (DETACH)
+     0x1800015D1: 5F                             pop      rdi
+     0x1800015D2: 5E                             pop      rsi
+     0x1800015D3: 5B                             pop      rbx
+     0x1800015D4: C3                             ret      
+     0x1800015D5: CC                             int3     
+     0x1800015D6: CC                             int3     
+     0x1800015D7: CC                             int3     
+     0x1800015D8: CC                             int3     
+     0x1800015D9: CC                             int3     
+     0x1800015DA: CC                             int3     
+     0x1800015DB: CC                             int3     
+     0x1800015DC: CC                             int3     
+     0x1800015DD: CC                             int3     
+     0x1800015DE: CC                             int3     
+     0x1800015DF: CC                             int3     
+     0x1800015E0: 48 89 5C 24 18                 mov      qword ptr [rsp + 0x18], rbx
+     0x1800015E5: 57                             push     rdi
+     0x1800015E6: 48 83 EC 60                    sub      rsp, 0x60
+     0x1800015EA: 48 8B 05 7F 3A 04 00           mov      rax, qword ptr [rip + 0x43a7f]
+     0x1800015F1: 48 33 C4                       xor      rax, rsp
+     0x1800015F4: 48 89 44 24 58                 mov      qword ptr [rsp + 0x58], rax
+     0x1800015F9: 48 83 39 00                    cmp      qword ptr [rcx], 0
+     0x1800015FD: 8B DA                          mov      ebx, edx
+     0x1800015FF: 48 8B F9                       mov      rdi, rcx
+     0x180001602: 0F 84 13 01 00 00              je       0x18000171b
+     0x180001608: FF 15 FA DC 02 00              call     qword ptr [rip + 0x2dcfa]
+     0x18000160E: 33 C9                          xor      ecx, ecx
+     0x180001610: 4C 8D 44 24 48                 lea      r8, [rsp + 0x48]
+     0x180001615: 48 89 4C 24 38                 mov      qword ptr [rsp + 0x38], rcx
+     0x18000161A: 89 44 24 4C                    mov      dword ptr [rsp + 0x4c], eax
+     0x18000161E: 48 8D 44 24 40                 lea      rax, [rsp + 0x40]
+     0x180001623: 48 89 44 24 30                 mov      qword ptr [rsp + 0x30], rax
+     0x180001628: 89 4C 24 28                    mov      dword ptr [rsp + 0x28], ecx
+     0x18000162C: 89 4C 24 40                    mov      dword ptr [rsp + 0x40], ecx
+     0x180001630: 48 89 4C 24 20                 mov      qword ptr [rsp + 0x20], rcx
+     0x180001635: 44 8D 49 0C                    lea      r9d, [rcx + 0xc]
+     0x180001639: 48 8B 0F                       mov      rcx, qword ptr [rdi]
+     0x18000163C: BA 14 24 40 9C                 mov      edx, 0x9c402414
+     0x180001641: C7 44 24 48 00 00 01 01        mov      dword ptr [rsp + 0x48], 0x1010000
+     0x180001649: 89 5C 24 50                    mov      dword ptr [rsp + 0x50], ebx
+ >>> 0x18000164D: FF 15 D5 DC 02 00              call     qword ptr [rip + 0x2dcd5]
+     0x180001653: 85 C0                          test     eax, eax
+     0x180001655: 75 73                          jne      0x1800016ca
+     0x180001657: 48 83 7F 18 00                 cmp      qword ptr [rdi + 0x18], 0
+     0x18000165C: 0F 84 B9 00 00 00              je       0x18000171b
+
+--- DeviceIoControl Call #4 at 0x1800017BA ---
+  IOCTL Code (rdx): 0x9C402420 (START)
+     0x180001735: C3                             ret      
+     0x180001736: CC                             int3     
+     0x180001737: CC                             int3     
+     0x180001738: CC                             int3     
+     0x180001739: CC                             int3     
+     0x18000173A: CC                             int3     
+     0x18000173B: CC                             int3     
+     0x18000173C: CC                             int3     
+     0x18000173D: CC                             int3     
+     0x18000173E: CC                             int3     
+     0x18000173F: CC                             int3     
+     0x180001740: 40 53                          push     rbx
+     0x180001742: 57                             push     rdi
+     0x180001743: 48 83 EC 68                    sub      rsp, 0x68
+     0x180001747: 48 8B 05 22 39 04 00           mov      rax, qword ptr [rip + 0x43922]
+     0x18000174E: 48 33 C4                       xor      rax, rsp
+     0x180001751: 48 89 44 24 58                 mov      qword ptr [rsp + 0x58], rax
+     0x180001756: 48 83 39 00                    cmp      qword ptr [rcx], 0
+     0x18000175A: 8B DA                          mov      ebx, edx
+     0x18000175C: 48 8B F9                       mov      rdi, rcx
+     0x18000175F: 75 07                          jne      0x180001768
+     0x180001761: 32 C0                          xor      al, al
+     0x180001763: E9 34 01 00 00                 jmp      0x18000189c
+     0x180001768: 48 89 AC 24 90 00 00 00        mov      qword ptr [rsp + 0x90], rbp
+     0x180001770: 48 89 74 24 60                 mov      qword ptr [rsp + 0x60], rsi
+     0x180001775: FF 15 8D DB 02 00              call     qword ptr [rip + 0x2db8d]
+     0x18000177B: 48 8B 0F                       mov      rcx, qword ptr [rdi]
+     0x18000177E: 33 F6                          xor      esi, esi
+     0x180001780: 89 44 24 4C                    mov      dword ptr [rsp + 0x4c], eax
+     0x180001784: 48 89 74 24 38                 mov      qword ptr [rsp + 0x38], rsi
+     0x180001789: 48 8D 44 24 40                 lea      rax, [rsp + 0x40]
+     0x18000178E: 4C 8D 44 24 48                 lea      r8, [rsp + 0x48]
+     0x180001793: 48 89 44 24 30                 mov      qword ptr [rsp + 0x30], rax
+     0x180001798: 44 8D 4E 0C                    lea      r9d, [rsi + 0xc]
+     0x18000179C: BA 20 24 40 9C                 mov      edx, 0x9c402420
+     0x1800017A1: 89 74 24 28                    mov      dword ptr [rsp + 0x28], esi
+     0x1800017A5: C7 44 24 48 00 00 01 01        mov      dword ptr [rsp + 0x48], 0x1010000
+     0x1800017AD: 89 5C 24 50                    mov      dword ptr [rsp + 0x50], ebx
+     0x1800017B1: 48 89 74 24 20                 mov      qword ptr [rsp + 0x20], rsi
+     0x1800017B6: 89 74 24 40                    mov      dword ptr [rsp + 0x40], esi
+ >>> 0x1800017BA: FF 15 68 DB 02 00              call     qword ptr [rip + 0x2db68]
+     0x1800017C0: 8B E8                          mov      ebp, eax
+     0x1800017C2: 85 C0                          test     eax, eax
+     0x1800017C4: 75 73                          jne      0x180001839
+     0x1800017C6: 48 39 77 18                    cmp      qword ptr [rdi + 0x18], rsi
+
+--- DeviceIoControl Call #5 at 0x18000192A ---
+  IOCTL Code (rdx): 0x9C402424 (STOP)
+     0x180001889: 48 8B 74 24 60                 mov      rsi, qword ptr [rsp + 0x60]
+     0x18000188E: 83 FD 01                       cmp      ebp, 1
+     0x180001891: 48 8B AC 24 90 00 00 00        mov      rbp, qword ptr [rsp + 0x90]
+     0x180001899: 0F 94 C0                       sete     al
+     0x18000189C: 48 8B 4C 24 58                 mov      rcx, qword ptr [rsp + 0x58]
+     0x1800018A1: 48 33 CC                       xor      rcx, rsp
+     0x1800018A4: E8 D7 7A 01 00                 call     0x180019380
+     0x1800018A9: 48 83 C4 68                    add      rsp, 0x68
+     0x1800018AD: 5F                             pop      rdi
+     0x1800018AE: 5B                             pop      rbx
+     0x1800018AF: C3                             ret      
+     0x1800018B0: 40 53                          push     rbx
+     0x1800018B2: 57                             push     rdi
+     0x1800018B3: 48 83 EC 68                    sub      rsp, 0x68
+     0x1800018B7: 48 8B 05 B2 37 04 00           mov      rax, qword ptr [rip + 0x437b2]
+     0x1800018BE: 48 33 C4                       xor      rax, rsp
+     0x1800018C1: 48 89 44 24 58                 mov      qword ptr [rsp + 0x58], rax
+     0x1800018C6: 48 83 39 00                    cmp      qword ptr [rcx], 0
+     0x1800018CA: 8B DA                          mov      ebx, edx
+     0x1800018CC: 48 8B F9                       mov      rdi, rcx
+     0x1800018CF: 75 07                          jne      0x1800018d8
+     0x1800018D1: 32 C0                          xor      al, al
+     0x1800018D3: E9 34 01 00 00                 jmp      0x180001a0c
+     0x1800018D8: 48 89 AC 24 90 00 00 00        mov      qword ptr [rsp + 0x90], rbp
+     0x1800018E0: 48 89 74 24 60                 mov      qword ptr [rsp + 0x60], rsi
+     0x1800018E5: FF 15 1D DA 02 00              call     qword ptr [rip + 0x2da1d]
+     0x1800018EB: 48 8B 0F                       mov      rcx, qword ptr [rdi]
+     0x1800018EE: 33 F6                          xor      esi, esi
+     0x1800018F0: 89 44 24 4C                    mov      dword ptr [rsp + 0x4c], eax
+     0x1800018F4: 48 89 74 24 38                 mov      qword ptr [rsp + 0x38], rsi
+     0x1800018F9: 48 8D 44 24 40                 lea      rax, [rsp + 0x40]
+     0x1800018FE: 4C 8D 44 24 48                 lea      r8, [rsp + 0x48]
+     0x180001903: 48 89 44 24 30                 mov      qword ptr [rsp + 0x30], rax
+     0x180001908: 44 8D 4E 0C                    lea      r9d, [rsi + 0xc]
+     0x18000190C: BA 24 24 40 9C                 mov      edx, 0x9c402424
+     0x180001911: 89 74 24 28                    mov      dword ptr [rsp + 0x28], esi
+     0x180001915: C7 44 24 48 00 00 01 01        mov      dword ptr [rsp + 0x48], 0x1010000
+     0x18000191D: 89 5C 24 50                    mov      dword ptr [rsp + 0x50], ebx
+     0x180001921: 48 89 74 24 20                 mov      qword ptr [rsp + 0x20], rsi
+     0x180001926: 89 74 24 40                    mov      dword ptr [rsp + 0x40], esi
+ >>> 0x18000192A: FF 15 F8 D9 02 00              call     qword ptr [rip + 0x2d9f8]
+     0x180001930: 8B E8                          mov      ebp, eax
+     0x180001932: 85 C0                          test     eax, eax
+     0x180001934: 75 73                          jne      0x1800019a9
+     0x180001936: 48 39 77 18                    cmp      qword ptr [rdi + 0x18], rsi
+
+======================================================================
+CREATEFILEA CALL SITE ANALYSIS
+======================================================================
+
+--- CreateFileA Call #1 at 0x18000131E ---
+     0x18000128F: 41 B9 00 00 04 00              mov      r9d, 0x40000
+     0x180001295: 33 C9                          xor      ecx, ecx
+     0x180001297: FF 15 A3 E1 02 00              call     qword ptr [rip + 0x2e1a3]
+     0x18000129D: 48 83 7F 18 00                 cmp      qword ptr [rdi + 0x18], 0
+     0x1800012A2: 74 4A                          je       0x1800012ee
+     0x1800012A4: 80 7F 10 00                    cmp      byte ptr [rdi + 0x10], 0
+     0x1800012A8: 74 44                          je       0x1800012ee
+     0x1800012AA: FF 15 68 E0 02 00              call     qword ptr [rip + 0x2e068]
+     0x1800012B0: 8B D8                          mov      ebx, eax
+     0x1800012B2: FF 15 18 E3 02 00              call     qword ptr [rip + 0x2e318]
+     0x1800012B8: 48 8D 15 C9 57 03 00           lea      rdx, [rip + 0x357c9]
+     0x1800012BF: 0F 57 D2                       xorps    xmm2, xmm2
+     0x1800012C2: 8B C8                          mov      ecx, eax
+     0x1800012C4: 48 8D 05 A5 57 03 00           lea      rax, [rip + 0x357a5]
+     0x1800012CB: 44 8B CB                       mov      r9d, ebx
+     0x1800012CE: 48 89 44 24 20                 mov      qword ptr [rsp + 0x20], rax
+     0x1800012D3: F2 48 0F 2A D1                 cvtsi2sd xmm2, rcx
+     0x1800012D8: 48 8B 4F 18                    mov      rcx, qword ptr [rdi + 0x18]
+     0x1800012DC: F2 0F 5E 15 04 7C 03 00        divsd    xmm2, qword ptr [rip + 0x37c04]
+     0x1800012E4: 66 49 0F 7E D0                 movq     r8, xmm2
+     0x1800012E9: E8 12 FD FF FF                 call     0x180001000
+     0x1800012EE: 32 C0                          xor      al, al
+     0x1800012F0: E9 AF 00 00 00                 jmp      0x1800013a4
+     0x1800012F5: 45 33 C9                       xor      r9d, r9d
+     0x1800012F8: 48 C7 44 24 30 00 00 00 00     mov      qword ptr [rsp + 0x30], 0
+     0x180001301: 48 8D 48 04                    lea      rcx, [rax + 4]
+     0x180001305: 45 8D 41 03                    lea      r8d, [r9 + 3]
+     0x180001309: BA 00 00 00 C0                 mov      edx, 0xc0000000
+     0x18000130E: C7 44 24 28 80 00 00 40        mov      dword ptr [rsp + 0x28], 0x40000080
+     0x180001316: C7 44 24 20 03 00 00 00        mov      dword ptr [rsp + 0x20], 3
+ >>> 0x18000131E: FF 15 14 E0 02 00              call     qword ptr [rip + 0x2e014]
+     0x180001324: 48 89 07                       mov      qword ptr [rdi], rax
+     0x180001327: 48 83 F8 FF                    cmp      rax, -1
+     0x18000132B: 75 75                          jne      0x1800013a2
+     0x18000132D: 48 83 7F 18 00                 cmp      qword ptr [rdi + 0x18], 0
+
+--- CreateFileA Call #2 at 0x180007A0B ---
+     0x180007970: 48 89 B4 24 A0 01 00 00        mov      qword ptr [rsp + 0x1a0], rsi
+     0x180007978: FF 15 C2 77 02 00              call     qword ptr [rip + 0x277c2]
+     0x18000797E: FF 15 94 79 02 00              call     qword ptr [rip + 0x27994]
+     0x180007984: 8B F0                          mov      esi, eax
+     0x180007986: FF 15 7C 79 02 00              call     qword ptr [rip + 0x2797c]
+     0x18000798C: 0F B7 4C 24 7C                 movzx    ecx, word ptr [rsp + 0x7c]
+     0x180007991: 0F B7 54 24 7A                 movzx    edx, word ptr [rsp + 0x7a]
+     0x180007996: 44 0F B7 54 24 78              movzx    r10d, word ptr [rsp + 0x78]
+     0x18000799C: 44 0F B7 5C 24 76              movzx    r11d, word ptr [rsp + 0x76]
+     0x1800079A2: 0F B7 7C 24 72                 movzx    edi, word ptr [rsp + 0x72]
+     0x1800079A7: 44 0F B7 4C 24 70              movzx    r9d, word ptr [rsp + 0x70]
+     0x1800079AD: 89 74 24 50                    mov      dword ptr [rsp + 0x50], esi
+     0x1800079B1: 89 44 24 48                    mov      dword ptr [rsp + 0x48], eax
+     0x1800079B5: 89 4C 24 40                    mov      dword ptr [rsp + 0x40], ecx
+     0x1800079B9: 89 54 24 38                    mov      dword ptr [rsp + 0x38], edx
+     0x1800079BD: 44 89 54 24 30                 mov      dword ptr [rsp + 0x30], r10d
+     0x1800079C2: 44 89 5C 24 28                 mov      dword ptr [rsp + 0x28], r11d
+     0x1800079C7: 48 8D 15 3A FD 02 00           lea      rdx, [rip + 0x2fd3a]
+     0x1800079CE: 48 8D 8C 24 80 00 00 00        lea      rcx, [rsp + 0x80]
+     0x1800079D6: 4C 8B C5                       mov      r8, rbp
+     0x1800079D9: 89 7C 24 20                    mov      dword ptr [rsp + 0x20], edi
+     0x1800079DD: E8 2E 38 00 00                 call     0x18000b210
+     0x1800079E2: 33 FF                          xor      edi, edi
+     0x1800079E4: 48 8D 8C 24 80 00 00 00        lea      rcx, [rsp + 0x80]
+     0x1800079EC: 48 89 7C 24 30                 mov      qword ptr [rsp + 0x30], rdi
+     0x1800079F1: 8D 57 02                       lea      edx, [rdi + 2]
+     0x1800079F4: 44 8D 47 01                    lea      r8d, [rdi + 1]
+     0x1800079F8: 45 33 C9                       xor      r9d, r9d
+     0x1800079FB: C7 44 24 28 80 00 00 00        mov      dword ptr [rsp + 0x28], 0x80
+     0x180007A03: C7 44 24 20 04 00 00 00        mov      dword ptr [rsp + 0x20], 4
+ >>> 0x180007A0B: FF 15 27 79 02 00              call     qword ptr [rip + 0x27927]
+     0x180007A11: 48 8B B4 24 A0 01 00 00        mov      rsi, qword ptr [rsp + 0x1a0]
+     0x180007A19: 48 8D 48 FF                    lea      rcx, [rax - 1]
+     0x180007A1D: 48 89 83 28 40 00 00           mov      qword ptr [rbx + 0x4028], rax
+     0x180007A24: 48 83 F9 FD                    cmp      rcx, -3
+
+======================================================================
+FUNCTION-LEVEL ANALYSIS (functions containing IOCTLs)
+======================================================================
+
+============================================================
+Function containing ATTACH (0x9C402410)
+IOCTL at VA=0x180001429, estimated function start=0x1800013D0
+============================================================
+  0x1800013D0: 40 53                          push     rbx
+  0x1800013D2: 56                             push     rsi
+  0x1800013D3: 57                             push     rdi
+  0x1800013D4: 48 83 EC 70                    sub      rsp, 0x70
+  0x1800013D8: 48 8B 05 91 3C 04 00           mov      rax, qword ptr [rip + 0x43c91]
+  0x1800013DF: 48 33 C4                       xor      rax, rsp
+  0x1800013E2: 48 89 44 24 68                 mov      qword ptr [rsp + 0x68], rax
+  0x1800013E7: 41 8B D8                       mov      ebx, r8d
+  0x1800013EA: 48 8B F2                       mov      rsi, rdx
+  0x1800013ED: 48 8B F9                       mov      rdi, rcx
+  0x1800013F0: C7 44 24 40 00 00 00 00        mov      dword ptr [rsp + 0x40], 0
+  0x1800013F8: FF 15 0A DF 02 00              call     qword ptr [rip + 0x2df0a]
+  0x1800013FE: 48 8B 0F                       mov      rcx, qword ptr [rdi]
+  0x180001401: 89 44 24 5C                    mov      dword ptr [rsp + 0x5c], eax
+  0x180001405: 48 C7 44 24 38 00 00 00 00     mov      qword ptr [rsp + 0x38], 0
+  0x18000140E: 48 8D 44 24 40                 lea      rax, [rsp + 0x40]
+  0x180001413: 48 89 44 24 30                 mov      qword ptr [rsp + 0x30], rax
+  0x180001418: 48 8D 44 24 48                 lea      rax, [rsp + 0x48]
+  0x18000141D: 4C 8D 44 24 58                 lea      r8, [rsp + 0x58]
+  0x180001422: 41 B9 0C 00 00 00              mov      r9d, 0xc
+  0x180001428: BA 10 24 40 9C                 mov      edx, 0x9c402410
+  0x18000142D: C7 44 24 28 0C 00 00 00        mov      dword ptr [rsp + 0x28], 0xc
+  0x180001435: C7 44 24 58 00 00 01 01        mov      dword ptr [rsp + 0x58], 0x1010000 <-- MAGIC
+  0x18000143D: 89 5C 24 60                    mov      dword ptr [rsp + 0x60], ebx
+  0x180001441: 48 89 44 24 20                 mov      qword ptr [rsp + 0x20], rax
+  0x180001446: FF 15 DC DE 02 00              call     qword ptr [rip + 0x2dedc] <-- CALL DeviceIoControl
+  0x18000144C: 85 C0                          test     eax, eax
+  0x18000144E: 75 70                          jne      0x1800014c0
+  0x180001450: 48 83 7F 18 00                 cmp      qword ptr [rdi + 0x18], 0
+  0x180001455: 74 62                          je       0x1800014b9
+  0x180001457: 38 47 10                       cmp      byte ptr [rdi + 0x10], al
+  0x18000145A: 74 5D                          je       0x1800014b9
+  0x18000145C: FF 15 B6 DE 02 00              call     qword ptr [rip + 0x2deb6]
+  0x180001462: 8B D8                          mov      ebx, eax
+  0x180001464: FF 15 66 E1 02 00              call     qword ptr [rip + 0x2e166]
+  0x18000146A: 48 8D 15 8F 56 03 00           lea      rdx, [rip + 0x3568f]
+  0x180001471: 0F 57 D2                       xorps    xmm2, xmm2
+  0x180001474: 8B C8                          mov      ecx, eax
+  0x180001476: 48 8D 05 73 56 03 00           lea      rax, [rip + 0x35673]
+  0x18000147D: 44 8B CB                       mov      r9d, ebx
+  0x180001480: 48 89 44 24 20                 mov      qword ptr [rsp + 0x20], rax
+  0x180001485: F2 48 0F 2A D1                 cvtsi2sd xmm2, rcx
+  0x18000148A: 48 8B 4F 18                    mov      rcx, qword ptr [rdi + 0x18]
+  0x18000148E: F2 0F 5E 15 52 7A 03 00        divsd    xmm2, qword ptr [rip + 0x37a52]
+  0x180001496: 66 49 0F 7E D0                 movq     r8, xmm2
+  0x18000149B: E8 60 FB FF FF                 call     0x180001000
+  0x1800014A0: FF 15 8A DE 02 00              call     qword ptr [rip + 0x2de8a]
+  0x1800014A6: 48 8B 4F 18                    mov      rcx, qword ptr [rdi + 0x18]
+  0x1800014AA: 48 8D 15 33 56 03 00           lea      rdx, [rip + 0x35633]
+  0x1800014B1: 44 8B C0                       mov      r8d, eax
+  0x1800014B4: E8 47 FB FF FF                 call     0x180001000
+  0x1800014B9: 33 C0                          xor      eax, eax
+  0x1800014BB: E9 00 01 00 00                 jmp      0x1800015c0
+  0x1800014C0: 83 7C 24 40 0C                 cmp      dword ptr [rsp + 0x40], 0xc
+  0x1800014C5: 0F 85 97 00 00 00              jne      0x180001562
+  0x1800014CB: 81 7C 24 48 00 00 01 01        cmp      dword ptr [rsp + 0x48], 0x1010000 <-- MAGIC
+  0x1800014D3: 0F 85 89 00 00 00              jne      0x180001562
+  0x1800014D9: 83 7C 24 50 00                 cmp      dword ptr [rsp + 0x50], 0
+  0x1800014DE: 0F 95 C0                       setne    al
+  0x1800014E1: 88 06                          mov      byte ptr [rsi], al
+  0x1800014E3: 84 C0                          test     al, al
+  0x1800014E5: 74 24                          je       0x18000150b
+  0x1800014E7: 48 83 7F 18 00                 cmp      qword ptr [rdi + 0x18], 0
+  0x1800014EC: 74 6E                          je       0x18000155c
+  0x1800014EE: 80 7F 10 00                    cmp      byte ptr [rdi + 0x10], 0
+  0x1800014F2: 74 68                          je       0x18000155c
+  0x1800014F4: FF 15 1E DE 02 00              call     qword ptr [rip + 0x2de1e]
+  0x1800014FA: 8B D8                          mov      ebx, eax
+  0x1800014FC: FF 15 CE E0 02 00              call     qword ptr [rip + 0x2e0ce]
+  0x180001502: 48 8D 15 4F 56 03 00           lea      rdx, [rip + 0x3564f]
+  0x180001509: EB 22                          jmp      0x18000152d
+  0x18000150B: 48 83 7F 18 00                 cmp      qword ptr [rdi + 0x18], 0
+  0x180001510: 74 4A                          je       0x18000155c
+  0x180001512: 80 7F 10 00                    cmp      byte ptr [rdi + 0x10], 0
+  0x180001516: 74 44                          je       0x18000155c
+  0x180001518: FF 15 FA DD 02 00              call     qword ptr [rip + 0x2ddfa]
+  0x18000151E: 8B D8                          mov      ebx, eax
+  0x180001520: FF 15 AA E0 02 00              call     qword ptr [rip + 0x2e0aa]
+  0x180001526: 48 8D 15 5B 56 03 00           lea      rdx, [rip + 0x3565b]
+  0x18000152D: 8B C8                          mov      ecx, eax
+  0x18000152F: 0F 57 D2                       xorps    xmm2, xmm2
+  0x180001532: 48 8D 05 B7 55 03 00           lea      rax, [rip + 0x355b7]
+  0x180001539: 44 8B CB                       mov      r9d, ebx
+  0x18000153C: 48 89 44 24 20                 mov      qword ptr [rsp + 0x20], rax
+  0x180001541: F2 48 0F 2A D1                 cvtsi2sd xmm2, rcx
+  0x180001546: 48 8B 4F 18                    mov      rcx, qword ptr [rdi + 0x18]
+  0x18000154A: F2 0F 5E 15 96 79 03 00        divsd    xmm2, qword ptr [rip + 0x37996]
+  0x180001552: 66 49 0F 7E D0                 movq     r8, xmm2
+  0x180001557: E8 A4 FA FF FF                 call     0x180001000
+  0x18000155C: 8B 44 24 48                    mov      eax, dword ptr [rsp + 0x48]
+  0x180001560: EB 5E                          jmp      0x1800015c0
+  0x180001562: 48 83 7F 18 00                 cmp      qword ptr [rdi + 0x18], 0
+  0x180001567: 74 52                          je       0x1800015bb
+  0x180001569: 80 7F 10 00                    cmp      byte ptr [rdi + 0x10], 0
+  0x18000156D: 74 4C                          je       0x1800015bb
+  0x18000156F: FF 15 A3 DD 02 00              call     qword ptr [rip + 0x2dda3]
+  0x180001575: 8B D8                          mov      ebx, eax
+  0x180001577: FF 15 53 E0 02 00              call     qword ptr [rip + 0x2e053]
+  0x18000157D: 48 8D 15 A4 55 03 00           lea      rdx, [rip + 0x355a4]
+  0x180001584: 0F 57 D2                       xorps    xmm2, xmm2
+  0x180001587: 8B C8                          mov      ecx, eax
+  0x180001589: 48 8D 05 60 55 03 00           lea      rax, [rip + 0x35560]
+  0x180001590: 44 8B CB                       mov      r9d, ebx
+  0x180001593: F2 48 0F 2A D1                 cvtsi2sd xmm2, rcx
+  0x180001598: 8B 4C 24 48                    mov      ecx, dword ptr [rsp + 0x48]
+  0x18000159C: 89 4C 24 28                    mov      dword ptr [rsp + 0x28], ecx
+  0x1800015A0: 48 8B 4F 18                    mov      rcx, qword ptr [rdi + 0x18]
+  0x1800015A4: 48 89 44 24 20                 mov      qword ptr [rsp + 0x20], rax
+  0x1800015A9: F2 0F 5E 15 37 79 03 00        divsd    xmm2, qword ptr [rip + 0x37937]
+  0x1800015B1: 66 49 0F 7E D0                 movq     r8, xmm2
+  0x1800015B6: E8 45 FA FF FF                 call     0x180001000
+  0x1800015BB: B8 FF FF 00 01                 mov      eax, 0x100ffff
+  0x1800015C0: 48 8B 4C 24 68                 mov      rcx, qword ptr [rsp + 0x68]
+  0x1800015C5: 48 33 CC                       xor      rcx, rsp
+  0x1800015C8: E8 B3 7D 01 00                 call     0x180019380
+  0x1800015CD: 48 83 C4 70                    add      rsp, 0x70
+  0x1800015D1: 5F                             pop      rdi
+  0x1800015D2: 5E                             pop      rsi
+  0x1800015D3: 5B                             pop      rbx
+  0x1800015D4: C3                             ret      
+  0x1800015D5: CC                             int3     
+  0x1800015D6: CC                             int3     
+  0x1800015D7: CC                             int3     
+  0x1800015D8: CC                             int3     
+  0x1800015D9: CC                             int3     
+  0x1800015DA: CC                             int3     
+  0x1800015DB: CC                             int3     
+  0x1800015DC: CC                             int3     
+  0x1800015DD: CC                             int3     
+  0x1800015DE: CC                             int3     
+  0x1800015DF: CC                             int3     
+  0x1800015E0: 48 89 5C 24 18                 mov      qword ptr [rsp + 0x18], rbx
+  0x1800015E5: 57                             push     rdi
+  0x1800015E6: 48 83 EC 60                    sub      rsp, 0x60
+  0x1800015EA: 48 8B 05 7F 3A 04 00           mov      rax, qword ptr [rip + 0x43a7f]
+  0x1800015F1: 48 33 C4                       xor      rax, rsp
+  0x1800015F4: 48 89 44 24 58                 mov      qword ptr [rsp + 0x58], rax
+  0x1800015F9: 48 83 39 00                    cmp      qword ptr [rcx], 0
+  0x1800015FD: 8B DA                          mov      ebx, edx
+  0x1800015FF: 48 8B F9                       mov      rdi, rcx
+  0x180001602: 0F 84 13 01 00 00              je       0x18000171b
+  0x180001608: FF 15 FA DC 02 00              call     qword ptr [rip + 0x2dcfa]
+  0x18000160E: 33 C9                          xor      ecx, ecx
+  0x180001610: 4C 8D 44 24 48                 lea      r8, [rsp + 0x48]
+  0x180001615: 48 89 4C 24 38                 mov      qword ptr [rsp + 0x38], rcx
+  0x18000161A: 89 44 24 4C                    mov      dword ptr [rsp + 0x4c], eax
+  0x18000161E: 48 8D 44 24 40                 lea      rax, [rsp + 0x40]
+  0x180001623: 48 89 44 24 30                 mov      qword ptr [rsp + 0x30], rax
+  0x180001628: 89 4C 24 28                    mov      dword ptr [rsp + 0x28], ecx
+  0x18000162C: 89 4C 24 40                    mov      dword ptr [rsp + 0x40], ecx
+  0x180001630: 48 89 4C 24 20                 mov      qword ptr [rsp + 0x20], rcx
+  0x180001635: 44 8D 49 0C                    lea      r9d, [rcx + 0xc]
+  0x180001639: 48 8B 0F                       mov      rcx, qword ptr [rdi]
+  0x18000163C: BA 14 24 40 9C                 mov      edx, 0x9c402414
+  0x180001641: C7 44 24 48 00 00 01 01        mov      dword ptr [rsp + 0x48], 0x1010000 <-- MAGIC
+  0x180001649: 89 5C 24 50                    mov      dword ptr [rsp + 0x50], ebx
+  0x18000164D: FF 15 D5 DC 02 00              call     qword ptr [rip + 0x2dcd5] <-- CALL DeviceIoControl
+  0x180001653: 85 C0                          test     eax, eax
+  0x180001655: 75 73                          jne      0x1800016ca
+  0x180001657: 48 83 7F 18 00                 cmp      qword ptr [rdi + 0x18], 0
+  0x18000165C: 0F 84 B9 00 00 00              je       0x18000171b
+  0x180001662: 38 47 10                       cmp      byte ptr [rdi + 0x10], al
+  0x180001665: 0F 84 B0 00 00 00              je       0x18000171b
+  0x18000166B: FF 15 A7 DC 02 00              call     qword ptr [rip + 0x2dca7]
+  0x180001671: 8B D8                          mov      ebx, eax
+  0x180001673: FF 15 57 DF 02 00              call     qword ptr [rip + 0x2df57]
+  0x180001679: 48 8D 15 40 55 03 00           lea      rdx, [rip + 0x35540]
+  0x180001680: 0F 57 D2                       xorps    xmm2, xmm2
+  0x180001683: 8B C8                          mov      ecx, eax
+  0x180001685: 48 8D 05 24 55 03 00           lea      rax, [rip + 0x35524]
+  0x18000168C: 44 8B CB                       mov      r9d, ebx
+  0x18000168F: 48 89 44 24 20                 mov      qword ptr [rsp + 0x20], rax
+  0x180001694: F2 48 0F 2A D1                 cvtsi2sd xmm2, rcx
+  0x180001699: 48 8B 4F 18                    mov      rcx, qword ptr [rdi + 0x18]
+  0x18000169D: F2 0F 5E 15 43 78 03 00        divsd    xmm2, qword ptr [rip + 0x37843]
+  0x1800016A5: 66 49 0F 7E D0                 movq     r8, xmm2
+  0x1800016AA: E8 51 F9 FF FF                 call     0x180001000
+  0x1800016AF: FF 15 7B DC 02 00              call     qword ptr [rip + 0x2dc7b]
+  0x1800016B5: 48 8B 4F 18                    mov      rcx, qword ptr [rdi + 0x18]
+  0x1800016B9: 48 8D 15 24 54 03 00           lea      rdx, [rip + 0x35424]
+  0x1800016C0: 44 8B C0                       mov      r8d, eax
+  0x1800016C3: E8 38 F9 FF FF                 call     0x180001000
+  0x1800016C8: EB 51                          jmp      0x18000171b
+  0x1800016CA: 48 83 7F 18 00                 cmp      qword ptr [rdi + 0x18], 0
+  0x1800016CF: 74 4A                          je       0x18000171b
+  0x1800016D1: 80 7F 10 00                    cmp      byte ptr [rdi + 0x10], 0
+  0x1800016D5: 74 44                          je       0x18000171b
+  0x1800016D7: FF 15 3B DC 02 00              call     qword ptr [rip + 0x2dc3b]
+  0x1800016DD: 8B D8                          mov      ebx, eax
+  0x1800016DF: FF 15 EB DE 02 00              call     qword ptr [rip + 0x2deeb]
+  0x1800016E5: 48 8D 15 FC 54 03 00           lea      rdx, [rip + 0x354fc]
+  0x1800016EC: 0F 57 D2                       xorps    xmm2, xmm2
+  0x1800016EF: 8B C8                          mov      ecx, eax
+  0x1800016F1: 48 8D 05 B8 54 03 00           lea      rax, [rip + 0x354b8]
+  0x1800016F8: 44 8B CB                       mov      r9d, ebx
+  0x1800016FB: 48 89 44 24 20                 mov      qword ptr [rsp + 0x20], rax
+  0x180001700: F2 48 0F 2A D1                 cvtsi2sd xmm2, rcx
+  0x180001705: 48 8B 4F 18                    mov      rcx, qword ptr [rdi + 0x18]
+  0x180001709: F2 0F 5E 15 D7 77 03 00        divsd    xmm2, qword ptr [rip + 0x377d7]
+  0x180001711: 66 49 0F 7E D0                 movq     r8, xmm2
+
+============================================================
+Function containing DETACH (0x9C402414)
+IOCTL at VA=0x18000163D, estimated function start=0x1800015DF
+============================================================
+  0x1800015DF: CC                             int3     
+  0x1800015E0: 48 89 5C 24 18                 mov      qword ptr [rsp + 0x18], rbx
+  0x1800015E5: 57                             push     rdi
+  0x1800015E6: 48 83 EC 60                    sub      rsp, 0x60
+  0x1800015EA: 48 8B 05 7F 3A 04 00           mov      rax, qword ptr [rip + 0x43a7f]
+  0x1800015F1: 48 33 C4                       xor      rax, rsp
+  0x1800015F4: 48 89 44 24 58                 mov      qword ptr [rsp + 0x58], rax
+  0x1800015F9: 48 83 39 00                    cmp      qword ptr [rcx], 0
+  0x1800015FD: 8B DA                          mov      ebx, edx
+  0x1800015FF: 48 8B F9                       mov      rdi, rcx
+  0x180001602: 0F 84 13 01 00 00              je       0x18000171b
+  0x180001608: FF 15 FA DC 02 00              call     qword ptr [rip + 0x2dcfa]
+  0x18000160E: 33 C9                          xor      ecx, ecx
+  0x180001610: 4C 8D 44 24 48                 lea      r8, [rsp + 0x48]
+  0x180001615: 48 89 4C 24 38                 mov      qword ptr [rsp + 0x38], rcx
+  0x18000161A: 89 44 24 4C                    mov      dword ptr [rsp + 0x4c], eax
+  0x18000161E: 48 8D 44 24 40                 lea      rax, [rsp + 0x40]
+  0x180001623: 48 89 44 24 30                 mov      qword ptr [rsp + 0x30], rax
+  0x180001628: 89 4C 24 28                    mov      dword ptr [rsp + 0x28], ecx
+  0x18000162C: 89 4C 24 40                    mov      dword ptr [rsp + 0x40], ecx
+  0x180001630: 48 89 4C 24 20                 mov      qword ptr [rsp + 0x20], rcx
+  0x180001635: 44 8D 49 0C                    lea      r9d, [rcx + 0xc]
+  0x180001639: 48 8B 0F                       mov      rcx, qword ptr [rdi]
+  0x18000163C: BA 14 24 40 9C                 mov      edx, 0x9c402414
+  0x180001641: C7 44 24 48 00 00 01 01        mov      dword ptr [rsp + 0x48], 0x1010000 <-- MAGIC
+  0x180001649: 89 5C 24 50                    mov      dword ptr [rsp + 0x50], ebx
+  0x18000164D: FF 15 D5 DC 02 00              call     qword ptr [rip + 0x2dcd5] <-- CALL DeviceIoControl
+  0x180001653: 85 C0                          test     eax, eax
+  0x180001655: 75 73                          jne      0x1800016ca
+  0x180001657: 48 83 7F 18 00                 cmp      qword ptr [rdi + 0x18], 0
+  0x18000165C: 0F 84 B9 00 00 00              je       0x18000171b
+  0x180001662: 38 47 10                       cmp      byte ptr [rdi + 0x10], al
+  0x180001665: 0F 84 B0 00 00 00              je       0x18000171b
+  0x18000166B: FF 15 A7 DC 02 00              call     qword ptr [rip + 0x2dca7]
+  0x180001671: 8B D8                          mov      ebx, eax
+  0x180001673: FF 15 57 DF 02 00              call     qword ptr [rip + 0x2df57]
+  0x180001679: 48 8D 15 40 55 03 00           lea      rdx, [rip + 0x35540]
+  0x180001680: 0F 57 D2                       xorps    xmm2, xmm2
+  0x180001683: 8B C8                          mov      ecx, eax
+  0x180001685: 48 8D 05 24 55 03 00           lea      rax, [rip + 0x35524]
+  0x18000168C: 44 8B CB                       mov      r9d, ebx
+  0x18000168F: 48 89 44 24 20                 mov      qword ptr [rsp + 0x20], rax
+  0x180001694: F2 48 0F 2A D1                 cvtsi2sd xmm2, rcx
+  0x180001699: 48 8B 4F 18                    mov      rcx, qword ptr [rdi + 0x18]
+  0x18000169D: F2 0F 5E 15 43 78 03 00        divsd    xmm2, qword ptr [rip + 0x37843]
+  0x1800016A5: 66 49 0F 7E D0                 movq     r8, xmm2
+  0x1800016AA: E8 51 F9 FF FF                 call     0x180001000
+  0x1800016AF: FF 15 7B DC 02 00              call     qword ptr [rip + 0x2dc7b]
+  0x1800016B5: 48 8B 4F 18                    mov      rcx, qword ptr [rdi + 0x18]
+  0x1800016B9: 48 8D 15 24 54 03 00           lea      rdx, [rip + 0x35424]
+  0x1800016C0: 44 8B C0                       mov      r8d, eax
+  0x1800016C3: E8 38 F9 FF FF                 call     0x180001000
+  0x1800016C8: EB 51                          jmp      0x18000171b
+  0x1800016CA: 48 83 7F 18 00                 cmp      qword ptr [rdi + 0x18], 0
+  0x1800016CF: 74 4A                          je       0x18000171b
+  0x1800016D1: 80 7F 10 00                    cmp      byte ptr [rdi + 0x10], 0
+  0x1800016D5: 74 44                          je       0x18000171b
+  0x1800016D7: FF 15 3B DC 02 00              call     qword ptr [rip + 0x2dc3b]
+  0x1800016DD: 8B D8                          mov      ebx, eax
+  0x1800016DF: FF 15 EB DE 02 00              call     qword ptr [rip + 0x2deeb]
+  0x1800016E5: 48 8D 15 FC 54 03 00           lea      rdx, [rip + 0x354fc]
+  0x1800016EC: 0F 57 D2                       xorps    xmm2, xmm2
+  0x1800016EF: 8B C8                          mov      ecx, eax
+  0x1800016F1: 48 8D 05 B8 54 03 00           lea      rax, [rip + 0x354b8]
+  0x1800016F8: 44 8B CB                       mov      r9d, ebx
+  0x1800016FB: 48 89 44 24 20                 mov      qword ptr [rsp + 0x20], rax
+  0x180001700: F2 48 0F 2A D1                 cvtsi2sd xmm2, rcx
+  0x180001705: 48 8B 4F 18                    mov      rcx, qword ptr [rdi + 0x18]
+  0x180001709: F2 0F 5E 15 D7 77 03 00        divsd    xmm2, qword ptr [rip + 0x377d7]
+  0x180001711: 66 49 0F 7E D0                 movq     r8, xmm2
+  0x180001716: E8 E5 F8 FF FF                 call     0x180001000
+  0x18000171B: 48 8B 4C 24 58                 mov      rcx, qword ptr [rsp + 0x58]
+  0x180001720: 48 33 CC                       xor      rcx, rsp
+  0x180001723: E8 58 7C 01 00                 call     0x180019380
+  0x180001728: 48 8B 9C 24 80 00 00 00        mov      rbx, qword ptr [rsp + 0x80]
+  0x180001730: 48 83 C4 60                    add      rsp, 0x60
+  0x180001734: 5F                             pop      rdi
+  0x180001735: C3                             ret      
+  0x180001736: CC                             int3     
+  0x180001737: CC                             int3     
+  0x180001738: CC                             int3     
+  0x180001739: CC                             int3     
+  0x18000173A: CC                             int3     
+  0x18000173B: CC                             int3     
+  0x18000173C: CC                             int3     
+  0x18000173D: CC                             int3     
+  0x18000173E: CC                             int3     
+  0x18000173F: CC                             int3     
+  0x180001740: 40 53                          push     rbx
+  0x180001742: 57                             push     rdi
+  0x180001743: 48 83 EC 68                    sub      rsp, 0x68
+  0x180001747: 48 8B 05 22 39 04 00           mov      rax, qword ptr [rip + 0x43922]
+  0x18000174E: 48 33 C4                       xor      rax, rsp
+  0x180001751: 48 89 44 24 58                 mov      qword ptr [rsp + 0x58], rax
+  0x180001756: 48 83 39 00                    cmp      qword ptr [rcx], 0
+  0x18000175A: 8B DA                          mov      ebx, edx
+  0x18000175C: 48 8B F9                       mov      rdi, rcx
+  0x18000175F: 75 07                          jne      0x180001768
+  0x180001761: 32 C0                          xor      al, al
+  0x180001763: E9 34 01 00 00                 jmp      0x18000189c
+  0x180001768: 48 89 AC 24 90 00 00 00        mov      qword ptr [rsp + 0x90], rbp
+  0x180001770: 48 89 74 24 60                 mov      qword ptr [rsp + 0x60], rsi
+  0x180001775: FF 15 8D DB 02 00              call     qword ptr [rip + 0x2db8d]
+  0x18000177B: 48 8B 0F                       mov      rcx, qword ptr [rdi]
+  0x18000177E: 33 F6                          xor      esi, esi
+  0x180001780: 89 44 24 4C                    mov      dword ptr [rsp + 0x4c], eax
+  0x180001784: 48 89 74 24 38                 mov      qword ptr [rsp + 0x38], rsi
+  0x180001789: 48 8D 44 24 40                 lea      rax, [rsp + 0x40]
+  0x18000178E: 4C 8D 44 24 48                 lea      r8, [rsp + 0x48]
+  0x180001793: 48 89 44 24 30                 mov      qword ptr [rsp + 0x30], rax
+  0x180001798: 44 8D 4E 0C                    lea      r9d, [rsi + 0xc]
+  0x18000179C: BA 20 24 40 9C                 mov      edx, 0x9c402420
+  0x1800017A1: 89 74 24 28                    mov      dword ptr [rsp + 0x28], esi
+  0x1800017A5: C7 44 24 48 00 00 01 01        mov      dword ptr [rsp + 0x48], 0x1010000 <-- MAGIC
+  0x1800017AD: 89 5C 24 50                    mov      dword ptr [rsp + 0x50], ebx
+  0x1800017B1: 48 89 74 24 20                 mov      qword ptr [rsp + 0x20], rsi
+  0x1800017B6: 89 74 24 40                    mov      dword ptr [rsp + 0x40], esi
+  0x1800017BA: FF 15 68 DB 02 00              call     qword ptr [rip + 0x2db68] <-- CALL DeviceIoControl
+  0x1800017C0: 8B E8                          mov      ebp, eax
+  0x1800017C2: 85 C0                          test     eax, eax
+  0x1800017C4: 75 73                          jne      0x180001839
+  0x1800017C6: 48 39 77 18                    cmp      qword ptr [rdi + 0x18], rsi
+  0x1800017CA: 0F 84 B9 00 00 00              je       0x180001889
+  0x1800017D0: 40 38 77 10                    cmp      byte ptr [rdi + 0x10], sil
+  0x1800017D4: 0F 84 AF 00 00 00              je       0x180001889
+  0x1800017DA: FF 15 38 DB 02 00              call     qword ptr [rip + 0x2db38]
+  0x1800017E0: 8B D8                          mov      ebx, eax
+  0x1800017E2: FF 15 E8 DD 02 00              call     qword ptr [rip + 0x2dde8]
+  0x1800017E8: 48 8B 4F 18                    mov      rcx, qword ptr [rdi + 0x18]
+  0x1800017EC: 0F 57 D2                       xorps    xmm2, xmm2
+  0x1800017EF: 8B C0                          mov      eax, eax
+  0x1800017F1: 48 8D 15 30 54 03 00           lea      rdx, [rip + 0x35430]
+  0x1800017F8: 44 8B CB                       mov      r9d, ebx
+  0x1800017FB: F2 48 0F 2A D0                 cvtsi2sd xmm2, rax
+  0x180001800: 48 8D 05 09 54 03 00           lea      rax, [rip + 0x35409]
+  0x180001807: 48 89 44 24 20                 mov      qword ptr [rsp + 0x20], rax
+  0x18000180C: F2 0F 5E 15 D4 76 03 00        divsd    xmm2, qword ptr [rip + 0x376d4]
+  0x180001814: 66 49 0F 7E D0                 movq     r8, xmm2
+  0x180001819: E8 E2 F7 FF FF                 call     0x180001000
+  0x18000181E: FF 15 0C DB 02 00              call     qword ptr [rip + 0x2db0c]
+  0x180001824: 48 8B 4F 18                    mov      rcx, qword ptr [rdi + 0x18]
+  0x180001828: 48 8D 15 B5 52 03 00           lea      rdx, [rip + 0x352b5]
+  0x18000182F: 44 8B C0                       mov      r8d, eax
+  0x180001832: E8 C9 F7 FF FF                 call     0x180001000
+  0x180001837: EB 50                          jmp      0x180001889
+  0x180001839: 48 39 77 18                    cmp      qword ptr [rdi + 0x18], rsi
+  0x18000183D: 74 4A                          je       0x180001889
+  0x18000183F: 40 38 77 10                    cmp      byte ptr [rdi + 0x10], sil
+  0x180001843: 74 44                          je       0x180001889
+  0x180001845: FF 15 CD DA 02 00              call     qword ptr [rip + 0x2dacd]
+  0x18000184B: 8B D8                          mov      ebx, eax
+  0x18000184D: FF 15 7D DD 02 00              call     qword ptr [rip + 0x2dd7d]
+  0x180001853: 48 8B 4F 18                    mov      rcx, qword ptr [rdi + 0x18]
+  0x180001857: 0F 57 D2                       xorps    xmm2, xmm2
+  0x18000185A: 8B C0                          mov      eax, eax
+  0x18000185C: 48 8D 15 ED 53 03 00           lea      rdx, [rip + 0x353ed]
+  0x180001863: 44 8B CB                       mov      r9d, ebx
+  0x180001866: F2 48 0F 2A D0                 cvtsi2sd xmm2, rax
+  0x18000186B: 48 8D 05 9E 53 03 00           lea      rax, [rip + 0x3539e]
+  0x180001872: 48 89 44 24 20                 mov      qword ptr [rsp + 0x20], rax
+  0x180001877: F2 0F 5E 15 69 76 03 00        divsd    xmm2, qword ptr [rip + 0x37669]
+  0x18000187F: 66 49 0F 7E D0                 movq     r8, xmm2
+  0x180001884: E8 77 F7 FF FF                 call     0x180001000
+  0x180001889: 48 8B 74 24 60                 mov      rsi, qword ptr [rsp + 0x60]
+  0x18000188E: 83 FD 01                       cmp      ebp, 1
+  0x180001891: 48 8B AC 24 90 00 00 00        mov      rbp, qword ptr [rsp + 0x90]
+  0x180001899: 0F 94 C0                       sete     al
+  0x18000189C: 48 8B 4C 24 58                 mov      rcx, qword ptr [rsp + 0x58]
+  0x1800018A1: 48 33 CC                       xor      rcx, rsp
+  0x1800018A4: E8 D7 7A 01 00                 call     0x180019380
+  0x1800018A9: 48 83 C4 68                    add      rsp, 0x68
+  0x1800018AD: 5F                             pop      rdi
+  0x1800018AE: 5B                             pop      rbx
+  0x1800018AF: C3                             ret      
+
+============================================================
+Function containing START (0x9C402420)
+IOCTL at VA=0x18000179D, estimated function start=0x18000173F
+============================================================
+  0x18000173F: CC                             int3     
+  0x180001740: 40 53                          push     rbx
+  0x180001742: 57                             push     rdi
+  0x180001743: 48 83 EC 68                    sub      rsp, 0x68
+  0x180001747: 48 8B 05 22 39 04 00           mov      rax, qword ptr [rip + 0x43922]
+  0x18000174E: 48 33 C4                       xor      rax, rsp
+  0x180001751: 48 89 44 24 58                 mov      qword ptr [rsp + 0x58], rax
+  0x180001756: 48 83 39 00                    cmp      qword ptr [rcx], 0
+  0x18000175A: 8B DA                          mov      ebx, edx
+  0x18000175C: 48 8B F9                       mov      rdi, rcx
+  0x18000175F: 75 07                          jne      0x180001768
+  0x180001761: 32 C0                          xor      al, al
+  0x180001763: E9 34 01 00 00                 jmp      0x18000189c
+  0x180001768: 48 89 AC 24 90 00 00 00        mov      qword ptr [rsp + 0x90], rbp
+  0x180001770: 48 89 74 24 60                 mov      qword ptr [rsp + 0x60], rsi
+  0x180001775: FF 15 8D DB 02 00              call     qword ptr [rip + 0x2db8d]
+  0x18000177B: 48 8B 0F                       mov      rcx, qword ptr [rdi]
+  0x18000177E: 33 F6                          xor      esi, esi
+  0x180001780: 89 44 24 4C                    mov      dword ptr [rsp + 0x4c], eax
+  0x180001784: 48 89 74 24 38                 mov      qword ptr [rsp + 0x38], rsi
+  0x180001789: 48 8D 44 24 40                 lea      rax, [rsp + 0x40]
+  0x18000178E: 4C 8D 44 24 48                 lea      r8, [rsp + 0x48]
+  0x180001793: 48 89 44 24 30                 mov      qword ptr [rsp + 0x30], rax
+  0x180001798: 44 8D 4E 0C                    lea      r9d, [rsi + 0xc]
+  0x18000179C: BA 20 24 40 9C                 mov      edx, 0x9c402420
+  0x1800017A1: 89 74 24 28                    mov      dword ptr [rsp + 0x28], esi
+  0x1800017A5: C7 44 24 48 00 00 01 01        mov      dword ptr [rsp + 0x48], 0x1010000 <-- MAGIC
+  0x1800017AD: 89 5C 24 50                    mov      dword ptr [rsp + 0x50], ebx
+  0x1800017B1: 48 89 74 24 20                 mov      qword ptr [rsp + 0x20], rsi
+  0x1800017B6: 89 74 24 40                    mov      dword ptr [rsp + 0x40], esi
+  0x1800017BA: FF 15 68 DB 02 00              call     qword ptr [rip + 0x2db68] <-- CALL DeviceIoControl
+  0x1800017C0: 8B E8                          mov      ebp, eax
+  0x1800017C2: 85 C0                          test     eax, eax
+  0x1800017C4: 75 73                          jne      0x180001839
+  0x1800017C6: 48 39 77 18                    cmp      qword ptr [rdi + 0x18], rsi
+  0x1800017CA: 0F 84 B9 00 00 00              je       0x180001889
+  0x1800017D0: 40 38 77 10                    cmp      byte ptr [rdi + 0x10], sil
+  0x1800017D4: 0F 84 AF 00 00 00              je       0x180001889
+  0x1800017DA: FF 15 38 DB 02 00              call     qword ptr [rip + 0x2db38]
+  0x1800017E0: 8B D8                          mov      ebx, eax
+  0x1800017E2: FF 15 E8 DD 02 00              call     qword ptr [rip + 0x2dde8]
+  0x1800017E8: 48 8B 4F 18                    mov      rcx, qword ptr [rdi + 0x18]
+  0x1800017EC: 0F 57 D2                       xorps    xmm2, xmm2
+  0x1800017EF: 8B C0                          mov      eax, eax
+  0x1800017F1: 48 8D 15 30 54 03 00           lea      rdx, [rip + 0x35430]
+  0x1800017F8: 44 8B CB                       mov      r9d, ebx
+  0x1800017FB: F2 48 0F 2A D0                 cvtsi2sd xmm2, rax
+  0x180001800: 48 8D 05 09 54 03 00           lea      rax, [rip + 0x35409]
+  0x180001807: 48 89 44 24 20                 mov      qword ptr [rsp + 0x20], rax
+  0x18000180C: F2 0F 5E 15 D4 76 03 00        divsd    xmm2, qword ptr [rip + 0x376d4]
+  0x180001814: 66 49 0F 7E D0                 movq     r8, xmm2
+  0x180001819: E8 E2 F7 FF FF                 call     0x180001000
+  0x18000181E: FF 15 0C DB 02 00              call     qword ptr [rip + 0x2db0c]
+  0x180001824: 48 8B 4F 18                    mov      rcx, qword ptr [rdi + 0x18]
+  0x180001828: 48 8D 15 B5 52 03 00           lea      rdx, [rip + 0x352b5]
+  0x18000182F: 44 8B C0                       mov      r8d, eax
+  0x180001832: E8 C9 F7 FF FF                 call     0x180001000
+  0x180001837: EB 50                          jmp      0x180001889
+  0x180001839: 48 39 77 18                    cmp      qword ptr [rdi + 0x18], rsi
+  0x18000183D: 74 4A                          je       0x180001889
+  0x18000183F: 40 38 77 10                    cmp      byte ptr [rdi + 0x10], sil
+  0x180001843: 74 44                          je       0x180001889
+  0x180001845: FF 15 CD DA 02 00              call     qword ptr [rip + 0x2dacd]
+  0x18000184B: 8B D8                          mov      ebx, eax
+  0x18000184D: FF 15 7D DD 02 00              call     qword ptr [rip + 0x2dd7d]
+  0x180001853: 48 8B 4F 18                    mov      rcx, qword ptr [rdi + 0x18]
+  0x180001857: 0F 57 D2                       xorps    xmm2, xmm2
+  0x18000185A: 8B C0                          mov      eax, eax
+  0x18000185C: 48 8D 15 ED 53 03 00           lea      rdx, [rip + 0x353ed]
+  0x180001863: 44 8B CB                       mov      r9d, ebx
+  0x180001866: F2 48 0F 2A D0                 cvtsi2sd xmm2, rax
+  0x18000186B: 48 8D 05 9E 53 03 00           lea      rax, [rip + 0x3539e]
+  0x180001872: 48 89 44 24 20                 mov      qword ptr [rsp + 0x20], rax
+  0x180001877: F2 0F 5E 15 69 76 03 00        divsd    xmm2, qword ptr [rip + 0x37669]
+  0x18000187F: 66 49 0F 7E D0                 movq     r8, xmm2
+  0x180001884: E8 77 F7 FF FF                 call     0x180001000
+  0x180001889: 48 8B 74 24 60                 mov      rsi, qword ptr [rsp + 0x60]
+  0x18000188E: 83 FD 01                       cmp      ebp, 1
+  0x180001891: 48 8B AC 24 90 00 00 00        mov      rbp, qword ptr [rsp + 0x90]
+  0x180001899: 0F 94 C0                       sete     al
+  0x18000189C: 48 8B 4C 24 58                 mov      rcx, qword ptr [rsp + 0x58]
+  0x1800018A1: 48 33 CC                       xor      rcx, rsp
+  0x1800018A4: E8 D7 7A 01 00                 call     0x180019380
+  0x1800018A9: 48 83 C4 68                    add      rsp, 0x68
+  0x1800018AD: 5F                             pop      rdi
+  0x1800018AE: 5B                             pop      rbx
+  0x1800018AF: C3                             ret      
+  0x1800018B0: 40 53                          push     rbx
+  0x1800018B2: 57                             push     rdi
+  0x1800018B3: 48 83 EC 68                    sub      rsp, 0x68
+  0x1800018B7: 48 8B 05 B2 37 04 00           mov      rax, qword ptr [rip + 0x437b2]
+  0x1800018BE: 48 33 C4                       xor      rax, rsp
+  0x1800018C1: 48 89 44 24 58                 mov      qword ptr [rsp + 0x58], rax
+  0x1800018C6: 48 83 39 00                    cmp      qword ptr [rcx], 0
+  0x1800018CA: 8B DA                          mov      ebx, edx
+  0x1800018CC: 48 8B F9                       mov      rdi, rcx
+  0x1800018CF: 75 07                          jne      0x1800018d8
+  0x1800018D1: 32 C0                          xor      al, al
+  0x1800018D3: E9 34 01 00 00                 jmp      0x180001a0c
+  0x1800018D8: 48 89 AC 24 90 00 00 00        mov      qword ptr [rsp + 0x90], rbp
+  0x1800018E0: 48 89 74 24 60                 mov      qword ptr [rsp + 0x60], rsi
+  0x1800018E5: FF 15 1D DA 02 00              call     qword ptr [rip + 0x2da1d]
+  0x1800018EB: 48 8B 0F                       mov      rcx, qword ptr [rdi]
+  0x1800018EE: 33 F6                          xor      esi, esi
+  0x1800018F0: 89 44 24 4C                    mov      dword ptr [rsp + 0x4c], eax
+  0x1800018F4: 48 89 74 24 38                 mov      qword ptr [rsp + 0x38], rsi
+  0x1800018F9: 48 8D 44 24 40                 lea      rax, [rsp + 0x40]
+  0x1800018FE: 4C 8D 44 24 48                 lea      r8, [rsp + 0x48]
+  0x180001903: 48 89 44 24 30                 mov      qword ptr [rsp + 0x30], rax
+  0x180001908: 44 8D 4E 0C                    lea      r9d, [rsi + 0xc]
+  0x18000190C: BA 24 24 40 9C                 mov      edx, 0x9c402424
+  0x180001911: 89 74 24 28                    mov      dword ptr [rsp + 0x28], esi
+  0x180001915: C7 44 24 48 00 00 01 01        mov      dword ptr [rsp + 0x48], 0x1010000 <-- MAGIC
+  0x18000191D: 89 5C 24 50                    mov      dword ptr [rsp + 0x50], ebx
+  0x180001921: 48 89 74 24 20                 mov      qword ptr [rsp + 0x20], rsi
+  0x180001926: 89 74 24 40                    mov      dword ptr [rsp + 0x40], esi
+  0x18000192A: FF 15 F8 D9 02 00              call     qword ptr [rip + 0x2d9f8] <-- CALL DeviceIoControl
+  0x180001930: 8B E8                          mov      ebp, eax
+  0x180001932: 85 C0                          test     eax, eax
+  0x180001934: 75 73                          jne      0x1800019a9
+  0x180001936: 48 39 77 18                    cmp      qword ptr [rdi + 0x18], rsi
+  0x18000193A: 0F 84 B9 00 00 00              je       0x1800019f9
+  0x180001940: 40 38 77 10                    cmp      byte ptr [rdi + 0x10], sil
+  0x180001944: 0F 84 AF 00 00 00              je       0x1800019f9
+  0x18000194A: FF 15 C8 D9 02 00              call     qword ptr [rip + 0x2d9c8]
+  0x180001950: 8B D8                          mov      ebx, eax
+  0x180001952: FF 15 78 DC 02 00              call     qword ptr [rip + 0x2dc78]
+  0x180001958: 48 8B 4F 18                    mov      rcx, qword ptr [rdi + 0x18]
+  0x18000195C: 0F 57 D2                       xorps    xmm2, xmm2
+  0x18000195F: 8B C0                          mov      eax, eax
+  0x180001961: 48 8D 15 28 53 03 00           lea      rdx, [rip + 0x35328]
+  0x180001968: 44 8B CB                       mov      r9d, ebx
+  0x18000196B: F2 48 0F 2A D0                 cvtsi2sd xmm2, rax
+  0x180001970: 48 8D 05 01 53 03 00           lea      rax, [rip + 0x35301]
+  0x180001977: 48 89 44 24 20                 mov      qword ptr [rsp + 0x20], rax
+  0x18000197C: F2 0F 5E 15 64 75 03 00        divsd    xmm2, qword ptr [rip + 0x37564]
+  0x180001984: 66 49 0F 7E D0                 movq     r8, xmm2
+  0x180001989: E8 72 F6 FF FF                 call     0x180001000
+  0x18000198E: FF 15 9C D9 02 00              call     qword ptr [rip + 0x2d99c]
+  0x180001994: 48 8B 4F 18                    mov      rcx, qword ptr [rdi + 0x18]
+  0x180001998: 48 8D 15 45 51 03 00           lea      rdx, [rip + 0x35145]
+  0x18000199F: 44 8B C0                       mov      r8d, eax
+  0x1800019A2: E8 59 F6 FF FF                 call     0x180001000
+  0x1800019A7: EB 50                          jmp      0x1800019f9
+  0x1800019A9: 48 39 77 18                    cmp      qword ptr [rdi + 0x18], rsi
+  0x1800019AD: 74 4A                          je       0x1800019f9
+  0x1800019AF: 40 38 77 10                    cmp      byte ptr [rdi + 0x10], sil
+  0x1800019B3: 74 44                          je       0x1800019f9
+  0x1800019B5: FF 15 5D D9 02 00              call     qword ptr [rip + 0x2d95d]
+  0x1800019BB: 8B D8                          mov      ebx, eax
+  0x1800019BD: FF 15 0D DC 02 00              call     qword ptr [rip + 0x2dc0d]
+  0x1800019C3: 48 8B 4F 18                    mov      rcx, qword ptr [rdi + 0x18]
+  0x1800019C7: 0F 57 D2                       xorps    xmm2, xmm2
+  0x1800019CA: 8B C0                          mov      eax, eax
+  0x1800019CC: 48 8D 15 E5 52 03 00           lea      rdx, [rip + 0x352e5]
+  0x1800019D3: 44 8B CB                       mov      r9d, ebx
+  0x1800019D6: F2 48 0F 2A D0                 cvtsi2sd xmm2, rax
+  0x1800019DB: 48 8D 05 96 52 03 00           lea      rax, [rip + 0x35296]
+  0x1800019E2: 48 89 44 24 20                 mov      qword ptr [rsp + 0x20], rax
+  0x1800019E7: F2 0F 5E 15 F9 74 03 00        divsd    xmm2, qword ptr [rip + 0x374f9]
+  0x1800019EF: 66 49 0F 7E D0                 movq     r8, xmm2
+  0x1800019F4: E8 07 F6 FF FF                 call     0x180001000
+  0x1800019F9: 48 8B 74 24 60                 mov      rsi, qword ptr [rsp + 0x60]
+  0x1800019FE: 83 FD 01                       cmp      ebp, 1
+  0x180001A01: 48 8B AC 24 90 00 00 00        mov      rbp, qword ptr [rsp + 0x90]
+  0x180001A09: 0F 94 C0                       sete     al
+  0x180001A0C: 48 8B 4C 24 58                 mov      rcx, qword ptr [rsp + 0x58]
+  0x180001A11: 48 33 CC                       xor      rcx, rsp
+  0x180001A14: E8 67 79 01 00                 call     0x180019380
+  0x180001A19: 48 83 C4 68                    add      rsp, 0x68
+  0x180001A1D: 5F                             pop      rdi
+  0x180001A1E: 5B                             pop      rbx
+  0x180001A1F: C3                             ret      
+
+============================================================
+Function containing STOP (0x9C402424)
+IOCTL at VA=0x18000190D, estimated function start=0x1800018AF
+============================================================
+  0x1800018AF: C3                             ret      
+  0x1800018B0: 40 53                          push     rbx
+  0x1800018B2: 57                             push     rdi
+  0x1800018B3: 48 83 EC 68                    sub      rsp, 0x68
+  0x1800018B7: 48 8B 05 B2 37 04 00           mov      rax, qword ptr [rip + 0x437b2]
+  0x1800018BE: 48 33 C4                       xor      rax, rsp
+  0x1800018C1: 48 89 44 24 58                 mov      qword ptr [rsp + 0x58], rax
+  0x1800018C6: 48 83 39 00                    cmp      qword ptr [rcx], 0
+  0x1800018CA: 8B DA                          mov      ebx, edx
+  0x1800018CC: 48 8B F9                       mov      rdi, rcx
+  0x1800018CF: 75 07                          jne      0x1800018d8
+  0x1800018D1: 32 C0                          xor      al, al
+  0x1800018D3: E9 34 01 00 00                 jmp      0x180001a0c
+  0x1800018D8: 48 89 AC 24 90 00 00 00        mov      qword ptr [rsp + 0x90], rbp
+  0x1800018E0: 48 89 74 24 60                 mov      qword ptr [rsp + 0x60], rsi
+  0x1800018E5: FF 15 1D DA 02 00              call     qword ptr [rip + 0x2da1d]
+  0x1800018EB: 48 8B 0F                       mov      rcx, qword ptr [rdi]
+  0x1800018EE: 33 F6                          xor      esi, esi
+  0x1800018F0: 89 44 24 4C                    mov      dword ptr [rsp + 0x4c], eax
+  0x1800018F4: 48 89 74 24 38                 mov      qword ptr [rsp + 0x38], rsi
+  0x1800018F9: 48 8D 44 24 40                 lea      rax, [rsp + 0x40]
+  0x1800018FE: 4C 8D 44 24 48                 lea      r8, [rsp + 0x48]
+  0x180001903: 48 89 44 24 30                 mov      qword ptr [rsp + 0x30], rax
+  0x180001908: 44 8D 4E 0C                    lea      r9d, [rsi + 0xc]
+  0x18000190C: BA 24 24 40 9C                 mov      edx, 0x9c402424
+  0x180001911: 89 74 24 28                    mov      dword ptr [rsp + 0x28], esi
+  0x180001915: C7 44 24 48 00 00 01 01        mov      dword ptr [rsp + 0x48], 0x1010000 <-- MAGIC
+  0x18000191D: 89 5C 24 50                    mov      dword ptr [rsp + 0x50], ebx
+  0x180001921: 48 89 74 24 20                 mov      qword ptr [rsp + 0x20], rsi
+  0x180001926: 89 74 24 40                    mov      dword ptr [rsp + 0x40], esi
+  0x18000192A: FF 15 F8 D9 02 00              call     qword ptr [rip + 0x2d9f8] <-- CALL DeviceIoControl
+  0x180001930: 8B E8                          mov      ebp, eax
+  0x180001932: 85 C0                          test     eax, eax
+  0x180001934: 75 73                          jne      0x1800019a9
+  0x180001936: 48 39 77 18                    cmp      qword ptr [rdi + 0x18], rsi
+  0x18000193A: 0F 84 B9 00 00 00              je       0x1800019f9
+  0x180001940: 40 38 77 10                    cmp      byte ptr [rdi + 0x10], sil
+  0x180001944: 0F 84 AF 00 00 00              je       0x1800019f9
+  0x18000194A: FF 15 C8 D9 02 00              call     qword ptr [rip + 0x2d9c8]
+  0x180001950: 8B D8                          mov      ebx, eax
+  0x180001952: FF 15 78 DC 02 00              call     qword ptr [rip + 0x2dc78]
+  0x180001958: 48 8B 4F 18                    mov      rcx, qword ptr [rdi + 0x18]
+  0x18000195C: 0F 57 D2                       xorps    xmm2, xmm2
+  0x18000195F: 8B C0                          mov      eax, eax
+  0x180001961: 48 8D 15 28 53 03 00           lea      rdx, [rip + 0x35328]
+  0x180001968: 44 8B CB                       mov      r9d, ebx
+  0x18000196B: F2 48 0F 2A D0                 cvtsi2sd xmm2, rax
+  0x180001970: 48 8D 05 01 53 03 00           lea      rax, [rip + 0x35301]
+  0x180001977: 48 89 44 24 20                 mov      qword ptr [rsp + 0x20], rax
+  0x18000197C: F2 0F 5E 15 64 75 03 00        divsd    xmm2, qword ptr [rip + 0x37564]
+  0x180001984: 66 49 0F 7E D0                 movq     r8, xmm2
+  0x180001989: E8 72 F6 FF FF                 call     0x180001000
+  0x18000198E: FF 15 9C D9 02 00              call     qword ptr [rip + 0x2d99c]
+  0x180001994: 48 8B 4F 18                    mov      rcx, qword ptr [rdi + 0x18]
+  0x180001998: 48 8D 15 45 51 03 00           lea      rdx, [rip + 0x35145]
+  0x18000199F: 44 8B C0                       mov      r8d, eax
+  0x1800019A2: E8 59 F6 FF FF                 call     0x180001000
+  0x1800019A7: EB 50                          jmp      0x1800019f9
+  0x1800019A9: 48 39 77 18                    cmp      qword ptr [rdi + 0x18], rsi
+  0x1800019AD: 74 4A                          je       0x1800019f9
+  0x1800019AF: 40 38 77 10                    cmp      byte ptr [rdi + 0x10], sil
+  0x1800019B3: 74 44                          je       0x1800019f9
+  0x1800019B5: FF 15 5D D9 02 00              call     qword ptr [rip + 0x2d95d]
+  0x1800019BB: 8B D8                          mov      ebx, eax
+  0x1800019BD: FF 15 0D DC 02 00              call     qword ptr [rip + 0x2dc0d]
+  0x1800019C3: 48 8B 4F 18                    mov      rcx, qword ptr [rdi + 0x18]
+  0x1800019C7: 0F 57 D2                       xorps    xmm2, xmm2
+  0x1800019CA: 8B C0                          mov      eax, eax
+  0x1800019CC: 48 8D 15 E5 52 03 00           lea      rdx, [rip + 0x352e5]
+  0x1800019D3: 44 8B CB                       mov      r9d, ebx
+  0x1800019D6: F2 48 0F 2A D0                 cvtsi2sd xmm2, rax
+  0x1800019DB: 48 8D 05 96 52 03 00           lea      rax, [rip + 0x35296]
+  0x1800019E2: 48 89 44 24 20                 mov      qword ptr [rsp + 0x20], rax
+  0x1800019E7: F2 0F 5E 15 F9 74 03 00        divsd    xmm2, qword ptr [rip + 0x374f9]
+  0x1800019EF: 66 49 0F 7E D0                 movq     r8, xmm2
+  0x1800019F4: E8 07 F6 FF FF                 call     0x180001000
+  0x1800019F9: 48 8B 74 24 60                 mov      rsi, qword ptr [rsp + 0x60]
+  0x1800019FE: 83 FD 01                       cmp      ebp, 1
+  0x180001A01: 48 8B AC 24 90 00 00 00        mov      rbp, qword ptr [rsp + 0x90]
+  0x180001A09: 0F 94 C0                       sete     al
+  0x180001A0C: 48 8B 4C 24 58                 mov      rcx, qword ptr [rsp + 0x58]
+  0x180001A11: 48 33 CC                       xor      rcx, rsp
+  0x180001A14: E8 67 79 01 00                 call     0x180019380
+  0x180001A19: 48 83 C4 68                    add      rsp, 0x68
+  0x180001A1D: 5F                             pop      rdi
+  0x180001A1E: 5B                             pop      rbx
+  0x180001A1F: C3                             ret      
+
+============================================================
+Function containing TRANSFER (0x9C402428)
+IOCTL at VA=0x180001136, estimated function start=0x18000110A
+============================================================
+  0x18000110A: 44 8B 4A 04                    mov      r9d, dword ptr [rdx + 4]
+  0x18000110E: 48 8D 44 24 70                 lea      rax, [rsp + 0x70]
+  0x180001113: 4C 8B C2                       mov      r8, rdx
+  0x180001116: 41 83 E9 80                    sub      r9d, -0x80
+  0x18000111A: 48 89 6C 24 60                 mov      qword ptr [rsp + 0x60], rbp
+  0x18000111F: 33 ED                          xor      ebp, ebp
+  0x180001121: 48 89 6C 24 38                 mov      qword ptr [rsp + 0x38], rbp
+  0x180001126: 48 89 44 24 30                 mov      qword ptr [rsp + 0x30], rax
+  0x18000112B: 44 89 4C 24 28                 mov      dword ptr [rsp + 0x28], r9d
+  0x180001130: 48 89 54 24 20                 mov      qword ptr [rsp + 0x20], rdx
+  0x180001135: BA 28 24 40 9C                 mov      edx, 0x9c402428
+  0x18000113A: 89 6C 24 70                    mov      dword ptr [rsp + 0x70], ebp
+  0x18000113E: FF 15 E4 E1 02 00              call     qword ptr [rip + 0x2e1e4] <-- CALL DeviceIoControl
+  0x180001144: 85 C0                          test     eax, eax
+  0x180001146: 75 18                          jne      0x180001160
+  0x180001148: 40 0F B6 C5                    movzx    eax, bpl
+  0x18000114C: 48 8B 6C 24 60                 mov      rbp, qword ptr [rsp + 0x60]
+  0x180001151: C7 47 40 64 00 00 80           mov      dword ptr [rdi + 0x40], 0x80000064
+  0x180001158: 48 83 C4 40                    add      rsp, 0x40
+  0x18000115C: 5F                             pop      rdi
+  0x18000115D: 5E                             pop      rsi
+  0x18000115E: 5B                             pop      rbx
+  0x18000115F: C3                             ret      
+  0x180001160: 4C 89 74 24 68                 mov      qword ptr [rsp + 0x68], r14
+  0x180001165: 44 8B 77 44                    mov      r14d, dword ptr [rdi + 0x44]
+  0x180001169: 45 85 F6                       test     r14d, r14d
+  0x18000116C: 74 5E                          je       0x1800011cc
+  0x18000116E: 48 39 6E 18                    cmp      qword ptr [rsi + 0x18], rbp
+  0x180001172: 74 4F                          je       0x1800011c3
+  0x180001174: 40 38 6E 10                    cmp      byte ptr [rsi + 0x10], bpl
+  0x180001178: 74 49                          je       0x1800011c3
+  0x18000117A: FF 15 98 E1 02 00              call     qword ptr [rip + 0x2e198]
+  0x180001180: 8B D8                          mov      ebx, eax
+  0x180001182: FF 15 48 E4 02 00              call     qword ptr [rip + 0x2e448]
+  0x180001188: 48 8D 15 11 58 03 00           lea      rdx, [rip + 0x35811]
+  0x18000118F: 0F 57 D2                       xorps    xmm2, xmm2
+  0x180001192: 8B C8                          mov      ecx, eax
+  0x180001194: 48 8D 05 E5 57 03 00           lea      rax, [rip + 0x357e5]
+  0x18000119B: 44 8B CB                       mov      r9d, ebx
+  0x18000119E: 44 89 74 24 28                 mov      dword ptr [rsp + 0x28], r14d
+  0x1800011A3: 48 89 44 24 20                 mov      qword ptr [rsp + 0x20], rax
+  0x1800011A8: F2 48 0F 2A D1                 cvtsi2sd xmm2, rcx
+  0x1800011AD: 48 8B 4E 18                    mov      rcx, qword ptr [rsi + 0x18]
+  0x1800011B1: F2 0F 5E 15 2F 7D 03 00        divsd    xmm2, qword ptr [rip + 0x37d2f]
+  0x1800011B9: 66 49 0F 7E D0                 movq     r8, xmm2
+  0x1800011BE: E8 3D FE FF FF                 call     0x180001000
+  0x1800011C3: C7 47 40 66 00 00 80           mov      dword ptr [rdi + 0x40], 0x80000066
+  0x1800011CA: EB 5B                          jmp      0x180001227
+  0x1800011CC: 8B 7F 40                       mov      edi, dword ptr [rdi + 0x40]
+  0x1800011CF: 85 FF                          test     edi, edi
+  0x1800011D1: 79 54                          jns      0x180001227
+  0x1800011D3: 48 39 6E 18                    cmp      qword ptr [rsi + 0x18], rbp
+  0x1800011D7: 74 4E                          je       0x180001227
+  0x1800011D9: 40 38 6E 10                    cmp      byte ptr [rsi + 0x10], bpl
+  0x1800011DD: 74 48                          je       0x180001227
+  0x1800011DF: FF 15 33 E1 02 00              call     qword ptr [rip + 0x2e133]
+  0x1800011E5: 8B D8                          mov      ebx, eax
+  0x1800011E7: FF 15 E3 E3 02 00              call     qword ptr [rip + 0x2e3e3]
+  0x1800011ED: 48 8D 15 FC 57 03 00           lea      rdx, [rip + 0x357fc]
+  0x1800011F4: 0F 57 D2                       xorps    xmm2, xmm2
+  0x1800011F7: 8B C8                          mov      ecx, eax
+  0x1800011F9: 48 8D 05 80 57 03 00           lea      rax, [rip + 0x35780]
+  0x180001200: 44 8B CB                       mov      r9d, ebx
+  0x180001203: 89 7C 24 28                    mov      dword ptr [rsp + 0x28], edi
+  0x180001207: 48 89 44 24 20                 mov      qword ptr [rsp + 0x20], rax
+  0x18000120C: F2 48 0F 2A D1                 cvtsi2sd xmm2, rcx
+  0x180001211: 48 8B 4E 18                    mov      rcx, qword ptr [rsi + 0x18]
+  0x180001215: F2 0F 5E 15 CB 7C 03 00        divsd    xmm2, qword ptr [rip + 0x37ccb]
+  0x18000121D: 66 49 0F 7E D0                 movq     r8, xmm2
+  0x180001222: E8 D9 FD FF FF                 call     0x180001000
+  0x180001227: 83 7C 24 70 40                 cmp      dword ptr [rsp + 0x70], 0x40
+  0x18000122C: 4C 8B 74 24 68                 mov      r14, qword ptr [rsp + 0x68]
+  0x180001231: 75 05                          jne      0x180001238
+  0x180001233: BD 01 00 00 00                 mov      ebp, 1
+  0x180001238: 40 0F B6 C5                    movzx    eax, bpl
+  0x18000123C: 48 8B 6C 24 60                 mov      rbp, qword ptr [rsp + 0x60]
+  0x180001241: 48 83 C4 40                    add      rsp, 0x40
+  0x180001245: 5F                             pop      rdi
+  0x180001246: 5E                             pop      rsi
+  0x180001247: 5B                             pop      rbx
+  0x180001248: C3                             ret      
+
+======================================================================
+DEVICE ENUMERATION ANALYSIS
+======================================================================
+  GUID string RVA: 0x36D20
+  'WDM2VST Driver' RVA: 0x37188
+  'wave%d' RVA: 0x371A8
+  SHM name RVA: 0x377B8
+  Registry path RVA: 0x37810
+
+  Reference to 'GUID {5B722BF8-...}' at 0x180001ACC:
+       0x180001AB6: 48 33 C4                       xor      rax, rsp
+       0x180001AB9: 48 89 84 24 80 00 00 00        mov      qword ptr [rsp + 0x80], rax
+       0x180001AC1: 48 8B DA                       mov      rbx, rdx
+       0x180001AC4: 48 8B F9                       mov      rdi, rcx
+       0x180001AC7: 48 8D 54 24 30                 lea      rdx, [rsp + 0x30]
+   >>> 0x180001ACC: 48 8D 0D 4D 52 03 00           lea      rcx, [rip + 0x3524d]
+       0x180001AD3: 33 F6                          xor      esi, esi
+       0x180001AD5: FF 15 05 DB 02 00              call     qword ptr [rip + 0x2db05]
+       0x180001ADB: 44 8D 4E 10                    lea      r9d, [rsi + 0x10]
+       0x180001ADF: 48 8D 4C 24 30                 lea      rcx, [rsp + 0x30]
+       0x180001AE4: 45 33 C0                       xor      r8d, r8d
+       0x180001AE7: 33 D2                          xor      edx, edx
+       0x180001AE9: C7 44 24 40 20 00 00 00        mov      dword ptr [rsp + 0x40], 0x20
+       0x180001AF1: C7 44 24 60 20 00 00 00        mov      dword ptr [rsp + 0x60], 0x20
+       0x180001AF9: C7 03 08 00 00 00              mov      dword ptr [rbx], 8
+       0x180001AFF: FF 15 1B D9 02 00              call     qword ptr [rip + 0x2d91b]
+       0x180001B05: 48 8B E8                       mov      rbp, rax
+       0x180001B08: 48 FF C8                       dec      rax
+       0x180001B0B: 48 83 F8 FD                    cmp      rax, -3
+       0x180001B0F: 0F 87 42 01 00 00              ja       0x180001c57
+       0x180001B15: 4C 8D 44 24 40                 lea      r8, [rsp + 0x40]
+       0x180001B1A: 33 D2                          xor      edx, edx
+       0x180001B1C: 48 8B CD                       mov      rcx, rbp
+       0x180001B1F: FF 15 E3 D8 02 00              call     qword ptr [rip + 0x2d8e3]
+       0x180001B25: 85 C0                          test     eax, eax
+
+  Reference to 'WDM2VST Driver' at 0x1800051C1:
+       0x1800051AF: 4C 8D 45 D7                    lea      r8, [rbp - 0x29]
+       0x1800051B3: 48 8D 15 3E A8 02 00           lea      rdx, [rip + 0x2a83e]
+       0x1800051BA: FF 50 28                       call     qword ptr [rax + 0x28]
+       0x1800051BD: 85 C0                          test     eax, eax
+       0x1800051BF: 78 58                          js       0x180005219
+   >>> 0x1800051C1: 48 8D 15 C0 1F 03 00           lea      rdx, [rip + 0x31fc0]
+       0x1800051C8: 48 8B 4D DF                    mov      rcx, qword ptr [rbp - 0x21]
+       0x1800051CC: E8 5B 4C 01 00                 call     0x180019e2c
+       0x1800051D1: 48 85 C0                       test     rax, rax
+       0x1800051D4: 74 40                          je       0x180005216
+       0x1800051D6: 48 8B 55 C7                    mov      rdx, qword ptr [rbp - 0x39]
+       0x1800051DA: 49 8B CF                       mov      rcx, r15
+       0x1800051DD: E8 FE 00 00 00                 call     0x1800052e0
+       0x1800051E2: 41 3B C6                       cmp      eax, r14d
+       0x1800051E5: 75 2F                          jne      0x180005216
+       0x1800051E7: 40 B6 01                       mov      sil, 1
+       0x1800051EA: 48 8B 55 BF                    mov      rdx, qword ptr [rbp - 0x41]
+       0x1800051EE: 66 83 3A 00                    cmp      word ptr [rdx], 0
+       0x1800051F2: 75 05                          jne      0x1800051f9
+       0x1800051F4: 4D 8B C4                       mov      r8, r12
+       0x1800051F7: EB 12                          jmp      0x18000520b
+       0x1800051F9: 49 83 C8 FF                    or       r8, 0xffffffffffffffff
+       0x1800051FD: 0F 1F 00                       nop      dword ptr [rax]
+       0x180005200: 49 FF C0                       inc      r8
+       0x180005203: 66 42 83 3C 42 00              cmp      word ptr [rdx + r8*2], 0
+
+  Reference to 'wave%d' at 0x1800053B3:
+       0x1800053A8: 33 DB                          xor      ebx, ebx
+       0x1800053AA: 39 5E 54                       cmp      dword ptr [rsi + 0x54], ebx
+       0x1800053AD: 76 59                          jbe      0x180005408
+       0x1800053AF: 90                             nop      
+       0x1800053B0: 8D 7B 01                       lea      edi, [rbx + 1]
+   >>> 0x1800053B3: 48 8D 15 EE 1D 03 00           lea      rdx, [rip + 0x31dee]
+       0x1800053BA: 48 8D 4C 24 60                 lea      rcx, [rsp + 0x60]
+       0x1800053BF: 44 8B C7                       mov      r8d, edi
+       0x1800053C2: FF 15 50 A1 02 00              call     qword ptr [rip + 0x2a150]
+       0x1800053C8: 48 8B 4C 24 30                 mov      rcx, qword ptr [rsp + 0x30]
+       0x1800053CD: 48 8D 54 24 60                 lea      rdx, [rsp + 0x60]
+       0x1800053D2: E8 55 4A 01 00                 call     0x180019e2c
+       0x1800053D7: 48 85 C0                       test     rax, rax
+       0x1800053DA: 74 20                          je       0x1800053fc
+       0x1800053DC: 4C 8D 44 24 60                 lea      r8, [rsp + 0x60]
+       0x1800053E1: 4C 2B C0                       sub      r8, rax
+       0x1800053E4: 0F B7 10                       movzx    edx, word ptr [rax]
+       0x1800053E7: 42 0F B7 0C 00                 movzx    ecx, word ptr [rax + r8]
+       0x1800053EC: 2B D1                          sub      edx, ecx
+       0x1800053EE: 75 08                          jne      0x1800053f8
+       0x1800053F0: 48 83 C0 02                    add      rax, 2
+       0x1800053F4: 85 C9                          test     ecx, ecx
+       0x1800053F6: 75 EC                          jne      0x1800053e4
+       0x1800053F8: 85 D2                          test     edx, edx
+       0x1800053FA: 74 09                          je       0x180005405
+
+  Reference to 'Registry Path' at 0x180007EE0:
+       0x180007ED0: 48 89 4C 24 08                 mov      qword ptr [rsp + 8], rcx
+       0x180007ED5: 53                             push     rbx
+       0x180007ED6: 48 83 EC 50                    sub      rsp, 0x50
+       0x180007EDA: 45 84 C0                       test     r8b, r8b
+       0x180007EDD: 48 8B DA                       mov      rbx, rdx
+   >>> 0x180007EE0: 48 8D 15 29 F9 02 00           lea      rdx, [rip + 0x2f929]
+       0x180007EE7: 0F 95 C0                       setne    al
+       0x180007EEA: 48 C7 C1 01 00 00 80           mov      rcx, 0xffffffff80000001
+       0x180007EF1: 45 33 C9                       xor      r9d, r9d
+       0x180007EF4: 04 30                          add      al, 0x30
+       0x180007EF6: 45 33 C0                       xor      r8d, r8d
+       0x180007EF9: C6 44 24 71 00                 mov      byte ptr [rsp + 0x71], 0
+       0x180007EFE: 88 44 24 70                    mov      byte ptr [rsp + 0x70], al
+       0x180007F02: 48 8D 44 24 60                 lea      rax, [rsp + 0x60]
+       0x180007F07: 48 89 44 24 40                 mov      qword ptr [rsp + 0x40], rax
+       0x180007F0C: 48 8D 44 24 78                 lea      rax, [rsp + 0x78]
+       0x180007F11: 48 89 44 24 38                 mov      qword ptr [rsp + 0x38], rax
+       0x180007F16: 33 C0                          xor      eax, eax
+       0x180007F18: 48 89 44 24 30                 mov      qword ptr [rsp + 0x30], rax
+       0x180007F1D: C7 44 24 28 02 00 00 00        mov      dword ptr [rsp + 0x28], 2
+       0x180007F25: 89 44 24 20                    mov      dword ptr [rsp + 0x20], eax
+       0x180007F29: FF 15 29 71 02 00              call     qword ptr [rip + 0x27129]
+       0x180007F2F: 85 C0                          test     eax, eax
+       0x180007F31: 75 3F                          jne      0x180007f72
+       0x180007F33: 8B 44 24 60                    mov      eax, dword ptr [rsp + 0x60]
+
+  Reference to 'Registry Path' at 0x180007F97:
+       0x180007F87: 49 89 53 10                    mov      qword ptr [r11 + 0x10], rdx
+       0x180007F8B: 53                             push     rbx
+       0x180007F8C: 48 83 EC 50                    sub      rsp, 0x50
+       0x180007F90: 49 8D 43 28                    lea      rax, [r11 + 0x28]
+       0x180007F94: 49 8B D8                       mov      rbx, r8
+   >>> 0x180007F97: 48 8D 15 72 F8 02 00           lea      rdx, [rip + 0x2f872]
+       0x180007F9E: 49 89 43 E8                    mov      qword ptr [r11 - 0x18], rax
+       0x180007FA2: 49 8D 43 10                    lea      rax, [r11 + 0x10]
+       0x180007FA6: 45 33 C9                       xor      r9d, r9d
+       0x180007FA9: 49 89 43 E0                    mov      qword ptr [r11 - 0x20], rax
+       0x180007FAD: 33 C0                          xor      eax, eax
+       0x180007FAF: 45 33 C0                       xor      r8d, r8d
+       0x180007FB2: 49 89 43 D8                    mov      qword ptr [r11 - 0x28], rax
+       0x180007FB6: 48 C7 C1 01 00 00 80           mov      rcx, 0xffffffff80000001
+       0x180007FBD: C7 44 24 28 02 00 00 00        mov      dword ptr [rsp + 0x28], 2
+       0x180007FC5: 89 44 24 20                    mov      dword ptr [rsp + 0x20], eax
+       0x180007FC9: FF 15 89 70 02 00              call     qword ptr [rip + 0x27089]
+       0x180007FCF: 85 C0                          test     eax, eax
+       0x180007FD1: 75 4A                          jne      0x18000801d
+       0x180007FD3: 8B 84 24 80 00 00 00           mov      eax, dword ptr [rsp + 0x80]
+       0x180007FDA: FF C8                          dec      eax
+       0x180007FDC: 83 F8 01                       cmp      eax, 1
+       0x180007FDF: 77 3C                          ja       0x18000801d
+       0x180007FE1: 48 8B 4C 24 68                 mov      rcx, qword ptr [rsp + 0x68]
+       0x180007FE6: 48 8D 44 24 78                 lea      rax, [rsp + 0x78]
+
+  Reference to 'Registry Path' at 0x18000806B:
+       0x180008052: 49 89 43 D8                    mov      qword ptr [r11 - 0x28], rax
+       0x180008056: 49 8D 43 E8                    lea      rax, [r11 - 0x18]
+       0x18000805A: BF 01 00 00 00                 mov      edi, 1
+       0x18000805F: 49 89 43 D0                    mov      qword ptr [r11 - 0x30], rax
+       0x180008063: 49 C7 43 C8 00 00 00 00        mov      qword ptr [r11 - 0x38], 0
+   >>> 0x18000806B: 48 8D 15 9E F7 02 00           lea      rdx, [rip + 0x2f79e]
+       0x180008072: 45 33 C9                       xor      r9d, r9d
+       0x180008075: 45 33 C0                       xor      r8d, r8d
+       0x180008078: 48 C7 C1 01 00 00 80           mov      rcx, 0xffffffff80000001
+       0x18000807F: 89 7C 24 28                    mov      dword ptr [rsp + 0x28], edi
+       0x180008083: C7 44 24 70 04 00 00 00        mov      dword ptr [rsp + 0x70], 4
+       0x18000808B: 41 C7 43 28 04 00 00 00        mov      dword ptr [r11 + 0x28], 4
+       0x180008093: C7 44 24 20 00 00 00 00        mov      dword ptr [rsp + 0x20], 0
+       0x18000809B: FF 15 B7 6F 02 00              call     qword ptr [rip + 0x26fb7]
+       0x1800080A1: 85 C0                          test     eax, eax
+       0x1800080A3: 75 64                          jne      0x180008109
+       0x1800080A5: 8B 44 24 78                    mov      eax, dword ptr [rsp + 0x78]
+       0x1800080A9: FF C8                          dec      eax
+       0x1800080AB: 3B C7                          cmp      eax, edi
+       0x1800080AD: 77 5A                          ja       0x180008109
+       0x1800080AF: 48 8B 4C 24 50                 mov      rcx, qword ptr [rsp + 0x50]
+       0x1800080B4: 48 8D 84 24 90 00 00 00        lea      rax, [rsp + 0x90]
+       0x1800080BC: 4C 8D 4C 24 70                 lea      r9, [rsp + 0x70]
+       0x1800080C1: 48 89 44 24 28                 mov      qword ptr [rsp + 0x28], rax
+       0x1800080C6: 45 33 C0                       xor      r8d, r8d
+
+  Reference to 'Registry Path' at 0x18000815A:
+       0x180008147: 41 89 43 28                    mov      dword ptr [r11 + 0x28], eax
+       0x18000814B: 49 8D 43 38                    lea      rax, [r11 + 0x38]
+       0x18000814F: 49 8B F0                       mov      rsi, r8
+       0x180008152: 49 89 43 E8                    mov      qword ptr [r11 - 0x18], rax
+       0x180008156: 49 8D 43 08                    lea      rax, [r11 + 8]
+   >>> 0x18000815A: 48 8D 15 AF F6 02 00           lea      rdx, [rip + 0x2f6af]
+       0x180008161: 49 89 43 E0                    mov      qword ptr [r11 - 0x20], rax
+       0x180008165: 49 C7 43 D8 00 00 00 00        mov      qword ptr [r11 - 0x28], 0
+       0x18000816D: 45 33 C9                       xor      r9d, r9d
+       0x180008170: 45 33 C0                       xor      r8d, r8d
+       0x180008173: 48 C7 C1 01 00 00 80           mov      rcx, 0xffffffff80000001
+       0x18000817A: 89 7C 24 28                    mov      dword ptr [rsp + 0x28], edi
+       0x18000817E: C7 44 24 20 00 00 00 00        mov      dword ptr [rsp + 0x20], 0
+       0x180008186: 89 7C 24 68                    mov      dword ptr [rsp + 0x68], edi
+       0x18000818A: FF 15 C8 6E 02 00              call     qword ptr [rip + 0x26ec8]
+       0x180008190: 85 C0                          test     eax, eax
+       0x180008192: 75 65                          jne      0x1800081f9
+       0x180008194: 8B 84 24 90 00 00 00           mov      eax, dword ptr [rsp + 0x90]
+       0x18000819B: FF C8                          dec      eax
+       0x18000819D: 3B C7                          cmp      eax, edi
+       0x18000819F: 77 58                          ja       0x1800081f9
+       0x1800081A1: 48 8B 4C 24 60                 mov      rcx, qword ptr [rsp + 0x60]
+       0x1800081A6: 48 8D 84 24 80 00 00 00        lea      rax, [rsp + 0x80]
+       0x1800081AE: 4C 8D 4C 24 68                 lea      r9, [rsp + 0x68]
+       0x1800081B3: 48 89 44 24 28                 mov      qword ptr [rsp + 0x28], rax
+
+  Reference to 'SharedMemory Name' at 0x180008398:
+       0x180008383: 48 89 4C 24 48                 mov      qword ptr [rsp + 0x48], rcx
+       0x180008388: E8 83 33 00 00                 call     0x18000b710
+       0x18000838D: 90                             nop      
+       0x18000838E: 48 8D 05 A3 EE 02 00           lea      rax, [rip + 0x2eea3]
+       0x180008395: 48 89 06                       mov      qword ptr [rsi], rax
+   >>> 0x180008398: 4C 8D 05 19 F4 02 00           lea      r8, [rip + 0x2f419]
+       0x18000839F: 33 D2                          xor      edx, edx
+       0x1800083A1: 33 C9                          xor      ecx, ecx
+       0x1800083A3: FF 15 A7 6D 02 00              call     qword ptr [rip + 0x26da7]
+       0x1800083A9: 48 89 86 28 01 00 00           mov      qword ptr [rsi + 0x128], rax
+       0x1800083B0: FF 15 7A 6F 02 00              call     qword ptr [rip + 0x26f7a]
+       0x1800083B6: 89 86 20 01 00 00              mov      dword ptr [rsi + 0x120], eax
+       0x1800083BC: 45 33 ED                       xor      r13d, r13d
+       0x1800083BF: 4C 89 AE 60 01 00 00           mov      qword ptr [rsi + 0x160], r13
+       0x1800083C6: 4C 89 AE 68 01 00 00           mov      qword ptr [rsi + 0x168], r13
+       0x1800083CD: 44 88 AE 70 01 00 00           mov      byte ptr [rsi + 0x170], r13b
+       0x1800083D4: 4C 89 AE 78 01 00 00           mov      qword ptr [rsi + 0x178], r13
+       0x1800083DB: 48 8D 9E A8 08 00 00           lea      rbx, [rsi + 0x8a8]
+       0x1800083E2: 48 8B CB                       mov      rcx, rbx
+       0x1800083E5: E8 16 F4 FF FF                 call     0x180007800
+       0x1800083EA: 90                             nop      
+       0x1800083EB: 48 89 9E 18 49 00 00           mov      qword ptr [rsi + 0x4918], rbx
+       0x1800083F2: 48 8D 55 A0                    lea      rdx, [rbp - 0x60]
+       0x1800083F6: E8 95 FE FF FF                 call     0x180008290
+       0x1800083FB: 90                             nop      

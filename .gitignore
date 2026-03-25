@@ -31,3 +31,25 @@ scream/
 *.sdf
 *.opensdf
 .vs/
+.gitnexus/
+
+# AI tooling
+.claude/
+
+# Crash dumps
+*.dmp
+
+# Installer build output
+installer_build/
+
+# Temporary analysis files
+crash_analysis.txt
+bsod_analysis.txt
+*_disasm*.txt
+*_strings.txt
+*_exports.txt
+*_compile.txt
+compile_log.txt
+install_log.txt
+wdm2vst_full.txt
+query

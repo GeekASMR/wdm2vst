@@ -1,0 +1,13 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/Python311/Lib/site-packages/cmake/data/share/cmake-4.2/Modules/BasicConfigVersion-ExactVersion.cmake.in
+C:/Program Files/Python311/Lib/site-packages/cmake/data/share/cmake-4.2/Modules/CMakeDependentOption.cmake
+C:/Program Files/Python311/Lib/site-packages/cmake/data/share/cmake-4.2/Modules/CMakePackageConfigHelpers.cmake
+C:/Program Files/Python311/Lib/site-packages/cmake/data/share/cmake-4.2/Modules/WriteBasicConfigVersionFile.cmake
+D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/CMakeLists.txt
+D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/extras/Build/CMake/JUCECheckAtomic.cmake
+D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/extras/Build/CMake/JUCEConfig.cmake.in
+D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/extras/Build/CMake/JUCEHelperTargets.cmake
+D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/extras/Build/CMake/JUCEModuleSupport.cmake
+D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/extras/Build/CMake/JUCEUtils.cmake
+D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/extras/Build/CMake/juce_runtime_arch_detection.cpp
+D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_asmrtop/CMakeFiles/cmake.verify_globs

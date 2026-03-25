@@ -1,0 +1,235 @@
+[Version]
+Signature="$Windows NT$"
+Class=MEDIA
+Provider=%JJShield%
+ClassGUID={4d36e96c-e325-11ce-bfc1-08002be10318}
+DriverVer=05/05/2016,17.28.35.476
+CatalogFile=wdm2vst_4ch.cat
+
+[SourceDisksNames]
+222="WDM2VST Driver Disk","",222
+
+[SourceDisksFiles]
+wdm2vst.sys=222
+
+[Manufacturer]
+%MfgName%=MicrosoftDS,NTAMD64,NTIA64
+
+[MicrosoftDS]
+%WDM2VST.DeviceDesc%=WDM2VST,*WDM2VST
+
+[MicrosoftDS.NTAMD64]
+%WDM2VST.DeviceDesc%=WDM2VST,*WDM2VST
+
+[MicrosoftDS.NTIA64]
+%WDM2VST.DeviceDesc%=WDM2VST,*WDM2VST
+
+[DestinationDirs]
+WDM2VST.CopyList=12
+
+;======================================================
+; WDM2VST
+;======================================================
+[WDM2VST]
+AlsoInstall=ks.registration(ks.inf),wdmaudio.registration(wdmaudio.inf)
+CopyFiles=WDM2VST.CopyList
+AddReg=WDM2VST.AddReg
+
+[WDM2VST.CopyList]
+wdm2vst.sys
+
+[WDM2VST.Interfaces]
+AddInterface=%KSCATEGORY_AUDIO%,%KSNAME_Wave1%,WDM2VST.I.Wave1
+AddInterface=%KSCATEGORY_RENDER%,%KSNAME_Wave1%,WDM2VST.I.Wave1
+AddInterface=%KSCATEGORY_CAPTURE%,%KSNAME_Wave1%,WDM2VST.I.Wave1
+AddInterface=%KSCATEGORY_AUDIO%,%KSNAME_Topology1%,WDM2VST.I.Topo1
+AddInterface=%KSCATEGORY_TOPOLOGY%,%KSNAME_Topology1%,WDM2VST.I.Topo1
+
+AddInterface=%KSCATEGORY_AUDIO%,%KSNAME_Wave2%,WDM2VST.I.Wave2
+AddInterface=%KSCATEGORY_RENDER%,%KSNAME_Wave2%,WDM2VST.I.Wave2
+AddInterface=%KSCATEGORY_CAPTURE%,%KSNAME_Wave2%,WDM2VST.I.Wave2
+AddInterface=%KSCATEGORY_AUDIO%,%KSNAME_Topology2%,WDM2VST.I.Topo2
+AddInterface=%KSCATEGORY_TOPOLOGY%,%KSNAME_Topology2%,WDM2VST.I.Topo2
+
+AddInterface=%KSCATEGORY_AUDIO%,%KSNAME_Wave3%,WDM2VST.I.Wave3
+AddInterface=%KSCATEGORY_RENDER%,%KSNAME_Wave3%,WDM2VST.I.Wave3
+AddInterface=%KSCATEGORY_CAPTURE%,%KSNAME_Wave3%,WDM2VST.I.Wave3
+AddInterface=%KSCATEGORY_AUDIO%,%KSNAME_Topology3%,WDM2VST.I.Topo3
+AddInterface=%KSCATEGORY_TOPOLOGY%,%KSNAME_Topology3%,WDM2VST.I.Topo3
+
+AddInterface=%KSCATEGORY_AUDIO%,%KSNAME_Wave4%,WDM2VST.I.Wave4
+AddInterface=%KSCATEGORY_RENDER%,%KSNAME_Wave4%,WDM2VST.I.Wave4
+AddInterface=%KSCATEGORY_CAPTURE%,%KSNAME_Wave4%,WDM2VST.I.Wave4
+AddInterface=%KSCATEGORY_AUDIO%,%KSNAME_Topology4%,WDM2VST.I.Topo4
+AddInterface=%KSCATEGORY_TOPOLOGY%,%KSNAME_Topology4%,WDM2VST.I.Topo4
+
+[WDM2VST.AddReg]
+HKR,,AssociatedFilters,,"wdmaud,redbook"
+HKR,,Driver,,wdm2vst.sys
+HKR,Drivers,SubClasses,,"wave,mixer"
+
+HKR,Drivers\wave\wdmaud.drv,Driver,,wdmaud.drv
+HKR,Drivers\mixer\wdmaud.drv,Driver,,wdmaud.drv
+HKR,Drivers\wave\wdmaud.drv,Description,,%WDM2VST.DeviceDesc%
+HKR,Drivers\mixer\wdmaud.drv,Description,,%WDM2VST.DeviceDesc%
+
+; Unlock 4 Channels in Registry! Driver reading it: HKLM\SOFTWARE\ODeusAudio\Wdm2Vst
+HKLM,SOFTWARE\ODeusAudio\Wdm2Vst,NumDevices,0x10001,4
+HKLM,SOFTWARE\ODeusAudio\Wdm2Vst,NumChannels,0x10001,8
+
+;======================================================
+; WAVE ENDPOINTS
+;======================================================
+
+[WDM2VST.I.Wave1]
+AddReg=WDM2VST.I.Wave1.AddReg
+[WDM2VST.I.Wave1.AddReg]
+HKR,,CLSID,,%Proxy.CLSID%
+HKR,,FriendlyName,,%WDM2VST.Wave1.szPname%
+
+[WDM2VST.I.Topo1]
+AddReg=WDM2VST.I.Topo1.AddReg, OEMSettingsOverride1.AddReg
+[WDM2VST.I.Topo1.AddReg]
+HKR,,CLSID,,%Proxy.CLSID%
+HKR,,FriendlyName,,%WDM2VST.Topo1.szPname%
+
+[WDM2VST.I.Wave2]
+AddReg=WDM2VST.I.Wave2.AddReg
+[WDM2VST.I.Wave2.AddReg]
+HKR,,CLSID,,%Proxy.CLSID%
+HKR,,FriendlyName,,%WDM2VST.Wave2.szPname%
+
+[WDM2VST.I.Topo2]
+AddReg=WDM2VST.I.Topo2.AddReg, OEMSettingsOverride2.AddReg
+[WDM2VST.I.Topo2.AddReg]
+HKR,,CLSID,,%Proxy.CLSID%
+HKR,,FriendlyName,,%WDM2VST.Topo2.szPname%
+
+[WDM2VST.I.Wave3]
+AddReg=WDM2VST.I.Wave3.AddReg
+[WDM2VST.I.Wave3.AddReg]
+HKR,,CLSID,,%Proxy.CLSID%
+HKR,,FriendlyName,,%WDM2VST.Wave3.szPname%
+
+[WDM2VST.I.Topo3]
+AddReg=WDM2VST.I.Topo3.AddReg, OEMSettingsOverride3.AddReg
+[WDM2VST.I.Topo3.AddReg]
+HKR,,CLSID,,%Proxy.CLSID%
+HKR,,FriendlyName,,%WDM2VST.Topo3.szPname%
+
+[WDM2VST.I.Wave4]
+AddReg=WDM2VST.I.Wave4.AddReg
+[WDM2VST.I.Wave4.AddReg]
+HKR,,CLSID,,%Proxy.CLSID%
+HKR,,FriendlyName,,%WDM2VST.Wave4.szPname%
+
+[WDM2VST.I.Topo4]
+AddReg=WDM2VST.I.Topo4.AddReg, OEMSettingsOverride4.AddReg
+[WDM2VST.I.Topo4.AddReg]
+HKR,,CLSID,,%Proxy.CLSID%
+HKR,,FriendlyName,,%WDM2VST.Topo4.szPname%
+
+;======================================================
+; OEM SETTINGS
+;======================================================
+
+[OEMSettingsOverride1.AddReg]
+HKR,"EP\\0", %PKEY_AudioEndpoint_Association%,,%KSNODETYPE_SPEAKER%
+HKR,"EP\\0", %PKEY_Device_DeviceDesc%,,%DeviceDescRender1%
+HKR,"EP\\1", %PKEY_AudioEndpoint_Association%,,%KSNODETYPE_MULTITRACK_RECORDER%
+HKR,"EP\\1", %PKEY_Device_DeviceDesc%,,%DeviceDescCapture1%
+HKR,"EP\\1", %PKEY_AudioDevice_EnableEndpointByDefault%,0x00010001,0x00000201
+
+[OEMSettingsOverride2.AddReg]
+HKR,"EP\\0", %PKEY_AudioEndpoint_Association%,,%KSNODETYPE_SPEAKER%
+HKR,"EP\\0", %PKEY_Device_DeviceDesc%,,%DeviceDescRender2%
+HKR,"EP\\1", %PKEY_AudioEndpoint_Association%,,%KSNODETYPE_MULTITRACK_RECORDER%
+HKR,"EP\\1", %PKEY_Device_DeviceDesc%,,%DeviceDescCapture2%
+HKR,"EP\\1", %PKEY_AudioDevice_EnableEndpointByDefault%,0x00010001,0x00000201
+
+[OEMSettingsOverride3.AddReg]
+HKR,"EP\\0", %PKEY_AudioEndpoint_Association%,,%KSNODETYPE_SPEAKER%
+HKR,"EP\\0", %PKEY_Device_DeviceDesc%,,%DeviceDescRender3%
+HKR,"EP\\1", %PKEY_AudioEndpoint_Association%,,%KSNODETYPE_MULTITRACK_RECORDER%
+HKR,"EP\\1", %PKEY_Device_DeviceDesc%,,%DeviceDescCapture3%
+HKR,"EP\\1", %PKEY_AudioDevice_EnableEndpointByDefault%,0x00010001,0x00000201
+
+[OEMSettingsOverride4.AddReg]
+HKR,"EP\\0", %PKEY_AudioEndpoint_Association%,,%KSNODETYPE_SPEAKER%
+HKR,"EP\\0", %PKEY_Device_DeviceDesc%,,%DeviceDescRender4%
+HKR,"EP\\1", %PKEY_AudioEndpoint_Association%,,%KSNODETYPE_MULTITRACK_RECORDER%
+HKR,"EP\\1", %PKEY_Device_DeviceDesc%,,%DeviceDescCapture4%
+HKR,"EP\\1", %PKEY_AudioDevice_EnableEndpointByDefault%,0x00010001,0x00000201
+
+[WDM2VST.Services]
+AddService=wdm2vst,0x00000002,wdm2vst_Service_Inst
+
+[wdm2vst_Service_Inst]
+DisplayName=%wdm2vst.SvcDesc%
+ServiceType=1
+StartType=3
+ErrorControl=1
+ServiceBinary=%12%\wdm2vst.sys
+
+;======================================================
+; STRINGS
+;======================================================
+[Strings]
+JJShield="ASMRTOP/ODeus"
+MfgName="ASMRTOP/ODeus"
+
+WDM2VST.DeviceDesc="WDM2VST 4-Channel Driver"
+
+WDM2VST.Wave1.szPname="WDM2VST Wave 1"
+WDM2VST.Topo1.szPname="WDM2VST Topology 1"
+
+WDM2VST.Wave2.szPname="WDM2VST Wave 2"
+WDM2VST.Topo2.szPname="WDM2VST Topology 2"
+
+WDM2VST.Wave3.szPname="WDM2VST Wave 3"
+WDM2VST.Topo3.szPname="WDM2VST Topology 3"
+
+WDM2VST.Wave4.szPname="WDM2VST Wave 4"
+WDM2VST.Topo4.szPname="WDM2VST Topology 4"
+
+Proxy.CLSID="{17CCA71B-ECD7-11D0-B908-00A0C9223196}"
+
+KSCATEGORY_AUDIO    = "{6994AD04-93EF-11D0-A3CC-00A0C9223196}"
+KSCATEGORY_RENDER   = "{65E8773E-8F56-11D0-A3B9-00A0C9223196}"
+KSCATEGORY_CAPTURE  = "{65E8773D-8F56-11D0-A3B9-00A0C9223196}"
+KSCATEGORY_TOPOLOGY = "{DDA54A40-1E4C-11D1-A050-405705C10000}"
+
+KSNODETYPE_SPEAKER = "{DFF21CE1-F70F-11D0-B917-00A0C9223196}"
+KSNODETYPE_LINE_CONNECTOR = "{DFF21FE3-F70F-11D0-B917-00A0C9223196}"
+KSNODETYPE_MULTITRACK_RECORDER = "{DFF220F2-F70F-11D0-B917-00A0C9223196}"
+
+PKEY_AudioEndpoint_Association="{1DA5D803-D492-4EDD-8C23-E0C0FFEE7F0E},2"
+PKEY_AudioEngine_OEMFormat="{E4870E26-3CC5-4CD2-BA46-CA0A9A70ED04},3"
+PKEY_Device_DeviceDesc="{a45c254e-df1c-4efd-8020-67d146a850e0},2"
+PKEY_AudioDevice_EnableEndpointByDefault="{F3E80BEF-1723-4FF2-BCC4-7F83DC5E46D4},4"
+
+DeviceDescRender1="WDM2VST Speaker 1"
+DeviceDescCapture1="WDM2VST Mix 1"
+
+DeviceDescRender2="WDM2VST Speaker 2"
+DeviceDescCapture2="WDM2VST Mix 2"
+
+DeviceDescRender3="WDM2VST Speaker 3"
+DeviceDescCapture3="WDM2VST Mix 3"
+
+DeviceDescRender4="WDM2VST Speaker 4"
+DeviceDescCapture4="WDM2VST Mix 4"
+
+KSNAME_Wave1="Wave1"
+KSNAME_Topology1="Topology1"
+
+KSNAME_Wave2="Wave2"
+KSNAME_Topology2="Topology2"
+
+KSNAME_Wave3="Wave3"
+KSNAME_Topology3="Topology3"
+
+KSNAME_Wave4="Wave4"
+KSNAME_Topology4="Topology4"
+
+wdm2vst.SvcDesc="WDM2VST"

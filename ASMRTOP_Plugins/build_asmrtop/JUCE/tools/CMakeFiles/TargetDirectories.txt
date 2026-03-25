@@ -1,0 +1,7 @@
+D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_asmrtop/JUCE/tools/CMakeFiles/INSTALL.dir
+D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_asmrtop/JUCE/tools/CMakeFiles/ALL_BUILD.dir
+D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_asmrtop/JUCE/tools/CMakeFiles/ZERO_CHECK.dir
+D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_asmrtop/JUCE/tools/modules/CMakeFiles/INSTALL.dir
+D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_asmrtop/JUCE/tools/extras/Build/CMakeFiles/INSTALL.dir
+D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_asmrtop/JUCE/tools/extras/Build/juceaide/CMakeFiles/juceaide.dir
+D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_asmrtop/JUCE/tools/extras/Build/juceaide/CMakeFiles/INSTALL.dir

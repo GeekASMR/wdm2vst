@@ -1,0 +1,11 @@
+{
+	"InstallScripts" : 
+	[
+		"D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_asmrtop/cmake_install.cmake",
+		"D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_asmrtop/JUCE/cmake_install.cmake",
+		"D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_asmrtop/JUCE/modules/cmake_install.cmake",
+		"D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_asmrtop/JUCE/extras/Build/cmake_install.cmake",
+		"D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_asmrtop/JUCE/extras/Build/juceaide/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

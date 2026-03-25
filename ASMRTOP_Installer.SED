@@ -1,0 +1,36 @@
+[Version]
+Class=IEXPRESS
+SEDVersion=3
+[Options]
+PackagePurpose=InstallApp
+ShowInstallProgramWindow=0
+HideExtractAnimation=0
+UseLongFileName=1
+InsideCompressed=0
+CAB_FixedSize=0
+CAB_ResvCodeSigning=0
+RebootMode=N
+InstallPrompt=Install ASMRTOP Virtual Audio Driver V3?
+DisplayLicense=
+FinishMessage=
+TargetName=d:\Autigravity\wdm2vst\ASMRTOP_4Channel_AutoInstall_V3_New.exe
+FriendlyName=ASMRTOP Audio Router V3
+AppLaunched=ASMRTOP_Install.bat
+PostInstallCmd=<None>
+AdminQuietInstCmd=
+UserQuietInstCmd=
+SourceFiles=SourceFiles
+[Strings]
+FILE0="VirtualAudioDriver.sys"
+FILE1="VirtualAudioDriver.inf"
+FILE2="asmrtopvirtualaudio.cat"
+FILE3="ASMRTOP_Install.bat"
+[SourceFiles]
+SourceFiles0=d:\Autigravity\wdm2vst\ASMRTOP_Driver_V3\x64\Release\package\
+SourceFiles1=d:\Autigravity\wdm2vst\
+[SourceFiles0]
+%FILE0%=
+%FILE1%=
+%FILE2%=
+[SourceFiles1]
+%FILE3%=

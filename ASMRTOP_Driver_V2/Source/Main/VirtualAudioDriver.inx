@@ -1,0 +1,393 @@
+[Version]
+Signature   = "$Windows NT$"
+Class       = MEDIA
+Provider    = %ProviderName%
+ClassGUID   = {4d36e96c-e325-11ce-bfc1-08002be10318}
+DriverVer   = 02/22/2016, 1.0.0.1
+CatalogFile = ASMRTOPVirtualAudio.cat
+PnpLockDown = 1
+
+[SourceDisksNames]
+222="ASMRTOPVirtualAudio Driver Disk","",222
+
+[SourceDisksFiles]
+VirtualAudioDriver.sys=222
+
+[SignatureAttributes]
+VirtualAudioDriver.sys=SignatureAttributes.DRM
+
+[SignatureAttributes.DRM]
+DRMLevel=1300
+
+[SignatureAttributes.PETrust]
+PETrust=true
+
+[Manufacturer]
+%MfgName%=ASMRTOPVirtualAudio,NT$ARCH$.10.0...16299
+
+[ASMRTOPVirtualAudio.NT$ARCH$.10.0...16299]
+%ASMRTOPVirtualAudio_SA.DeviceDesc%=ASMRTOPVirtualAudio_SA, ROOT\ASMRTOPVirtualAudio
+
+[DestinationDirs]
+ASMRTOPVirtualAudio_SA.CopyList=13
+
+;======================================================
+; ASMRTOPVirtualAudio_SA
+;======================================================
+[ASMRTOPVirtualAudio_SA.CopyList]
+VirtualAudioDriver.sys
+
+[ASMRTOPVirtualAudio_SA.AddReg]
+HKR,,AssociatedFilters,,"wdmaud,swmidi,redbook"
+HKR,,Driver,,VirtualAudioDriver.sys
+
+;
+; Power management settings
+;
+HKR,PowerSettings,SingleComponentMultiFxStates,3,1,0,0,0
+HKR,PowerSettings,ConservationIdleTime,3,3,0,0,0
+HKR,PowerSettings,PerformanceIdleTime,3,3,0,0,0
+HKR,PowerSettings,IdlePowerState,3,3,0,0,0
+
+HKR,Drivers,SubClasses,,"wave,midi,mixer"
+
+HKR,Drivers\wave\wdmaud.drv,Driver,,wdmaud.drv
+HKR,Drivers\midi\wdmaud.drv,Driver,,wdmaud.drv
+HKR,Drivers\mixer\wdmaud.drv,Driver,,wdmaud.drv
+
+HKR,Drivers\wave\wdmaud.drv,Description,,%ASMRTOPVirtualAudio_SA.DeviceDesc%
+HKR,Drivers\mixer\wdmaud.drv,Description,,%ASMRTOPVirtualAudio_SA.DeviceDesc%
+
+;======================================================
+; Render interfaces: Speaker 1
+;======================================================
+[ASMRTOPVirtualAudio.I.WaveSpeaker]
+AddReg=ASMRTOPVirtualAudio.I.WaveSpeaker.AddReg
+[ASMRTOPVirtualAudio.I.WaveSpeaker.AddReg]
+HKR,,CLSID,,%Proxy.CLSID%
+HKR,,FriendlyName,,%ASMRTOPVirtualAudio.WaveSpeaker.szPname%
+
+[ASMRTOPVirtualAudio.I.TopologySpeaker]
+AddReg=ASMRTOPVirtualAudio.I.TopologySpeaker.AddReg, OEMSpeaker1.AddReg
+[ASMRTOPVirtualAudio.I.TopologySpeaker.AddReg]
+HKR,,CLSID,,%Proxy.CLSID%
+HKR,,FriendlyName,,%ASMRTOPVirtualAudio.TopologySpeaker.szPname%
+
+[OEMSpeaker1.AddReg]
+HKR,EP\0,%PKEY_AudioEndpoint_Association%,,%KSNODETYPE_LINE_CONNECTOR%
+HKR,EP\0,%PKEY_AudioEndpoint_Supports_EventDriven_Mode%,0x00010001,0x1
+HKR,EP\0,%PKEY_Device_DeviceDesc%,,%SpeakerName1%
+
+;======================================================
+; Render interfaces: Speaker 2
+;======================================================
+[ASMRTOPVirtualAudio.I.WaveSpeaker2]
+AddReg=ASMRTOPVirtualAudio.I.WaveSpeaker2.AddReg
+[ASMRTOPVirtualAudio.I.WaveSpeaker2.AddReg]
+HKR,,CLSID,,%Proxy.CLSID%
+HKR,,FriendlyName,,%ASMRTOPVirtualAudio.WaveSpeaker2.szPname%
+
+[ASMRTOPVirtualAudio.I.TopologySpeaker2]
+AddReg=ASMRTOPVirtualAudio.I.TopologySpeaker2.AddReg, OEMSpeaker2.AddReg
+[ASMRTOPVirtualAudio.I.TopologySpeaker2.AddReg]
+HKR,,CLSID,,%Proxy.CLSID%
+HKR,,FriendlyName,,%ASMRTOPVirtualAudio.TopologySpeaker2.szPname%
+
+[OEMSpeaker2.AddReg]
+HKR,EP\0,%PKEY_AudioEndpoint_Association%,,%KSNODETYPE_LINE_CONNECTOR%
+HKR,EP\0,%PKEY_AudioEndpoint_Supports_EventDriven_Mode%,0x00010001,0x1
+HKR,EP\0,%PKEY_Device_DeviceDesc%,,%SpeakerName2%
+
+;======================================================
+; Render interfaces: Speaker 3
+;======================================================
+[ASMRTOPVirtualAudio.I.WaveSpeaker3]
+AddReg=ASMRTOPVirtualAudio.I.WaveSpeaker3.AddReg
+[ASMRTOPVirtualAudio.I.WaveSpeaker3.AddReg]
+HKR,,CLSID,,%Proxy.CLSID%
+HKR,,FriendlyName,,%ASMRTOPVirtualAudio.WaveSpeaker3.szPname%
+
+[ASMRTOPVirtualAudio.I.TopologySpeaker3]
+AddReg=ASMRTOPVirtualAudio.I.TopologySpeaker3.AddReg, OEMSpeaker3.AddReg
+[ASMRTOPVirtualAudio.I.TopologySpeaker3.AddReg]
+HKR,,CLSID,,%Proxy.CLSID%
+HKR,,FriendlyName,,%ASMRTOPVirtualAudio.TopologySpeaker3.szPname%
+
+[OEMSpeaker3.AddReg]
+HKR,EP\0,%PKEY_AudioEndpoint_Association%,,%KSNODETYPE_LINE_CONNECTOR%
+HKR,EP\0,%PKEY_AudioEndpoint_Supports_EventDriven_Mode%,0x00010001,0x1
+HKR,EP\0,%PKEY_Device_DeviceDesc%,,%SpeakerName3%
+
+;======================================================
+; Render interfaces: Speaker 4
+;======================================================
+[ASMRTOPVirtualAudio.I.WaveSpeaker4]
+AddReg=ASMRTOPVirtualAudio.I.WaveSpeaker4.AddReg
+[ASMRTOPVirtualAudio.I.WaveSpeaker4.AddReg]
+HKR,,CLSID,,%Proxy.CLSID%
+HKR,,FriendlyName,,%ASMRTOPVirtualAudio.WaveSpeaker4.szPname%
+
+[ASMRTOPVirtualAudio.I.TopologySpeaker4]
+AddReg=ASMRTOPVirtualAudio.I.TopologySpeaker4.AddReg, OEMSpeaker4.AddReg
+[ASMRTOPVirtualAudio.I.TopologySpeaker4.AddReg]
+HKR,,CLSID,,%Proxy.CLSID%
+HKR,,FriendlyName,,%ASMRTOPVirtualAudio.TopologySpeaker4.szPname%
+
+[OEMSpeaker4.AddReg]
+HKR,EP\0,%PKEY_AudioEndpoint_Association%,,%KSNODETYPE_LINE_CONNECTOR%
+HKR,EP\0,%PKEY_AudioEndpoint_Supports_EventDriven_Mode%,0x00010001,0x1
+HKR,EP\0,%PKEY_Device_DeviceDesc%,,%SpeakerName4%
+
+;======================================================
+; Capture interfaces: MicArray 1
+;======================================================
+[ASMRTOPVirtualAudio.I.WaveMicArray1]
+AddReg=ASMRTOPVirtualAudio.I.WaveMicArray1.AddReg
+[ASMRTOPVirtualAudio.I.WaveMicArray1.AddReg]
+HKR,,CLSID,,%Proxy.CLSID%
+HKR,,FriendlyName,,%ASMRTOPVirtualAudio.WaveMicArray1.szPname%
+
+[ASMRTOPVirtualAudio.I.TopologyMicArray1]
+AddReg=ASMRTOPVirtualAudio.I.TopologyMicArray1.AddReg, OEMMic1.AddReg
+[ASMRTOPVirtualAudio.I.TopologyMicArray1.AddReg]
+HKR,,CLSID,,%Proxy.CLSID%
+HKR,,FriendlyName,,%ASMRTOPVirtualAudio.TopologyMicArray1.szPname%
+
+[OEMMic1.AddReg]
+HKR,EP\0,%PKEY_AudioEndpoint_Association%,,%KSNODETYPE_LINE_CONNECTOR%
+HKR,EP\0,%PKEY_AudioEndpoint_Supports_EventDriven_Mode%,0x00010001,0x1
+HKR,EP\0,%PKEY_Device_DeviceDesc%,,%MicName1%
+
+;======================================================
+; Capture interfaces: MicArray 2
+;======================================================
+[ASMRTOPVirtualAudio.I.WaveMicArray2]
+AddReg=ASMRTOPVirtualAudio.I.WaveMicArray2.AddReg
+[ASMRTOPVirtualAudio.I.WaveMicArray2.AddReg]
+HKR,,CLSID,,%Proxy.CLSID%
+HKR,,FriendlyName,,%ASMRTOPVirtualAudio.WaveMicArray2.szPname%
+
+[ASMRTOPVirtualAudio.I.TopologyMicArray2]
+AddReg=ASMRTOPVirtualAudio.I.TopologyMicArray2.AddReg, OEMMic2.AddReg
+[ASMRTOPVirtualAudio.I.TopologyMicArray2.AddReg]
+HKR,,CLSID,,%Proxy.CLSID%
+HKR,,FriendlyName,,%ASMRTOPVirtualAudio.TopologyMicArray2.szPname%
+
+[OEMMic2.AddReg]
+HKR,EP\0,%PKEY_AudioEndpoint_Association%,,%KSNODETYPE_LINE_CONNECTOR%
+HKR,EP\0,%PKEY_AudioEndpoint_Supports_EventDriven_Mode%,0x00010001,0x1
+HKR,EP\0,%PKEY_Device_DeviceDesc%,,%MicName2%
+
+;======================================================
+; Capture interfaces: MicArray 3
+;======================================================
+[ASMRTOPVirtualAudio.I.WaveMicArray3]
+AddReg=ASMRTOPVirtualAudio.I.WaveMicArray3.AddReg
+[ASMRTOPVirtualAudio.I.WaveMicArray3.AddReg]
+HKR,,CLSID,,%Proxy.CLSID%
+HKR,,FriendlyName,,%ASMRTOPVirtualAudio.WaveMicArray3.szPname%
+
+[ASMRTOPVirtualAudio.I.TopologyMicArray3]
+AddReg=ASMRTOPVirtualAudio.I.TopologyMicArray3.AddReg, OEMMic3.AddReg
+[ASMRTOPVirtualAudio.I.TopologyMicArray3.AddReg]
+HKR,,CLSID,,%Proxy.CLSID%
+HKR,,FriendlyName,,%ASMRTOPVirtualAudio.TopologyMicArray3.szPname%
+
+[OEMMic3.AddReg]
+HKR,EP\0,%PKEY_AudioEndpoint_Association%,,%KSNODETYPE_LINE_CONNECTOR%
+HKR,EP\0,%PKEY_AudioEndpoint_Supports_EventDriven_Mode%,0x00010001,0x1
+HKR,EP\0,%PKEY_Device_DeviceDesc%,,%MicName3%
+
+;======================================================
+; Capture interfaces: MicArray 4
+;======================================================
+[ASMRTOPVirtualAudio.I.WaveMicArray4]
+AddReg=ASMRTOPVirtualAudio.I.WaveMicArray4.AddReg
+[ASMRTOPVirtualAudio.I.WaveMicArray4.AddReg]
+HKR,,CLSID,,%Proxy.CLSID%
+HKR,,FriendlyName,,%ASMRTOPVirtualAudio.WaveMicArray4.szPname%
+
+[ASMRTOPVirtualAudio.I.TopologyMicArray4]
+AddReg=ASMRTOPVirtualAudio.I.TopologyMicArray4.AddReg, OEMMic4.AddReg
+[ASMRTOPVirtualAudio.I.TopologyMicArray4.AddReg]
+HKR,,CLSID,,%Proxy.CLSID%
+HKR,,FriendlyName,,%ASMRTOPVirtualAudio.TopologyMicArray4.szPname%
+
+[OEMMic4.AddReg]
+HKR,EP\0,%PKEY_AudioEndpoint_Association%,,%KSNODETYPE_LINE_CONNECTOR%
+HKR,EP\0,%PKEY_AudioEndpoint_Supports_EventDriven_Mode%,0x00010001,0x1
+HKR,EP\0,%PKEY_Device_DeviceDesc%,,%MicName4%
+
+;======================================================
+; ASMRTOPVirtualAudio_SA  (NT Install)
+;======================================================
+[ASMRTOPVirtualAudio_SA.NT]
+Include=ks.inf,wdmaudio.inf
+Needs=KS.Registration, WDMAUDIO.Registration
+CopyFiles=ASMRTOPVirtualAudio_SA.CopyList
+AddReg=ASMRTOPVirtualAudio_SA.AddReg
+
+[ASMRTOPVirtualAudio_SA.NT.Interfaces]
+;
+; Render endpoints: Speaker 1-4
+;
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_WaveSpeaker%,     ASMRTOPVirtualAudio.I.WaveSpeaker
+AddInterface=%KSCATEGORY_RENDER%,   %KSNAME_WaveSpeaker%,     ASMRTOPVirtualAudio.I.WaveSpeaker
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_WaveSpeaker%,     ASMRTOPVirtualAudio.I.WaveSpeaker
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_TopologySpeaker%, ASMRTOPVirtualAudio.I.TopologySpeaker
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_TopologySpeaker%, ASMRTOPVirtualAudio.I.TopologySpeaker
+
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_WaveSpeaker2%,     ASMRTOPVirtualAudio.I.WaveSpeaker2
+AddInterface=%KSCATEGORY_RENDER%,   %KSNAME_WaveSpeaker2%,     ASMRTOPVirtualAudio.I.WaveSpeaker2
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_WaveSpeaker2%,     ASMRTOPVirtualAudio.I.WaveSpeaker2
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_TopologySpeaker2%, ASMRTOPVirtualAudio.I.TopologySpeaker2
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_TopologySpeaker2%, ASMRTOPVirtualAudio.I.TopologySpeaker2
+
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_WaveSpeaker3%,     ASMRTOPVirtualAudio.I.WaveSpeaker3
+AddInterface=%KSCATEGORY_RENDER%,   %KSNAME_WaveSpeaker3%,     ASMRTOPVirtualAudio.I.WaveSpeaker3
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_WaveSpeaker3%,     ASMRTOPVirtualAudio.I.WaveSpeaker3
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_TopologySpeaker3%, ASMRTOPVirtualAudio.I.TopologySpeaker3
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_TopologySpeaker3%, ASMRTOPVirtualAudio.I.TopologySpeaker3
+
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_WaveSpeaker4%,     ASMRTOPVirtualAudio.I.WaveSpeaker4
+AddInterface=%KSCATEGORY_RENDER%,   %KSNAME_WaveSpeaker4%,     ASMRTOPVirtualAudio.I.WaveSpeaker4
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_WaveSpeaker4%,     ASMRTOPVirtualAudio.I.WaveSpeaker4
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_TopologySpeaker4%, ASMRTOPVirtualAudio.I.TopologySpeaker4
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_TopologySpeaker4%, ASMRTOPVirtualAudio.I.TopologySpeaker4
+
+;
+; Capture endpoints: MicArray 1-4
+;
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_WaveMicArray1%,     ASMRTOPVirtualAudio.I.WaveMicArray1
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_WaveMicArray1%,     ASMRTOPVirtualAudio.I.WaveMicArray1
+AddInterface=%KSCATEGORY_CAPTURE%,  %KSNAME_WaveMicArray1%,     ASMRTOPVirtualAudio.I.WaveMicArray1
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_TopologyMicArray1%, ASMRTOPVirtualAudio.I.TopologyMicArray1
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_TopologyMicArray1%, ASMRTOPVirtualAudio.I.TopologyMicArray1
+
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_WaveMicArray2%,     ASMRTOPVirtualAudio.I.WaveMicArray2
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_WaveMicArray2%,     ASMRTOPVirtualAudio.I.WaveMicArray2
+AddInterface=%KSCATEGORY_CAPTURE%,  %KSNAME_WaveMicArray2%,     ASMRTOPVirtualAudio.I.WaveMicArray2
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_TopologyMicArray2%, ASMRTOPVirtualAudio.I.TopologyMicArray2
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_TopologyMicArray2%, ASMRTOPVirtualAudio.I.TopologyMicArray2
+
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_WaveMicArray3%,     ASMRTOPVirtualAudio.I.WaveMicArray3
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_WaveMicArray3%,     ASMRTOPVirtualAudio.I.WaveMicArray3
+AddInterface=%KSCATEGORY_CAPTURE%,  %KSNAME_WaveMicArray3%,     ASMRTOPVirtualAudio.I.WaveMicArray3
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_TopologyMicArray3%, ASMRTOPVirtualAudio.I.TopologyMicArray3
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_TopologyMicArray3%, ASMRTOPVirtualAudio.I.TopologyMicArray3
+
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_WaveMicArray4%,     ASMRTOPVirtualAudio.I.WaveMicArray4
+AddInterface=%KSCATEGORY_REALTIME%, %KSNAME_WaveMicArray4%,     ASMRTOPVirtualAudio.I.WaveMicArray4
+AddInterface=%KSCATEGORY_CAPTURE%,  %KSNAME_WaveMicArray4%,     ASMRTOPVirtualAudio.I.WaveMicArray4
+AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_TopologyMicArray4%, ASMRTOPVirtualAudio.I.TopologyMicArray4
+AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_TopologyMicArray4%, ASMRTOPVirtualAudio.I.TopologyMicArray4
+
+[ASMRTOPVirtualAudio_SA.NT.Services]
+AddService=ASMRTOPVirtualAudio,0x00000002,ASMRTOPVirtualAudio_Service_Inst
+
+[ASMRTOPVirtualAudio_Service_Inst]
+DisplayName=%ASMRTOPVirtualAudio.SvcDesc%
+ServiceType=1
+StartType=3
+ErrorControl=1
+ServiceBinary=%13%\VirtualAudioDriver.sys
+
+[ASMRTOPVirtualAudio_SA.NT.HW]
+AddReg = AUDIOHW.AddReg
+
+[AUDIOHW.AddReg]
+; FILE_DEVICE_SOUND
+HKR,,DeviceType,0x10001,0x0000001D
+; SDDL_DEVOBJ_SYS_ALL_ADM_RWX_WORLD_RWX_RES_RWX
+HKR,,Security,,"D:P(A;;GA;;;SY)(A;;GRGWGX;;;BA)(A;;GRGWGX;;;WD)(A;;GRGWGX;;;RC)"
+
+;======================================================
+; WDF
+;======================================================
+[ASMRTOPVirtualAudio_SA.NT.Wdf]
+KmdfService = ASMRTOPVirtualAudio, ASMRTOPVirtualAudio_SA_WdfSect
+[ASMRTOPVirtualAudio_SA_WdfSect]
+KmdfLibraryVersion = $KMDFVERSION$
+
+;======================================================
+; STRINGS
+;======================================================
+[Strings]
+
+;Non-localizable
+
+KSNAME_WaveSpeaker="WaveSpeaker"
+KSNAME_TopologySpeaker="TopologySpeaker"
+KSNAME_WaveSpeaker2="WaveSpeaker2"
+KSNAME_TopologySpeaker2="TopologySpeaker2"
+KSNAME_WaveSpeaker3="WaveSpeaker3"
+KSNAME_TopologySpeaker3="TopologySpeaker3"
+KSNAME_WaveSpeaker4="WaveSpeaker4"
+KSNAME_TopologySpeaker4="TopologySpeaker4"
+
+KSNAME_WaveMicArray1="WaveMicArray1"
+KSNAME_TopologyMicArray1="TopologyMicArray1"
+KSNAME_WaveMicArray2="WaveMicArray2"
+KSNAME_TopologyMicArray2="TopologyMicArray2"
+KSNAME_WaveMicArray3="WaveMicArray3"
+KSNAME_TopologyMicArray3="TopologyMicArray3"
+KSNAME_WaveMicArray4="WaveMicArray4"
+KSNAME_TopologyMicArray4="TopologyMicArray4"
+
+Proxy.CLSID="{17CCA71B-ECD7-11D0-B908-00A0C9223196}"
+KSCATEGORY_AUDIO="{6994AD04-93EF-11D0-A3CC-00A0C9223196}"
+KSCATEGORY_RENDER="{65E8773E-8F56-11D0-A3B9-00A0C9223196}"
+KSCATEGORY_CAPTURE="{65E8773D-8F56-11D0-A3B9-00A0C9223196}"
+KSCATEGORY_REALTIME ="{EB115FFC-10C8-4964-831D-6DCB02E6F23F}"
+KSCATEGORY_TOPOLOGY = "{DDA54A40-1E4C-11D1-A050-405705C10000}"
+
+KSNODETYPE_ANY   = "{00000000-0000-0000-0000-000000000000}"
+KSNODETYPE_LINE_CONNECTOR = "{DFF21FE3-F70F-11D0-B917-00A0C9223196}"
+
+PKEY_AudioEndpoint_Association               = "{1DA5D803-D492-4EDD-8C23-E0C0FFEE7F0E},2"
+PKEY_AudioEndpoint_Supports_EventDriven_Mode = "{1DA5D803-D492-4EDD-8C23-E0C0FFEE7F0E},7"
+PKEY_Device_DeviceDesc                       = "{a45c254e-df1c-4efd-8020-67d146a850e0},2"
+
+;Localizable
+; >>> BRAND:ASMRTOP <<<
+
+ProviderName = "ASMRTOP"
+MfgName      = "ASMRTOP"
+MsCopyRight  = "ASMRTOP"
+
+ASMRTOPVirtualAudio_SA.DeviceDesc="ASMRTOP Audio Router"
+ASMRTOPVirtualAudio.SvcDesc="ASMRTOP Audio Router"
+
+;; Speaker friendly names
+ASMRTOPVirtualAudio.WaveSpeaker.szPname="ASMR Audio 1/2"
+ASMRTOPVirtualAudio.TopologySpeaker.szPname="ASMR Audio 1/2"
+ASMRTOPVirtualAudio.WaveSpeaker2.szPname="ASMR Audio 3/4"
+ASMRTOPVirtualAudio.TopologySpeaker2.szPname="ASMR Audio 3/4"
+ASMRTOPVirtualAudio.WaveSpeaker3.szPname="ASMR Audio 5/6"
+ASMRTOPVirtualAudio.TopologySpeaker3.szPname="ASMR Audio 5/6"
+ASMRTOPVirtualAudio.WaveSpeaker4.szPname="ASMR Audio 7/8"
+ASMRTOPVirtualAudio.TopologySpeaker4.szPname="ASMR Audio 7/8"
+
+;; MicArray friendly names
+ASMRTOPVirtualAudio.WaveMicArray1.szPname="ASMR Mic 1/2"
+ASMRTOPVirtualAudio.TopologyMicArray1.szPname="ASMR Mic 1/2"
+ASMRTOPVirtualAudio.WaveMicArray2.szPname="ASMR Mic 3/4"
+ASMRTOPVirtualAudio.TopologyMicArray2.szPname="ASMR Mic 3/4"
+ASMRTOPVirtualAudio.WaveMicArray3.szPname="ASMR Mic 5/6"
+ASMRTOPVirtualAudio.TopologyMicArray3.szPname="ASMR Mic 5/6"
+ASMRTOPVirtualAudio.WaveMicArray4.szPname="ASMR Mic 7/8"
+ASMRTOPVirtualAudio.TopologyMicArray4.szPname="ASMR Mic 7/8"
+
+;; Endpoint display names (PKEY_Device_DeviceDesc)
+SpeakerName1="ASMR Audio 1/2"
+SpeakerName2="ASMR Audio 3/4"
+SpeakerName3="ASMR Audio 5/6"
+SpeakerName4="ASMR Audio 7/8"
+MicName1="ASMR Mic 1/2"
+MicName2="ASMR Mic 3/4"
+MicName3="ASMR Mic 5/6"
+MicName4="ASMR Mic 7/8"
+
+
+
+

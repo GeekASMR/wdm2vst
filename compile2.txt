@@ -1,0 +1,11 @@
+用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.44.35225 版
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+list_audio.cpp
+Microsoft (R) Incremental Linker Version 14.44.35225.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/out:d:\Autigravity\wdm2vst\list_audio.exe 
+list_audio.obj 
+Ole32.lib 
+OleAut32.lib 

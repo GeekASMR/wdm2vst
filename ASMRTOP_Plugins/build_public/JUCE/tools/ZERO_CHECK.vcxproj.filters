@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\JUCE\tools\CMakeFiles\90dfe165280be3b0dd42aad082cce10f\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{CB8638DC-EA9E-3BE1-B0E2-E4E6674F526B}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

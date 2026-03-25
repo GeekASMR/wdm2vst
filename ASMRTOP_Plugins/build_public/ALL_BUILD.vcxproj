@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ResolveNugetPackages>false</ResolveNugetPackages>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0F3015DF-AADA-3287-8D8B-B31C64D9DECF}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/Autigravity/wdm2vst/ASMRTOP_Plugins/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\Python311\Lib\site-packages\cmake\data\bin\cmake.exe" -SD:/Autigravity/wdm2vst/ASMRTOP_Plugins -BD:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public --check-stamp-file D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeCInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeCXXInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeGenericSystem.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeLanguageInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeRCInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Compiler\MSVC-C.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Compiler\MSVC.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Linker\MSVC-C.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Linker\MSVC.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\WindowsPaths.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\4.2.3\CMakeCCompiler.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\4.2.3\CMakeCXXCompiler.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\4.2.3\CMakeRCCompiler.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\4.2.3\CMakeSystem.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/Autigravity/wdm2vst/ASMRTOP_Plugins/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\Python311\Lib\site-packages\cmake\data\bin\cmake.exe" -SD:/Autigravity/wdm2vst/ASMRTOP_Plugins -BD:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public --check-stamp-file D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeCInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeCXXInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeGenericSystem.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeLanguageInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeRCInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Compiler\MSVC-C.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Compiler\MSVC.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Linker\MSVC-C.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Linker\MSVC.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\WindowsPaths.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\4.2.3\CMakeCCompiler.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\4.2.3\CMakeCXXCompiler.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\4.2.3\CMakeRCCompiler.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\4.2.3\CMakeSystem.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/Autigravity/wdm2vst/ASMRTOP_Plugins/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\Python311\Lib\site-packages\cmake\data\bin\cmake.exe" -SD:/Autigravity/wdm2vst/ASMRTOP_Plugins -BD:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public --check-stamp-file D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeCInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeCXXInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeGenericSystem.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeLanguageInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeRCInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Compiler\MSVC-C.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Compiler\MSVC.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Linker\MSVC-C.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Linker\MSVC.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\WindowsPaths.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\4.2.3\CMakeCCompiler.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\4.2.3\CMakeCXXCompiler.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\4.2.3\CMakeRCCompiler.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\4.2.3\CMakeSystem.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/Autigravity/wdm2vst/ASMRTOP_Plugins/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\Python311\Lib\site-packages\cmake\data\bin\cmake.exe" -SD:/Autigravity/wdm2vst/ASMRTOP_Plugins -BD:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public --check-stamp-file D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeCInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeCXXInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeGenericSystem.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeLanguageInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeRCInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Compiler\MSVC-C.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Compiler\MSVC.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Linker\MSVC-C.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Linker\MSVC.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\WindowsPaths.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\4.2.3\CMakeCCompiler.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\4.2.3\CMakeCXXCompiler.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\4.2.3\CMakeRCCompiler.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\4.2.3\CMakeSystem.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ZERO_CHECK.vcxproj">
+      <Project>{2E90BF9F-92E5-3B80-AC02-9BD7C51719AF}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_INST_WDM2VST.vcxproj">
+      <Project>{6E2A6D44-A3B9-37CD-AF79-EB08D8B7052A}</Project>
+      <Name>ASMRTOP_INST_WDM2VST</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_INST_WDM2VST_Standalone.vcxproj">
+      <Project>{F2DAEBC3-744A-3CBD-BA8A-5DED9DE84DAA}</Project>
+      <Name>ASMRTOP_INST_WDM2VST_Standalone</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_INST_WDM2VST_VST3.vcxproj">
+      <Project>{5D27677A-4805-3687-B56D-6A2BCC9863DE}</Project>
+      <Name>ASMRTOP_INST_WDM2VST_VST3</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_INST_WDM2VST_rc_lib.vcxproj">
+      <Project>{943FC80F-B4A3-30A4-85A3-6452F7383C61}</Project>
+      <Name>ASMRTOP_INST_WDM2VST_rc_lib</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_INST_WDM2VST_vst3_helper.vcxproj">
+      <Project>{6DA6DA8A-0AD0-3FEE-BE77-2DCEA5114060}</Project>
+      <Name>ASMRTOP_INST_WDM2VST_vst3_helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_RECV.vcxproj">
+      <Project>{613EDB24-9923-3E1D-AAFA-AB694264EAE4}</Project>
+      <Name>ASMRTOP_RECV</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_RECV_Standalone.vcxproj">
+      <Project>{85109199-360C-3E40-A362-24B925405730}</Project>
+      <Name>ASMRTOP_RECV_Standalone</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_RECV_VST3.vcxproj">
+      <Project>{F76BAE25-1F58-3171-BF37-47E89D653D21}</Project>
+      <Name>ASMRTOP_RECV_VST3</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_RECV_rc_lib.vcxproj">
+      <Project>{22C34D37-DF40-33AA-A964-F83961046814}</Project>
+      <Name>ASMRTOP_RECV_rc_lib</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_RECV_vst3_helper.vcxproj">
+      <Project>{93FC813C-35D6-3156-9926-4164B5B532FF}</Project>
+      <Name>ASMRTOP_RECV_vst3_helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_SEND.vcxproj">
+      <Project>{50BE85ED-77DB-3DF7-A9C9-B6D3AA0C192E}</Project>
+      <Name>ASMRTOP_SEND</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_SEND_Standalone.vcxproj">
+      <Project>{93BEBF6D-B789-3EE6-B8FA-6243618EB96E}</Project>
+      <Name>ASMRTOP_SEND_Standalone</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_SEND_VST3.vcxproj">
+      <Project>{1E0BAE59-7E0C-3BC6-A886-08764C238AB2}</Project>
+      <Name>ASMRTOP_SEND_VST3</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_SEND_rc_lib.vcxproj">
+      <Project>{761EC7EB-B0A3-3A91-8707-69E4FE9B229E}</Project>
+      <Name>ASMRTOP_SEND_rc_lib</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_SEND_vst3_helper.vcxproj">
+      <Project>{E05EC2EF-BF67-3930-A0AE-BE9874EC9BF2}</Project>
+      <Name>ASMRTOP_SEND_vst3_helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_VST2WDM.vcxproj">
+      <Project>{EB2F27FE-1768-3199-948F-6DF40968825B}</Project>
+      <Name>ASMRTOP_VST2WDM</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_VST2WDM_Standalone.vcxproj">
+      <Project>{516458A5-8A42-3498-AD2F-A3EEA28F8D1E}</Project>
+      <Name>ASMRTOP_VST2WDM_Standalone</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_VST2WDM_VST3.vcxproj">
+      <Project>{ADDA61A9-C410-36EB-B934-0462550AAFDB}</Project>
+      <Name>ASMRTOP_VST2WDM_VST3</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_VST2WDM_rc_lib.vcxproj">
+      <Project>{CA22F556-CD9A-3600-81CC-F4ED6841DAC0}</Project>
+      <Name>ASMRTOP_VST2WDM_rc_lib</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_VST2WDM_vst3_helper.vcxproj">
+      <Project>{E65ED13F-30CC-35F5-8540-DC0AE1FC2B83}</Project>
+      <Name>ASMRTOP_VST2WDM_vst3_helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_WDM2VST.vcxproj">
+      <Project>{4E23D1E4-C99F-3815-8CD8-627C05E6DB27}</Project>
+      <Name>ASMRTOP_WDM2VST</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_WDM2VST_Standalone.vcxproj">
+      <Project>{0CD108D7-5F7C-3DDA-9C70-FA9318B61679}</Project>
+      <Name>ASMRTOP_WDM2VST_Standalone</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_WDM2VST_VST3.vcxproj">
+      <Project>{D7D6F72F-75C1-396A-A4FA-0AB1FF1F1992}</Project>
+      <Name>ASMRTOP_WDM2VST_VST3</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_WDM2VST_rc_lib.vcxproj">
+      <Project>{0C550AC7-402A-3F73-A649-4DB515914BBD}</Project>
+      <Name>ASMRTOP_WDM2VST_rc_lib</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_WDM2VST_vst3_helper.vcxproj">
+      <Project>{A808335E-1B6C-3CC1-9EF7-C447D258948D}</Project>
+      <Name>ASMRTOP_WDM2VST_vst3_helper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

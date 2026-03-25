@@ -1,0 +1,511 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F76BAE25-1F58-3171-BF37-47E89D653D21}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>ASMRTOP_RECV_VST3</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_RECV_artefacts\Debug\VST3\Audio Receive.vst3\Contents\x86_64-win\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ASMRTOP_RECV_VST3.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Audio Receive</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.vst3</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_RECV_artefacts\Release\VST3\Audio Receive.vst3\Contents\x86_64-win\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ASMRTOP_RECV_VST3.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Audio Receive</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.vst3</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_RECV_artefacts\MinSizeRel\VST3\Audio Receive.vst3\Contents\x86_64-win\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">ASMRTOP_RECV_VST3.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Audio Receive</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.vst3</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_RECV_artefacts\RelWithDebInfo\VST3\Audio Receive.vst3\Contents\x86_64-win\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">ASMRTOP_RECV_VST3.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Audio Receive</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.vst3</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_RECV_artefacts\JuceLibraryCode;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\VST3_SDK;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lv2;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\serd;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sord;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sord\src;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sratom;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lilv;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lilv\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <BufferSecurityCheck></BufferSecurityCheck>
+      <CallingConvention></CallingConvention>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel></FloatingPointModel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;JUCE_GLOBAL_MODULE_SETTINGS_INCLUDED=1;DEBUG=1;_DEBUG=1;JucePlugin_IsSynth=0;JucePlugin_ManufacturerCode=0x56615274;JucePlugin_Manufacturer="VirtualAudioRouter";JucePlugin_ManufacturerWebsite="";JucePlugin_ManufacturerEmail="";JucePlugin_PluginCode=0x72637650;JucePlugin_ProducesMidiOutput=0;JucePlugin_IsMidiEffect=0;JucePlugin_WantsMidiInput=0;JucePlugin_EditorRequiresKeyboardFocus=0;JucePlugin_Name="Audio Receive";JucePlugin_Desc="Audio Receive";JucePlugin_Version=3.0.2;JucePlugin_VersionString="3.0.2";JucePlugin_VersionCode=0x30002;JucePlugin_VSTUniqueID=JucePlugin_PluginCode;JucePlugin_VSTCategory=kPlugCategEffect;JucePlugin_Vst3Category="Fx";JucePlugin_AUMainType='aufx';JucePlugin_AUSubType=JucePlugin_PluginCode;JucePlugin_AUExportPrefix=Audio_ReceiveAU;JucePlugin_AUExportPrefixQuoted="Audio_ReceiveAU";JucePlugin_AUManufacturerCode=JucePlugin_ManufacturerCode;JucePlugin_CFBundleIdentifier=com.VirtualAudioRouter.ASMRTOP_RECV;JucePlugin_AAXIdentifier=com.VirtualAudioRouter.ASMRTOP_RECV;JucePlugin_AAXManufacturerCode=JucePlugin_ManufacturerCode;JucePlugin_AAXProductId=JucePlugin_PluginCode;JucePlugin_AAXCategory=0;JucePlugin_AAXDisableBypass=0;JucePlugin_AAXDisableMultiMono=0;JucePlugin_VSTNumMidiInputs=16;JucePlugin_VSTNumMidiOutputs=16;JucePlugin_Enable_ARA=0;JucePlugin_ARAFactoryID="com.VirtualAudioRouter.ASMRTOP_RECV.arafactory.3.0.2";JucePlugin_ARADocumentArchiveID="com.VirtualAudioRouter.ASMRTOP_RECV.aradocumentarchive.1";JucePlugin_ARACompatibleArchiveIDs="";JucePlugin_ARAContentTypes=0;JucePlugin_ARATransformationFlags=0;JUCE_WEB_BROWSER=0;JUCE_USE_CURL=0;JUCE_WASAPI=1;JUCE_DIRECTSOUND=1;JUCE_VST3_CAN_REPLACE_VST2=0;JUCE_MODULE_AVAILABLE_juce_audio_plugin_client=1;JUCE_MODULE_AVAILABLE_juce_audio_processors=1;JUCE_MODULE_AVAILABLE_juce_gui_extra=1;JUCE_MODULE_AVAILABLE_juce_gui_basics=1;JUCE_MODULE_AVAILABLE_juce_graphics=1;JUCE_MODULE_AVAILABLE_juce_events=1;JUCE_MODULE_AVAILABLE_juce_core=1;JUCE_MODULE_AVAILABLE_juce_data_structures=1;JUCE_MODULE_AVAILABLE_juce_audio_processors_headless=1;JUCE_MODULE_AVAILABLE_juce_audio_basics=1;JUCE_MODULE_AVAILABLE_juce_audio_utils=1;JUCE_MODULE_AVAILABLE_juce_audio_formats=1;JUCE_MODULE_AVAILABLE_juce_audio_devices=1;JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone;JucePlugin_Build_AU=0;JucePlugin_Build_AUv3=0;JucePlugin_Build_AAX=0;JucePlugin_Build_LV2=0;JucePlugin_Build_Standalone=0;JucePlugin_Build_Unity=0;JucePlugin_Build_VST=0;JucePlugin_Build_VST3=1;CMAKE_INTDIR="Debug";ASMRTOP_RECV_VST3_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;JUCE_GLOBAL_MODULE_SETTINGS_INCLUDED=1;DEBUG=1;_DEBUG=1;JucePlugin_IsSynth=0;JucePlugin_ManufacturerCode=0x56615274;JucePlugin_Manufacturer=\"VirtualAudioRouter\";JucePlugin_ManufacturerWebsite=\"\";JucePlugin_ManufacturerEmail=\"\";JucePlugin_PluginCode=0x72637650;JucePlugin_ProducesMidiOutput=0;JucePlugin_IsMidiEffect=0;JucePlugin_WantsMidiInput=0;JucePlugin_EditorRequiresKeyboardFocus=0;JucePlugin_Name=\"Audio Receive\";JucePlugin_Desc=\"Audio Receive\";JucePlugin_Version=3.0.2;JucePlugin_VersionString=\"3.0.2\";JucePlugin_VersionCode=0x30002;JucePlugin_VSTUniqueID=JucePlugin_PluginCode;JucePlugin_VSTCategory=kPlugCategEffect;JucePlugin_Vst3Category=\"Fx\";JucePlugin_AUMainType='aufx';JucePlugin_AUSubType=JucePlugin_PluginCode;JucePlugin_AUExportPrefix=Audio_ReceiveAU;JucePlugin_AUExportPrefixQuoted=\"Audio_ReceiveAU\";JucePlugin_AUManufacturerCode=JucePlugin_ManufacturerCode;JucePlugin_CFBundleIdentifier=com.VirtualAudioRouter.ASMRTOP_RECV;JucePlugin_AAXIdentifier=com.VirtualAudioRouter.ASMRTOP_RECV;JucePlugin_AAXManufacturerCode=JucePlugin_ManufacturerCode;JucePlugin_AAXProductId=JucePlugin_PluginCode;JucePlugin_AAXCategory=0;JucePlugin_AAXDisableBypass=0;JucePlugin_AAXDisableMultiMono=0;JucePlugin_VSTNumMidiInputs=16;JucePlugin_VSTNumMidiOutputs=16;JucePlugin_Enable_ARA=0;JucePlugin_ARAFactoryID=\"com.VirtualAudioRouter.ASMRTOP_RECV.arafactory.3.0.2\";JucePlugin_ARADocumentArchiveID=\"com.VirtualAudioRouter.ASMRTOP_RECV.aradocumentarchive.1\";JucePlugin_ARACompatibleArchiveIDs=\"\";JucePlugin_ARAContentTypes=0;JucePlugin_ARATransformationFlags=0;JUCE_WEB_BROWSER=0;JUCE_USE_CURL=0;JUCE_WASAPI=1;JUCE_DIRECTSOUND=1;JUCE_VST3_CAN_REPLACE_VST2=0;JUCE_MODULE_AVAILABLE_juce_audio_plugin_client=1;JUCE_MODULE_AVAILABLE_juce_audio_processors=1;JUCE_MODULE_AVAILABLE_juce_gui_extra=1;JUCE_MODULE_AVAILABLE_juce_gui_basics=1;JUCE_MODULE_AVAILABLE_juce_graphics=1;JUCE_MODULE_AVAILABLE_juce_events=1;JUCE_MODULE_AVAILABLE_juce_core=1;JUCE_MODULE_AVAILABLE_juce_data_structures=1;JUCE_MODULE_AVAILABLE_juce_audio_processors_headless=1;JUCE_MODULE_AVAILABLE_juce_audio_basics=1;JUCE_MODULE_AVAILABLE_juce_audio_utils=1;JUCE_MODULE_AVAILABLE_juce_audio_formats=1;JUCE_MODULE_AVAILABLE_juce_audio_devices=1;JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone;JucePlugin_Build_AU=0;JucePlugin_Build_AUv3=0;JucePlugin_Build_AAX=0;JucePlugin_Build_LV2=0;JucePlugin_Build_Standalone=0;JucePlugin_Build_Unity=0;JucePlugin_Build_VST=0;JucePlugin_Build_VST3=1;CMAKE_INTDIR=\"Debug\";ASMRTOP_RECV_VST3_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_RECV_artefacts\JuceLibraryCode;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\VST3_SDK;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lv2;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\serd;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sord;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sord\src;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sratom;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lilv;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lilv\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_RECV_artefacts\JuceLibraryCode;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\VST3_SDK;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lv2;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\serd;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sord;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sord\src;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sratom;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lilv;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lilv\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>	</Message>
+      <Command>setlocal
+"C:\Program Files\Python311\Lib\site-packages\cmake\data\bin\cmake.exe" -E echo "removing moduleinfo.json"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Python311\Lib\site-packages\cmake\data\bin\cmake.exe" -E remove -f "D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/ASMRTOP_RECV_artefacts/Debug/VST3/Audio Receive.vst3/Contents/moduleinfo.json" "D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/ASMRTOP_RECV_artefacts/Debug/VST3/Audio Receive.vst3/Contents/Resources/moduleinfo.json"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\Python311\Lib\site-packages\cmake\data\bin\cmake.exe" -E echo "creating D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/ASMRTOP_RECV_artefacts/Debug/VST3/Audio Receive.vst3"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Python311\Lib\site-packages\cmake\data\bin\cmake.exe" -E make_directory "D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/ASMRTOP_RECV_artefacts/Debug/VST3/Audio Receive.vst3/Contents/Resources"
+if %errorlevel% neq 0 goto :cmEnd
+Debug\ASMRTOP_RECV_vst3_helper.exe &gt; "D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/ASMRTOP_RECV_artefacts/Debug/VST3/Audio Receive.vst3/Contents/Resources/moduleinfo.json"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>ASMRTOP_RECV_artefacts\Debug\Audio Receive_SharedCode.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_plugin_client/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_plugin_client/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_processors/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_processors/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_gui_extra/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_gui_extra/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_gui_basics/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_gui_basics/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_graphics/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_graphics/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_events/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_events/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_core/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_core/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_data_structures/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_data_structures/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_processors_headless/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_processors_headless/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_basics/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_basics/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_utils/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_utils/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_formats/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_formats/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_devices/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_devices/libs/VisualStudio2022/x64/MDd/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <DataExecutionPrevention></DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/ASMRTOP_RECV_artefacts/Debug/VST3/Audio Receive.lib</ImportLibrary>
+      <LinkErrorReporting></LinkErrorReporting>
+      <ProgramDataBaseFile>D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/ASMRTOP_RECV_artefacts/Debug/VST3/Audio Receive.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_RECV_artefacts\JuceLibraryCode;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\VST3_SDK;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lv2;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\serd;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sord;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sord\src;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sratom;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lilv;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lilv\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BufferSecurityCheck></BufferSecurityCheck>
+      <CallingConvention></CallingConvention>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel></FloatingPointModel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;JUCE_GLOBAL_MODULE_SETTINGS_INCLUDED=1;NDEBUG=1;_NDEBUG=1;JucePlugin_IsSynth=0;JucePlugin_ManufacturerCode=0x56615274;JucePlugin_Manufacturer="VirtualAudioRouter";JucePlugin_ManufacturerWebsite="";JucePlugin_ManufacturerEmail="";JucePlugin_PluginCode=0x72637650;JucePlugin_ProducesMidiOutput=0;JucePlugin_IsMidiEffect=0;JucePlugin_WantsMidiInput=0;JucePlugin_EditorRequiresKeyboardFocus=0;JucePlugin_Name="Audio Receive";JucePlugin_Desc="Audio Receive";JucePlugin_Version=3.0.2;JucePlugin_VersionString="3.0.2";JucePlugin_VersionCode=0x30002;JucePlugin_VSTUniqueID=JucePlugin_PluginCode;JucePlugin_VSTCategory=kPlugCategEffect;JucePlugin_Vst3Category="Fx";JucePlugin_AUMainType='aufx';JucePlugin_AUSubType=JucePlugin_PluginCode;JucePlugin_AUExportPrefix=Audio_ReceiveAU;JucePlugin_AUExportPrefixQuoted="Audio_ReceiveAU";JucePlugin_AUManufacturerCode=JucePlugin_ManufacturerCode;JucePlugin_CFBundleIdentifier=com.VirtualAudioRouter.ASMRTOP_RECV;JucePlugin_AAXIdentifier=com.VirtualAudioRouter.ASMRTOP_RECV;JucePlugin_AAXManufacturerCode=JucePlugin_ManufacturerCode;JucePlugin_AAXProductId=JucePlugin_PluginCode;JucePlugin_AAXCategory=0;JucePlugin_AAXDisableBypass=0;JucePlugin_AAXDisableMultiMono=0;JucePlugin_VSTNumMidiInputs=16;JucePlugin_VSTNumMidiOutputs=16;JucePlugin_Enable_ARA=0;JucePlugin_ARAFactoryID="com.VirtualAudioRouter.ASMRTOP_RECV.arafactory.3.0.2";JucePlugin_ARADocumentArchiveID="com.VirtualAudioRouter.ASMRTOP_RECV.aradocumentarchive.1";JucePlugin_ARACompatibleArchiveIDs="";JucePlugin_ARAContentTypes=0;JucePlugin_ARATransformationFlags=0;JUCE_WEB_BROWSER=0;JUCE_USE_CURL=0;JUCE_WASAPI=1;JUCE_DIRECTSOUND=1;JUCE_VST3_CAN_REPLACE_VST2=0;JUCE_MODULE_AVAILABLE_juce_audio_plugin_client=1;JUCE_MODULE_AVAILABLE_juce_audio_processors=1;JUCE_MODULE_AVAILABLE_juce_gui_extra=1;JUCE_MODULE_AVAILABLE_juce_gui_basics=1;JUCE_MODULE_AVAILABLE_juce_graphics=1;JUCE_MODULE_AVAILABLE_juce_events=1;JUCE_MODULE_AVAILABLE_juce_core=1;JUCE_MODULE_AVAILABLE_juce_data_structures=1;JUCE_MODULE_AVAILABLE_juce_audio_processors_headless=1;JUCE_MODULE_AVAILABLE_juce_audio_basics=1;JUCE_MODULE_AVAILABLE_juce_audio_utils=1;JUCE_MODULE_AVAILABLE_juce_audio_formats=1;JUCE_MODULE_AVAILABLE_juce_audio_devices=1;JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone;JucePlugin_Build_AU=0;JucePlugin_Build_AUv3=0;JucePlugin_Build_AAX=0;JucePlugin_Build_LV2=0;JucePlugin_Build_Standalone=0;JucePlugin_Build_Unity=0;JucePlugin_Build_VST=0;JucePlugin_Build_VST3=1;CMAKE_INTDIR="Release";ASMRTOP_RECV_VST3_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;JUCE_GLOBAL_MODULE_SETTINGS_INCLUDED=1;NDEBUG=1;_NDEBUG=1;JucePlugin_IsSynth=0;JucePlugin_ManufacturerCode=0x56615274;JucePlugin_Manufacturer=\"VirtualAudioRouter\";JucePlugin_ManufacturerWebsite=\"\";JucePlugin_ManufacturerEmail=\"\";JucePlugin_PluginCode=0x72637650;JucePlugin_ProducesMidiOutput=0;JucePlugin_IsMidiEffect=0;JucePlugin_WantsMidiInput=0;JucePlugin_EditorRequiresKeyboardFocus=0;JucePlugin_Name=\"Audio Receive\";JucePlugin_Desc=\"Audio Receive\";JucePlugin_Version=3.0.2;JucePlugin_VersionString=\"3.0.2\";JucePlugin_VersionCode=0x30002;JucePlugin_VSTUniqueID=JucePlugin_PluginCode;JucePlugin_VSTCategory=kPlugCategEffect;JucePlugin_Vst3Category=\"Fx\";JucePlugin_AUMainType='aufx';JucePlugin_AUSubType=JucePlugin_PluginCode;JucePlugin_AUExportPrefix=Audio_ReceiveAU;JucePlugin_AUExportPrefixQuoted=\"Audio_ReceiveAU\";JucePlugin_AUManufacturerCode=JucePlugin_ManufacturerCode;JucePlugin_CFBundleIdentifier=com.VirtualAudioRouter.ASMRTOP_RECV;JucePlugin_AAXIdentifier=com.VirtualAudioRouter.ASMRTOP_RECV;JucePlugin_AAXManufacturerCode=JucePlugin_ManufacturerCode;JucePlugin_AAXProductId=JucePlugin_PluginCode;JucePlugin_AAXCategory=0;JucePlugin_AAXDisableBypass=0;JucePlugin_AAXDisableMultiMono=0;JucePlugin_VSTNumMidiInputs=16;JucePlugin_VSTNumMidiOutputs=16;JucePlugin_Enable_ARA=0;JucePlugin_ARAFactoryID=\"com.VirtualAudioRouter.ASMRTOP_RECV.arafactory.3.0.2\";JucePlugin_ARADocumentArchiveID=\"com.VirtualAudioRouter.ASMRTOP_RECV.aradocumentarchive.1\";JucePlugin_ARACompatibleArchiveIDs=\"\";JucePlugin_ARAContentTypes=0;JucePlugin_ARATransformationFlags=0;JUCE_WEB_BROWSER=0;JUCE_USE_CURL=0;JUCE_WASAPI=1;JUCE_DIRECTSOUND=1;JUCE_VST3_CAN_REPLACE_VST2=0;JUCE_MODULE_AVAILABLE_juce_audio_plugin_client=1;JUCE_MODULE_AVAILABLE_juce_audio_processors=1;JUCE_MODULE_AVAILABLE_juce_gui_extra=1;JUCE_MODULE_AVAILABLE_juce_gui_basics=1;JUCE_MODULE_AVAILABLE_juce_graphics=1;JUCE_MODULE_AVAILABLE_juce_events=1;JUCE_MODULE_AVAILABLE_juce_core=1;JUCE_MODULE_AVAILABLE_juce_data_structures=1;JUCE_MODULE_AVAILABLE_juce_audio_processors_headless=1;JUCE_MODULE_AVAILABLE_juce_audio_basics=1;JUCE_MODULE_AVAILABLE_juce_audio_utils=1;JUCE_MODULE_AVAILABLE_juce_audio_formats=1;JUCE_MODULE_AVAILABLE_juce_audio_devices=1;JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone;JucePlugin_Build_AU=0;JucePlugin_Build_AUv3=0;JucePlugin_Build_AAX=0;JucePlugin_Build_LV2=0;JucePlugin_Build_Standalone=0;JucePlugin_Build_Unity=0;JucePlugin_Build_VST=0;JucePlugin_Build_VST3=1;CMAKE_INTDIR=\"Release\";ASMRTOP_RECV_VST3_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_RECV_artefacts\JuceLibraryCode;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\VST3_SDK;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lv2;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\serd;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sord;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sord\src;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sratom;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lilv;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lilv\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_RECV_artefacts\JuceLibraryCode;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\VST3_SDK;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lv2;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\serd;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sord;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sord\src;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sratom;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lilv;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lilv\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>	</Message>
+      <Command>setlocal
+"C:\Program Files\Python311\Lib\site-packages\cmake\data\bin\cmake.exe" -E echo "removing moduleinfo.json"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Python311\Lib\site-packages\cmake\data\bin\cmake.exe" -E remove -f "D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/ASMRTOP_RECV_artefacts/Release/VST3/Audio Receive.vst3/Contents/moduleinfo.json" "D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/ASMRTOP_RECV_artefacts/Release/VST3/Audio Receive.vst3/Contents/Resources/moduleinfo.json"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\Python311\Lib\site-packages\cmake\data\bin\cmake.exe" -E echo "creating D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/ASMRTOP_RECV_artefacts/Release/VST3/Audio Receive.vst3"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Python311\Lib\site-packages\cmake\data\bin\cmake.exe" -E make_directory "D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/ASMRTOP_RECV_artefacts/Release/VST3/Audio Receive.vst3/Contents/Resources"
+if %errorlevel% neq 0 goto :cmEnd
+Release\ASMRTOP_RECV_vst3_helper.exe &gt; "D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/ASMRTOP_RECV_artefacts/Release/VST3/Audio Receive.vst3/Contents/Resources/moduleinfo.json"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>ASMRTOP_RECV_artefacts\Release\Audio Receive_SharedCode.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_plugin_client/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_plugin_client/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_processors/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_processors/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_gui_extra/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_gui_extra/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_gui_basics/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_gui_basics/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_graphics/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_graphics/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_events/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_events/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_core/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_core/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_data_structures/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_data_structures/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_processors_headless/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_processors_headless/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_basics/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_basics/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_utils/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_utils/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_formats/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_formats/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_devices/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_devices/libs/VisualStudio2022/x64/MDd/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <DataExecutionPrevention></DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/ASMRTOP_RECV_artefacts/Release/VST3/Audio Receive.lib</ImportLibrary>
+      <LinkErrorReporting></LinkErrorReporting>
+      <ProgramDataBaseFile>D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/ASMRTOP_RECV_artefacts/Release/VST3/Audio Receive.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_RECV_artefacts\JuceLibraryCode;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\VST3_SDK;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lv2;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\serd;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sord;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sord\src;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sratom;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lilv;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lilv\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BufferSecurityCheck></BufferSecurityCheck>
+      <CallingConvention></CallingConvention>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel></FloatingPointModel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;JUCE_GLOBAL_MODULE_SETTINGS_INCLUDED=1;NDEBUG=1;_NDEBUG=1;JucePlugin_IsSynth=0;JucePlugin_ManufacturerCode=0x56615274;JucePlugin_Manufacturer="VirtualAudioRouter";JucePlugin_ManufacturerWebsite="";JucePlugin_ManufacturerEmail="";JucePlugin_PluginCode=0x72637650;JucePlugin_ProducesMidiOutput=0;JucePlugin_IsMidiEffect=0;JucePlugin_WantsMidiInput=0;JucePlugin_EditorRequiresKeyboardFocus=0;JucePlugin_Name="Audio Receive";JucePlugin_Desc="Audio Receive";JucePlugin_Version=3.0.2;JucePlugin_VersionString="3.0.2";JucePlugin_VersionCode=0x30002;JucePlugin_VSTUniqueID=JucePlugin_PluginCode;JucePlugin_VSTCategory=kPlugCategEffect;JucePlugin_Vst3Category="Fx";JucePlugin_AUMainType='aufx';JucePlugin_AUSubType=JucePlugin_PluginCode;JucePlugin_AUExportPrefix=Audio_ReceiveAU;JucePlugin_AUExportPrefixQuoted="Audio_ReceiveAU";JucePlugin_AUManufacturerCode=JucePlugin_ManufacturerCode;JucePlugin_CFBundleIdentifier=com.VirtualAudioRouter.ASMRTOP_RECV;JucePlugin_AAXIdentifier=com.VirtualAudioRouter.ASMRTOP_RECV;JucePlugin_AAXManufacturerCode=JucePlugin_ManufacturerCode;JucePlugin_AAXProductId=JucePlugin_PluginCode;JucePlugin_AAXCategory=0;JucePlugin_AAXDisableBypass=0;JucePlugin_AAXDisableMultiMono=0;JucePlugin_VSTNumMidiInputs=16;JucePlugin_VSTNumMidiOutputs=16;JucePlugin_Enable_ARA=0;JucePlugin_ARAFactoryID="com.VirtualAudioRouter.ASMRTOP_RECV.arafactory.3.0.2";JucePlugin_ARADocumentArchiveID="com.VirtualAudioRouter.ASMRTOP_RECV.aradocumentarchive.1";JucePlugin_ARACompatibleArchiveIDs="";JucePlugin_ARAContentTypes=0;JucePlugin_ARATransformationFlags=0;JUCE_WEB_BROWSER=0;JUCE_USE_CURL=0;JUCE_WASAPI=1;JUCE_DIRECTSOUND=1;JUCE_VST3_CAN_REPLACE_VST2=0;JUCE_MODULE_AVAILABLE_juce_audio_plugin_client=1;JUCE_MODULE_AVAILABLE_juce_audio_processors=1;JUCE_MODULE_AVAILABLE_juce_gui_extra=1;JUCE_MODULE_AVAILABLE_juce_gui_basics=1;JUCE_MODULE_AVAILABLE_juce_graphics=1;JUCE_MODULE_AVAILABLE_juce_events=1;JUCE_MODULE_AVAILABLE_juce_core=1;JUCE_MODULE_AVAILABLE_juce_data_structures=1;JUCE_MODULE_AVAILABLE_juce_audio_processors_headless=1;JUCE_MODULE_AVAILABLE_juce_audio_basics=1;JUCE_MODULE_AVAILABLE_juce_audio_utils=1;JUCE_MODULE_AVAILABLE_juce_audio_formats=1;JUCE_MODULE_AVAILABLE_juce_audio_devices=1;JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone;JucePlugin_Build_AU=0;JucePlugin_Build_AUv3=0;JucePlugin_Build_AAX=0;JucePlugin_Build_LV2=0;JucePlugin_Build_Standalone=0;JucePlugin_Build_Unity=0;JucePlugin_Build_VST=0;JucePlugin_Build_VST3=1;CMAKE_INTDIR="MinSizeRel";ASMRTOP_RECV_VST3_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;JUCE_GLOBAL_MODULE_SETTINGS_INCLUDED=1;NDEBUG=1;_NDEBUG=1;JucePlugin_IsSynth=0;JucePlugin_ManufacturerCode=0x56615274;JucePlugin_Manufacturer=\"VirtualAudioRouter\";JucePlugin_ManufacturerWebsite=\"\";JucePlugin_ManufacturerEmail=\"\";JucePlugin_PluginCode=0x72637650;JucePlugin_ProducesMidiOutput=0;JucePlugin_IsMidiEffect=0;JucePlugin_WantsMidiInput=0;JucePlugin_EditorRequiresKeyboardFocus=0;JucePlugin_Name=\"Audio Receive\";JucePlugin_Desc=\"Audio Receive\";JucePlugin_Version=3.0.2;JucePlugin_VersionString=\"3.0.2\";JucePlugin_VersionCode=0x30002;JucePlugin_VSTUniqueID=JucePlugin_PluginCode;JucePlugin_VSTCategory=kPlugCategEffect;JucePlugin_Vst3Category=\"Fx\";JucePlugin_AUMainType='aufx';JucePlugin_AUSubType=JucePlugin_PluginCode;JucePlugin_AUExportPrefix=Audio_ReceiveAU;JucePlugin_AUExportPrefixQuoted=\"Audio_ReceiveAU\";JucePlugin_AUManufacturerCode=JucePlugin_ManufacturerCode;JucePlugin_CFBundleIdentifier=com.VirtualAudioRouter.ASMRTOP_RECV;JucePlugin_AAXIdentifier=com.VirtualAudioRouter.ASMRTOP_RECV;JucePlugin_AAXManufacturerCode=JucePlugin_ManufacturerCode;JucePlugin_AAXProductId=JucePlugin_PluginCode;JucePlugin_AAXCategory=0;JucePlugin_AAXDisableBypass=0;JucePlugin_AAXDisableMultiMono=0;JucePlugin_VSTNumMidiInputs=16;JucePlugin_VSTNumMidiOutputs=16;JucePlugin_Enable_ARA=0;JucePlugin_ARAFactoryID=\"com.VirtualAudioRouter.ASMRTOP_RECV.arafactory.3.0.2\";JucePlugin_ARADocumentArchiveID=\"com.VirtualAudioRouter.ASMRTOP_RECV.aradocumentarchive.1\";JucePlugin_ARACompatibleArchiveIDs=\"\";JucePlugin_ARAContentTypes=0;JucePlugin_ARATransformationFlags=0;JUCE_WEB_BROWSER=0;JUCE_USE_CURL=0;JUCE_WASAPI=1;JUCE_DIRECTSOUND=1;JUCE_VST3_CAN_REPLACE_VST2=0;JUCE_MODULE_AVAILABLE_juce_audio_plugin_client=1;JUCE_MODULE_AVAILABLE_juce_audio_processors=1;JUCE_MODULE_AVAILABLE_juce_gui_extra=1;JUCE_MODULE_AVAILABLE_juce_gui_basics=1;JUCE_MODULE_AVAILABLE_juce_graphics=1;JUCE_MODULE_AVAILABLE_juce_events=1;JUCE_MODULE_AVAILABLE_juce_core=1;JUCE_MODULE_AVAILABLE_juce_data_structures=1;JUCE_MODULE_AVAILABLE_juce_audio_processors_headless=1;JUCE_MODULE_AVAILABLE_juce_audio_basics=1;JUCE_MODULE_AVAILABLE_juce_audio_utils=1;JUCE_MODULE_AVAILABLE_juce_audio_formats=1;JUCE_MODULE_AVAILABLE_juce_audio_devices=1;JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone;JucePlugin_Build_AU=0;JucePlugin_Build_AUv3=0;JucePlugin_Build_AAX=0;JucePlugin_Build_LV2=0;JucePlugin_Build_Standalone=0;JucePlugin_Build_Unity=0;JucePlugin_Build_VST=0;JucePlugin_Build_VST3=1;CMAKE_INTDIR=\"MinSizeRel\";ASMRTOP_RECV_VST3_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_RECV_artefacts\JuceLibraryCode;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\VST3_SDK;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lv2;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\serd;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sord;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sord\src;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sratom;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lilv;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lilv\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_RECV_artefacts\JuceLibraryCode;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\VST3_SDK;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lv2;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\serd;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sord;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sord\src;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sratom;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lilv;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lilv\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>	</Message>
+      <Command>setlocal
+"C:\Program Files\Python311\Lib\site-packages\cmake\data\bin\cmake.exe" -E echo "removing moduleinfo.json"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Python311\Lib\site-packages\cmake\data\bin\cmake.exe" -E remove -f "D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/ASMRTOP_RECV_artefacts/MinSizeRel/VST3/Audio Receive.vst3/Contents/moduleinfo.json" "D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/ASMRTOP_RECV_artefacts/MinSizeRel/VST3/Audio Receive.vst3/Contents/Resources/moduleinfo.json"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\Python311\Lib\site-packages\cmake\data\bin\cmake.exe" -E echo "creating D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/ASMRTOP_RECV_artefacts/MinSizeRel/VST3/Audio Receive.vst3"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Python311\Lib\site-packages\cmake\data\bin\cmake.exe" -E make_directory "D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/ASMRTOP_RECV_artefacts/MinSizeRel/VST3/Audio Receive.vst3/Contents/Resources"
+if %errorlevel% neq 0 goto :cmEnd
+MinSizeRel\ASMRTOP_RECV_vst3_helper.exe &gt; "D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/ASMRTOP_RECV_artefacts/MinSizeRel/VST3/Audio Receive.vst3/Contents/Resources/moduleinfo.json"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>ASMRTOP_RECV_artefacts\MinSizeRel\Audio Receive_SharedCode.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_plugin_client/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_plugin_client/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_processors/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_processors/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_gui_extra/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_gui_extra/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_gui_basics/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_gui_basics/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_graphics/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_graphics/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_events/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_events/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_core/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_core/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_data_structures/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_data_structures/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_processors_headless/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_processors_headless/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_basics/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_basics/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_utils/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_utils/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_formats/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_formats/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_devices/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_devices/libs/VisualStudio2022/x64/MDd/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <DataExecutionPrevention></DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/ASMRTOP_RECV_artefacts/MinSizeRel/VST3/Audio Receive.lib</ImportLibrary>
+      <LinkErrorReporting></LinkErrorReporting>
+      <ProgramDataBaseFile>D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/ASMRTOP_RECV_artefacts/MinSizeRel/VST3/Audio Receive.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_RECV_artefacts\JuceLibraryCode;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\VST3_SDK;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lv2;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\serd;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sord;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sord\src;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sratom;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lilv;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lilv\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BufferSecurityCheck></BufferSecurityCheck>
+      <CallingConvention></CallingConvention>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel></FloatingPointModel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;JUCE_GLOBAL_MODULE_SETTINGS_INCLUDED=1;NDEBUG=1;_NDEBUG=1;JucePlugin_IsSynth=0;JucePlugin_ManufacturerCode=0x56615274;JucePlugin_Manufacturer="VirtualAudioRouter";JucePlugin_ManufacturerWebsite="";JucePlugin_ManufacturerEmail="";JucePlugin_PluginCode=0x72637650;JucePlugin_ProducesMidiOutput=0;JucePlugin_IsMidiEffect=0;JucePlugin_WantsMidiInput=0;JucePlugin_EditorRequiresKeyboardFocus=0;JucePlugin_Name="Audio Receive";JucePlugin_Desc="Audio Receive";JucePlugin_Version=3.0.2;JucePlugin_VersionString="3.0.2";JucePlugin_VersionCode=0x30002;JucePlugin_VSTUniqueID=JucePlugin_PluginCode;JucePlugin_VSTCategory=kPlugCategEffect;JucePlugin_Vst3Category="Fx";JucePlugin_AUMainType='aufx';JucePlugin_AUSubType=JucePlugin_PluginCode;JucePlugin_AUExportPrefix=Audio_ReceiveAU;JucePlugin_AUExportPrefixQuoted="Audio_ReceiveAU";JucePlugin_AUManufacturerCode=JucePlugin_ManufacturerCode;JucePlugin_CFBundleIdentifier=com.VirtualAudioRouter.ASMRTOP_RECV;JucePlugin_AAXIdentifier=com.VirtualAudioRouter.ASMRTOP_RECV;JucePlugin_AAXManufacturerCode=JucePlugin_ManufacturerCode;JucePlugin_AAXProductId=JucePlugin_PluginCode;JucePlugin_AAXCategory=0;JucePlugin_AAXDisableBypass=0;JucePlugin_AAXDisableMultiMono=0;JucePlugin_VSTNumMidiInputs=16;JucePlugin_VSTNumMidiOutputs=16;JucePlugin_Enable_ARA=0;JucePlugin_ARAFactoryID="com.VirtualAudioRouter.ASMRTOP_RECV.arafactory.3.0.2";JucePlugin_ARADocumentArchiveID="com.VirtualAudioRouter.ASMRTOP_RECV.aradocumentarchive.1";JucePlugin_ARACompatibleArchiveIDs="";JucePlugin_ARAContentTypes=0;JucePlugin_ARATransformationFlags=0;JUCE_WEB_BROWSER=0;JUCE_USE_CURL=0;JUCE_WASAPI=1;JUCE_DIRECTSOUND=1;JUCE_VST3_CAN_REPLACE_VST2=0;JUCE_MODULE_AVAILABLE_juce_audio_plugin_client=1;JUCE_MODULE_AVAILABLE_juce_audio_processors=1;JUCE_MODULE_AVAILABLE_juce_gui_extra=1;JUCE_MODULE_AVAILABLE_juce_gui_basics=1;JUCE_MODULE_AVAILABLE_juce_graphics=1;JUCE_MODULE_AVAILABLE_juce_events=1;JUCE_MODULE_AVAILABLE_juce_core=1;JUCE_MODULE_AVAILABLE_juce_data_structures=1;JUCE_MODULE_AVAILABLE_juce_audio_processors_headless=1;JUCE_MODULE_AVAILABLE_juce_audio_basics=1;JUCE_MODULE_AVAILABLE_juce_audio_utils=1;JUCE_MODULE_AVAILABLE_juce_audio_formats=1;JUCE_MODULE_AVAILABLE_juce_audio_devices=1;JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone;JucePlugin_Build_AU=0;JucePlugin_Build_AUv3=0;JucePlugin_Build_AAX=0;JucePlugin_Build_LV2=0;JucePlugin_Build_Standalone=0;JucePlugin_Build_Unity=0;JucePlugin_Build_VST=0;JucePlugin_Build_VST3=1;CMAKE_INTDIR="RelWithDebInfo";ASMRTOP_RECV_VST3_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;JUCE_GLOBAL_MODULE_SETTINGS_INCLUDED=1;NDEBUG=1;_NDEBUG=1;JucePlugin_IsSynth=0;JucePlugin_ManufacturerCode=0x56615274;JucePlugin_Manufacturer=\"VirtualAudioRouter\";JucePlugin_ManufacturerWebsite=\"\";JucePlugin_ManufacturerEmail=\"\";JucePlugin_PluginCode=0x72637650;JucePlugin_ProducesMidiOutput=0;JucePlugin_IsMidiEffect=0;JucePlugin_WantsMidiInput=0;JucePlugin_EditorRequiresKeyboardFocus=0;JucePlugin_Name=\"Audio Receive\";JucePlugin_Desc=\"Audio Receive\";JucePlugin_Version=3.0.2;JucePlugin_VersionString=\"3.0.2\";JucePlugin_VersionCode=0x30002;JucePlugin_VSTUniqueID=JucePlugin_PluginCode;JucePlugin_VSTCategory=kPlugCategEffect;JucePlugin_Vst3Category=\"Fx\";JucePlugin_AUMainType='aufx';JucePlugin_AUSubType=JucePlugin_PluginCode;JucePlugin_AUExportPrefix=Audio_ReceiveAU;JucePlugin_AUExportPrefixQuoted=\"Audio_ReceiveAU\";JucePlugin_AUManufacturerCode=JucePlugin_ManufacturerCode;JucePlugin_CFBundleIdentifier=com.VirtualAudioRouter.ASMRTOP_RECV;JucePlugin_AAXIdentifier=com.VirtualAudioRouter.ASMRTOP_RECV;JucePlugin_AAXManufacturerCode=JucePlugin_ManufacturerCode;JucePlugin_AAXProductId=JucePlugin_PluginCode;JucePlugin_AAXCategory=0;JucePlugin_AAXDisableBypass=0;JucePlugin_AAXDisableMultiMono=0;JucePlugin_VSTNumMidiInputs=16;JucePlugin_VSTNumMidiOutputs=16;JucePlugin_Enable_ARA=0;JucePlugin_ARAFactoryID=\"com.VirtualAudioRouter.ASMRTOP_RECV.arafactory.3.0.2\";JucePlugin_ARADocumentArchiveID=\"com.VirtualAudioRouter.ASMRTOP_RECV.aradocumentarchive.1\";JucePlugin_ARACompatibleArchiveIDs=\"\";JucePlugin_ARAContentTypes=0;JucePlugin_ARATransformationFlags=0;JUCE_WEB_BROWSER=0;JUCE_USE_CURL=0;JUCE_WASAPI=1;JUCE_DIRECTSOUND=1;JUCE_VST3_CAN_REPLACE_VST2=0;JUCE_MODULE_AVAILABLE_juce_audio_plugin_client=1;JUCE_MODULE_AVAILABLE_juce_audio_processors=1;JUCE_MODULE_AVAILABLE_juce_gui_extra=1;JUCE_MODULE_AVAILABLE_juce_gui_basics=1;JUCE_MODULE_AVAILABLE_juce_graphics=1;JUCE_MODULE_AVAILABLE_juce_events=1;JUCE_MODULE_AVAILABLE_juce_core=1;JUCE_MODULE_AVAILABLE_juce_data_structures=1;JUCE_MODULE_AVAILABLE_juce_audio_processors_headless=1;JUCE_MODULE_AVAILABLE_juce_audio_basics=1;JUCE_MODULE_AVAILABLE_juce_audio_utils=1;JUCE_MODULE_AVAILABLE_juce_audio_formats=1;JUCE_MODULE_AVAILABLE_juce_audio_devices=1;JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone;JucePlugin_Build_AU=0;JucePlugin_Build_AUv3=0;JucePlugin_Build_AAX=0;JucePlugin_Build_LV2=0;JucePlugin_Build_Standalone=0;JucePlugin_Build_Unity=0;JucePlugin_Build_VST=0;JucePlugin_Build_VST3=1;CMAKE_INTDIR=\"RelWithDebInfo\";ASMRTOP_RECV_VST3_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_RECV_artefacts\JuceLibraryCode;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\VST3_SDK;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lv2;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\serd;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sord;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sord\src;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sratom;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lilv;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lilv\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_RECV_artefacts\JuceLibraryCode;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\VST3_SDK;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lv2;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\serd;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sord;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sord\src;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\sratom;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lilv;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_processors_headless\format_types\LV2_SDK\lilv\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>	</Message>
+      <Command>setlocal
+"C:\Program Files\Python311\Lib\site-packages\cmake\data\bin\cmake.exe" -E echo "removing moduleinfo.json"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Python311\Lib\site-packages\cmake\data\bin\cmake.exe" -E remove -f "D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/ASMRTOP_RECV_artefacts/RelWithDebInfo/VST3/Audio Receive.vst3/Contents/moduleinfo.json" "D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/ASMRTOP_RECV_artefacts/RelWithDebInfo/VST3/Audio Receive.vst3/Contents/Resources/moduleinfo.json"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+"C:\Program Files\Python311\Lib\site-packages\cmake\data\bin\cmake.exe" -E echo "creating D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/ASMRTOP_RECV_artefacts/RelWithDebInfo/VST3/Audio Receive.vst3"
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\Python311\Lib\site-packages\cmake\data\bin\cmake.exe" -E make_directory "D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/ASMRTOP_RECV_artefacts/RelWithDebInfo/VST3/Audio Receive.vst3/Contents/Resources"
+if %errorlevel% neq 0 goto :cmEnd
+RelWithDebInfo\ASMRTOP_RECV_vst3_helper.exe &gt; "D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/ASMRTOP_RECV_artefacts/RelWithDebInfo/VST3/Audio Receive.vst3/Contents/Resources/moduleinfo.json"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>ASMRTOP_RECV_artefacts\RelWithDebInfo\Audio Receive_SharedCode.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_plugin_client/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_plugin_client/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_processors/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_processors/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_gui_extra/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_gui_extra/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_gui_basics/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_gui_basics/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_graphics/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_graphics/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_events/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_events/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_core/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_core/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_data_structures/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_data_structures/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_processors_headless/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_processors_headless/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_basics/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_basics/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_utils/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_utils/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_formats/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_formats/libs/VisualStudio2022/x64/MDd/$(Configuration);D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_devices/libs/VisualStudio2022/x64/MDd;D:/Autigravity/wdm2vst/ASMRTOP_Plugins/JUCE/modules/juce_audio_devices/libs/VisualStudio2022/x64/MDd/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <DataExecutionPrevention></DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/ASMRTOP_RECV_artefacts/RelWithDebInfo/VST3/Audio Receive.lib</ImportLibrary>
+      <LinkErrorReporting></LinkErrorReporting>
+      <ProgramDataBaseFile>D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/ASMRTOP_RECV_artefacts/RelWithDebInfo/VST3/Audio Receive.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/Autigravity/wdm2vst/ASMRTOP_Plugins/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\Python311\Lib\site-packages\cmake\data\bin\cmake.exe" -SD:/Autigravity/wdm2vst/ASMRTOP_Plugins -BD:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public --check-stamp-file D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeCInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeCXXInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeGenericSystem.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeLanguageInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeRCInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Compiler\MSVC-C.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Compiler\MSVC.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Linker\MSVC-C.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Linker\MSVC.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\WindowsPaths.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\4.2.3\CMakeCCompiler.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\4.2.3\CMakeCXXCompiler.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\4.2.3\CMakeRCCompiler.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\4.2.3\CMakeSystem.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/Autigravity/wdm2vst/ASMRTOP_Plugins/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\Python311\Lib\site-packages\cmake\data\bin\cmake.exe" -SD:/Autigravity/wdm2vst/ASMRTOP_Plugins -BD:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public --check-stamp-file D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeCInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeCXXInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeGenericSystem.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeLanguageInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeRCInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Compiler\MSVC-C.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Compiler\MSVC.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Linker\MSVC-C.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Linker\MSVC.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\WindowsPaths.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\4.2.3\CMakeCCompiler.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\4.2.3\CMakeCXXCompiler.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\4.2.3\CMakeRCCompiler.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\4.2.3\CMakeSystem.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/Autigravity/wdm2vst/ASMRTOP_Plugins/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\Python311\Lib\site-packages\cmake\data\bin\cmake.exe" -SD:/Autigravity/wdm2vst/ASMRTOP_Plugins -BD:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public --check-stamp-file D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeCInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeCXXInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeGenericSystem.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeLanguageInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeRCInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Compiler\MSVC-C.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Compiler\MSVC.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Linker\MSVC-C.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Linker\MSVC.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\WindowsPaths.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\4.2.3\CMakeCCompiler.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\4.2.3\CMakeCXXCompiler.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\4.2.3\CMakeRCCompiler.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\4.2.3\CMakeSystem.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/Autigravity/wdm2vst/ASMRTOP_Plugins/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\Python311\Lib\site-packages\cmake\data\bin\cmake.exe" -SD:/Autigravity/wdm2vst/ASMRTOP_Plugins -BD:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public --check-stamp-file D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeCInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeCXXInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeGenericSystem.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeLanguageInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeRCInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Compiler\MSVC-C.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Compiler\MSVC.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Internal\CMakeCXXLinkerInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Linker\MSVC-C.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Linker\MSVC-CXX.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Linker\MSVC.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC-CXX.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\Windows.cmake;C:\Program Files\Python311\Lib\site-packages\cmake\data\share\cmake-4.2\Modules\Platform\WindowsPaths.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\4.2.3\CMakeCCompiler.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\4.2.3\CMakeCXXCompiler.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\4.2.3\CMakeRCCompiler.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\4.2.3\CMakeSystem.cmake;D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\cmake.verify_globs;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_plugin_client\juce_audio_plugin_client_AAX.cpp" />
+    <ClCompile Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_plugin_client\juce_audio_plugin_client_AAX_utils.cpp" />
+    <ClCompile Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_plugin_client\juce_audio_plugin_client_ARA.cpp" />
+    <ClCompile Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_plugin_client\juce_audio_plugin_client_LV2.cpp" />
+    <ClCompile Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_plugin_client\juce_audio_plugin_client_Standalone.cpp" />
+    <ClCompile Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_plugin_client\juce_audio_plugin_client_Unity.cpp" />
+    <ClCompile Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_plugin_client\juce_audio_plugin_client_VST2.cpp" />
+    <ClCompile Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\JUCE\modules\juce_audio_plugin_client\juce_audio_plugin_client_VST3.cpp" />
+    <Object Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_RECV_rc_lib.dir\$(Configuration)\ASMRTOP_RECV_resources.res" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ZERO_CHECK.vcxproj">
+      <Project>{2E90BF9F-92E5-3B80-AC02-9BD7C51719AF}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_RECV.vcxproj">
+      <Project>{613EDB24-9923-3E1D-AAFA-AB694264EAE4}</Project>
+      <Name>ASMRTOP_RECV</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_RECV_rc_lib.vcxproj">
+      <Project>{22C34D37-DF40-33AA-A964-F83961046814}</Project>
+      <Name>ASMRTOP_RECV_rc_lib</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_RECV_vst3_helper.vcxproj">
+      <Project>{93FC813C-35D6-3156-9926-4164B5B532FF}</Project>
+      <Name>ASMRTOP_RECV_vst3_helper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

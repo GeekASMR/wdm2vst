@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_asmrtop\CMakeFiles\9248b112f6d9ce4c15592c152f14f3ce\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{52D2BF16-79AE-3F00-A5CC-8E157FA67B35}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

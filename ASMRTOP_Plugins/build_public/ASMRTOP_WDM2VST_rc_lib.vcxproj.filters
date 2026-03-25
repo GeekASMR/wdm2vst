@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\CMakeFiles\99f0cce67ec31ef49a3f0bb2ceccca66\ASMRTOP_WDM2VST_resources.rc.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="D:\Autigravity\wdm2vst\ASMRTOP_Plugins\build_public\ASMRTOP_WDM2VST_artefacts\JuceLibraryCode\ASMRTOP_WDM2VST_resources.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{706F6D64-7ACA-3FA7-A85D-D0E726C54F6F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{7F99A88E-254A-3956-BFAD-3AD9A36B8B5D}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

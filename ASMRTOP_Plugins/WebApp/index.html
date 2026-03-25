@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#0F1115">
+    <title>ASMRTOP Monitor</title>
+    <link rel="manifest" href="manifest.json">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #0F1115;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .header {
+            width: 100%;
+            padding: 20px 24px 16px;
+            background: linear-gradient(180deg, #191C22 0%, #0F1115 100%);
+            border-bottom: 2px solid #00BCD4;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, #00BCD4, #4DD0E1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header .subtitle {
+            font-size: 11px;
+            color: #555;
+            margin-top: 4px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .card {
+            width: calc(100% - 32px);
+            max-width: 420px;
+            margin: 16px auto;
+            background: #16191F;
+            border-radius: 16px;
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .card-title {
+            font-size: 11px;
+            font-weight: 700;
+            color: #00BCD4;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .input-group input {
+            flex: 1;
+            background: #0F1115;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 12px 16px;
+            color: #fff;
+            font-size: 16px;
+            font-family: 'SF Mono', 'Consolas', monospace;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .input-group input:focus {
+            border-color: #00BCD4;
+        }
+
+        .input-group input::placeholder {
+            color: #444;
+        }
+
+        .port-input {
+            max-width: 80px;
+        }
+
+        .connect-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .connect-btn.idle {
+            background: linear-gradient(135deg, #00BCD4, #0097A7);
+            color: #fff;
+        }
+
+        .connect-btn.connecting {
+            background: #333;
+            color: #888;
+            pointer-events: none;
+        }
+
+        .connect-btn.connected {
+            background: linear-gradient(135deg, #E91E63, #C2185B);
+            color: #fff;
+        }
+
+        .connect-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Status */
+        .status {
+            text-align: center;
+            padding: 6px 0;
+            font-size: 12px;
+            color: #555;
+        }
+
+        .status.ok { color: #4CAF50; }
+        .status.err { color: #E91E63; }
+
+        /* Meters */
+        .meter-container {
+            margin: 8px 0;
+        }
+
+        .meter-row {
+            display: flex;
+            align-items: center;
+            margin: 6px 0;
+        }
+
+        .meter-label {
+            width: 16px;
+            font-size: 10px;
+            color: #555;
+            font-weight: 700;
+        }
+
+        .meter-track {
+            flex: 1;
+            height: 10px;
+            background: #0A0C0F;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .meter-fill {
+            height: 100%;
+            border-radius: 5px;
+            transition: width 0.05s linear;
+            background: linear-gradient(90deg, #00BCD4, #4CAF50, #FFEB3B, #FF5722);
+            width: 0%;
+        }
+
+        .meter-peak {
+            position: absolute;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: #fff;
+            border-radius: 1px;
+            transition: left 0.05s linear;
+            left: 0%;
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 8px;
+            background: #0F1115;
+            border-radius: 8px;
+        }
+
+        .stat-value {
+            font-size: 18px;
+            font-weight: 700;
+            color: #00BCD4;
+            font-family: 'SF Mono', 'Consolas', monospace;
+        }
+
+        .stat-label {
+            font-size: 9px;
+            color: #555;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        /* Visualizer */
+        .visualizer {
+            width: 100%;
+            height: 100px;
+            margin-top: 8px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .visualizer canvas {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Volume */
+        .volume-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .volume-icon {
+            font-size: 18px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .volume-slider {
+            flex: 1;
+            -webkit-appearance: none;
+            appearance: none;
+            height: 6px;
+            background: #0A0C0F;
+            border-radius: 3px;
+            outline: none;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #00BCD4;
+            cursor: pointer;
+        }
+
+        .volume-value {
+            width: 40px;
+            text-align: right;
+            font-size: 13px;
+            color: #888;
+            font-family: 'SF Mono', 'Consolas', monospace;
+        }
+
+        /* Animations */
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .pulse { animation: pulse 1.5s infinite; }
+
+        /* Safe area for notch phones */
+        @supports (padding-top: env(safe-area-inset-top)) {
+            .header { padding-top: calc(20px + env(safe-area-inset-top)); }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>ASMRTOP Monitor</h1>
+        <div class="subtitle">Real-time Audio Monitor</div>
+    </div>
+
+    <div class="card">
+        <div class="card-title">Connection</div>
+        <div class="input-group">
+            <input type="text" id="hostInput" placeholder="192.168.1.100" value="">
+            <input type="text" id="portInput" class="port-input" placeholder="18820" value="18820">
+        </div>
+        <button class="connect-btn idle" id="connectBtn" onclick="toggleConnect()">CONNECT</button>
+        <div class="status" id="statusText">Ready to connect</div>
+    </div>
+
+    <div class="card">
+        <div class="card-title">Audio</div>
+        <div class="meter-container">
+            <div class="meter-row">
+                <span class="meter-label">L</span>
+                <div class="meter-track">
+                    <div class="meter-fill" id="meterL"></div>
+                    <div class="meter-peak" id="peakL"></div>
+                </div>
+            </div>
+            <div class="meter-row">
+                <span class="meter-label">R</span>
+                <div class="meter-track">
+                    <div class="meter-fill" id="meterR"></div>
+                    <div class="meter-peak" id="peakR"></div>
+                </div>
+            </div>
+        </div>
+        <div class="visualizer">
+            <canvas id="waveCanvas"></canvas>
+        </div>
+        <div class="volume-row">
+            <span class="volume-icon" id="muteBtn" onclick="toggleMute()">🔊</span>
+            <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="80"
+                   oninput="setVolume(this.value)">
+            <span class="volume-value" id="volumeValue">80%</span>
+        </div>
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-value" id="sampleRate">—</div>
+                <div class="stat-label">Sample Rate</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="bufferMs">—</div>
+                <div class="stat-label">Buffer</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="packets">—</div>
+                <div class="stat-label">Packets/s</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // ========================================================================
+    // State
+    // ========================================================================
+    let ws = null;
+    let audioCtx = null;
+    let gainNode = null;
+    let sampleRate = 48000;
+    let channels = 2;
+    let volume = 0.8;
+    let muted = false;
+    let packetCount = 0;
+    let lastPacketCheck = 0;
+    let waveformData = new Float32Array(256);
+
+    // Meter state
+    let meterLVal = 0, meterRVal = 0;
+    let peakLVal = 0, peakRVal = 0;
+    let peakLDecay = 0, peakRDecay = 0;
+
+    // ========================================================================
+    // Connection
+    // ========================================================================
+    function toggleConnect() {
+        if (ws && ws.readyState <= 1) {
+            ws.close();
+        } else {
+            connect();
+        }
+    }
+
+    function connect() {
+        const host = document.getElementById('hostInput').value.trim();
+        const port = document.getElementById('portInput').value.trim() || '18820';
+        
+        if (!host) {
+            setStatus('Enter host IP address', 'err');
+            return;
+        }
+
+        setStatus('Connecting...', '');
+        setBtnState('connecting');
+
+        try {
+            ws = new WebSocket(`ws://${host}:${port}`);
+            ws.binaryType = 'arraybuffer';
+        } catch (e) {
+            setStatus('Invalid address', 'err');
+            setBtnState('idle');
+            return;
+        }
+
+        ws.onopen = () => {
+            setStatus('Connected', 'ok');
+            setBtnState('connected');
+            initAudio();
+        };
+
+        ws.onmessage = (e) => {
+            if (typeof e.data === 'string') {
+                // Config message (JSON)
+                try {
+                    const cfg = JSON.parse(e.data);
+                    if (cfg.sampleRate) sampleRate = cfg.sampleRate;
+                    if (cfg.channels) channels = cfg.channels;
+                    document.getElementById('sampleRate').textContent = sampleRate;
+                } catch(ex) {}
+            } else {
+                // Binary audio data (int16 interleaved stereo)
+                processAudioData(e.data);
+                packetCount++;
+            }
+        };
+
+        ws.onerror = () => {
+            setStatus('Connection error', 'err');
+            setBtnState('idle');
+        };
+
+        ws.onclose = () => {
+            setStatus('Disconnected', '');
+            setBtnState('idle');
+        };
+    }
+
+    // ========================================================================
+    // Audio Playback
+    // ========================================================================
+    function initAudio() {
+        if (audioCtx) return;
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)({ sampleRate: sampleRate });
+        gainNode = audioCtx.createGain();
+        gainNode.gain.value = muted ? 0 : volume;
+        gainNode.connect(audioCtx.destination);
+    }
+
+    function processAudioData(arrayBuffer) {
+        if (!audioCtx || audioCtx.state === 'closed') return;
+        
+        // Resume audio context on first data (required for mobile)
+        if (audioCtx.state === 'suspended') {
+            audioCtx.resume();
+        }
+
+        const int16 = new Int16Array(arrayBuffer);
+        const numSamples = int16.length / 2; // stereo
+        
+        if (numSamples === 0) return;
+
+        // Create audio buffer
+        const buffer = audioCtx.createBuffer(2, numSamples, sampleRate);
+        const chL = buffer.getChannelData(0);
+        const chR = buffer.getChannelData(1);
+
+        let pL = 0, pR = 0;
+        for (let i = 0; i < numSamples; i++) {
+            chL[i] = int16[i * 2] / 32768.0;
+            chR[i] = int16[i * 2 + 1] / 32768.0;
+            pL = Math.max(pL, Math.abs(chL[i]));
+            pR = Math.max(pR, Math.abs(chR[i]));
+        }
+
+        // Update meters
+        meterLVal = pL;
+        meterRVal = pR;
+        if (pL > peakLVal) { peakLVal = pL; peakLDecay = 0; }
+        if (pR > peakRVal) { peakRVal = pR; peakRDecay = 0; }
+
+        // Store waveform for visualizer
+        const step = Math.max(1, Math.floor(numSamples / 256));
+        for (let i = 0; i < 256 && i * step < numSamples; i++) {
+            waveformData[i] = (chL[i * step] + chR[i * step]) * 0.5;
+        }
+
+        // Schedule playback
+        const source = audioCtx.createBufferSource();
+        source.buffer = buffer;
+        source.connect(gainNode);
+        source.start(0);
+    }
+
+    // ========================================================================
+    // Volume
+    // ========================================================================
+    function setVolume(val) {
+        volume = val / 100;
+        document.getElementById('volumeValue').textContent = val + '%';
+        if (gainNode && !muted) {
+            gainNode.gain.setValueAtTime(volume, audioCtx.currentTime);
+        }
+    }
+
+    function toggleMute() {
+        muted = !muted;
+        document.getElementById('muteBtn').textContent = muted ? '🔇' : '🔊';
+        if (gainNode) {
+            gainNode.gain.setValueAtTime(muted ? 0 : volume, audioCtx.currentTime);
+        }
+    }
+
+    // ========================================================================
+    // UI Updates
+    // ========================================================================
+    function setStatus(text, cls) {
+        const el = document.getElementById('statusText');
+        el.textContent = text;
+        el.className = 'status ' + cls;
+    }
+
+    function setBtnState(state) {
+        const btn = document.getElementById('connectBtn');
+        btn.className = 'connect-btn ' + state;
+        btn.textContent = state === 'connected' ? 'DISCONNECT' : 
+                          state === 'connecting' ? 'CONNECTING...' : 'CONNECT';
+    }
+
+    // Meter + Visualizer update loop
+    function updateUI() {
+        // Meters
+        const mL = document.getElementById('meterL');
+        const mR = document.getElementById('meterR');
+        const pkL = document.getElementById('peakL');
+        const pkR = document.getElementById('peakR');
+        
+        mL.style.width = (meterLVal * 100) + '%';
+        mR.style.width = (meterRVal * 100) + '%';
+        pkL.style.left = (peakLVal * 100) + '%';
+        pkR.style.left = (peakRVal * 100) + '%';
+        
+        // Decay
+        meterLVal *= 0.85;
+        meterRVal *= 0.85;
+        peakLDecay++;
+        peakRDecay++;
+        if (peakLDecay > 30) peakLVal *= 0.95;
+        if (peakRDecay > 30) peakRVal *= 0.95;
+
+        // Buffer estimate
+        if (audioCtx) {
+            const bufMs = audioCtx.baseLatency ? (audioCtx.baseLatency * 1000).toFixed(0) : '—';
+            document.getElementById('bufferMs').textContent = bufMs + 'ms';
+        }
+
+        // Packet rate
+        const now = performance.now();
+        if (now - lastPacketCheck > 1000) {
+            document.getElementById('packets').textContent = packetCount;
+            packetCount = 0;
+            lastPacketCheck = now;
+        }
+
+        // Waveform
+        drawWaveform();
+        requestAnimationFrame(updateUI);
+    }
+
+    function drawWaveform() {
+        const canvas = document.getElementById('waveCanvas');
+        const ctx = canvas.getContext('2d');
+        const W = canvas.width = canvas.offsetWidth * 2;
+        const H = canvas.height = canvas.offsetHeight * 2;
+        
+        ctx.clearRect(0, 0, W, H);
+
+        // Draw center line
+        ctx.strokeStyle = 'rgba(255,255,255,0.05)';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(0, H / 2);
+        ctx.lineTo(W, H / 2);
+        ctx.stroke();
+
+        // Draw waveform
+        const gradient = ctx.createLinearGradient(0, 0, W, 0);
+        gradient.addColorStop(0, '#00BCD4');
+        gradient.addColorStop(0.5, '#4DD0E1');
+        gradient.addColorStop(1, '#00BCD4');
+        
+        ctx.strokeStyle = gradient;
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        
+        const sliceWidth = W / 256;
+        for (let i = 0; i < 256; i++) {
+            const x = i * sliceWidth;
+            const y = (0.5 + waveformData[i] * 0.45) * H;
+            if (i === 0) ctx.moveTo(x, y);
+            else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+
+        // Glow effect
+        ctx.strokeStyle = gradient;
+        ctx.lineWidth = 6;
+        ctx.globalAlpha = 0.15;
+        ctx.beginPath();
+        for (let i = 0; i < 256; i++) {
+            const x = i * sliceWidth;
+            const y = (0.5 + waveformData[i] * 0.45) * H;
+            if (i === 0) ctx.moveTo(x, y);
+            else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+        ctx.globalAlpha = 1;
+    }
+
+    // Start UI loop
+    requestAnimationFrame(updateUI);
+
+    // Auto-detect host from URL
+    if (location.hostname && location.hostname !== 'localhost') {
+        document.getElementById('hostInput').value = location.hostname;
+    }
+    </script>
+</body>
+</html>
