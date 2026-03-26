@@ -4,6 +4,7 @@
 #include "Localization.h"
 #include "QRCodePopup.h"
 #include "DropdownLookAndFeel.h"
+#include "UpdateChecker.h"
 
 class AsmrtopVst2WdmAudioProcessorEditor : public juce::AudioProcessorEditor, public juce::ComboBox::Listener, public juce::Timer
 {
@@ -34,6 +35,8 @@ private:
     // Language
     juce::TextButton langBtn;
     DropdownLookAndFeel dropdownLnf;
+    std::unique_ptr<UpdateChecker> updateChecker;
+    juce::HyperlinkButton updateBtn;
 
     float displayedPeakL { 0.0f };
     float displayedPeakR { 0.0f };
@@ -41,6 +44,8 @@ private:
     void showQRCode();
     void openFirewallPort(int port);
     void refreshDeviceList();
+    bool hasUpdate = false;
+    float flashPhase = 0.0f;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AsmrtopVst2WdmAudioProcessorEditor)
 };

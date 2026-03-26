@@ -13,6 +13,19 @@ AsmrtopWdm2VstAudioProcessorEditor::AsmrtopWdm2VstAudioProcessorEditor (AsmrtopW
     langBtn.setButtonText(L::t(L::LANG_SWITCH));
     addAndMakeVisible(langBtn);
 
+    addAndMakeVisible(updateBtn);
+    updateBtn.setButtonText("NEW VST!");
+    updateBtn.setColour(juce::HyperlinkButton::textColourId, juce::Colour(0xFF4CAF50));
+    updateBtn.setURL(juce::URL("https://github.com/GeekASMR/wdm2vst/releases/latest"));
+    updateBtn.setVisible(false);
+
+    updateChecker = std::make_unique<UpdateChecker>([this](juce::String newVer) {
+        updateBtn.setButtonText(juce::String(JucePlugin_VersionString) + " -> " + newVer);
+        updateBtn.setVisible(true);
+        hasUpdate = true;
+        repaint();
+    });
+
     addAndMakeVisible (deviceComboBox);
     deviceComboBox.setColour(juce::ComboBox::backgroundColourId, juce::Colour(0xFF1E2229));
     deviceComboBox.setColour(juce::ComboBox::outlineColourId, juce::Colours::transparentBlack);
@@ -192,7 +205,15 @@ void AsmrtopWdm2VstAudioProcessorEditor::timerCallback()
     bool isDirectMode = audioProcessor.isIPCMode();
     latencyModeComboBox.setEnabled(isDirectMode);
     latencyModeComboBox.setAlpha(isDirectMode ? 1.0f : 0.4f);
-        
+    
+    if (hasUpdate) {
+        flashPhase += 0.15f;
+        if (flashPhase > juce::MathConstants<float>::twoPi) flashPhase -= juce::MathConstants<float>::twoPi;
+        float alpha = 0.5f + 0.5f * std::sin(flashPhase);
+        updateBtn.setColour(juce::HyperlinkButton::textColourId, juce::Colour(0xFF4CAF50).interpolatedWith(juce::Colour(0xFFE91E63), alpha));
+        updateBtn.repaint();
+    }
+    
     repaint(20, 150, 460, 140);
 }
 
@@ -245,9 +266,11 @@ void AsmrtopWdm2VstAudioProcessorEditor::paint (juce::Graphics& g)
 #endif
     
     // Version (left of lang button)
-    g.setColour (juce::Colour(0xFF555555));
-    g.setFont(12.0f);
-    g.drawText(juce::String("v") + JucePlugin_VersionString, getWidth()-95, 25, 40, 15, juce::Justification::right);
+    if (!hasUpdate) {
+        g.setColour(juce::Colour(0xFF555555));
+        g.setFont(12.0f);
+        g.drawText(juce::String("v") + JucePlugin_VersionString, getWidth()-95, 25, 40, 15, juce::Justification::right);
+    }
 
     // Labels
     g.setColour (juce::Colour(0xFFAAAAAA));
@@ -317,6 +340,7 @@ void AsmrtopWdm2VstAudioProcessorEditor::paint (juce::Graphics& g)
 void AsmrtopWdm2VstAudioProcessorEditor::resized()
 {
     langBtn.setBounds(getWidth() - 50, 20, 35, 24);
+    updateBtn.setBounds(getWidth() - 145, 22, 90, 20);
     deviceComboBox.setBounds (90, 80, 390, 30);
     volumeSlider.setBounds (85, 120, 190, 30);
     latencyModeComboBox.setBounds (280, 123, 110, 24);

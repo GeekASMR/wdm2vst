@@ -4,7 +4,7 @@
 #include "PluginBranding.h"
 #include "P2PTransport.h"
 
-class AsmrtopVst2WdmAudioProcessor : public juce::AudioProcessor, public juce::AudioIODeviceCallback
+class AsmrtopVst2WdmAudioProcessor : public juce::AudioProcessor, public juce::AudioIODeviceCallback, public juce::Timer
 {
 public:
     AsmrtopVst2WdmAudioProcessor();
@@ -57,6 +57,8 @@ public:
                                            const juce::AudioIODeviceCallbackContext& context) override;
     void audioDeviceAboutToStart (juce::AudioIODevice* device) override;
     void audioDeviceStopped() override;
+    
+    void timerCallback() override;
 
     juce::AudioDeviceManager deviceManager;
     juce::AudioProcessorValueTreeState vts;

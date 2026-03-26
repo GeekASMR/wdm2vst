@@ -21,7 +21,7 @@ HTML_ADDITION = """
   </ul>
   
   <div style="margin-top: 25px;">
-    <a href="https://github.com/fangf2018/wdm2vst/releases/tag/v3.1.0" target="_blank" style="display: inline-block; padding: 12px 28px; background-color: #ff1e5f; color: #fff; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 16px;">📥 前往 GitHub 官方仓库下载最新 V3.1.0</a>
+    <a href="https://github.com/GeekASMR/wdm2vst/releases/tag/v3.1.0" target="_blank" style="display: inline-block; padding: 12px 28px; background-color: #ff1e5f; color: #fff; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 16px;">📥 前往 GitHub 官方仓库下载最新 V3.1.0</a>
   </div>
 </div>
 """

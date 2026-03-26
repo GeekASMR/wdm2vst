@@ -3,6 +3,7 @@
 #include "W2V_PluginProcessor.h"
 #include "Localization.h"
 #include "DropdownLookAndFeel.h"
+#include "UpdateChecker.h"
 
 class AsmrtopWdm2VstAudioProcessorEditor : public juce::AudioProcessorEditor, public juce::ComboBox::Listener, public juce::Timer
 {
@@ -25,8 +26,13 @@ private:
     std::unique_ptr<juce::AudioProcessorValueTreeState::ComboBoxAttachment> latencyModeAttachment;
     juce::TextButton langBtn;
     DropdownLookAndFeel dropdownLnf;
+    std::unique_ptr<UpdateChecker> updateChecker;
+    juce::HyperlinkButton updateBtn;
+    
     float displayedPeakL { 0.0f };
     float displayedPeakR { 0.0f };
+    bool hasUpdate = false;
+    float flashPhase = 0.0f;
     void refreshDeviceList();
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AsmrtopWdm2VstAudioProcessorEditor)
 };

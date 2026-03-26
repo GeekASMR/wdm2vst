@@ -1,6 +1,7 @@
 #include "V2W_PluginProcessor.h"
 #include "V2W_PluginEditor.h"
 #include "AudioUtils.h"
+#include "TelemetryReporter.h"
 using Asmrtop::hermite_interp;
 
 AsmrtopVst2WdmAudioProcessor::AsmrtopVst2WdmAudioProcessor()
@@ -12,15 +13,22 @@ AsmrtopVst2WdmAudioProcessor::AsmrtopVst2WdmAudioProcessor()
            std::make_unique<juce::AudioParameterBool> ("limiter", "Limiter", false)
        })
 {
+    TelemetryReporter::getInstance().logEvent("Plugin_Opened", "Plugin Instance Created", "VST2WDM");
     deviceManager.setCurrentAudioDeviceType ("Windows Audio", true);
 
     deviceManager.initialise (0, 2, nullptr, false);
     deviceManager.addAudioCallback (this);
+    
+    juce::String defaultName = Asmrtop::SharedMemoryBridge::getIpcChannelName("REC", 0);
+    enableIPCMode(0, defaultName + " [IPC]");
+    
+    startTimer(300);
 }
 
 AsmrtopVst2WdmAudioProcessor::~AsmrtopVst2WdmAudioProcessor() { deviceManager.removeAudioCallback (this); }
 void AsmrtopVst2WdmAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock) 
 { 
+    TelemetryReporter::getInstance().logEvent("DAW_Prepare", "SR: " + juce::String(sampleRate) + " | Block: " + juce::String(samplesPerBlock), "VST2WDM");
     currentDawRate = sampleRate;
     
     std::fill(ringL.begin(), ringL.end(), 0.0f);
@@ -134,6 +142,7 @@ void AsmrtopVst2WdmAudioProcessor::audioDeviceIOCallbackWithContext (const float
 
     // Safety check
     if (availableU > Asmrtop::IPC_RING_SIZE) {
+        TelemetryReporter::getInstance().logEvent("Buffer_Overrun", "Avail: " + juce::String(availableU), "VST2WDM");
         state.store(0, std::memory_order_relaxed);
         r = w - (uint32_t)expectedDiff; 
         readPos.store(r, std::memory_order_relaxed);
@@ -141,6 +150,7 @@ void AsmrtopVst2WdmAudioProcessor::audioDeviceIOCallbackWithContext (const float
         smoothedDiff = 0.0;
         availableU = (int32_t)expectedDiff;
     } else if (availableU < 0) {
+        TelemetryReporter::getInstance().logEvent("Buffer_Underrun", "Avail: " + juce::String(availableU), "VST2WDM");
         state.store(0, std::memory_order_relaxed);
         r = w; 
         readPos.store(r, std::memory_order_relaxed);
@@ -269,4 +279,11 @@ double AsmrtopVst2WdmAudioProcessor::getLatencyMs() const {
     sr = deviceSampleRate.load(std::memory_order_relaxed);
     if (sr < 8000.0) sr = 48000.0;
     return (double)getAvailableSamples() / sr * 1000.0;
+}
+
+void AsmrtopVst2WdmAudioProcessor::timerCallback()
+{
+    if (ipcBridge != nullptr && !ipcBridge->isConnected()) {
+        ipcBridge->connect();
+    }
 }

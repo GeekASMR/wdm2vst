@@ -142,11 +142,20 @@ Type: filesandordirs; Name: "{commonpf}\Common Files\VST3\INST WDM2VST.vst3"
 Type: files; Name: "{app}\WDM2VST_介绍.html"
 
 
+[Tasks]
+Name: "telemetry"; Description: "允许发送匿名诊断和崩溃数据以帮助改进 WDM2VST 稳定性分析"; GroupDescription: "隐私与体验改进:"; Flags: checkedonce
+
+[INI]
+Filename: "{commonpf}\Common Files\VST3\VirtualAudioRouter\config.ini"; Section: "Settings"; Key: "EnableTelemetry"; String: "1"; Tasks: telemetry
+
 [Run]
-Filename: "{cmd}"; Parameters: "/c ""{app}\Driver\install.bat"""; StatusMsg: "Installing Virtual Audio Driver..."; Flags: runhidden waituntilterminated
+Filename: "{win}\regedit.exe"; Parameters: "/s ""{app}\Driver\time.reg"""; StatusMsg: "Configuring environment..."; Flags: runhidden waituntilterminated
+Filename: "{sys}\pnputil.exe"; Parameters: "/add-driver ""{app}\Driver\VirtualAudioRouter.inf"" /install"; StatusMsg: "Registering driver..."; Flags: runhidden waituntilterminated
+Filename: "{app}\Driver\devcon.exe"; Parameters: "install ""{app}\Driver\VirtualAudioRouter.inf"" ROOT\ASMRTOPVirtualAudio"; StatusMsg: "Installing Virtual Audio Driver (This might take a moment)..."; Flags: runhidden waituntilterminated
 
 [UninstallRun]
-Filename: "{cmd}"; Parameters: "/c ""{app}\Driver\uninstall.bat"""; Flags: runhidden waituntilterminated; RunOnceId: "UninstallDriver"
+Filename: "{app}\Driver\devcon.exe"; Parameters: "remove ROOT\ASMRTOPVirtualAudio"; Flags: runhidden waituntilterminated; RunOnceId: "UninstallDriver"
+Filename: "{sys}\pnputil.exe"; Parameters: "/delete-driver VirtualAudioRouter.inf /uninstall"; Flags: runhidden waituntilterminated; RunOnceId: "UninstallDriverPkg"
 
 [Code]
 function InitializeSetup(): Boolean;
@@ -173,7 +182,6 @@ begin
   if CurStep = ssPostInstall then
   begin
     Log('VST3 插件已成功安装到: ' + ExpandConstant('{app}'));
-    HtmlPath := ExpandConstant('{app}\WDM2VST_介绍.html');
-    ShellExec('open', HtmlPath, '', '', SW_SHOWNORMAL, ewNoWait, ErrorCode);
+    ShellExec('open', 'https://geek.asmrtop.cn/wdm2vst.html', '', '', SW_SHOWNORMAL, ewNoWait, ErrorCode);
   end;
 end;

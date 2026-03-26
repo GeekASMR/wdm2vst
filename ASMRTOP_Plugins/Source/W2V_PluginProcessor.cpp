@@ -1,6 +1,7 @@
 #include "W2V_PluginProcessor.h"
 #include "W2V_PluginEditor.h"
 #include "AudioUtils.h"
+#include "TelemetryReporter.h"
 using Asmrtop::hermite_interp;
 AsmrtopWdm2VstAudioProcessor::AsmrtopWdm2VstAudioProcessor()
      : AudioProcessor (BusesProperties()
@@ -12,10 +13,15 @@ AsmrtopWdm2VstAudioProcessor::AsmrtopWdm2VstAudioProcessor()
            std::make_unique<juce::AudioParameterChoice> ("latencyMode", "Latency Focus", juce::StringArray{"Safe (8ms+)", "Fast (4ms+)", "Extreme (2ms+)", "Insane (1ms+ PRIO)"}, 1)
        })
 {
+    TelemetryReporter::getInstance().logEvent("Plugin_Opened", "Plugin Instance Created", "WDM2VST");
     deviceManager.setCurrentAudioDeviceType ("Windows Audio", true);
 
     deviceManager.initialise (2, 0, nullptr, false);
     deviceManager.addAudioCallback (this);
+    
+    juce::String defaultName = Asmrtop::SharedMemoryBridge::getIpcChannelName("PLAY", 0);
+    enableIPCMode(0, defaultName + " [IPC]");
+    
     startTimer(300);
 }
 
@@ -25,6 +31,7 @@ AsmrtopWdm2VstAudioProcessor::~AsmrtopWdm2VstAudioProcessor() {
 }
 void AsmrtopWdm2VstAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock) 
 { 
+    TelemetryReporter::getInstance().logEvent("DAW_Prepare", "SR: " + juce::String(sampleRate) + " | Block: " + juce::String(samplesPerBlock), "WDM2VST");
     currentDawRate = sampleRate;
     
     std::fill(ringL.begin(), ringL.end(), 0.0f);
@@ -188,6 +195,7 @@ void AsmrtopWdm2VstAudioProcessor::processBlock (juce::AudioBuffer<float>& buffe
 
     // Safety check for desync or extreme underrun/overrun
     if (availableU > Asmrtop::IPC_RING_SIZE) {
+        TelemetryReporter::getInstance().logEvent("Buffer_Overrun", "Avail: " + juce::String(availableU), "WDM2VST");
         state.store(0, std::memory_order_relaxed);
         r = w - (uint32_t)expectedDiff; 
         readPos.store(r, std::memory_order_relaxed);
@@ -195,6 +203,7 @@ void AsmrtopWdm2VstAudioProcessor::processBlock (juce::AudioBuffer<float>& buffe
         smoothedDiff = 0.0;
         availableU = (int32_t)expectedDiff;
     } else if (availableU < 0) {
+        TelemetryReporter::getInstance().logEvent("Buffer_Underrun", "Avail: " + juce::String(availableU), "WDM2VST");
         state.store(0, std::memory_order_relaxed);
         r = w; 
         readPos.store(r, std::memory_order_relaxed);

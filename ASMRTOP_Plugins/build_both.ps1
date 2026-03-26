@@ -10,6 +10,9 @@ function BuildBrand($BrandStr, $BuildDir) {
     cmake -B $BuildDir
     if ($LASTEXITCODE -ne 0) { Write-Error "CMake configure failed for $BrandStr"; exit 1 }
     
+    # Pre-cleanup flattened files to avoid MSBuild error MSB3191
+    Get-ChildItem -Path "$BuildDir\*" -Filter "*.vst3" -Recurse -File | Remove-Item -Force -ErrorAction SilentlyContinue
+
     cmake --build $BuildDir --config Release
     if ($LASTEXITCODE -ne 0) { Write-Error "CMake build failed for $BrandStr"; exit 1 }
     
