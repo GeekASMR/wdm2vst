@@ -73,7 +73,7 @@ events:
       The output was:
       0
       适用于 .NET Framework MSBuild 版本 17.14.40+3e7442088
-      生成启动时间为 2026/3/25 20:03:59。
+      生成启动时间为 2026/3/26 12:59:31。
       
       节点 1 上的项目“D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\build_public\\CMakeFiles\\4.2.3\\CompilerIdC\\CompilerIdC.vcxproj”(默认目标)。
       PrepareForBuild:
@@ -102,7 +102,7 @@ events:
           0 个警告
           0 个错误
       
-      已用时间 00:00:01.00
+      已用时间 00:00:00.71
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -644,7 +644,7 @@ events:
       The output was:
       0
       适用于 .NET Framework MSBuild 版本 17.14.40+3e7442088
-      生成启动时间为 2026/3/25 20:04:00。
+      生成启动时间为 2026/3/26 12:59:32。
       
       节点 1 上的项目“D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\build_public\\CMakeFiles\\4.2.3\\CompilerIdCXX\\CompilerIdCXX.vcxproj”(默认目标)。
       PrepareForBuild:
@@ -673,7 +673,7 @@ events:
           0 个警告
           0 个错误
       
-      已用时间 00:00:00.72
+      已用时间 00:00:00.96
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -964,8 +964,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/CMakeFiles/CMakeScratch/TryCompile-inj9a2"
-      binary: "D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/CMakeFiles/CMakeScratch/TryCompile-inj9a2"
+      source: "D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/CMakeFiles/CMakeScratch/TryCompile-784bej"
+      binary: "D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/CMakeFiles/CMakeScratch/TryCompile-784bej"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -974,39 +974,39 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/CMakeFiles/CMakeScratch/TryCompile-inj9a2'
+        Change Dir: 'D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/CMakeFiles/CMakeScratch/TryCompile-784bej'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_d1e07.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_2dcd8.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         适用于 .NET Framework MSBuild 版本 17.14.40+3e7442088
-        生成启动时间为 2026/3/25 20:04:01。
+        生成启动时间为 2026/3/26 12:59:33。
         
-        节点 1 上的项目“D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\build_public\\CMakeFiles\\CMakeScratch\\TryCompile-inj9a2\\cmTC_d1e07.vcxproj”(默认目标)。
+        节点 1 上的项目“D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\build_public\\CMakeFiles\\CMakeScratch\\TryCompile-784bej\\cmTC_2dcd8.vcxproj”(默认目标)。
         PrepareForBuild:
           已启用结构化输出。编译器诊断的格式设置将反映错误层次结构。有关详细信息，请参阅 https://aka.ms/cpp/structured-output。
-          正在创建目录“D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\build_public\\CMakeFiles\\CMakeScratch\\TryCompile-inj9a2\\Debug\\”。
-          正在创建目录“cmTC_d1e07.dir\\Debug\\cmTC_d1e07.tlog\\”。
+          正在创建目录“D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\build_public\\CMakeFiles\\CMakeScratch\\TryCompile-784bej\\Debug\\”。
+          正在创建目录“cmTC_2dcd8.dir\\Debug\\cmTC_2dcd8.tlog\\”。
         InitializeBuildStatus:
-          正在创建“cmTC_d1e07.dir\\Debug\\cmTC_d1e07.tlog\\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
-          正在对“cmTC_d1e07.dir\\Debug\\cmTC_d1e07.tlog\\unsuccessfulbuild”执行 Touch 任务。
+          正在创建“cmTC_2dcd8.dir\\Debug\\cmTC_2dcd8.tlog\\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+          正在对“cmTC_2dcd8.dir\\Debug\\cmTC_2dcd8.tlog\\unsuccessfulbuild”执行 Touch 任务。
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_d1e07.dir\\Debug\\\\" /Fd"cmTC_d1e07.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "C:\\Program Files\\Python311\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_2dcd8.dir\\Debug\\\\" /Fd"cmTC_2dcd8.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "C:\\Program Files\\Python311\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
           用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.44.35225 版
           版权所有(C) Microsoft Corporation。保留所有权利。
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_d1e07.dir\\Debug\\\\" /Fd"cmTC_d1e07.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "C:\\Program Files\\Python311\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_2dcd8.dir\\Debug\\\\" /Fd"cmTC_2dcd8.dir\\Debug\\vc143.pdb" /external:W1 /TC /errorReport:queue "C:\\Program Files\\Python311\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
           CMakeCCompilerABI.c
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\build_public\\CMakeFiles\\CMakeScratch\\TryCompile-inj9a2\\Debug\\cmTC_d1e07.exe" /INCREMENTAL /ILK:"cmTC_d1e07.dir\\Debug\\cmTC_d1e07.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/CMakeFiles/CMakeScratch/TryCompile-inj9a2/Debug/cmTC_d1e07.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/CMakeFiles/CMakeScratch/TryCompile-inj9a2/Debug/cmTC_d1e07.lib" /MACHINE:X64  /machine:x64 cmTC_d1e07.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_d1e07.vcxproj -> D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\build_public\\CMakeFiles\\CMakeScratch\\TryCompile-inj9a2\\Debug\\cmTC_d1e07.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\build_public\\CMakeFiles\\CMakeScratch\\TryCompile-784bej\\Debug\\cmTC_2dcd8.exe" /INCREMENTAL /ILK:"cmTC_2dcd8.dir\\Debug\\cmTC_2dcd8.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/CMakeFiles/CMakeScratch/TryCompile-784bej/Debug/cmTC_2dcd8.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/CMakeFiles/CMakeScratch/TryCompile-784bej/Debug/cmTC_2dcd8.lib" /MACHINE:X64  /machine:x64 cmTC_2dcd8.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_2dcd8.vcxproj -> D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\build_public\\CMakeFiles\\CMakeScratch\\TryCompile-784bej\\Debug\\cmTC_2dcd8.exe
         FinalizeBuildStatus:
-          正在删除文件“cmTC_d1e07.dir\\Debug\\cmTC_d1e07.tlog\\unsuccessfulbuild”。
-          正在对“cmTC_d1e07.dir\\Debug\\cmTC_d1e07.tlog\\cmTC_d1e07.lastbuildstate”执行 Touch 任务。
-        已完成生成项目“D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\build_public\\CMakeFiles\\CMakeScratch\\TryCompile-inj9a2\\cmTC_d1e07.vcxproj”(默认目标)的操作。
+          正在删除文件“cmTC_2dcd8.dir\\Debug\\cmTC_2dcd8.tlog\\unsuccessfulbuild”。
+          正在对“cmTC_2dcd8.dir\\Debug\\cmTC_2dcd8.tlog\\cmTC_2dcd8.lastbuildstate”执行 Touch 任务。
+        已完成生成项目“D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\build_public\\CMakeFiles\\CMakeScratch\\TryCompile-784bej\\cmTC_2dcd8.vcxproj”(默认目标)的操作。
         
         已成功生成。
             0 个警告
             0 个错误
         
-        已用时间 00:00:00.71
+        已用时间 00:00:00.73
         
       exitCode: 0
   -
@@ -1046,8 +1046,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/CMakeFiles/CMakeScratch/TryCompile-e3tl5m"
-      binary: "D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/CMakeFiles/CMakeScratch/TryCompile-e3tl5m"
+      source: "D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/CMakeFiles/CMakeScratch/TryCompile-lgrem2"
+      binary: "D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/CMakeFiles/CMakeScratch/TryCompile-lgrem2"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -1057,39 +1057,39 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/CMakeFiles/CMakeScratch/TryCompile-e3tl5m'
+        Change Dir: 'D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/CMakeFiles/CMakeScratch/TryCompile-lgrem2'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_fbb1b.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_522c2.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         适用于 .NET Framework MSBuild 版本 17.14.40+3e7442088
-        生成启动时间为 2026/3/25 20:04:02。
+        生成启动时间为 2026/3/26 12:59:34。
         
-        节点 1 上的项目“D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\build_public\\CMakeFiles\\CMakeScratch\\TryCompile-e3tl5m\\cmTC_fbb1b.vcxproj”(默认目标)。
+        节点 1 上的项目“D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\build_public\\CMakeFiles\\CMakeScratch\\TryCompile-lgrem2\\cmTC_522c2.vcxproj”(默认目标)。
         PrepareForBuild:
           已启用结构化输出。编译器诊断的格式设置将反映错误层次结构。有关详细信息，请参阅 https://aka.ms/cpp/structured-output。
-          正在创建目录“D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\build_public\\CMakeFiles\\CMakeScratch\\TryCompile-e3tl5m\\Debug\\”。
-          正在创建目录“cmTC_fbb1b.dir\\Debug\\cmTC_fbb1b.tlog\\”。
+          正在创建目录“D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\build_public\\CMakeFiles\\CMakeScratch\\TryCompile-lgrem2\\Debug\\”。
+          正在创建目录“cmTC_522c2.dir\\Debug\\cmTC_522c2.tlog\\”。
         InitializeBuildStatus:
-          正在创建“cmTC_fbb1b.dir\\Debug\\cmTC_fbb1b.tlog\\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
-          正在对“cmTC_fbb1b.dir\\Debug\\cmTC_fbb1b.tlog\\unsuccessfulbuild”执行 Touch 任务。
+          正在创建“cmTC_522c2.dir\\Debug\\cmTC_522c2.tlog\\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+          正在对“cmTC_522c2.dir\\Debug\\cmTC_522c2.tlog\\unsuccessfulbuild”执行 Touch 任务。
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /Fo"cmTC_fbb1b.dir\\Debug\\\\" /Fd"cmTC_fbb1b.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\Python311\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /Fo"cmTC_522c2.dir\\Debug\\\\" /Fd"cmTC_522c2.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\Python311\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
           用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.44.35225 版
           版权所有(C) Microsoft Corporation。保留所有权利。
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /Fo"cmTC_fbb1b.dir\\Debug\\\\" /Fd"cmTC_fbb1b.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\Python311\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /Fo"cmTC_522c2.dir\\Debug\\\\" /Fd"cmTC_522c2.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\Python311\\Lib\\site-packages\\cmake\\data\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\build_public\\CMakeFiles\\CMakeScratch\\TryCompile-e3tl5m\\Debug\\cmTC_fbb1b.exe" /INCREMENTAL /ILK:"cmTC_fbb1b.dir\\Debug\\cmTC_fbb1b.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/CMakeFiles/CMakeScratch/TryCompile-e3tl5m/Debug/cmTC_fbb1b.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/CMakeFiles/CMakeScratch/TryCompile-e3tl5m/Debug/cmTC_fbb1b.lib" /MACHINE:X64  /machine:x64 cmTC_fbb1b.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_fbb1b.vcxproj -> D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\build_public\\CMakeFiles\\CMakeScratch\\TryCompile-e3tl5m\\Debug\\cmTC_fbb1b.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\build_public\\CMakeFiles\\CMakeScratch\\TryCompile-lgrem2\\Debug\\cmTC_522c2.exe" /INCREMENTAL /ILK:"cmTC_522c2.dir\\Debug\\cmTC_522c2.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/CMakeFiles/CMakeScratch/TryCompile-lgrem2/Debug/cmTC_522c2.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/CMakeFiles/CMakeScratch/TryCompile-lgrem2/Debug/cmTC_522c2.lib" /MACHINE:X64  /machine:x64 cmTC_522c2.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_522c2.vcxproj -> D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\build_public\\CMakeFiles\\CMakeScratch\\TryCompile-lgrem2\\Debug\\cmTC_522c2.exe
         FinalizeBuildStatus:
-          正在删除文件“cmTC_fbb1b.dir\\Debug\\cmTC_fbb1b.tlog\\unsuccessfulbuild”。
-          正在对“cmTC_fbb1b.dir\\Debug\\cmTC_fbb1b.tlog\\cmTC_fbb1b.lastbuildstate”执行 Touch 任务。
-        已完成生成项目“D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\build_public\\CMakeFiles\\CMakeScratch\\TryCompile-e3tl5m\\cmTC_fbb1b.vcxproj”(默认目标)的操作。
+          正在删除文件“cmTC_522c2.dir\\Debug\\cmTC_522c2.tlog\\unsuccessfulbuild”。
+          正在对“cmTC_522c2.dir\\Debug\\cmTC_522c2.tlog\\cmTC_522c2.lastbuildstate”执行 Touch 任务。
+        已完成生成项目“D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\build_public\\CMakeFiles\\CMakeScratch\\TryCompile-lgrem2\\cmTC_522c2.vcxproj”(默认目标)的操作。
         
         已成功生成。
             0 个警告
             0 个错误
         
-        已用时间 00:00:00.70
+        已用时间 00:00:00.85
         
       exitCode: 0
   -
@@ -1139,32 +1139,32 @@ events:
       stdout: |
         Change Dir: 'D:/Autigravity/wdm2vst/ASMRTOP_Plugins/build_public/JUCE/CMakeFiles/CMakeTmp'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_f5c58.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_20a64.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         适用于 .NET Framework MSBuild 版本 17.14.40+3e7442088
-        生成启动时间为 2026/3/25 20:04:03。
+        生成启动时间为 2026/3/26 12:59:35。
         
-        节点 1 上的项目“D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\build_public\\JUCE\\CMakeFiles\\CMakeTmp\\cmTC_f5c58.vcxproj”(默认目标)。
+        节点 1 上的项目“D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\build_public\\JUCE\\CMakeFiles\\CMakeTmp\\cmTC_20a64.vcxproj”(默认目标)。
         PrepareForBuild:
           已启用结构化输出。编译器诊断的格式设置将反映错误层次结构。有关详细信息，请参阅 https://aka.ms/cpp/structured-output。
           正在创建目录“D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\build_public\\JUCE\\CMakeFiles\\CMakeTmp\\Debug\\”。
-          正在创建目录“cmTC_f5c58.dir\\Debug\\cmTC_f5c58.tlog\\”。
+          正在创建目录“cmTC_20a64.dir\\Debug\\cmTC_20a64.tlog\\”。
         InitializeBuildStatus:
-          正在创建“cmTC_f5c58.dir\\Debug\\cmTC_f5c58.tlog\\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
-          正在对“cmTC_f5c58.dir\\Debug\\cmTC_f5c58.tlog\\unsuccessfulbuild”执行 Touch 任务。
+          正在创建“cmTC_20a64.dir\\Debug\\cmTC_20a64.tlog\\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+          正在对“cmTC_20a64.dir\\Debug\\cmTC_20a64.tlog\\unsuccessfulbuild”执行 Touch 任务。
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /Fo"cmTC_f5c58.dir\\Debug\\\\" /Fd"cmTC_f5c58.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\JUCE\\extras\\Build\\CMake\\juce_runtime_arch_detection.cpp
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /Fo"cmTC_20a64.dir\\Debug\\\\" /Fd"cmTC_20a64.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\JUCE\\extras\\Build\\CMake\\juce_runtime_arch_detection.cpp
           用于 x64 的 Microsoft (R) C/C++ 优化编译器 19.44.35225 版
           版权所有(C) Microsoft Corporation。保留所有权利。
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /Fo"cmTC_f5c58.dir\\Debug\\\\" /Fd"cmTC_f5c58.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\JUCE\\extras\\Build\\CMake\\juce_runtime_arch_detection.cpp
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /Fo"cmTC_20a64.dir\\Debug\\\\" /Fd"cmTC_20a64.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\JUCE\\extras\\Build\\CMake\\juce_runtime_arch_detection.cpp
           juce_runtime_arch_detection.cpp
-        D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\JUCE\\extras\\Build\\CMake\\juce_runtime_arch_detection.cpp(56,1): error C1189: #error:  JUCE_ARCH x86_64 [D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\build_public\\JUCE\\CMakeFiles\\CMakeTmp\\cmTC_f5c58.vcxproj]
-        已完成生成项目“D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\build_public\\JUCE\\CMakeFiles\\CMakeTmp\\cmTC_f5c58.vcxproj”(默认目标)的操作 - 失败。
+        D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\JUCE\\extras\\Build\\CMake\\juce_runtime_arch_detection.cpp(56,1): error C1189: #error:  JUCE_ARCH x86_64 [D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\build_public\\JUCE\\CMakeFiles\\CMakeTmp\\cmTC_20a64.vcxproj]
+        已完成生成项目“D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\build_public\\JUCE\\CMakeFiles\\CMakeTmp\\cmTC_20a64.vcxproj”(默认目标)的操作 - 失败。
         
         生成失败。
         
-        “D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\build_public\\JUCE\\CMakeFiles\\CMakeTmp\\cmTC_f5c58.vcxproj”(默认目标) (1) ->
+        “D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\build_public\\JUCE\\CMakeFiles\\CMakeTmp\\cmTC_20a64.vcxproj”(默认目标) (1) ->
         (ClCompile 目标) -> 
-          D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\JUCE\\extras\\Build\\CMake\\juce_runtime_arch_detection.cpp(56,1): error C1189: #error:  JUCE_ARCH x86_64 [D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\build_public\\JUCE\\CMakeFiles\\CMakeTmp\\cmTC_f5c58.vcxproj]
+          D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\JUCE\\extras\\Build\\CMake\\juce_runtime_arch_detection.cpp(56,1): error C1189: #error:  JUCE_ARCH x86_64 [D:\\Autigravity\\wdm2vst\\ASMRTOP_Plugins\\build_public\\JUCE\\CMakeFiles\\CMakeTmp\\cmTC_20a64.vcxproj]
         
             0 个警告
             1 个错误

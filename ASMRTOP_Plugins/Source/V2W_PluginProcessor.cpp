@@ -21,6 +21,7 @@ AsmrtopVst2WdmAudioProcessor::AsmrtopVst2WdmAudioProcessor()
     
     juce::String defaultName = Asmrtop::SharedMemoryBridge::getIpcChannelName("REC", 0);
     enableIPCMode(0, defaultName + " [IPC]");
+    deviceManager.closeAudioDevice(); // PREVENT DUAL AUDIO!
     
     startTimer(300);
 }

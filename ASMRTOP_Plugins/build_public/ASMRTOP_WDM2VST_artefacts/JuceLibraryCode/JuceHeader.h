@@ -41,7 +41,7 @@ namespace ProjectInfo
 {
     const char* const  projectName    = "WDM2VST";
     const char* const  companyName    = "VirtualAudioRouter";
-    const char* const  versionString  = "3.1.0";
-    const int          versionNumber  =  0x30100;
+    const char* const  versionString  = "3.1.1";
+    const int          versionNumber  =  0x30101;
 }
 #endif
