@@ -5,7 +5,7 @@ print("Connecting to FTP...")
 ftp = ftplib.FTP(timeout=15)
 ftp.connect('103.80.27.48', 21)
 ftp.login('geek_asmrtop_cn', '5yifcKJkbKefm4JR')
-ftp.set_pasv(False)
+ftp.set_pasv(True)
 
 remote_file = 'wdm2vst.html'
 local_file = 'wdm2vst.html'

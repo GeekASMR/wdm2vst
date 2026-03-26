@@ -1,0 +1,29 @@
+Connecting to FTP...
+Downloading from FTP...
+Applying modifications...
+Uploading back to FTP...
+Traceback (most recent call last):
+  File "D:\Autigravity\wdm2vst\edit_ftp_html.py", line 37, in <module>
+    ftp.storbinary(f'STOR {remote_file}', f)
+  File "C:\Program Files\Python311\Lib\ftplib.py", line 497, in storbinary
+    self.voidcmd('TYPE I')
+  File "C:\Program Files\Python311\Lib\ftplib.py", line 286, in voidcmd
+    return self.voidresp()
+           ^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\ftplib.py", line 259, in voidresp
+    resp = self.getresp()
+           ^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\ftplib.py", line 244, in getresp
+    resp = self.getmultiline()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\ftplib.py", line 230, in getmultiline
+    line = self.getline()
+           ^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\ftplib.py", line 212, in getline
+    line = self.file.readline(self.maxline + 1)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python311\Lib\socket.py", line 706, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+^C
