@@ -33,6 +33,8 @@ $brands = @{
         Provider      = 'ASMRTOP'
         DeviceDesc    = 'ASMRTOP Audio Router'
         SvcDesc       = 'ASMRTOP Audio Router'
+        HardwareId    = 'ASMRTOPVirtualAudio'
+        ServiceName   = 'ASMRTOPVirtualAudio'
         Speaker       = @('ASMR Audio 1/2','ASMR Audio 3/4','ASMR Audio 5/6','ASMR Audio 7/8')
         Mic           = @('ASMR Mic 1/2','ASMR Mic 3/4','ASMR Mic 5/6','ASMR Mic 7/8')
         IpcBaseName   = 'AsmrtopWDM'
@@ -45,6 +47,8 @@ $brands = @{
         Provider      = 'VirtualAudioRouter'
         DeviceDesc    = 'Virtual Audio Router'
         SvcDesc       = 'Virtual Audio Router'
+        HardwareId    = 'VirtualAudioRouter'
+        ServiceName   = 'VirtualAudioRouter'
         Speaker       = @('Virtual 1/2','Virtual 3/4','Virtual 5/6','Virtual 7/8')
         Mic           = @('Mic 1/2','Mic 3/4','Mic 5/6','Mic 7/8')
         IpcBaseName   = 'VirtualAudioWDM'
@@ -89,6 +93,13 @@ $inxContent = $inxContent -replace '(?m)^MsCopyRight\s*=\s*"[^"]*"', "MsCopyRigh
 # Device desc / Service desc
 $inxContent = $inxContent -replace '(?m)^ASMRTOPVirtualAudio_SA\.DeviceDesc="[^"]*"', "ASMRTOPVirtualAudio_SA.DeviceDesc=`"$($b.DeviceDesc)`""
 $inxContent = $inxContent -replace '(?m)^ASMRTOPVirtualAudio\.SvcDesc="[^"]*"', "ASMRTOPVirtualAudio.SvcDesc=`"$($b.SvcDesc)`""
+
+# Hardware ID  (ROOT\xxx in [Manufacturer] section)
+$inxContent = $inxContent -replace 'ROOT\\(ASMRTOPVirtualAudio|VirtualAudioRouter)', "ROOT\$($b.HardwareId)"
+
+# Service name  (AddService= and KmdfService= lines)
+$inxContent = $inxContent -replace 'AddService=(ASMRTOPVirtualAudio|VirtualAudioRouter)', "AddService=$($b.ServiceName)"
+$inxContent = $inxContent -replace 'KmdfService\s*=\s*(ASMRTOPVirtualAudio|VirtualAudioRouter)', "KmdfService = $($b.ServiceName)"
 
 # Speaker names (1-4)
 $spkNames = @('WaveSpeaker','WaveSpeaker2','WaveSpeaker3','WaveSpeaker4')
@@ -163,6 +174,8 @@ Write-Host "================================================" -ForegroundColor Y
 Write-Host ""
 Write-Host "  [Driver]"
 Write-Host "    Device:     $($b.DeviceDesc)"
+Write-Host "    HW ID:      ROOT\$($b.HardwareId)"
+Write-Host "    Service:    $($b.ServiceName)"
 Write-Host "    Speakers:   $($b.Speaker -join ', ')"
 Write-Host "    Mics:       $($b.Mic -join ', ')"
 Write-Host "    IPC Base:   $($b.IpcBaseName)"

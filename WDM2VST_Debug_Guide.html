@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDM2VST 驱动报错收集指南 (Debug 指南)</title>
+    <style>
+        body { font-family: "Microsoft YaHei", sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; }
+        h1, h2, h3 { color: #0056b3; }
+        .step { background: #fff; padding: 15px 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px; border-left: 5px solid #0056b3; }
+        code { background: #f1f1f1; padding: 2px 6px; border-radius: 4px; color: #d63384; font-family: Consolas, monospace; }
+        .highlight { font-weight: bold; color: #d9534f; }
+        .warning { background-color: #fff3cd; border-left-color: #ffecb5; }
+        .btn { display: inline-block; padding: 10px 20px; background: #0056b3; color: white; text-decoration: none; border-radius: 5px; margin-top: 10px; }
+        .btn:hover { background: #004494; }
+    </style>
+</head>
+<body>
+
+    <h1>📝 WDM2VST 驱动故障排查与日志收集指南</h1>
+    <p>当虚拟音频驱动（虚拟声卡）出现声音卡顿、跳音、无法出声或设备被占用等深层问题时，常规截图无法判断原因。请按照以下步骤截取内核级日志文件供开发人员分析。</p>
+    
+    <div class="step warning">
+        <h3>🔔 步骤 0：解除 Windows 拦截 (仅初次需要)</h3>
+        <p>由于最近的 Windows 系统默认禁用了驱动日志输出，我们需要先执行一次注册表解除锁定：</p>
+        <ol>
+            <li>按键盘 <code>Win</code> 键，搜索 <strong>"命令提示符"</strong> 或 "CMD"。</li>
+            <li>点击右侧的 <span class="highlight">"以管理员身份运行"</span>。</li>
+            <li>复制以下内容，右键粘贴进去并回车：<br>
+                <code>reg add "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Debug Print Filter" /v "DEFAULT" /t REG_DWORD /d 0xFFFFFFFF /f</code>
+            </li>
+            <li>提示“操作成功完成”后，<span class="highlight">重启一次电脑！</span>。</li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h3>🛠️ 步骤 1：下载并打开日志抓取工具 (DebugView)</h3>
+        <p>我们使用微软官方的系统排查内核工具 DebugView。</p>
+        <ul>
+            <li>如果您尚未下载，请点此 <a href="https://download.sysinternals.com/files/DebugView.zip" class="btn" target="_blank">下载 DebugView 官方绿色版</a></li>
+            <li>解压下载的压缩包。</li>
+            <li>找到里面的 <code>dbgview64.exe</code>，<strong>必须鼠标右键 -> 选择“以管理员身份运行”</strong>。</li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <h3>🎯 步骤 2：监听内核捕捉</h3>
+        <p>打开 DebugView 软件后，为了只看到我们的虚拟声卡的日志：</p>
+        <ol>
+            <li>点击屏幕最上方菜单栏的 <strong>Capture</strong>。</li>
+            <li>确保 <code>Capture Kernel</code> (捕捉内核) 是<strong>打勾</strong>状态的。</li>
+            <li>（可选）点击菜单栏的漏斗图标（或者按 <code>Ctrl+L</code>），在 "Include" 输入框中输入 <code>*WDM2VST*</code>，然后点 OK。这样屏幕就不会被别的系统乱码刷屏了。</li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h3>🔥 步骤 3：复现问题</h3>
+        <p>这时候软件会在后台一直监控。请开启您的音乐软件或 DAW (比如 Studio One / OBS)：</p>
+        <ul>
+            <li>像平常使用一样去复现你的 BUG（比如直到听到破音、杂音发生）。</li>
+            <li>复现完成后，看一眼 DebugView 窗口，里面应该刷出了密密麻麻的 <code>[WDM2VST STREAM...]</code> 开头的英文。</li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <h3>📁 步骤 4：保存并发送给开发人员</h3>
+        <ol>
+            <li>在 DebugView 里，点击左上角的 <strong>File -> Save As...</strong>。</li>
+            <li>把文件保存为 <code>虚拟声卡故障记录.log</code>。</li>
+            <li>关掉 DebugView， 把这个文件发给我们！</li>
+        </ol>
+    </div>
+
+    <hr>
+    <p style="color: #666; font-size: 14px; text-align: center;">GeekASMR / WDM-to-VST Virtual Audio Route Driver Team © 2026</p>
+
+</body>
+</html>

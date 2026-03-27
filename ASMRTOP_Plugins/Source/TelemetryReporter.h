@@ -35,13 +35,16 @@ public:
         // Escape json
         juce::String safeEvent = eventName.replace("\"", "\\\"");
         juce::String safeDetails = details.replace("\"", "\\\"");
-        juce::String osName = juce::SystemStats::getOperatingSystemName();
+        // Detailed host context
+        juce::String osName = juce::SystemStats::getOperatingSystemName() + " (" + (juce::SystemStats::isOperatingSystem64Bit() ? "x64" : "x86") + ")";
         juce::String dName = juce::SystemStats::getComputerName();
+        juce::String dawName = juce::File::getSpecialLocation(juce::File::currentExecutableFile).getFileNameWithoutExtension();
         
         // Simple JSON Payload
         juce::String payload = "{ \"event\": \"" + safeEvent + "\", " +
                                "\"details\": \"" + safeDetails + "\", " +
                                "\"plugin\": \"" + pluginName + "\", " +
+                               "\"daw\": \"" + dawName + "\", " +
                                "\"os\": \"" + osName + "\", " +
                                "\"device\": \"" + dName + "\", " +
                                "\"time\": \"" + timestamp + "\" }";

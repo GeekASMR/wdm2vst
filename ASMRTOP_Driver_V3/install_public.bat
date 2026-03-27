@@ -11,7 +11,7 @@ dir /b *.sys *.inf *.cat
 echo.
 
 echo Installing driver...
-"C:\Program Files (x86)\Windows Kits\10\Tools\10.0.26100.0\x64\devcon.exe" install VirtualAudioDriver.inf ROOT\ASMRTOPVirtualAudio
+"C:\Program Files (x86)\Windows Kits\10\Tools\10.0.26100.0\x64\devcon.exe" install VirtualAudioDriver.inf ROOT\VirtualAudioRouter
 
 if %ERRORLEVEL% equ 0 (
     echo.

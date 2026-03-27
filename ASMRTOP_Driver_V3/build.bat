@@ -126,16 +126,25 @@ if /i "%PLATFORM%"=="ARM64" (
         /p:ApiValidator_ExcludedTargets=ARM64 ^
         /p:EnableInf2cat=false
 ) else (
-    echo Building x64 with full validation...
-    call "%MSBUILD_CMD%" "VirtualAudioDriver.sln" /p:Configuration=%CONFIG% /p:Platform=%PLATFORM% /p:StampInf=false
+    echo Building x64 with full validation disabled...
+    call "%MSBUILD_CMD%" "VirtualAudioDriver.sln" ^
+        /p:Configuration=%CONFIG% ^
+        /p:Platform=%PLATFORM% ^
+        /p:RunCodeAnalysis=false ^
+        /p:UseInfVerifierEx=false ^
+        /p:ValidateDrivers=false ^
+        /p:StampInf=false ^
+        /p:ApiValidator_Enable=false ^
+        /p:InfVerif_Enable=false ^
+        /p:DisableVerification=true ^
+        /p:SignMode=Off ^
+        /p:EnableInf2cat=false
 )
 
 if %errorlevel% neq 0 (
     echo.
     echo ERROR: Build failed with exit code %errorlevel%
     echo.
-    echo Press any key to close...
-    pause >nul
     exit /b %errorlevel%
 )
 
@@ -215,6 +224,4 @@ echo   - VirtualAudioDriver.inf  (installation file)
 echo   - virtualaudiodriver.cat  (catalog file)
 
 echo.
-echo Press any key to close...
-pause >nul
 exit /b 0

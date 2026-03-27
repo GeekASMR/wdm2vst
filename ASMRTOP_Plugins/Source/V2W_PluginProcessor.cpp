@@ -46,6 +46,8 @@ void AsmrtopVst2WdmAudioProcessor::enableIPCMode(int channelId, const juce::Stri
     ipcBridge = std::make_unique<Asmrtop::SharedMemoryBridge>(PLUGIN_IPC_BASE_NAME, "REC", channelId);
     currentDeviceName = deviceName;
     ipcChannelId = channelId;
+    
+    TelemetryReporter::getInstance().logEvent("Channel_Switch", "Target ID: " + juce::String(channelId) + " | Alias: " + deviceName, "VST2WDM");
 }
 
 void AsmrtopVst2WdmAudioProcessor::disableIPCMode()
@@ -143,7 +145,7 @@ void AsmrtopVst2WdmAudioProcessor::audioDeviceIOCallbackWithContext (const float
 
     // Safety check
     if (availableU > Asmrtop::IPC_RING_SIZE) {
-        TelemetryReporter::getInstance().logEvent("Buffer_Overrun", "Avail: " + juce::String(availableU), "VST2WDM");
+        TelemetryReporter::getInstance().logEvent("Buffer_Overrun", "Avail: " + juce::String(availableU) + " | Expected: " + juce::String(expectedDiff, 1) + " | Req: " + juce::String(minRequired) + " | Block: " + juce::String(numSamples), "VST2WDM");
         state.store(0, std::memory_order_relaxed);
         r = w - (uint32_t)expectedDiff; 
         readPos.store(r, std::memory_order_relaxed);
@@ -151,7 +153,7 @@ void AsmrtopVst2WdmAudioProcessor::audioDeviceIOCallbackWithContext (const float
         smoothedDiff = 0.0;
         availableU = (int32_t)expectedDiff;
     } else if (availableU < 0) {
-        TelemetryReporter::getInstance().logEvent("Buffer_Underrun", "Avail: " + juce::String(availableU), "VST2WDM");
+        TelemetryReporter::getInstance().logEvent("Buffer_Underrun", "Avail: " + juce::String(availableU) + " | Expected: " + juce::String(expectedDiff, 1) + " | Req: " + juce::String(minRequired) + " | Block: " + juce::String(numSamples), "VST2WDM");
         state.store(0, std::memory_order_relaxed);
         r = w; 
         readPos.store(r, std::memory_order_relaxed);

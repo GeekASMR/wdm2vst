@@ -270,6 +270,10 @@ Return Value:
     m_bCapture = Capture_;
     m_ulDmaMovementRate = pWfEx->nAvgBytesPerSec;
 
+    DPF(D_TERSE, ("[WDM2VST STREAM START] Init Pin: %u, Capture: %d", m_ulPin, m_bCapture));
+    DPF(D_TERSE, ("[WDM2VST STREAM FORMAT] SampleRate: %lu, Channels: %u, Bits: %u, BlockAlign: %u, AvgBps: %lu",
+                 pWfEx->nSamplesPerSec, (ULONG)pWfEx->nChannels, (ULONG)pWfEx->wBitsPerSample, (ULONG)pWfEx->nBlockAlign, pWfEx->nAvgBytesPerSec));
+
     m_pDpc = (PRKDPC)ExAllocatePool2(POOL_FLAG_NON_PAGED, sizeof(KDPC), MINWAVERTSTREAM_POOLTAG);
     if (!m_pDpc)
     {
@@ -471,6 +475,8 @@ NTSTATUS CMiniportWaveRTStream::AllocateBufferWithNotification
     m_ulDmaBufferSize = RequestedSize_;
     ulBufferDurationMs = (RequestedSize_ * 1000) / m_ulDmaMovementRate;
     m_ulNotificationIntervalMs = ulBufferDurationMs / NotificationCount_;
+
+    DPF(D_TERSE, ("[WDM2VST ALLOC EVENT BUF] Size: %lu bytes, Count: %lu, Interval: %lu ms", RequestedSize_, NotificationCount_, m_ulNotificationIntervalMs));
 
     *AudioBufferMdl_ = pBufferMdl;
     *ActualSize_ = RequestedSize_;
@@ -706,6 +712,8 @@ _Out_   MEMORY_CACHING_TYPE    *CacheType_
 
     m_ulDmaBufferSize = RequestedSize_;
     m_ulNotificationsPerBuffer = 0;
+
+    DPF(D_TERSE, ("[WDM2VST ALLOC BASIC BUF] Size: %lu bytes, CacheType: %d", RequestedSize_, MmCached));
 
     *AudioBufferMdl_ = pBufferMdl;
     *ActualSize_ = RequestedSize_;
@@ -1121,6 +1129,7 @@ NTSTATUS CMiniportWaveRTStream::SetState
     switch (State_)
     {
         case KSSTATE_STOP:
+            DPF(D_TERSE, ("[WDM2VST PIN %lu] KSSTATE_STOP", m_ulPin));
             if (m_KsState == KSSTATE_ACQUIRE)
             {
                 // Acquire stream resources
@@ -1150,6 +1159,7 @@ NTSTATUS CMiniportWaveRTStream::SetState
             break;
 
         case KSSTATE_ACQUIRE:
+            DPF(D_TERSE, ("[WDM2VST PIN %lu] KSSTATE_ACQUIRE", m_ulPin));
             if (m_KsState == KSSTATE_STOP)
             {
                 // Acquire stream resources
@@ -1157,7 +1167,7 @@ NTSTATUS CMiniportWaveRTStream::SetState
             break;
             
         case KSSTATE_PAUSE:
-
+            DPF(D_TERSE, ("[WDM2VST PIN %lu] KSSTATE_PAUSE", m_ulPin));
             if (m_KsState > KSSTATE_PAUSE)
             {
                 //
@@ -1191,6 +1201,7 @@ NTSTATUS CMiniportWaveRTStream::SetState
             break;
 
         case KSSTATE_RUN:
+            DPF(D_TERSE, ("[WDM2VST PIN %lu] KSSTATE_RUN", m_ulPin));
             // Start DMA
             LARGE_INTEGER ullPerfCounterTemp;
             ullPerfCounterTemp = KeQueryPerformanceCounter(&m_ullPerformanceCounterFrequency);

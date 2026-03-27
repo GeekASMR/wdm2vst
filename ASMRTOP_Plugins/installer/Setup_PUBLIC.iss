@@ -2,7 +2,7 @@
 ; Inno Setup 6 - 中文版
 
 #define MyAppName "WDM2VST 虚拟音频路由"
-#define MyAppVersion "3.1.1"
+#define MyAppVersion "3.2.0"
 #define MyAppPublisher "VirtualAudioRouter"
 #define MyAppURL "https://github.com/VirtualAudioRouter/WDM2VST"
 
@@ -94,9 +94,9 @@ Name: "inst"; Description: "INST WDM2VST — 音源发生器（扩展选装）"
 [Files]
 
 ; Driver Setup Files
-Source: "E:\Personal\Desktop\签名\已签名\Release\VirtualAudioRouter.sys"; DestDir: "{app}\Driver"; Flags: ignoreversion
-Source: "E:\Personal\Desktop\签名\已签名\Release\VirtualAudioRouter.inf"; DestDir: "{app}\Driver"; Flags: ignoreversion
-Source: "E:\Personal\Desktop\签名\已签名\Release\virtualaudiorouter.cat"; DestDir: "{app}\Driver"; Flags: ignoreversion
+Source: "D:\Autigravity\sgin\签名\共存版已签名\gongkai\VirtualAudioRouter.sys"; DestDir: "{app}\Driver"; Flags: ignoreversion
+Source: "D:\Autigravity\sgin\签名\共存版已签名\gongkai\VirtualAudioRouter.inf"; DestDir: "{app}\Driver"; Flags: ignoreversion
+Source: "D:\Autigravity\sgin\签名\共存版已签名\gongkai\VirtualAudioRouter.cat"; DestDir: "{app}\Driver"; Flags: ignoreversion
 Source: "D:\Autigravity\sgin\wdm2vst\gongkai\time.reg"; DestDir: "{app}\Driver"; Flags: ignoreversion
 Source: "D:\Autigravity\sgin\wdm2vst\gongkai\devcon.exe"; DestDir: "{app}\Driver"; Flags: ignoreversion
 Source: "D:\Autigravity\sgin\wdm2vst\gongkai\install.bat"; DestDir: "{app}\Driver"; Flags: ignoreversion
@@ -151,10 +151,10 @@ Filename: "{commonpf}\Common Files\VST3\VirtualAudioRouter\config.ini"; Section:
 [Run]
 Filename: "{win}\regedit.exe"; Parameters: "/s ""{app}\Driver\time.reg"""; StatusMsg: "Configuring environment..."; Flags: runhidden waituntilterminated
 Filename: "{sys}\pnputil.exe"; Parameters: "/add-driver ""{app}\Driver\VirtualAudioRouter.inf"" /install"; StatusMsg: "Registering driver..."; Flags: runhidden waituntilterminated
-Filename: "{app}\Driver\devcon.exe"; Parameters: "install ""{app}\Driver\VirtualAudioRouter.inf"" ROOT\ASMRTOPVirtualAudio"; StatusMsg: "Installing Virtual Audio Driver (This might take a moment)..."; Flags: runhidden waituntilterminated
+Filename: "{app}\Driver\devcon.exe"; Parameters: "install ""{app}\Driver\VirtualAudioRouter.inf"" ROOT\VirtualAudioRouter"; StatusMsg: "Installing Virtual Audio Driver (This might take a moment)..."; Flags: runhidden waituntilterminated
 
 [UninstallRun]
-Filename: "{app}\Driver\devcon.exe"; Parameters: "remove ROOT\ASMRTOPVirtualAudio"; Flags: runhidden waituntilterminated; RunOnceId: "UninstallDriver"
+Filename: "{app}\Driver\devcon.exe"; Parameters: "remove ROOT\VirtualAudioRouter"; Flags: runhidden waituntilterminated; RunOnceId: "UninstallDriver"
 Filename: "{sys}\pnputil.exe"; Parameters: "/delete-driver VirtualAudioRouter.inf /uninstall"; Flags: runhidden waituntilterminated; RunOnceId: "UninstallDriverPkg"
 
 [Code]

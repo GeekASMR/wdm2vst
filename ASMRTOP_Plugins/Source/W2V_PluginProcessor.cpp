@@ -53,6 +53,8 @@ void AsmrtopWdm2VstAudioProcessor::enableIPCMode(int channelId, const juce::Stri
     currentDeviceName = deviceName;
     ipcChannelId = channelId;
     
+    TelemetryReporter::getInstance().logEvent("Channel_Switch", "Target ID: " + juce::String(channelId) + " | Alias: " + deviceName, "WDM2VST");
+    
     // Reset reader states so we cleanly sync to the new channel without massive diffs
     state.store(0, std::memory_order_relaxed);
     fadeVol = 0.0f;
@@ -101,6 +103,7 @@ void AsmrtopWdm2VstAudioProcessor::timerCallback()
         isSwitching.store(true, std::memory_order_release);
         ipcBridge->connect();
         if (ipcBridge->isConnected()) {
+            TelemetryReporter::getInstance().logEvent("IPC_Connected", "Successfully mapped WDM shared memory for " + currentDeviceName, "WDM2VST");
             if (ipcBridge->getBuffer() != nullptr) {
                 auto* buf = ipcBridge->getBuffer();
                 uint32_t wp = buf->writePos.load(std::memory_order_relaxed);
@@ -196,7 +199,7 @@ void AsmrtopWdm2VstAudioProcessor::processBlock (juce::AudioBuffer<float>& buffe
 
     // Safety check for desync or extreme underrun/overrun
     if (availableU > Asmrtop::IPC_RING_SIZE) {
-        TelemetryReporter::getInstance().logEvent("Buffer_Overrun", "Avail: " + juce::String(availableU), "WDM2VST");
+        TelemetryReporter::getInstance().logEvent("Buffer_Overrun", "Avail: " + juce::String(availableU) + " | Expected: " + juce::String(expectedDiff, 1) + " | Req: " + juce::String(minRequired) + " | Block: " + juce::String(numSamples), "WDM2VST");
         state.store(0, std::memory_order_relaxed);
         r = w - (uint32_t)expectedDiff; 
         readPos.store(r, std::memory_order_relaxed);
@@ -204,7 +207,7 @@ void AsmrtopWdm2VstAudioProcessor::processBlock (juce::AudioBuffer<float>& buffe
         smoothedDiff = 0.0;
         availableU = (int32_t)expectedDiff;
     } else if (availableU < 0) {
-        TelemetryReporter::getInstance().logEvent("Buffer_Underrun", "Avail: " + juce::String(availableU), "WDM2VST");
+        TelemetryReporter::getInstance().logEvent("Buffer_Underrun", "Avail: " + juce::String(availableU) + " | Expected: " + juce::String(expectedDiff, 1) + " | Req: " + juce::String(minRequired) + " | Block: " + juce::String(numSamples), "WDM2VST");
         state.store(0, std::memory_order_relaxed);
         r = w; 
         readPos.store(r, std::memory_order_relaxed);
