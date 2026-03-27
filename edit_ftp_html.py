@@ -29,7 +29,8 @@ content = re.sub(r'下载最新 V3\.\d+\.\d+', r'下载最新 V3.2.0', content, 
 content = re.sub(r'href="https://github.com/VirtualAudioRouter/WDM2VST/releases/tag/v3\.\d+\.\d+"', r'href="https://github.com/VirtualAudioRouter/WDM2VST/releases/tag/v3.2.0"', content, flags=re.IGNORECASE)
 
 update_block = """    <div class="step"><div><h4>版本更新检测</h4><p>内置自动化版本侦测系统。当检测到新版本时，UI自动变形展现极客风格呼吸幻彩按钮，全自动重定向至最新发布页。</p></div></div>
-    <div class="step"><div><h4>内核级遥测监控 (Telemetry)</h4><p>首创诊断式宿主音频配置收集，实时协助排查因未知原因引发的爆音问题。</p></div></div>"""
+    <div class="step"><div><h4>内核级遥测监控 (Telemetry)</h4><p>首创诊断式宿主音频配置收集，实时协助排查因未知原因引发的爆音问题。</p></div></div>
+    <div class="step"><div><h4>⚠️安装异常修复手册</h4><p>若安装后驱动提示设备异常（代码37/52），请关闭 Windows 安全中心 -> 设备安全性中的【内存完整性】后重启即可。</p></div></div>"""
 
 if "版本更新检测" not in content:
     content = content.replace('<div class="steps">', '<div class="steps">\n' + update_block)

@@ -48,7 +48,7 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 SetupAppTitle=安装 - {#MyAppName}
 SetupWindowTitle=安装 - {#MyAppName} v{#MyAppVersion}
 WelcomeLabel1=欢迎安装 {#MyAppName}
-WelcomeLabel2=即将安装 {#MyAppName} v{#MyAppVersion} 到您的电脑。%n%n本套件包含以下 VST3 插件：%n%n  • WDM2VST — 将系统声音捕获到 DAW%n  • VST2WDM — 将 DAW 声音输出到系统设备%n  • Audio Send — 跨插件音频发送%n  • Audio Receive — 跨插件音频接收%n%n插件将安装到 VST3 标准目录。%n%n点击"下一步"继续。
+WelcomeLabel2=即将安装 {#MyAppName} v{#MyAppVersion} 到您的电脑。%n%n本套件包含以下 VST3 插件：%n%n  • WDM2VST — 将系统声音捕获到 DAW%n  • VST2WDM — 将 DAW 声音输出到系统设备%n  • Audio Send — 跨插件音频发送%n  • Audio Receive — 跨插件音频接收%n%n【⚠️ 重要提示：设备管理器报错 37/52 解决方法】%n如果安装后驱动加载失败，请进入 Windows 安全中心 -> 设备安全性 -> 内核隔离，关闭【内存完整性】后重启电脑即可。%n%n点击"下一步"继续。
 ClickNext=点击"下一步"继续，或点击"取消"退出安装。
 SelectComponentsLabel2=选择要安装的组件，然后点击"下一步"继续。
 SelectComponentsDesc=请选择要安装的插件组件
