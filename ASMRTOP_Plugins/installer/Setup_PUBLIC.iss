@@ -2,7 +2,7 @@
 ; Inno Setup 6 - 中文版
 
 #define MyAppName "WDM2VST 虚拟音频路由"
-#define MyAppVersion "3.2.0"
+#define MyAppVersion "3.2.1"
 #define MyAppPublisher "VirtualAudioRouter"
 #define MyAppURL "https://github.com/VirtualAudioRouter/WDM2VST"
 
