@@ -159,7 +159,7 @@ tr:hover td{background:var(--card)}
 <section class="hero">
   <h1><span>WDM2VST</span> Audio Router</h1>
   <p class="sub">虚拟音频路由 VST3 插件套件</p>
-  <div class="version">V3.1.1 · Public Edition · 4 个 VST3 插件</div>
+  <div class="version">V3.2.0 · Public Edition · 4 个 VST3 插件</div>
   <p class="desc">将 Windows 系统音频无缝桥接到任何 DAW，实现零延迟虚拟音频路由、跨插件传输和 WASAPI 设备直连。经 A/B 音质测试验证：<strong style="color:#4CAF50">Bit-Perfect 无损传输</strong>，SNR 128dB，THD 0.0000%。</p>
 </section>
 <div class="accent-bar"></div>
@@ -168,7 +168,7 @@ tr:hover td{background:var(--card)}
 
 <!-- WDM2VST V3.1.1 Update Log & Download Button -->
 <div class="update-log-section" style="background: var(--card); border: 1px solid #1e2535; color: var(--text); padding: 25px; border-left: 4px solid var(--a); border-radius: var(--r); margin: 20px 0; font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;">
-  <h3 style="color: #fff; margin-top: 0; font-size: 20px; font-weight: 800;">🚀 V3.1.1 稳定版 更新日志</h3>
+  <h3 style="color: #fff; margin-top: 0; font-size: 20px; font-weight: 800;">🚀 V3.2.0 稳定版 更新日志</h3>
   
   <h4 style="color: var(--a); margin-bottom: 5px; margin-top: 15px; font-size: 15px;">🎵 核心音频修复</h4>
   <ul style="line-height: 1.8; margin-top: 0; color: #aaa; font-size: 14px; padding-left: 20px;">
@@ -177,13 +177,13 @@ tr:hover td{background:var(--card)}
   </ul>
   
   <div style="margin-top: 25px;">
-    <a href="https://github.com/GeekASMR/wdm2vst/releases/tag/v3.1.1" target="_blank" style="display: inline-block; padding: 12px 28px; background: linear-gradient(135deg, var(--a), #ff5281); color: #fff; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 15px; transition: all 0.2s; box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);">📥 前往 GitHub 官方仓库下载最新 V3.1.1</a>
+    <a href="https://github.com/GeekASMR/wdm2vst/releases/tag/v3.1.1" target="_blank" style="display: inline-block; padding: 12px 28px; background: linear-gradient(135deg, var(--a), #ff5281); color: #fff; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 15px; transition: all 0.2s; box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);">📥 前往 GitHub 官方仓库下载最新 V3.2.0</a>
   </div>
 </div>
 
 <!-- WDM2VST V3.1.0 Update Log -->
 <div class="update-log-section" style="background: var(--card2); border: 1px solid #1e2535; color: var(--text); padding: 25px; border-left: 4px solid #444; border-radius: var(--r); margin: 20px 0; font-family: 'Inter', 'Segoe UI', system-ui, sans-serif; opacity: 0.8;">
-  <h3 style="color: #ccc; margin-top: 0; font-size: 18px; font-weight: 700;">🚀 V3.1.0 稳定版 更新日志 <span style="font-size:12px;color:#777;font-weight:600;margin-left:8px">(历史大版本)</span></h3>
+  <h3 style="color: #ccc; margin-top: 0; font-size: 18px; font-weight: 700;">🚀 V3.2.0 稳定版 更新日志 <span style="font-size:12px;color:#777;font-weight:600;margin-left:8px">(历史大版本)</span></h3>
   
   <h4 style="color: #888; margin-bottom: 5px; margin-top: 15px; font-size: 15px;">🎵 核心音频修复</h4>
   <ul style="line-height: 1.8; margin-top: 0; color: #888; font-size: 14px; padding-left: 20px;">
@@ -204,4 +204,306 @@ tr:hover td{background:var(--card)}
 <!-- ═══════════════ PART 1: 产品介绍 ═══════════════ -->
 
 <!-- Plugins -->
-<section class="secti
+<section class="section" id="plugins">
+  <div class="stitle"><div class="dot"></div>插件一览</div>
+  <p class="sdesc">套件包含 4 个 VST3 插件，覆盖音频路由的所有场景</p>
+  <div class="plugins">
+    <div class="pcard">
+      <h3>WDM2VST</h3><span class="tag">核心 · 输入</span>
+      <p>将 Windows WDM 虚拟音频设备的音频捕获到 DAW 中。支持 IPC 零延迟模式和 WASAPI 录音模式，可捕获任意系统声音。</p>
+      <span class="arrow">系统 → DAW</span>
+    </div>
+    <div class="pcard">
+      <h3>VST2WDM</h3><span class="tag">核心 · 输出</span>
+      <p>将 DAW 音频发送到 WDM 物理/虚拟设备。支持选择输出设备、音量控制、限制器，可实现 DAW 到系统的音频路由。</p>
+      <span class="arrow">DAW → 设备</span>
+    </div>
+    <div class="pcard">
+      <h3>Audio Send</h3><span class="tag">扩展 · 发送</span>
+      <p>跨插件音频路由发送端。支持 IPC 本机通信、LAN 局域网传输、手机监听。可广播到多个接收端。</p>
+      <span class="arrow">插件 → 网络</span>
+    </div>
+    <div class="pcard">
+      <h3>Audio Receive</h3><span class="tag">扩展 · 接收</span>
+      <p>跨插件音频路由接收端。接收来自 Audio Send 的音频流，支持本机 IPC 零延迟和 LAN 远程接收。</p>
+      <span class="arrow">网络 → 插件</span>
+    </div>
+  </div>
+</section>
+
+<!-- Detail: WDM2VST -->
+<div class="dtable">
+  <h3><span style="color:var(--a)">🎙️</span> WDM2VST — 系统声音捕获到 DAW</h3>
+  <div class="desc">将浏览器、游戏、音乐播放器等系统声音实时捕获到 DAW</div>
+  <table>
+    <tr><th style="width:110px">属性</th><th>说明</th></tr>
+    <tr><td>功能</td><td>将 Windows 系统播放的声音<strong style="color:#4CAF50">实时捕获</strong>到 DAW 轨道</td></tr>
+    <tr><td>方向</td><td>WDM 驱动 → DAW（系统声音 → DAW 输入）</td></tr>
+    <tr><td>场景</td><td>直播混音 · 录制游戏/视频通话音频 · 系统声音后期处理 · 多通道捕获（4 对立体声）</td></tr>
+    <tr><td>传输</td><td>IPC 共享内存，<span class="win">Bit-Perfect 无损</span></td></tr>
+    <tr><td>延迟</td><td>Extreme 2ms+ / Fast 4ms+ / Safe 8ms+</td></tr>
+    <tr><td>功能</td><td>音量控制、Limiter 限制器、电平表、语言切换（中/英）</td></tr>
+  </table>
+</div>
+
+<!-- Detail: VST2WDM -->
+<div class="dtable">
+  <h3><span style="color:var(--a2)">🔊</span> VST2WDM — DAW 声音输出到系统</h3>
+  <div class="desc">将 DAW 中的音频实时输出到 Windows 系统的虚拟麦克风或物理设备</div>
+  <table>
+    <tr><th style="width:110px">属性</th><th>说明</th></tr>
+    <tr><td>功能</td><td>将 DAW 音频<strong style="color:#4CAF50">实时输出</strong>到虚拟麦克风</td></tr>
+    <tr><td>方向</td><td>DAW → WDM 驱动（DAW 输出 → 虚拟麦克风）</td></tr>
+    <tr><td>场景</td><td>直播用 DAW 作为麦克风 · 让微信/Teams/Discord 听到 DAW 声音 · DAW 混音输出到 OBS</td></tr>
+    <tr><td>功能</td><td>音量控制、Limiter 限制器、手机远程监听、QR 码连接</td></tr>
+  </table>
+</div>
+
+<!-- Detail: Send/Receive -->
+<div class="dtable">
+  <h3><span style="color:#FFD600">📤</span> Audio Send / <span style="color:#4CAF50">📥</span> Audio Receive — 跨插件传输</h3>
+  <div class="desc">在不同 DAW 实例、不同轨道、甚至不同电脑之间传输音频</div>
+  <table>
+    <tr><th>功能</th><th>Audio Send</th><th>Audio Receive</th></tr>
+    <tr><td>方向</td><td>发送音频</td><td>接收音频</td></tr>
+    <tr><td>IPC</td><td>本机零延迟发送</td><td>本机零延迟接收</td></tr>
+    <tr><td>LAN</td><td>UDP 局域网传输</td><td>UDP 局域网接收</td></tr>
+    <tr><td>手机监听</td><td>扫码浏览器监听</td><td>—</td></tr>
+    <tr><td>防火墙</td><td>一键修复</td><td>自动放行</td></tr>
+  </table>
+</div>
+
+<!-- Tech Highlights -->
+<section class="section">
+  <div class="stitle"><div class="dot" style="background:var(--a2)"></div>核心技术优势</div>
+  <div class="sgrid">
+    <div class="scard winner"><div class="nm">Bit-Perfect 比特级完美</div><div class="val win">0% THD</div><div class="unit">零失真传输，信号完全无损</div></div>
+    <div class="scard winner"><div class="nm">SNR 信噪比</div><div class="val win">128 dB</div><div class="unit">远超行业标准，超过竞品 70dB</div></div>
+    <div class="scard"><div class="nm">超低延迟</div><div class="val" style="color:var(--a)">2ms+</div><div class="unit">内核共享内存直通，无中间环节</div></div>
+    <div class="scard"><div class="nm">多通道支持</div><div class="val" style="color:var(--a)">4×2ch</div><div class="unit">4 对立体声通道同时工作</div></div>
+  </div>
+</section>
+
+<!-- Architecture -->
+<section class="section" id="arch">
+  <div class="stitle"><div class="dot" style="background:#FFD600"></div>工作原理</div>
+  <p class="sdesc">理解音频信号流，正确选择使用方式</p>
+  
+  <div class="arch" style="line-height:2.2">
+    🖥️ Windows 系统声音 ⟷ 🔌 WDM 虚拟驱动 ⟷ 🔗 IPC 共享内存 ⟷ 🎛️ DAW 插件<br>
+    <small style="color:#555">整条链路 Bit-Perfect 无损传输 · 零格式转换 · 超低延迟</small>
+  </div>
+
+  <div class="flow">
+    <div class="flow-label">场景 1：系统声音录入 DAW</div>
+    <div class="flow-row">
+      <div class="fb fb-app">浏览器/游戏</div><span class="fa">→</span>
+      <div class="fb fb-app">WDM 虚拟设备</div><span class="fa">→</span>
+      <div class="fb fb-p1">WDM2VST</div><span class="fa">→</span>
+      <div class="fb fb-app">DAW 轨道</div>
+    </div>
+  </div>
+  <div class="flow">
+    <div class="flow-label">场景 2：DAW 音频输出到特定设备</div>
+    <div class="flow-row">
+      <div class="fb fb-app">DAW 轨道</div><span class="fa">→</span>
+      <div class="fb fb-p2">VST2WDM</div><span class="fa">→</span>
+      <div class="fb fb-app">物理/虚拟设备</div>
+    </div>
+  </div>
+  <div class="flow">
+    <div class="flow-label">场景 3：跨插件 / 跨电脑音频传输</div>
+    <div class="flow-row">
+      <div class="fb fb-app">DAW A</div><span class="fa">→</span>
+      <div class="fb fb-p3">Audio Send</div><span class="fa">→ UDP/IPC →</span>
+      <div class="fb fb-p4">Audio Receive</div><span class="fa">→</span>
+      <div class="fb fb-app">DAW B</div>
+    </div>
+  </div>
+</section>
+
+<!-- Mode Comparison -->
+<section class="section">
+  <div class="stitle"><div class="dot" style="background:#9C27B0"></div>工作模式对比</div>
+  <table>
+    <tr><th>特性</th><th>IPC 模式</th><th>WASAPI 模式</th></tr>
+    <tr><td>延迟</td><td><span class="mode mode-ipc">零延迟</span></td><td><span class="mode mode-wasapi">取决于缓冲</span></td></tr>
+    <tr><td>原理</td><td>共享内存 + 信号量</td><td>WASAPI Loopback / 录音</td></tr>
+    <tr><td>需要虚拟设备</td><td>需要（WDM2VST 驱动）</td><td>不需要</td></tr>
+    <tr><td>音质</td><td>无损（直接内存拷贝）</td><td>无损</td></tr>
+    <tr><td>CPU 占用</td><td>极低</td><td>低</td></tr>
+    <tr><td>适用场景</td><td>配合虚拟驱动的专业路由</td><td>捕获系统回环 / 麦克风录音</td></tr>
+  </table>
+</section>
+
+<!-- Usage -->
+<section class="section" id="usage">
+  <div class="stitle"><div class="dot" style="background:#4CAF50"></div>使用方法</div>
+  <p class="sdesc">从安装到使用，5 分钟上手</p>
+  <div class="steps">
+    <div class="step"><div><h4>版本更新检测</h4><p>内置自动化版本侦测系统。当检测到新版本时，UI自动变形展现极客风格呼吸幻彩按钮，全自动重定向至最新下载地址。</p></div></div>
+    <div class="step"><div><h4>内核级遥测监控 (Telemetry)</h4><p>首创诊断式宿主音频配置收集，实时协助排查因未知原因引发的爆音问题。</p></div></div>
+    <div class="step"><div><h4>安装插件</h4><p>运行 <code>WDM2VST_Public_v3.2.0_Setup.exe</code>，插件自动安装到 <code>C:\Program Files\Common Files\VST3</code></p></div></div>
+    <div class="step"><div><h4>打开 DAW</h4><p>打开 Studio One / Cubase / Ableton / FL Studio 等 DAW，扫描 VST3 插件目录</p></div></div>
+    <div class="step"><div><h4>创建轨道并加载插件</h4><p>新建音频轨道，在效果器插槽中加载 <code>WDM2VST</code> 或 <code>VST2WDM</code></p></div></div>
+    <div class="step"><div><h4>选择音频设备</h4><p>在插件界面下拉列表中选择目标设备。IPC 模式选虚拟设备，WASAPI 模式选物理设备</p></div></div>
+    <div class="step"><div><h4>开始录制/播放</h4><p>点击「启动」按钮，音频流开始传输。DAW 中即可看到电平变化</p></div></div>
+  </div>
+  <div class="tip"><strong>💡 IPC 零延迟模式</strong><p>如果安装了 WDM2VST 虚拟音频驱动，推荐使用 IPC 模式。通过共享内存实现真正的零延迟传输，音质无损且 CPU 占用极低。</p></div>
+  <div class="warn"><strong>⚠️ 采样率匹配</strong><p>确保 DAW 采样率与系统音频设备一致（48000Hz 或 44100Hz），否则可能出现音高异常或噪音。</p></div>
+</section>
+
+<!-- ═══════════════ PART 2: A/B 测试报告 ═══════════════ -->
+
+<div class="divider" id="report"><span>A/B 音质对比测试报告</span></div>
+
+<!-- Test Files -->
+<section class="section" style="padding-top:32px">
+  <div class="stitle"><div class="dot"></div>测试条件</div>
+  <p class="sdesc">1kHz + 440Hz 正弦波 · 32-bit Float / 48kHz · 31.17 秒</p>
+  <table>
+    <tr><th>文件</th><th>来源</th><th>格式</th><th>大小</th></tr>
+    <tr><td><code>test_odeus_ipc.wav</code></td><td><span class="lose">O Deus wdm2vst</span> (竞品)</td><td>32-bit Float, 48kHz, Stereo</td><td>11.41 MB</td></tr>
+    <tr><td><code>test_wdm2vst_ipc.wav</code></td><td><span class="win">我们的 WDM2VST</span> (IPC模式)</td><td>32-bit Float, 48kHz, Stereo</td><td>11.41 MB</td></tr>
+  </table>
+  <div class="info">两个插件均使用 IPC 共享内存从 WDM 虚拟驱动传输音频，架构相同。</div>
+</section>
+
+<!-- Key Metrics -->
+<section class="section">
+  <div class="stitle"><div class="dot" style="background:var(--a2)"></div>关键指标对比</div>
+  
+  <h3 style="color:#aaa;font-size:14px;margin:16px 0 8px">SNR（信噪比）— 越高越好</h3>
+  <div class="sgrid">
+    <div class="scard"><div class="nm">O Deus wdm2vst</div><div class="val lose">58 dB</div><div class="unit">有可测量噪声底</div></div>
+    <div class="scard winner"><div class="nm">我们的 WDM2VST</div><div class="val win">128 dB</div><div class="unit">🏆 Bit-Perfect 传输</div></div>
+  </div>
+
+  <h3 style="color:#aaa;font-size:14px;margin:16px 0 8px">THD（总谐波失真）— 越低越好</h3>
+  <div class="sgrid">
+    <div class="scard"><div class="nm">O Deus wdm2vst</div><div class="val lose">0.06%</div><div class="unit">存在谐波失真</div></div>
+    <div class="scard winner"><div class="nm">我们的 WDM2VST</div><div class="val win">0.00%</div><div class="unit">🏆 零失真</div></div>
+  </div>
+
+  <h3 style="color:#aaa;font-size:14px;margin:16px 0 8px">SNR 可视化对比</h3>
+  <div class="bar-cmp"><div class="bar-lbl">O Deus</div><div class="bar-trk"><div class="bar-fill bar-them" style="width:45%">58 dB</div></div></div>
+  <div class="bar-cmp"><div class="bar-lbl">我们的</div><div class="bar-trk"><div class="bar-fill bar-ours" style="width:100%">128 dB ✓</div></div></div>
+</section>
+
+<!-- Detailed Data -->
+<section class="section">
+  <div class="stitle"><div class="dot" style="background:#FFD600"></div>详细数据对比</div>
+  
+  <h3 style="color:#aaa;font-size:14px;margin:16px 0 8px">左声道 — 1000 Hz</h3>
+  <table>
+    <tr><th>指标</th><th>O Deus</th><th>我们的 WDM2VST</th><th>结果</th></tr>
+    <tr><td>Peak 峰值</td><td>-1.9 dB</td><td>-1.9 dB</td><td class="tie">平</td></tr>
+    <tr><td>RMS 均方根</td><td>-5.3 dB</td><td>-5.3 dB</td><td class="tie">平</td></tr>
+    <tr><td>检测频率</td><td>1000 Hz</td><td>1000 Hz</td><td class="tie">平</td></tr>
+    <tr><td><strong>THD 总谐波失真</strong></td><td class="lose">0.0602%</td><td class="win">0.0000%</td><td class="win">🏆 我们胜</td></tr>
+    <tr><td><strong>SNR 信噪比</strong></td><td class="lose">57.9 dB</td><td class="win">128.2 dB</td><td class="win">🏆 +70dB!</td></tr>
+  </table>
+
+  <h3 style="color:#aaa;font-size:14px;margin:16px 0 8px">右声道 — 440 Hz</h3>
+  <table>
+    <tr><th>指标</th><th>O Deus</th><th>我们的 WDM2VST</th><th>结果</th></tr>
+    <tr><td>Peak 峰值</td><td>-1.9 dB</td><td>-1.9 dB</td><td class="tie">平</td></tr>
+    <tr><td>RMS 均方根</td><td>-5.3 dB</td><td>-5.3 dB</td><td class="tie">平</td></tr>
+    <tr><td>检测频率</td><td>440 Hz</td><td>440 Hz</td><td class="tie">平</td></tr>
+    <tr><td><strong>THD 总谐波失真</strong></td><td class="lose">0.0427%</td><td class="win">0.0000%</td><td class="win">🏆 我们胜</td></tr>
+    <tr><td><strong>SNR 信噪比</strong></td><td class="lose">60.7 dB</td><td class="win">128.2 dB</td><td class="win">🏆 +67dB!</td></tr>
+  </table>
+</section>
+
+<!-- Verdict -->
+<div class="verdict">
+  <h3>🏆 我们的 WDM2VST 实现 Bit-Perfect 无损传输</h3>
+  <p>THD = 0.0000% · SNR = 128 dB · 完美保真</p>
+</div>
+
+<!-- Technical Analysis -->
+<section class="section">
+  <div class="stitle"><div class="dot" style="background:#4CAF50"></div>技术分析</div>
+  
+  <div class="arch">驱动渲染端点 → 内核共享内存 (IPC/LPC) → VST 插件读取</div>
+
+  <h3 style="color:#aaa;font-size:14px;margin:16px 0 8px">为什么同为 IPC，我们更优？</h3>
+  <table>
+    <tr><th>方面</th><th>我们的 WDM2VST</th><th>O Deus wdm2vst</th></tr>
+    <tr><td>IPC 方式</td><td>Shared Memory</td><td>Shared Memory</td></tr>
+    <tr><td>数据格式</td><td class="win">float32 直通</td><td>float32</td></tr>
+    <tr><td>信号质量</td><td class="win">Bit-perfect (0% THD)</td><td class="lose">有噪声 (0.06% THD)</td></tr>
+    <tr><td>信噪比</td><td class="win">128 dB</td><td class="lose">58-61 dB</td></tr>
+  </table>
+
+  <h3 style="color:#aaa;font-size:14px;margin:16px 0 8px">O Deus 噪声来源分析</h3>
+  <ul class="alist">
+    <li><strong>Ring Buffer 同步问题</strong> — 读写指针竞争导致读到部分旧数据</li>
+    <li><strong>插值 / 重采样</strong> — 可能在读取 IPC 数据后做了采样率转换</li>
+    <li><strong>缓冲区溢出/欠载处理</strong> — 缓冲跟不上时填充了非零数据</li>
+    <li><strong>格式转换</strong> — 传输中可能经历了 int→float 转换</li>
+  </ul>
+
+  <div class="info">
+    我们的实现使用 <code>IpcAudioBuffer</code> 结构直接在内核共享内存中传递 float32 样本，没有任何格式转换或插值，因此实现了 <strong>Bit-Perfect</strong> 传输。
+  </div>
+</section>
+
+<!-- Score -->
+<section class="section">
+  <div class="stitle"><div class="dot" style="background:var(--a)"></div>综合评分</div>
+  <table>
+    <tr><th>维度</th><th>O Deus</th><th>我们的 WDM2VST</th></tr>
+    <tr><td>信号保真度</td><td><span class="stars">★★★</span><span class="stars-empty">★★</span></td><td><span class="stars">★★★★★</span></td></tr>
+    <tr><td>噪声表现</td><td><span class="stars">★★</span><span class="stars-empty">★★★</span> <small>(58-61dB)</small></td><td><span class="stars">★★★★★</span> <small>(128dB)</small></td></tr>
+    <tr><td>THD 谐波失真</td><td><span class="stars">★★★★</span><span class="stars-empty">★</span> <small>(0.06%)</small></td><td><span class="stars">★★★★★</span> <small>(0.00%)</small></td></tr>
+    <tr><td>IPC 实现</td><td><span class="stars">★★★</span><span class="stars-empty">★★</span></td><td><span class="stars">★★★★★</span> <small>(Bit-Perfect)</small></td></tr>
+    <tr style="background:var(--card2)"><td><strong>综合</strong></td><td><span class="stars">★★★</span><span class="stars-empty">★★</span></td><td><span class="stars">★★★★★</span> <span class="win">🏆</span></td></tr>
+  </table>
+</section>
+
+<!-- ═══════════════ PART 3: FAQ ═══════════════ -->
+
+<div class="divider" id="faq"><span>常见问题</span></div>
+
+<section class="section" style="padding-top:32px">
+  <div class="steps" style="counter-reset:none">
+    <div class="step" style="counter-increment:none"><div>
+      <h4>DAW 扫描不到插件？</h4>
+      <p>确认安装目录为 <code>C:\Program Files\Common Files\VST3</code>，在 DAW 中添加该路径并重新扫描。</p>
+    </div></div>
+    <div class="step" style="counter-increment:none"><div>
+      <h4>IPC 模式无法连接？</h4>
+      <p>需要先安装 WDM2VST 虚拟音频驱动。没有驱动请使用 WASAPI 模式。</p>
+    </div></div>
+    <div class="step" style="counter-increment:none"><div>
+      <h4>有杂音或音高不对？</h4>
+      <p>检查采样率是否匹配：DAW 和系统设备须一致，建议统一 48000Hz。</p>
+    </div></div>
+    <div class="step" style="counter-increment:none"><div>
+      <h4>LAN 模式连不上？</h4>
+      <p>点击 Audio Send 的「修复防火墙」按钮，确保两台电脑在同一子网。</p>
+    </div></div>
+  </div>
+</section>
+
+<!-- System Requirements -->
+<section class="section">
+  <div class="stitle"><div class="dot" style="background:#FF5722"></div>系统要求</div>
+  <table>
+    <tr><td><strong>操作系统</strong></td><td>Windows 10 / 11（64 位）</td></tr>
+    <tr><td><strong>DAW</strong></td><td>支持 VST3 的宿主（Studio One、Cubase、Ableton、FL Studio、Reaper 等）</td></tr>
+    <tr><td><strong>格式</strong></td><td>VST3（.vst3）</td></tr>
+    <tr><td><strong>内存</strong></td><td>极低占用（< 10MB）</td></tr>
+  </table>
+</section>
+
+</div>
+
+<footer class="footer">
+  <p>WDM2VST Audio Router V3.2.0 · Public Edition</p>
+  <p style="margin-top:6px">© 2024-2026 VirtualAudioRouter · <a href="https://github.com/VirtualAudioRouter/WDM2VST">GitHub</a></p>
+</footer>
+
+</body>
+</html>
