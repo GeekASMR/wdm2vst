@@ -166,24 +166,36 @@ tr:hover td{background:var(--card)}
 
 <div class="container">
 
-<!-- WDM2VST V3.1.1 Update Log & Download Button -->
+<!-- WDM2VST V3.2.1 Update Log & Download Button -->
 <div class="update-log-section" style="background: var(--card); border: 1px solid #1e2535; color: var(--text); padding: 25px; border-left: 4px solid var(--a); border-radius: var(--r); margin: 20px 0; font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;">
   <h3 style="color: #fff; margin-top: 0; font-size: 20px; font-weight: 800;">🚀 V3.2.1 稳定版 更新日志</h3>
   
-  <h4 style="color: var(--a); margin-bottom: 5px; margin-top: 15px; font-size: 15px;">🎵 核心音频修复</h4>
+  <h4 style="color: var(--a); margin-bottom: 5px; margin-top: 15px; font-size: 15px;">🎵 核心音频与引擎修复</h4>
   <ul style="line-height: 1.8; margin-top: 0; color: #aaa; font-size: 14px; padding-left: 20px;">
-    <li><strong style="color:#e0e0e0">完全切断双重播放架构 Bug</strong>：修复了 DAW 加载 VST2WDM 插件并启用 IPC 时，底层物理扬声器依然会错误地同时并发播放双重音频的历史遗留问题。</li>
-    <li><strong style="color:#e0e0e0">安装包与编译架构增强</strong>：清除了无用的 CMake 目录包裹层，直接产出纯净文件；解决并消灭了因 MSBuild 残留文件夹引发的嵌套崩溃问题。</li>
+    <li><strong style="color:#e0e0e0">彻底屏蔽双重播放 Bug</strong>：完美修复 DAW 加载 VST2WDM 插件并启用 IPC 时，底层物理扬声器依然会错误地并发播放产生重音的历史级故障。</li>
+    <li><strong style="color:#e0e0e0">内核级 DPF 状态机诊断</strong>：底层全新注入无损连线日志，捕获 DAW 与系统间的采样率协商异常，终结“采样率不匹配导致的各类鬼畜爆音”。</li>
+  </ul>
+
+  <h4 style="color: var(--a); margin-bottom: 5px; margin-top: 15px; font-size: 15px;">📦 架构精简与纯净部署</h4>
+  <ul style="line-height: 1.8; margin-top: 0; color: #aaa; font-size: 14px; padding-left: 20px;">
+    <li><strong style="color:#e0e0e0">编译系统去冗优化</strong>：清除了无用的 CMake 目录包裹层，直接产出纯净文件；解决并消灭了因 MSBuild 残留文件夹引发的嵌套崩溃问题。</li>
+    <li><strong style="color:#e0e0e0">安装目录绝对洗地 (tmp释放)</strong>：大幅优化 Inno Setup，采用临时缓存动态提取机制。驱动注册用到的冗余批处理文件会在安装成功后自动彻底自毁，不留任何垃圾。</li>
+  </ul>
+
+  <h4 style="color: var(--a); margin-bottom: 5px; margin-top: 15px; font-size: 15px;">🛡️ 体验防护与提示</h4>
+  <ul style="line-height: 1.8; margin-top: 0; color: #aaa; font-size: 14px; padding-left: 20px;">
+    <li><strong style="color:#e0e0e0">版本检测与内核遥测</strong>：检测到新发布时UI全自动展现呼吸灯跳转；加入实时异常诊断辅助宿主排错。</li>
+    <li><strong style="color:#e0e0e0">Code 37 阻断弹窗引流</strong>：原生集成图形化防护弹窗，当系统内存完整性阻断驱动注册时，引导可视化关闭内存完整性方案。</li>
   </ul>
   
   <div style="margin-top: 25px;">
-    <a href="https://github.com/GeekASMR/wdm2vst/releases/tag/v3.1.1" target="_blank" style="display: inline-block; padding: 12px 28px; background: linear-gradient(135deg, var(--a), #ff5281); color: #fff; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 15px; transition: all 0.2s; box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);">📥 前往 GitHub 官方仓库下载最新 V3.2.1</a>
+    <a href="https://github.com/GeekASMR/wdm2vst/releases/tag/v3.2.1" target="_blank" style="display: inline-block; padding: 12px 28px; background: linear-gradient(135deg, var(--a), #ff5281); color: #fff; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 15px; transition: all 0.2s; box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);">📥 前往 GitHub 官方仓库下载最新 V3.2.1</a>
   </div>
 </div>
 
 <!-- WDM2VST V3.1.0 Update Log -->
 <div class="update-log-section" style="background: var(--card2); border: 1px solid #1e2535; color: var(--text); padding: 25px; border-left: 4px solid #444; border-radius: var(--r); margin: 20px 0; font-family: 'Inter', 'Segoe UI', system-ui, sans-serif; opacity: 0.8;">
-  <h3 style="color: #ccc; margin-top: 0; font-size: 18px; font-weight: 700;">🚀 V3.2.1 稳定版 更新日志 <span style="font-size:12px;color:#777;font-weight:600;margin-left:8px">(历史大版本)</span></h3>
+  <h3 style="color: #ccc; margin-top: 0; font-size: 18px; font-weight: 700;">🚀 V3.1.0 稳定版 更新日志 <span style="font-size:12px;color:#777;font-weight:600;margin-left:8px">(大版本重构)</span></h3>
   
   <h4 style="color: #888; margin-bottom: 5px; margin-top: 15px; font-size: 15px;">🎵 核心音频修复</h4>
   <ul style="line-height: 1.8; margin-top: 0; color: #888; font-size: 14px; padding-left: 20px;">
@@ -194,9 +206,9 @@ tr:hover td{background:var(--card)}
   <h4 style="color: #888; margin-bottom: 5px; margin-top: 15px; font-size: 15px;">💻 引擎与架构特性</h4>
   <ul style="line-height: 1.8; margin-top: 0; color: #888; font-size: 14px; padding-left: 20px;">
     <li><strong style="color:#bbb">纯名单文件 <code>.vst3</code></strong>：跳出臃肿的自带包层级，回归极致纯净的标准单文件封装，跟商业级插件架构看齐。</li>
-    <li><strong style="color:#bbb">全血 Release 驱动</strong>：底层 WDM 虚拟总栈到多层 VST 协议联通，全部跃迁至 满血加速 Release 分支。</li>
-    <li><strong style="color:#bbb">环境绝对隔离与自动洗地</strong>：采用了独立的厂牌环境专属目录 (<code>VirtualAudioRouter</code>)，并且在安装前释放激进清理探针，无痕秒删客户机上曾经胡乱残存的任何死锁错包！</li>
-    <li><strong style="color:#bbb">安装界面视觉大改</strong>：同步上线插件同款暗夜 + 赛博粉设计美学的专属安装向导！</li>
+    <li><strong style="color:#bbb">全血 Release 驱动</strong>：底层 WDM 虚拟总栈到多层 VST 协议联通，全部跃迁至满血加速 Release 分支。</li>
+    <li><strong style="color:#bbb">环境绝对隔离与自动洗地</strong>：采用了独立的厂牌环境专属目录，并且在安装前释放清理探针，无痕秒删残存的伪签名包！</li>
+    <li><strong style="color:#bbb">安装界面视觉大改</strong>：同步上线专属暗夜 + 赛博粉设计美学的极致安装向导。</li>
   </ul>
 </div>
 
