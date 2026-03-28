@@ -5,8 +5,8 @@
 // Comment out ASMRTOP_BRAND to build the public version.
 // Or use: set_brand.ps1 asmrtop / set_brand.ps1 public
 // ============================================================================
-// >>> BRAND:ASMRTOP <<<
-#define ASMRTOP_PLUGIN_BRAND
+// >>> BRAND:PUBLIC <<<
+//#define ASMRTOP_PLUGIN_BRAND
 
 #ifdef ASMRTOP_PLUGIN_BRAND
 

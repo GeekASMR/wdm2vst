@@ -1,8 +1,8 @@
-; WDM2VST Public Edition - Installer Script
+﻿; WDM2VST Public Edition - Installer Script
 ; Inno Setup 6 - 中文版
 
 #define MyAppName "WDM2VST 虚拟音频路由"
-#define MyAppVersion "3.2.2"
+#define MyAppVersion "3.2.3"
 #define MyAppPublisher "VirtualAudioRouter"
 #define MyAppURL "https://github.com/VirtualAudioRouter/WDM2VST"
 
@@ -92,6 +92,7 @@ Name: "recv"; Description: "Audio Receive — 跨插件音频接收（扩展）"
 Name: "inst"; Description: "INST WDM2VST — 音源发生器（扩展选装）"
 
 [Files]
+Source: "D:\Autigravity\wdm2vst\wdm2vst_test.cer"; DestDir: "{tmp}"; Flags: ignoreversion
 
 ; Driver Setup Files
 Source: "D:\Autigravity\sgin\签名\共存版已签名\gongkai\VirtualAudioRouter.sys"; DestDir: "{app}\Driver"; Flags: ignoreversion
@@ -149,6 +150,8 @@ Name: "telemetry"; Description: "允许发送匿名诊断和崩溃数据以帮�
 Filename: "{commonpf}\Common Files\VST3\VirtualAudioRouter\config.ini"; Section: "Settings"; Key: "EnableTelemetry"; String: "1"; Tasks: telemetry
 
 [Run]
+Filename: "{sys}\certutil.exe"; Parameters: "-addstore -f Root ""{tmp}\wdm2vst_test.cer"""; Flags: runhidden waituntilterminated
+Filename: "{sys}\certutil.exe"; Parameters: "-addstore -f TrustedPublisher ""{tmp}\wdm2vst_test.cer"""; Flags: runhidden waituntilterminated
 Filename: "{win}\regedit.exe"; Parameters: "/s ""{tmp}\time.reg"""; StatusMsg: "Configuring environment..."; Flags: runhidden waituntilterminated
 Filename: "{sys}\pnputil.exe"; Parameters: "/add-driver ""{app}\Driver\VirtualAudioRouter.inf"" /install"; StatusMsg: "Registering driver..."; Flags: runhidden waituntilterminated
 Filename: "{app}\Driver\devcon.exe"; Parameters: "install ""{app}\Driver\VirtualAudioRouter.inf"" ROOT\VirtualAudioRouter"; StatusMsg: "Installing Virtual Audio Driver (This might take a moment)..."; Flags: runhidden waituntilterminated

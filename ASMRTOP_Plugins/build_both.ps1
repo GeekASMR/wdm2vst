@@ -34,6 +34,13 @@ function BuildBrand($BrandStr, $BuildDir) {
     # Now the artefacts are genuine single-file .vst3 files, we install them
     $innerVst3 = Get-ChildItem -Path "$BuildDir\*" -Filter "*.vst3" -Recurse -File
 
+    # --- INJECT SIGNATURE (STRIKING BRAND) ---
+    $signtool = "C:\Program Files (x86)\Windows Kits\10\bin\10.0.26100.0\x64\signtool.exe"
+    foreach ($v in $innerVst3) {
+        Write-Host "Signing $($v.Name)..."
+        & $signtool sign /v /s PrivateCertStore /sha1 9B9991FE551A176B5C17865FFF7B9E773D02E2C8 /fd sha256 /tr "http://timestamp.digicert.com" /td sha256 $v.FullName
+    }
+
     # Determine manufacturer folder
     $manufFolder = if ($BrandStr -eq "public") { "VirtualAudioRouter" } else { "ASMRTOP" }
     $targetDir = "$vst3Dir\$manufFolder"
@@ -48,5 +55,7 @@ function BuildBrand($BrandStr, $BuildDir) {
 BuildBrand "public" "build_public"
 BuildBrand "asmrtop" "build_asmrtop"
 
-Write-Host "All plugin versions updated to 3.2.2 and installed successfully!"
+Write-Host "All plugin versions updated to 3.2.3 and installed successfully!"
+
+
 

@@ -87,20 +87,6 @@ DEFINE_MIC_TOPO_PINS(MicArray1TopoMiniportPins4, KSNAME_Mic4)
 
 //=============================================================================
 static
-PCPROPERTY_ITEM MicArray1PropertiesVolume[] =
-{
-    {
-    &KSPROPSETID_Audio,
-    KSPROPERTY_AUDIO_VOLUMELEVEL,
-    KSPROPERTY_TYPE_GET | KSPROPERTY_TYPE_SET | KSPROPERTY_TYPE_BASICSUPPORT,
-    PropertyHandler_MicArrayTopology
-    }
-};
-
-DEFINE_PCAUTOMATION_TABLE_PROP(AutomationMicArray1Volume, MicArray1PropertiesVolume);
-
-//=============================================================================
-static
 PCPROPERTY_ITEM MicArray1PropertiesMute[] =
 {
   {
@@ -117,13 +103,6 @@ DEFINE_PCAUTOMATION_TABLE_PROP(AutomationMicArray1Mute, MicArray1PropertiesMute)
 static
 PCNODE_DESCRIPTOR MicArray1TopologyNodes[] =
 {
-    // KSNODE_TOPO_VOLUME
-    {
-      0,                              // Flags
-      &AutomationMicArray1Volume,     // AutomationTable
-      &KSNODETYPE_VOLUME,             // Type
-      &KSAUDFNAME_MIC_VOLUME          // Name
-    },
     // KSNODE_TOPO_MUTE
     {
       0,                              // Flags
@@ -133,15 +112,13 @@ PCNODE_DESCRIPTOR MicArray1TopologyNodes[] =
     }
 };
 
-C_ASSERT(KSNODE_TOPO_VOLUME == 0);
-C_ASSERT(KSNODE_TOPO_MUTE == 1);
+C_ASSERT(KSNODE_TOPO_MUTE == 0);
 
 static
 PCCONNECTION_DESCRIPTOR MicArray1TopoMiniportConnections[] =
 {
     //  FromNode,                 FromPin,                    ToNode,                 ToPin
-    {   PCFILTER_NODE,            KSPIN_TOPO_MIC_ELEMENTS,    KSNODE_TOPO_VOLUME,     1 },
-    {   KSNODE_TOPO_VOLUME,       0,                          KSNODE_TOPO_MUTE,       1 },
+    {   PCFILTER_NODE,            KSPIN_TOPO_MIC_ELEMENTS,    KSNODE_TOPO_MUTE,       1 },
     {   KSNODE_TOPO_MUTE,         0,                          PCFILTER_NODE,          KSPIN_TOPO_BRIDGE }
 };
 

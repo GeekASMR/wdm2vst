@@ -84,31 +84,9 @@ DEFINE_SPEAKER_TOPO_PINS(SpeakerTopoMiniportPins4, KSNAME_Speaker4)
 // Backward compat alias
 #define SpeakerTopoMiniportPins SpeakerTopoMiniportPins1
 
-//=============================================================================
-static
-PCPROPERTY_ITEM SpeakerPropertiesVolume[] =
-{
-    {
-    &KSPROPSETID_Audio,
-    KSPROPERTY_AUDIO_VOLUMELEVEL,
-    KSPROPERTY_TYPE_GET | KSPROPERTY_TYPE_SET | KSPROPERTY_TYPE_BASICSUPPORT,
-    PropertyHandler_SpeakerTopology
-    }
-};
-
-DEFINE_PCAUTOMATION_TABLE_PROP(AutomationSpeakerVolume, SpeakerPropertiesVolume);
-
-//=============================================================================
 static
 PCNODE_DESCRIPTOR SpeakerTopologyNodes[] =
 {
-    // KSNODE_TOPO_VOLUME
-    {
-        0,                          // Flags
-        &AutomationSpeakerVolume,   // AutomationTable
-        &KSNODETYPE_VOLUME,         // Type
-        &KSAUDFNAME_WAVE_VOLUME     // Name
-    },
     // KSNODE_TOPO_MUTE
     {
         0,                          // Flags
@@ -134,8 +112,7 @@ static
 PCCONNECTION_DESCRIPTOR SpeakerTopoMiniportConnections[] =
 {
     //  FromNode,                 FromPin,                    ToNode,                 ToPin
-    {   PCFILTER_NODE,            KSPIN_TOPO_WAVEOUT_SOURCE,    KSNODE_TOPO_VOLUME,     1 },
-    {   KSNODE_TOPO_VOLUME,       0,                          KSNODE_TOPO_MUTE,       1 },
+    {   PCFILTER_NODE,            KSPIN_TOPO_WAVEOUT_SOURCE,  KSNODE_TOPO_MUTE,       1 },
     {   KSNODE_TOPO_MUTE,         0,                          PCFILTER_NODE,          KSPIN_TOPO_LINEOUT_DEST }
 };
 

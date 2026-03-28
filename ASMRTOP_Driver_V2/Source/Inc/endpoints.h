@@ -62,8 +62,7 @@ enum
 // Topology nodes.
 enum
 {
-    KSNODE_TOPO_WAVEOUT_VOLUME = 0,
-    KSNODE_TOPO_WAVEOUT_MUTE,
+    KSNODE_TOPO_WAVEOUT_MUTE = 0,
     KSNODE_TOPO_WAVEOUT_PEAKMETER
 };
 
@@ -103,8 +102,7 @@ enum
 // topology nodes.
 enum
 {
-    KSNODE_TOPO_VOLUME,
-    KSNODE_TOPO_MUTE,
+    KSNODE_TOPO_MUTE = 0,
     KSNODE_TOPO_PEAKMETER
 };
 
