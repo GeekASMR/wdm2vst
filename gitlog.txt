@@ -1,0 +1,19 @@
+﻿0d49145 Release v3.2.1: Re-align timeline (V3.2.1 vs V3.1.0 history) & Finalize changelog details
+50edddb Release v3.2.1: Fix double playback bug and enhance {tmp} cleanup
+7075eea Release v3.2.0: Installer {tmp} cleanup enhancements
+581eec5 Release v3.2.0: Unified Versioning and Kernel Debug Logging with Code 37 Troubleshooting
+a73bf1d Release v3.2.0: Add Code 37 troubleshooting steps
+e22b06e Release v3.2.0: Unified Versioning and Kernel Debug Logging
+702fd0b  Release v3.1.1 Full Sync
+1c4dbe1 Release v3.1.1
+37e4c69 Release v3.1.0: Auto Updater, Telemetry, and Auto-Connect Fixes
+1b8a172 馃殌 feat: V3.1.0 绋冲畾鐗堝彂甯?- 閲嶆瀯锛氬鍑轰负鏍囧噯绾噣鍗曟枃浠?.vst3 灏佽 - 瀹夊叏锛氬叏鏂板簳灞傜幆澧冮殧绂?(鐙珛 VirtualAudioRouter 鐩綍) - 浼樺寲锛氬畨瑁呯▼搴忔敞鍏ュ己鍔涙娴嬫竻鐞嗘棫鐗堥敊鍖呮畫鐣欑畻娉?- 鎬ц兘锛氬叏绯?WDM & VST3 搴曞眰杞负 Release 缂栬瘧 - 鍒嗘媶锛氬皢鍘熸暣鍚堢殑淇″彿鍙戠敓鍣?INST WDM2VST 杞负鑷畾閫夎鎵╁睍 - 瑙嗚锛氬叏闈㈤€傞厤鏆楀鑹茶皟鍜岀矇搴曞厜杞?Inno 瀹夎鐗堥潰
+ec72811 fix: clear IPC ring buffer on channel switch to eliminate audio residue
+06497da v3.0: Driver V3 + V2 + Plugins unified repo, IPC channel switching with fade-in, branding system, 4+4 endpoints, installer scripts
+94c0ee0 Update submodules, VS Code settings, and add branding scripts
+d68f367 v2.1: branding system + BSOD fix + IPC channel alignment
+d9572e0 v2.0: driver 4+4 endpoints + plugin IPC PLAY/REC naming + branding system
+d12499c v1.5.4: WDM2VST latency dropdown disabled in non-IPC mode + code cleanup
+be72bdb v1.5.4: code cleanup - unified comments, removed unused latency dropdown from VST2WDM
+ddd1a85 v1.5.4: VST2WDM绉婚櫎鏃犳晥鐨勫欢杩熸ā寮忛€夐」, 绠€鍖朥I
+20b3b8f v1.5.3: VST2WDM鐩村啓妯″紡淇鐖嗛煶 + WDM2VST缂撳啿浼樺寲 + 鐘舵€佷繚瀛?+ 鐗堟湰鍙锋洿鏂?

@@ -197,8 +197,11 @@ void AsmrtopWdm2VstAudioProcessor::processBlock (juce::AudioBuffer<float>& buffe
     double wasapiExpected = std::max((double)(devRate * baseLatency), (double)(numSamples * baseSpeed * 2.5));
     double expectedDiff = isIPC ? ipcExpected : wasapiExpected;
 
+    int32_t maxSlip = (int32_t)(expectedDiff + 4800.0);
+    if (maxSlip < minRequired * 4) maxSlip = minRequired * 4;
+
     // Safety check for desync or extreme underrun/overrun
-    if (availableU > Asmrtop::IPC_RING_SIZE) {
+    if (availableU > maxSlip) {
         TelemetryReporter::getInstance().logEvent("Buffer_Overrun", "Avail: " + juce::String(availableU) + " | Expected: " + juce::String(expectedDiff, 1) + " | Req: " + juce::String(minRequired) + " | Block: " + juce::String(numSamples), "WDM2VST");
         state.store(0, std::memory_order_relaxed);
         r = w - (uint32_t)expectedDiff; 
@@ -247,11 +250,11 @@ void AsmrtopWdm2VstAudioProcessor::processBlock (juce::AudioBuffer<float>& buffe
             // Slowly drift fractional part to 0.0 so we read bit-perfect samples
             readPosFractional *= 0.99;
         } else {
-            read_speed = baseSpeed + (smoothedDiff * 0.00001); // Very gentle push 0.00001
+            read_speed = baseSpeed + (smoothedDiff * 0.0001); // Stronger push 0.0001 to handle 48k->44k seamlessly
         }
         
-        if (read_speed > baseSpeed * 1.05) read_speed = baseSpeed * 1.05; // Slightly widen margin for big block jumps
-        if (read_speed < baseSpeed * 0.95) read_speed = baseSpeed * 0.95;
+        if (read_speed > baseSpeed * 1.50) read_speed = baseSpeed * 1.50; // Allow true resampling headroom
+        if (read_speed < baseSpeed * 0.50) read_speed = baseSpeed * 0.50;
     }
     
     float* outL = buffer.getWritePointer(0);

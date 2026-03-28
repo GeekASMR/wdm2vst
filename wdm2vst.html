@@ -159,59 +159,15 @@ tr:hover td{background:var(--card)}
 <section class="hero">
   <h1><span>WDM2VST</span> Audio Router</h1>
   <p class="sub">虚拟音频路由 VST3 插件套件</p>
-  <div class="version">V3.2.1 · Public Edition · 4 个 VST3 插件</div>
+  <div class="version">稳定版 · 包含 4 个 VST3 插件</div>
   <p class="desc">将 Windows 系统音频无缝桥接到任何 DAW，实现零延迟虚拟音频路由、跨插件传输和 WASAPI 设备直连。经 A/B 音质测试验证：<strong style="color:#4CAF50">Bit-Perfect 无损传输</strong>，SNR 128dB，THD 0.0000%。</p>
+  <div style="margin-top: 35px;">
+    <a href="https://github.com/GeekASMR/wdm2vst/releases/latest" target="_blank" style="display: inline-block; padding: 12px 28px; background: linear-gradient(135deg, var(--a), #ff5281); color: #fff; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 15px; transition: all 0.2s; box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);">📥 前往 GitHub 下载最新稳定版</a>
+  </div>
 </section>
 <div class="accent-bar"></div>
 
 <div class="container">
-
-<!-- WDM2VST V3.2.1 Update Log & Download Button -->
-<div class="update-log-section" style="background: var(--card); border: 1px solid #1e2535; color: var(--text); padding: 25px; border-left: 4px solid var(--a); border-radius: var(--r); margin: 20px 0; font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;">
-  <h3 style="color: #fff; margin-top: 0; font-size: 20px; font-weight: 800;">🚀 V3.2.1 稳定版 更新日志</h3>
-  
-  <h4 style="color: var(--a); margin-bottom: 5px; margin-top: 15px; font-size: 15px;">🎵 核心音频与引擎修复</h4>
-  <ul style="line-height: 1.8; margin-top: 0; color: #aaa; font-size: 14px; padding-left: 20px;">
-    <li><strong style="color:#e0e0e0">彻底屏蔽双重播放 Bug</strong>：完美修复 DAW 加载 VST2WDM 插件并启用 IPC 时，底层物理扬声器依然会错误地并发播放产生重音的历史级故障。</li>
-    <li><strong style="color:#e0e0e0">内核级 DPF 状态机诊断</strong>：底层全新注入无损连线日志，捕获 DAW 与系统间的采样率协商异常，终结“采样率不匹配导致的各类鬼畜爆音”。</li>
-  </ul>
-
-  <h4 style="color: var(--a); margin-bottom: 5px; margin-top: 15px; font-size: 15px;">📦 架构精简与纯净部署</h4>
-  <ul style="line-height: 1.8; margin-top: 0; color: #aaa; font-size: 14px; padding-left: 20px;">
-    <li><strong style="color:#e0e0e0">编译系统去冗优化</strong>：清除了无用的 CMake 目录包裹层，直接产出纯净文件；解决并消灭了因 MSBuild 残留文件夹引发的嵌套崩溃问题。</li>
-    <li><strong style="color:#e0e0e0">安装目录绝对洗地 (tmp释放)</strong>：大幅优化 Inno Setup，采用临时缓存动态提取机制。驱动注册用到的冗余批处理文件会在安装成功后自动彻底自毁，不留任何垃圾。</li>
-  </ul>
-
-  <h4 style="color: var(--a); margin-bottom: 5px; margin-top: 15px; font-size: 15px;">🛡️ 体验防护与提示</h4>
-  <ul style="line-height: 1.8; margin-top: 0; color: #aaa; font-size: 14px; padding-left: 20px;">
-    <li><strong style="color:#e0e0e0">版本检测与内核遥测</strong>：检测到新发布时UI全自动展现呼吸灯跳转；加入实时异常诊断辅助宿主排错。</li>
-    <li><strong style="color:#e0e0e0">Code 37 阻断弹窗引流</strong>：原生集成图形化防护弹窗，当系统内存完整性阻断驱动注册时，引导可视化关闭内存完整性方案。</li>
-  </ul>
-  
-  <div style="margin-top: 25px;">
-    <a href="https://github.com/GeekASMR/wdm2vst/releases/tag/v3.2.1" target="_blank" style="display: inline-block; padding: 12px 28px; background: linear-gradient(135deg, var(--a), #ff5281); color: #fff; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 15px; transition: all 0.2s; box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);">📥 前往 GitHub 官方仓库下载最新 V3.2.1</a>
-  </div>
-</div>
-
-<!-- WDM2VST V3.1.0 Update Log -->
-<div class="update-log-section" style="background: var(--card2); border: 1px solid #1e2535; color: var(--text); padding: 25px; border-left: 4px solid #444; border-radius: var(--r); margin: 20px 0; font-family: 'Inter', 'Segoe UI', system-ui, sans-serif; opacity: 0.8;">
-  <h3 style="color: #ccc; margin-top: 0; font-size: 18px; font-weight: 700;">🚀 V3.1.0 稳定版 更新日志 <span style="font-size:12px;color:#777;font-weight:600;margin-left:8px">(大版本重构)</span></h3>
-  
-  <h4 style="color: #888; margin-bottom: 5px; margin-top: 15px; font-size: 15px;">🎵 核心音频修复</h4>
-  <ul style="line-height: 1.8; margin-top: 0; color: #888; font-size: 14px; padding-left: 20px;">
-    <li><strong style="color:#bbb">WDM2VST 热切换顺滑</strong>：重写了 IPC 断连逻辑，完美解决了 DAW 中进行轨道热切换时突然哑音和卡死的硬核故障。</li>
-    <li><strong style="color:#bbb">VST2WDM 零残留串音</strong>：独家新增了通道切换强制刷空 (Zero-flush) 机制，彻底根除在切换输出轨道时爆出幽灵残留音频的刺耳 Bug。</li>
-  </ul>
-
-  <h4 style="color: #888; margin-bottom: 5px; margin-top: 15px; font-size: 15px;">💻 引擎与架构特性</h4>
-  <ul style="line-height: 1.8; margin-top: 0; color: #888; font-size: 14px; padding-left: 20px;">
-    <li><strong style="color:#bbb">纯名单文件 <code>.vst3</code></strong>：跳出臃肿的自带包层级，回归极致纯净的标准单文件封装，跟商业级插件架构看齐。</li>
-    <li><strong style="color:#bbb">全血 Release 驱动</strong>：底层 WDM 虚拟总栈到多层 VST 协议联通，全部跃迁至满血加速 Release 分支。</li>
-    <li><strong style="color:#bbb">环境绝对隔离与自动洗地</strong>：采用了独立的厂牌环境专属目录，并且在安装前释放清理探针，无痕秒删残存的伪签名包！</li>
-    <li><strong style="color:#bbb">安装界面视觉大改</strong>：同步上线专属暗夜 + 赛博粉设计美学的极致安装向导。</li>
-  </ul>
-</div>
-
 
 <!-- ═══════════════ PART 1: 产品介绍 ═══════════════ -->
 
@@ -236,7 +192,12 @@ tr:hover td{background:var(--card)}
       <span class="arrow">插件 → 网络</span>
     </div>
     <div class="pcard">
-      <h3>Audio Receive</h3><span class="tag">扩展 · 接收</span>
+        <h3>INST WDM2VST</h3><span class="tag">扩展 · 乐器版</span>
+        <p>伪装成合成器（Synth/Instrument）的 WDM2VST。专为那些禁止在空白 MIDI/乐器 轨道上直接加载普通效果器的特殊宿主软件（DAW）设计，支持 MIDI 接收并无缝引流系统音频。</p>
+        <span class="arrow">系统音 → DAW (乐器轨)</span>
+      </div>
+      <div class="pcard">
+        <h3>Audio Receive</h3><span class="tag">扩展 · 接收</span>
       <p>跨插件音频路由接收端。接收来自 Audio Send 的音频流，支持本机 IPC 零延迟和 LAN 远程接收。</p>
       <span class="arrow">网络 → 插件</span>
     </div>
@@ -258,7 +219,18 @@ tr:hover td{background:var(--card)}
   </table>
 </div>
 
-<!-- Detail: VST2WDM -->
+  <!-- Detail: INST WDM2VST -->
+  <div class="dtable">
+    <h3><span style="color:#E91E63">🎹</span> INST WDM2VST —— 乐器轨专用捕获端</h3>
+    <div class="desc">专为必须加载在虚拟乐器 / MIDI轨 (VSTi/Synth) 的特殊 DAW 设计</div>
+    <table>
+      <tr><th style="width:110px">属性</th><th>说明</th></tr>
+      <tr><td>功能</td><td>伪装成 MIDI 合成器，允许你在没有任何物理音频输入的【空白乐器轨道】上强制加载本接收器，打破通道束缚。</td></tr>
+      <tr><td>核心机制</td><td>底层引擎同普通核心版完全一致，具备极致平滑的毫秒级防溢出重采样时钟锁流控。</td></tr>
+      <tr><td>适用场景</td><td>如 FL Studio / Ableton Live 等对效果器轨与乐器轨限制严格的宿主软件中强制捕获系统音频等。</td></tr>
+    </table>
+  </div>
+  <!-- Detail: VST2WDM -->
 <div class="dtable">
   <h3><span style="color:var(--a2)">🔊</span> VST2WDM — DAW 声音输出到系统</h3>
   <div class="desc">将 DAW 中的音频实时输出到 Windows 系统的虚拟麦克风或物理设备</div>
@@ -355,7 +327,7 @@ tr:hover td{background:var(--card)}
   <div class="steps">
     <div class="step"><div><h4>版本更新检测</h4><p>内置自动化版本侦测系统。当检测到新版本时，UI自动变形展现极客风格呼吸幻彩按钮，全自动重定向至最新下载地址。</p></div></div>
     <div class="step"><div><h4>内核级遥测监控 (Telemetry)</h4><p>首创诊断式宿主音频配置收集，实时协助排查因未知原因引发的爆音问题。</p></div></div>
-    <div class="step"><div><h4>安装插件</h4><p>运行 <code>WDM2VST_Public_v3.2.1_Setup.exe</code>，插件自动安装到 <code>C:\Program Files\Common Files\VST3</code></p></div></div>
+    <div class="step"><div><h4>安装插件</h4><p>运行官方安装包程序，插件将自动安装到 <code>C:\Program Files\Common Files\VST3</code></p></div></div>
     <div class="step"><div><h4>打开 DAW</h4><p>打开 Studio One / Cubase / Ableton / FL Studio 等 DAW，扫描 VST3 插件目录</p></div></div>
     <div class="step"><div><h4>创建轨道并加载插件</h4><p>新建音频轨道，在效果器插槽中加载 <code>WDM2VST</code> 或 <code>VST2WDM</code></p></div></div>
     <div class="step"><div><h4>选择音频设备</h4><p>在插件界面下拉列表中选择目标设备。IPC 模式选虚拟设备，WASAPI 模式选物理设备</p></div></div>
@@ -513,8 +485,8 @@ tr:hover td{background:var(--card)}
 </div>
 
 <footer class="footer">
-  <p>WDM2VST Audio Router V3.2.1 · Public Edition</p>
-  <p style="margin-top:6px">© 2024-2026 VirtualAudioRouter · <a href="https://github.com/VirtualAudioRouter/WDM2VST">GitHub</a></p>
+  <p>WDM2VST Audio Router · 稳定版</p>
+  <p style="margin-top:6px">© 2024-2026 VirtualAudioRouter · <a href="https://github.com/GeekASMR/wdm2vst">GitHub</a></p>
 </footer>
 
 </body>

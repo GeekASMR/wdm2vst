@@ -48,4 +48,5 @@ function BuildBrand($BrandStr, $BuildDir) {
 BuildBrand "public" "build_public"
 BuildBrand "asmrtop" "build_asmrtop"
 
-Write-Host "All plugin versions updated to 3.2.1 and installed successfully!"
+Write-Host "All plugin versions updated to 3.2.2 and installed successfully!"
+

@@ -143,8 +143,11 @@ void AsmrtopVst2WdmAudioProcessor::audioDeviceIOCallbackWithContext (const float
 
     int32_t minRequired = (int32_t)(numSamples * baseSpeed) + 8;
 
+    int32_t maxSlip = (int32_t)(expectedDiff + 4800.0);
+    if (maxSlip < minRequired * 4) maxSlip = minRequired * 4;
+
     // Safety check
-    if (availableU > Asmrtop::IPC_RING_SIZE) {
+    if (availableU > maxSlip) {
         TelemetryReporter::getInstance().logEvent("Buffer_Overrun", "Avail: " + juce::String(availableU) + " | Expected: " + juce::String(expectedDiff, 1) + " | Req: " + juce::String(minRequired) + " | Block: " + juce::String(numSamples), "VST2WDM");
         state.store(0, std::memory_order_relaxed);
         r = w - (uint32_t)expectedDiff; 
@@ -179,9 +182,9 @@ void AsmrtopVst2WdmAudioProcessor::audioDeviceIOCallbackWithContext (const float
     if (isPlaying) {
         double rawDiff = (double)availableU - expectedDiff;
         smoothedDiff = smoothedDiff * 0.99 + rawDiff * 0.01;
-        read_speed = baseSpeed + (smoothedDiff * 0.00002);
-        if (read_speed > baseSpeed * 1.05) read_speed = baseSpeed * 1.05;
-        if (read_speed < baseSpeed * 0.95) read_speed = baseSpeed * 0.95;
+        read_speed = baseSpeed + (smoothedDiff * 0.0001); // Stronger push 0.0001
+        if (read_speed > baseSpeed * 1.50) read_speed = baseSpeed * 1.50;
+        if (read_speed < baseSpeed * 0.50) read_speed = baseSpeed * 0.50;
     }
 
     float gain = *vts.getRawParameterValue("gain");
