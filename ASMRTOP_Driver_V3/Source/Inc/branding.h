@@ -12,7 +12,7 @@ Abstract:
 // ============================================================================
 // Uncomment for ASMRTOP branded build, comment out for public build
 // ============================================================================
-//#define ASMRTOP_BRAND
+#define ASMRTOP_BRAND
 
 #ifdef ASMRTOP_BRAND
 

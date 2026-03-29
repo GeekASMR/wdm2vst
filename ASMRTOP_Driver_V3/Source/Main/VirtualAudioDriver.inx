@@ -26,7 +26,7 @@ PETrust=true
 %MfgName%=ASMRTOPVirtualAudio,NT$ARCH$.10.0...16299
 
 [ASMRTOPVirtualAudio.NT$ARCH$.10.0...16299]
-%ASMRTOPVirtualAudio_SA.DeviceDesc%=ASMRTOPVirtualAudio_SA, ROOT\VirtualAudioRouter
+%ASMRTOPVirtualAudio_SA.DeviceDesc%=ASMRTOPVirtualAudio_SA, ROOT\ASMRTOPVirtualAudio
 
 [DestinationDirs]
 ASMRTOPVirtualAudio_SA.CopyList=13
@@ -283,7 +283,7 @@ AddInterface=%KSCATEGORY_AUDIO%,    %KSNAME_TopologyMicArray4%, ASMRTOPVirtualAu
 AddInterface=%KSCATEGORY_TOPOLOGY%, %KSNAME_TopologyMicArray4%, ASMRTOPVirtualAudio.I.TopologyMicArray4
 
 [ASMRTOPVirtualAudio_SA.NT.Services]
-AddService=VirtualAudioRouter,0x00000002,ASMRTOPVirtualAudio_Service_Inst
+AddService=ASMRTOPVirtualAudio,0x00000002,ASMRTOPVirtualAudio_Service_Inst
 
 [ASMRTOPVirtualAudio_Service_Inst]
 DisplayName=%ASMRTOPVirtualAudio.SvcDesc%
@@ -305,7 +305,7 @@ HKR,,Security,,"D:P(A;;GA;;;SY)(A;;GRGWGX;;;BA)(A;;GRGWGX;;;WD)(A;;GRGWGX;;;RC)"
 ; WDF
 ;======================================================
 [ASMRTOPVirtualAudio_SA.NT.Wdf]
-KmdfService = VirtualAudioRouter, ASMRTOPVirtualAudio_SA_WdfSect
+KmdfService = ASMRTOPVirtualAudio, ASMRTOPVirtualAudio_SA_WdfSect
 [ASMRTOPVirtualAudio_SA_WdfSect]
 KmdfLibraryVersion = $KMDFVERSION$
 
@@ -349,42 +349,42 @@ PKEY_AudioEndpoint_Supports_EventDriven_Mode = "{1DA5D803-D492-4EDD-8C23-E0C0FFE
 PKEY_Device_DeviceDesc                       = "{a45c254e-df1c-4efd-8020-67d146a850e0},2"
 
 ;Localizable
-; >>> BRAND:PUBLIC <<<
+; >>> BRAND:ASMRTOP <<<
 
-ProviderName = "VirtualAudioRouter"
-MfgName      = "VirtualAudioRouter"
-MsCopyRight  = "VirtualAudioRouter"
+ProviderName = "ASMRTOP"
+MfgName      = "ASMRTOP"
+MsCopyRight  = "ASMRTOP"
 
-ASMRTOPVirtualAudio_SA.DeviceDesc="Virtual Audio Router"
-ASMRTOPVirtualAudio.SvcDesc="Virtual Audio Router"
+ASMRTOPVirtualAudio_SA.DeviceDesc="ASMRTOP Audio Router"
+ASMRTOPVirtualAudio.SvcDesc="ASMRTOP Audio Router"
 
 ;; Speaker friendly names
-ASMRTOPVirtualAudio.WaveSpeaker.szPname="Virtual 1/2"
-ASMRTOPVirtualAudio.TopologySpeaker.szPname="Virtual 1/2"
-ASMRTOPVirtualAudio.WaveSpeaker2.szPname="Virtual 3/4"
-ASMRTOPVirtualAudio.TopologySpeaker2.szPname="Virtual 3/4"
-ASMRTOPVirtualAudio.WaveSpeaker3.szPname="Virtual 5/6"
-ASMRTOPVirtualAudio.TopologySpeaker3.szPname="Virtual 5/6"
-ASMRTOPVirtualAudio.WaveSpeaker4.szPname="Virtual 7/8"
-ASMRTOPVirtualAudio.TopologySpeaker4.szPname="Virtual 7/8"
+ASMRTOPVirtualAudio.WaveSpeaker.szPname="ASMR Audio 1/2"
+ASMRTOPVirtualAudio.TopologySpeaker.szPname="ASMR Audio 1/2"
+ASMRTOPVirtualAudio.WaveSpeaker2.szPname="ASMR Audio 3/4"
+ASMRTOPVirtualAudio.TopologySpeaker2.szPname="ASMR Audio 3/4"
+ASMRTOPVirtualAudio.WaveSpeaker3.szPname="ASMR Audio 5/6"
+ASMRTOPVirtualAudio.TopologySpeaker3.szPname="ASMR Audio 5/6"
+ASMRTOPVirtualAudio.WaveSpeaker4.szPname="ASMR Audio 7/8"
+ASMRTOPVirtualAudio.TopologySpeaker4.szPname="ASMR Audio 7/8"
 
 ;; MicArray friendly names
-ASMRTOPVirtualAudio.WaveMicArray1.szPname="Mic 1/2"
-ASMRTOPVirtualAudio.TopologyMicArray1.szPname="Mic 1/2"
-ASMRTOPVirtualAudio.WaveMicArray2.szPname="Mic 3/4"
-ASMRTOPVirtualAudio.TopologyMicArray2.szPname="Mic 3/4"
-ASMRTOPVirtualAudio.WaveMicArray3.szPname="Mic 5/6"
-ASMRTOPVirtualAudio.TopologyMicArray3.szPname="Mic 5/6"
-ASMRTOPVirtualAudio.WaveMicArray4.szPname="Mic 7/8"
-ASMRTOPVirtualAudio.TopologyMicArray4.szPname="Mic 7/8"
+ASMRTOPVirtualAudio.WaveMicArray1.szPname="ASMR Mic 1/2"
+ASMRTOPVirtualAudio.TopologyMicArray1.szPname="ASMR Mic 1/2"
+ASMRTOPVirtualAudio.WaveMicArray2.szPname="ASMR Mic 3/4"
+ASMRTOPVirtualAudio.TopologyMicArray2.szPname="ASMR Mic 3/4"
+ASMRTOPVirtualAudio.WaveMicArray3.szPname="ASMR Mic 5/6"
+ASMRTOPVirtualAudio.TopologyMicArray3.szPname="ASMR Mic 5/6"
+ASMRTOPVirtualAudio.WaveMicArray4.szPname="ASMR Mic 7/8"
+ASMRTOPVirtualAudio.TopologyMicArray4.szPname="ASMR Mic 7/8"
 
 ;; Endpoint display names (PKEY_Device_DeviceDesc)
-SpeakerName1="Virtual 1/2"
-SpeakerName2="Virtual 3/4"
-SpeakerName3="Virtual 5/6"
-SpeakerName4="Virtual 7/8"
-MicName1="Mic 1/2"
-MicName2="Mic 3/4"
-MicName3="Mic 5/6"
-MicName4="Mic 7/8"
+SpeakerName1="ASMR Audio 1/2"
+SpeakerName2="ASMR Audio 3/4"
+SpeakerName3="ASMR Audio 5/6"
+SpeakerName4="ASMR Audio 7/8"
+MicName1="ASMR Mic 1/2"
+MicName2="ASMR Mic 3/4"
+MicName3="ASMR Mic 5/6"
+MicName4="ASMR Mic 7/8"
 

@@ -41,7 +41,7 @@ namespace ProjectInfo
 {
     const char* const  projectName    = "ASMRTOP INST WDM2VST";
     const char* const  companyName    = "ASMRTOP";
-    const char* const  versionString  = "3.2.2";
-    const int          versionNumber  =  0x30202;
+    const char* const  versionString  = "3.2.4";
+    const int          versionNumber  =  0x30204;
 }
 #endif

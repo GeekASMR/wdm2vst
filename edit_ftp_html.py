@@ -19,19 +19,19 @@ with open(local_file, 'r', encoding='utf-8', errors='ignore') as f:
     content = f.read()
 
 # Replace version string 
-content = re.sub(r'v[23]\.\d+\.\d+ · Public Edition', r'V3.2.3 · Public Edition', content, flags=re.IGNORECASE)
-content = re.sub(r'WDM2VST_v[23]\.\d+\.\d+_Setup\.exe', r'WDM2VST_Public_v3.2.3_Setup.exe', content, flags=re.IGNORECASE)
-content = re.sub(r'WDM2VST_Public_v[23]\.\d+\.\d+_Setup\.exe', r'WDM2VST_Public_v3.2.3_Setup.exe', content, flags=re.IGNORECASE)
+content = re.sub(r'v[23]\.\d+\.\d+ · Public Edition', r'V3.2.4 · Public Edition', content, flags=re.IGNORECASE)
+content = re.sub(r'WDM2VST_v[23]\.\d+\.\d+_Setup\.exe', r'WDM2VST_Public_v3.2.4_Setup.exe', content, flags=re.IGNORECASE)
+content = re.sub(r'WDM2VST_Public_v[23]\.\d+\.\d+_Setup\.exe', r'WDM2VST_Public_v3.2.4_Setup.exe', content, flags=re.IGNORECASE)
 
 # Update the changelog header and button text
-# First replace all explicit 3.2.1 to 3.2.3
-content = re.sub(r'V3\.2\.1 稳定�?更新日志', r'V3.2.3 稳定�?更新日志', content, flags=re.IGNORECASE)
-content = re.sub(r'下载最�?V3\.2\.1', r'下载最�?V3.2.3', content, flags=re.IGNORECASE)
-content = re.sub(r'href="https://github.com/VirtualAudioRouter/WDM2VST/releases/tag/v3\.2\.1"', r'href="https://github.com/VirtualAudioRouter/WDM2VST/releases/tag/v3.2.3"', content, flags=re.IGNORECASE)
+# First replace all explicit 3.2.1 to 3.2.4
+content = re.sub(r'V3\.2\.1 稳定�?更新日志', r'V3.2.4 稳定�?更新日志', content, flags=re.IGNORECASE)
+content = re.sub(r'下载最�?V3\.2\.1', r'下载最�?V3.2.4', content, flags=re.IGNORECASE)
+content = re.sub(r'href="https://github.com/VirtualAudioRouter/WDM2VST/releases/tag/v3\.2\.1"', r'href="https://github.com/VirtualAudioRouter/WDM2VST/releases/tag/v3.2.4"', content, flags=re.IGNORECASE)
 
-# Then fix the collateral damage where historical block got renamed to 3.2.3 by targeting the specific historical span class and reverting it back to 3.2.1
+# Then fix the collateral damage where historical block got renamed to 3.2.4 by targeting the specific historical span class and reverting it back to 3.2.1
 content = re.sub(r'V3\.2\.2 稳定�?更新日志( <span style="font-size:12px;color:#777;font-weight:600;margin-left:8px">\(历史大版本\))', r'V3.2.1 稳定�?更新日志\1', content)
-content = re.sub(r'href="https://github.com/VirtualAudioRouter/WDM2VST/releases/tag/v3\.\d+\.\d+"', r'href="https://github.com/VirtualAudioRouter/WDM2VST/releases/tag/v3.2.3"', content, flags=re.IGNORECASE)
+content = re.sub(r'href="https://github.com/VirtualAudioRouter/WDM2VST/releases/tag/v3\.\d+\.\d+"', r'href="https://github.com/VirtualAudioRouter/WDM2VST/releases/tag/v3.2.4"', content, flags=re.IGNORECASE)
 
 # Insert the new comprehensive changelog about double playback and tmp logic 
 new_changelog = """    <ul>
@@ -84,5 +84,6 @@ with open(local_file, 'rb') as f:
 
 ftp.quit()
 print("Website updated and deployed on FTP.")
+
 
 
