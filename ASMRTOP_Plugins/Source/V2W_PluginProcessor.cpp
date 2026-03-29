@@ -39,7 +39,6 @@ void AsmrtopVst2WdmAudioProcessor::prepareToPlay (double sampleRate, int samples
     state.store(0, std::memory_order_relaxed);
     readPosFractional = 0.0;
     smoothedDiff = 0.0;
-    fadeVol = 0.0f;
 }
 void AsmrtopVst2WdmAudioProcessor::releaseResources() {}
 void AsmrtopVst2WdmAudioProcessor::enableIPCMode(int channelId, const juce::String& deviceName)
@@ -156,7 +155,6 @@ void AsmrtopVst2WdmAudioProcessor::audioDeviceIOCallbackWithContext (const float
         readPosFractional = 0.0;
         smoothedDiff = 0.0;
         availableU = (int32_t)expectedDiff;
-        fadeVol = 0.0f;
     } else if (availableU < 0) {
         TelemetryReporter::getInstance().logEvent("Buffer_Underrun", "Avail: " + juce::String(availableU) + " | Expected: " + juce::String(expectedDiff, 1) + " | Req: " + juce::String(minRequired) + " | Block: " + juce::String(numSamples), "VST2WDM");
         state.store(0, std::memory_order_relaxed);
@@ -165,7 +163,6 @@ void AsmrtopVst2WdmAudioProcessor::audioDeviceIOCallbackWithContext (const float
         readPosFractional = 0.0;
         smoothedDiff = 0.0;
         availableU = 0;
-        fadeVol = 0.0f;
     }
     
     bool isPlaying = (state.load(std::memory_order_relaxed) == 1);

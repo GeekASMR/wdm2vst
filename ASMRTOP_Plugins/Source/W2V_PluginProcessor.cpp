@@ -38,18 +38,10 @@ void AsmrtopWdm2VstAudioProcessor::prepareToPlay (double sampleRate, int samples
     std::fill(ringL.begin(), ringL.end(), 0.0f);
     std::fill(ringR.begin(), ringR.end(), 0.0f);
     writePos.store(0, std::memory_order_relaxed);
-    
-    if (ipcBridge != nullptr && ipcBridge->isConnected() && ipcBridge->getBuffer() != nullptr) {
-        uint32_t wp = ipcBridge->getBuffer()->writePos.load(std::memory_order_relaxed);
-        readPos.store(wp, std::memory_order_relaxed);
-    } else {
-        readPos.store(0, std::memory_order_relaxed);
-    }
-    
+    readPos.store(0, std::memory_order_relaxed);
     state.store(0, std::memory_order_relaxed);
     readPosFractional = 0.0;
     smoothedDiff = 0.0;
-    fadeVol = 0.0f;
 }
 void AsmrtopWdm2VstAudioProcessor::releaseResources() {}
 void AsmrtopWdm2VstAudioProcessor::enableIPCMode(int channelId, const juce::String& deviceName)
@@ -217,20 +209,14 @@ void AsmrtopWdm2VstAudioProcessor::processBlock (juce::AudioBuffer<float>& buffe
         readPosFractional = 0.0;
         smoothedDiff = 0.0;
         availableU = (int32_t)expectedDiff;
-        fadeVol = 0.0f;
     } else if (availableU < 0) {
-        if (availableU < -1000) {
-            TelemetryReporter::getInstance().logEvent("Stream_Restart", "WDM pointer reset | Avail: " + juce::String(availableU), "WDM2VST");
-        } else {
-            TelemetryReporter::getInstance().logEvent("Buffer_Underrun", "Avail: " + juce::String(availableU) + " | Expected: " + juce::String(expectedDiff, 1) + " | Req: " + juce::String(minRequired) + " | Block: " + juce::String(numSamples), "WDM2VST");
-        }
+        TelemetryReporter::getInstance().logEvent("Buffer_Underrun", "Avail: " + juce::String(availableU) + " | Expected: " + juce::String(expectedDiff, 1) + " | Req: " + juce::String(minRequired) + " | Block: " + juce::String(numSamples), "WDM2VST");
         state.store(0, std::memory_order_relaxed);
         r = w; 
         readPos.store(r, std::memory_order_relaxed);
         readPosFractional = 0.0;
         smoothedDiff = 0.0;
         availableU = 0;
-        fadeVol = 0.0f;
     }
     
     bool isPlaying = (state.load(std::memory_order_relaxed) == 1);
